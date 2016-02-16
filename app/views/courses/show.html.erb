@@ -1,19 +1,40 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-12 clearfix">
+  <p>
+    <h1><%= @course.title %></h1>
+  </p>
+  <p>
+    <strong>Язык курсов:</strong>
+    <%= @course.language %>
+  </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @course.title %>
-</p>
+  <p>
+    <%= @course.description %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @course.description %>
-</p>
+  <%= link_to 'Edit', edit_course_path(@course) %> |
+</div>
 
-<p>
-  <strong>Language:</strong>
-  <%= @course.language %>
-</p>
+<div class="col-md-6">
+  <h3>Комментарии</h3>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+  <% if @comments.any? %>
+    <div class="well">
+      <%= render partial: 'comments/comment', collection: @comments %>
+    </div>
+  <% end %>
+
+  <div class="well">
+    <% if signed_in? %>
+      <%= form_for [@course, @comment] do |f| %>
+        <%= f.text_area :content, class: 'form-control' %>
+        <%= f.submit 'Сохранить', class: 'btn btn-default' %>
+      <% end %>
+    <% else %>
+      <h4>Для оставления комментариев необходимо авторизоваться</h4>
+    <% end %>
+  </div>
+</div>
+
+<div class="col-md-6">
+  <!-- <h3>Другие курсы</h3> -->
+</div>

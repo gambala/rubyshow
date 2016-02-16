@@ -1,0 +1,16 @@
+<% if comment.user.present? %>
+  <div class="media">
+    <div class="media-left">
+      <a href="#">
+        <%= image_tag avatar_url(comment.user.email, 75), class: 'media-object' %>
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading"><%= comment.user.email %></h4>
+        <p>
+          <%= comment.content %>
+        </p>
+    </div>
+  </div>
+  <hr>
+<% end %>
