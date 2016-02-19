@@ -6,10 +6,15 @@
       </a>
     </div>
     <div class="media-body">
-      <h4 class="media-heading"><%= comment.user.email %></h4>
-        <p>
-          <%= comment.content %>
-        </p>
+      <h4 class="media-heading">
+        <%= comment.user.email %>
+        <small class="text-success">
+          <%= is_graduate?(comment.user, course) %>
+        </small>
+      </h4>
+      <p>
+        <%= comment.content %>
+      </p>
     </div>
   </div>
   <hr>

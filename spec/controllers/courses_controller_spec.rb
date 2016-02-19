@@ -145,6 +145,14 @@ RSpec.describe CoursesController, type: :controller do
       expect do
         post :graduate, id: course.id, user: user, format: :js
       end.to change(Graduate, :count).by(1)
+
+      expect do
+        post :graduate, id: course.id, user: user, format: :js
+      end.to change(user.courses, :count).by(-1)
+
+      expect do
+        post :graduate, id: course.id, user: user, format: :js
+      end.to change(course.users, :count).by(1)
     end
   end
 

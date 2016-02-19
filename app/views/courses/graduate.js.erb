@@ -2,8 +2,10 @@
   $(<%= dom_id @course %>).html(
     '<%= j link_to "Я тут не учился".html_safe, graduate_course_path(@course), class: "btn btn-success", remote: true, method: :post %>'
     );
+  $('.course-title').append('<i class="glyphicon glyphicon-ok" id="course-done"></i>')
 <% else %>
   $(<%= dom_id @course %>).html(
       '<%= j link_to "Я тут учился".html_safe, graduate_course_path(@course), class: "btn btn-success", remote: true, method: :post %>'
     );
+  $('#course-done').remove();
 <% end %>
