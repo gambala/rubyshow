@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :course do
-    title "MyString"
-    description "MyText"
-    language "MyString"
+    title "Coursera"
+    description "Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, error."
+    language "English"
   end
 end

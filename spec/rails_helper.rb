@@ -23,6 +23,7 @@ RSpec.configure do |config|
   # Подключаем синтаксис FactoryGirl в тесты
   config.include FactoryGirl::Syntax::Methods
   config.include Capybara::DSL
+  config.include Devise::TestHelpers, type: :controller
   # Подключаем хелперы url в тесты
   config.include Rails.application.routes.url_helpers
 

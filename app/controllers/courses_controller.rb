@@ -52,10 +52,12 @@ class CoursesController < ApplicationController
   end
 
   def graduate
-    if current_user.courses.include?(@course)
-      Graduate.find_by(user_id: current_user.id, course: @course).destroy
-    else
-      Graduate.create(user_id: current_user.id, course: @course )
+    respond_to do |format|
+      if current_user.courses.include?(@course)
+        format.js { Graduate.find_by(user_id: current_user.id, course: @course).destroy }
+      else
+        format.js { Graduate.create(user_id: current_user.id, course: @course ) }
+      end
     end
   end
 
