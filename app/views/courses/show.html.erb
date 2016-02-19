@@ -1,11 +1,17 @@
 <div class="clearfix">
   <div class="col-md-8">
     <p>
-      <h1 class='course-title'><%= @course.title %><%= current_user.courses.include?(@course) ? '<i class="glyphicon glyphicon-ok" id="course-done"></i>'.html_safe : '' %></h1>
+      <h1 class='course-title'>
+        <%= @course.title %>
+        <% if signed_in? %>
+          <%= current_user.courses.include?(@course) ? '<i class="glyphicon glyphicon-ok" id="course-done"></i>'.html_safe : '' %>
+        <% end %>
+      </h1>
       <div id='<%= dom_id @course %>'>
         <% if signed_in? %>
           <% if current_user.courses.include?(@course) %>
             <%= link_to 'Я здесь не учился!', graduate_course_path(@course), class: 'btn btn-success', remote: true, method: :post %>
+            <%= rating_for @course, 'score' %>
           <% else %>
             <%= link_to 'Я здесь учился!', graduate_course_path(@course), class: 'btn btn-success', remote: true, method: :post %>
           <% end %>

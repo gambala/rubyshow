@@ -2,24 +2,43 @@
 
 <h1>Рейтинг курсов</h1>
 
-<table class='table table-bordered table-hover'>
-  <thead>
-    <tr>
-      <th>Название</th>
-      <th>Количество учеников</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @courses.each do |course| %>
+<div class="col-md-6">
+  <table class='table table-bordered table-hover'>
+    <thead>
       <tr>
-        <td><%= link_to course.title, course %></td>
-        <td><%= rand(1..1000) %></td>
+        <th>Название</th>
+        <th>Количество учеников</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @paid_courses.each do |course| %>
+        <tr>
+          <td><%= link_to course.title, course %></td>
+          <td><%= course.users.count %><%= rating_for course, 'score', disable_after_rate: true, imdb_avg: true %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
+<div class="col-md-6">
+  <table class='table table-bordered table-hover'>
+    <thead>
+      <tr>
+        <th>Название</th>
+        <th>Количество учеников</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @free_courses.each do |course| %>
+        <tr>
+          <td><%= link_to course.title, course %></td>
+          <td><%= course.users.count %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <%= link_to 'New Course', new_course_path %>

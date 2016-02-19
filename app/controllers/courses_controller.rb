@@ -2,7 +2,8 @@ class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy, :graduate]
 
   def index
-    @courses = Course.all
+    @paid_courses = Course.where(paid: true)
+    @free_courses = Course.where(paid: false)
   end
 
   def show

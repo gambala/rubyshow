@@ -1,6 +1,6 @@
 <% if current_user.courses.include?(@course) %>
   $(<%= dom_id @course %>).html(
-    '<%= j link_to "Я тут не учился".html_safe, graduate_course_path(@course), class: "btn btn-success", remote: true, method: :post %>'
+    '<%= j link_to "Я тут не учился!".html_safe, graduate_course_path(@course), class: "btn btn-success", remote: true, method: :post %><%= j rating_for @course, "score" %>'
     );
   $('.course-title').append('<i class="glyphicon glyphicon-ok" id="course-done"></i>')
 <% else %>

@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :graduates
   has_many :courses, through: :graduates
+  ratyrate_rater
 end
