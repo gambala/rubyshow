@@ -1,0 +1,9 @@
+<% if current_user.courses.include?(@course) %>
+  $(<%= dom_id @course %>).html(
+    '<%= j link_to "Я тут не учился".html_safe, graduate_course_path(@course), class: "btn btn-success", remote: true, method: :post %>'
+    );
+<% else %>
+  $(<%= dom_id @course %>).html(
+      '<%= j link_to "Я тут учился".html_safe, graduate_course_path(@course), class: "btn btn-success", remote: true, method: :post %>'
+    );
+<% end %>

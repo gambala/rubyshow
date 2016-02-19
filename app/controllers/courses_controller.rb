@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :set_course, only: [:show, :edit, :update, :destroy, :graduate]
 
   def index
     @courses = Course.all
@@ -48,6 +48,14 @@ class CoursesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to courses_url, notice: 'Course was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def graduate
+    if current_user.courses.include?(@course)
+      Graduate.find_by(user_id: current_user.id, course: @course).destroy
+    else
+      Graduate.create(user_id: current_user.id, course: @course )
     end
   end
 

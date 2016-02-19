@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Название</th>
-      <th>Язык обучения</th>
+      <th>Количество учеников</th>
     </tr>
   </thead>
 
@@ -14,7 +14,7 @@
     <% @courses.each do |course| %>
       <tr>
         <td><%= link_to course.title, course %></td>
-        <td><%= course.language %></td>
+        <td><%= rand(1..1000) %></td>
       </tr>
     <% end %>
   </tbody>

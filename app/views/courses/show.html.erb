@@ -1,17 +1,48 @@
-<div class="col-md-12 clearfix">
-  <p>
-    <h1><%= @course.title %></h1>
-  </p>
-  <p>
-    <strong>Язык курсов:</strong>
-    <%= @course.language %>
-  </p>
+<div class="clearfix">
+  <div class="col-md-8">
+    <p>
+      <h1><%= @course.title %></h1>
+      <div id='<%= dom_id @course %>'>
+        <% if signed_in? %>
+          <% if current_user.courses.include?(@course) %>
+            <%= link_to 'Я здесь не учился!', graduate_course_path(@course), class: 'btn btn-success', remote: true, method: :post %>
+          <% else %>
+            <%= link_to 'Я здесь учился!', graduate_course_path(@course), class: 'btn btn-success', remote: true, method: :post %>
+          <% end %>
+        <% else %>
+          <a href="#" class='btn btn-success disabled' data-toggle='tooltip' data-placement='bottom' title='Сначала нужно авторизоваться'>Я здесь учился!</a>
+        <% end %>
+      </div>
+    </p>
+    <p>
+      <strong>Язык курсов:</strong>
+      <%= @course.language %>
+    </p>
 
-  <p>
-    <%= @course.description %>
-  </p>
+    <p>
+      <%= @course.description %>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. At reprehenderit, aliquid voluptatum perferendis omnis, ducimus nobis hic vitae repudiandae, tenetur ut veritatis sunt cupiditate! Neque illum consequatur ut quam impedit cum, autem iusto, praesentium cupiditate doloremque voluptatem unde sed vel, magnam fugit libero nihil veniam quis eligendi illo dolorem. Eveniet non magnam dolor, maxime quis dolores accusantium. Eveniet, voluptatibus odio maiores omnis quidem illo, animi deleniti veritatis optio, alias assumenda saepe quam possimus illum natus molestiae nobis temporibus. Pariatur quibusdam ea tenetur nulla ab aliquid reiciendis expedita in voluptatum cupiditate. Sequi voluptas laboriosam dolore totam hic neque, distinctio et, veritatis!
+    </p>
 
-  <%= link_to 'Edit', edit_course_path(@course) %> |
+    <%= link_to 'Edit', edit_course_path(@course) %> |
+  </div>
+
+  <div class="col-md-4">
+    <h3>Статистика</h3>
+    <p>
+      <strong>Количество учеников: 40</strong>
+    </p>
+    <p>
+      <strong>Закончили курс: 20</strong>
+    </p>
+    <p>
+      <strong>Процент завершаемости: 50</strong>
+    </p>
+    <p>
+      <strong>Рейтинг: 100</strong>
+    </p>
+  </div>
+
 </div>
 
 <div class="col-md-6">
