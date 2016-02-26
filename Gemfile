@@ -9,13 +9,15 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'font-awesome-sass', '~> 4.5.0'
 
 gem 'dragonfly', '~> 1.0.12'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'cancancan', '~> 1.10'
+gem 'figaro'
 
-gem 'font-awesome-sass', '~> 4.5.0'
+gem 'omniauth-github', :github => 'intridea/omniauth-github'
 
 group :test do
   gem 'capybara', '~> 2.4.0'
