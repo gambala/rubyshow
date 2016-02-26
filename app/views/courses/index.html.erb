@@ -1,10 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Рейтинг курсов</h1>
-
 <div class="col-md-6">
   <table class='table table-bordered table-hover'>
     <thead>
+      <tr>
+        <th colspan='2' class='text-center'>Платные курсы</th>
+      </tr>
       <tr>
         <th>Название</th>
         <th>Количество учеников</th>
@@ -15,7 +14,12 @@
       <% @paid_courses.each do |course| %>
         <tr>
           <td><%= link_to course.title, course %></td>
-          <td><%= course.users.count %><%= rating_for course, 'score', disable_after_rate: true, imdb_avg: true %></td>
+          <td>
+            <%= course.users.count %>
+            <% if signed_in? && current_user.courses.include?(course) %>
+              <%= rating_for course, 'score', disable_after_rate: true, imdb_avg: true %>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>
@@ -25,6 +29,7 @@
 <div class="col-md-6">
   <table class='table table-bordered table-hover'>
     <thead>
+      <th colspan='2' class='text-center'>Бесплатные курсы</th>
       <tr>
         <th>Название</th>
         <th>Количество учеников</th>
