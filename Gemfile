@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'dragonfly', '~> 1.0.12'
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'cancancan', '~> 1.10'
 
 gem 'font-awesome-sass', '~> 4.5.0'
 

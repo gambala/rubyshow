@@ -30,7 +30,9 @@
     <div class="course-description">
       <%= @course.description %>
     </div>
-    <%= link_to 'Edit', edit_course_path(@course) %> |
+    <% if can? :edit, Course %>
+      <%= link_to 'Редактировать', edit_course_path(@course) %>
+    <% end %>
   </div>
 
   <div class="col-md-4">

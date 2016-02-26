@@ -15,6 +15,14 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li>
+          <%= link_to new_course_path do %>
+            Добавить курс
+            <span class="badge" data-toggle='tooltip' data-placement='right' title='Количество нерассмотренных курсов'>
+              <%= unapproved_courses %>
+            </span>
+          <% end %>
+        </li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
