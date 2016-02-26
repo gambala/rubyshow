@@ -5,6 +5,18 @@
       <%= f.text_field :title, class: 'form-control' %>
     </div>
     <div class='form-group'>
+      <%= f.label :url, 'Ссылка на курс' %><br>
+      <%= f.text_field :url, class: 'form-control' %>
+    </div>
+    <div class='form-group'>
+      <% [{ 'Платный' => true }, { 'Бесплатный' => false }].each do |hash| %>
+        <label>
+          <%= hash.keys.first.to_s %>
+          <%= f.radio_button(:paid, hash.values.first) %>
+        </label>
+      <% end %>
+    </div>
+    <div class='form-group'>
       <%= f.label :description, 'Описание' %><br>
       <%= f.text_area :description, rows: 10, class: 'form-control' %>
     </div>

@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+  load_and_authorize_resource
   before_action :set_course, only: [:show, :edit, :update, :destroy, :graduate]
 
   def index
@@ -65,6 +66,6 @@ class CoursesController < ApplicationController
   end
 
   def course_params
-    params.require(:course).permit(:title, :description, :language)
+    params.require(:course).permit(:title, :description, :language, :url, :paid)
   end
 end
