@@ -27,11 +27,9 @@
       <%= @course.language %>
     </p>
 
-    <p>
+    <div class="course-description">
       <%= @course.description %>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. At reprehenderit, aliquid voluptatum perferendis omnis, ducimus nobis hic vitae repudiandae, tenetur ut veritatis sunt cupiditate! Neque illum consequatur ut quam impedit cum, autem iusto, praesentium cupiditate doloremque voluptatem unde sed vel, magnam fugit libero nihil veniam quis eligendi illo dolorem. Eveniet non magnam dolor, maxime quis dolores accusantium. Eveniet, voluptatibus odio maiores omnis quidem illo, animi deleniti veritatis optio, alias assumenda saepe quam possimus illum natus molestiae nobis temporibus. Pariatur quibusdam ea tenetur nulla ab aliquid reiciendis expedita in voluptatum cupiditate. Sequi voluptas laboriosam dolore totam hic neque, distinctio et, veritatis!
-    </p>
-
+    </div>
     <%= link_to 'Edit', edit_course_path(@course) %> |
   </div>
 
@@ -40,13 +38,6 @@
     <p>
       <strong>Количество учеников: <%= @course.users.count %></strong>
     </p>
-<!--     <p>
-      <strong>Закончили курс: 20</strong>
-    </p>
- -->
-    <!-- <p>
-      <strong>Процент завершаемости: 50</strong>
-    </p> -->
     <p>
       <strong>Средняя оценка: <%= @rating %>/5</strong>
     </p>
@@ -62,17 +53,20 @@
   <% end %>
 
   <div class="well">
-    <% if signed_in? && current_user.courses.include?(@course) %>
+    <% if signed_in? && current_user.comments.pluck(:course_id).include?(@course.id) %>
       <h4>Вы уже оставили комментарий к этому курсу</h4>
     <% elsif signed_in? %>
       <%= form_for [@course, @comment] do |f| %>
         <%= f.text_area :content, class: 'form-control' %>
-        <% (1..5).each do |value| %>
-          <label>
-            <%= value %>
-            <%= f.radio_button(:rating, value) %>
-          </label>
-        <% end %>
+        <div class='rate-course'>
+          Оценка курса:
+          <% (1..5).each do |value| %>
+            <label>
+              <%= value %>
+              <%= f.radio_button(:rating, value) %>
+            </label>
+          <% end %>
+        </div>
         <%= f.submit 'Сохранить', class: 'btn btn-default' %>
       <% end %>
     <% else %>
