@@ -11,13 +11,11 @@
         <% if signed_in? %>
           <% if current_user.courses.include?(@course) %>
             <%= link_to 'Я здесь не учился!', graduate_course_path(@course), class: 'btn btn-success', remote: true, method: :post %>
-            <%= rating_for @course, 'score' %>
           <% else %>
             <%= link_to 'Я здесь учился!', graduate_course_path(@course), class: 'btn btn-success', remote: true, method: :post %>
           <% end %>
         <% else %>
           <a href="#" class='btn btn-success disabled' data-toggle='tooltip' data-placement='bottom' title='Сначала нужно авторизоваться'>Я здесь учился!</a>
-          <%= rating_for @course, 'score', disable_after_rate: true, imdb_avg: true %>
         <% end %>
       </div>
     </p>
@@ -61,7 +59,9 @@
   <% end %>
 
   <div class="well">
-    <% if signed_in? %>
+    <% if signed_in? && current_user.courses.include?(@course) %>
+      <h4>Вы уже оставили комментарий к этому курсу</h4>
+    <% elsif signed_in? %>
       <%= form_for [@course, @comment] do |f| %>
         <%= f.text_area :content, class: 'form-control' %>
         <%= f.submit 'Сохранить', class: 'btn btn-default' %>

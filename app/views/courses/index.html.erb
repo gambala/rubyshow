@@ -16,9 +16,6 @@
           <td><%= link_to course.title, course %></td>
           <td>
             <%= course.users.count %>
-            <% if signed_in? && current_user.courses.include?(course) %>
-              <%= rating_for course, 'score', disable_after_rate: true, imdb_avg: true %>
-            <% end %>
           </td>
         </tr>
       <% end %>
