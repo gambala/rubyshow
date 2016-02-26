@@ -26,6 +26,13 @@
       <strong>Язык курсов:</strong>
       <%= @course.language %>
     </p>
+    <p>
+      <strong>Сайт курса:</strong>
+      <%= link_to @course.url do %>
+        <img src='<%= "#{@course.url}/favicon.ico" %>' width='20' height='20'>
+        <%= @course.url %>
+      <% end %>
+    </p>
 
     <div class="course-description">
       <%= @course.description %>
