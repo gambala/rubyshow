@@ -9,6 +9,7 @@ class CoursesController < ApplicationController
   def show
     @comments = @course.comments
     @comment = @course.comments.build
+    @rating = @course.rating
   end
 
   def new

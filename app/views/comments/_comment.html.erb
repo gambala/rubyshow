@@ -8,7 +8,10 @@
     <div class="media-body">
       <h4 class="media-heading">
         <%= comment.user.email %>
-        <small class="text-success">
+        <small class='rating' data-toggle='tooltip' data-placement='top' title='Оценка пользователя'>
+          <%= rating_in_gems(comment.rating) %>
+        </small>
+        <small class='text-success'>
           <%= is_graduate?(comment.user, course) %>
         </small>
       </h4>

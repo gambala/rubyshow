@@ -14,6 +14,8 @@ gem 'dragonfly', '~> 1.0.12'
 gem 'bootstrap-sass'
 gem 'devise'
 
+gem 'font-awesome-sass', '~> 4.5.0'
+
 group :test do
   gem 'capybara', '~> 2.4.0'
   gem 'capybara-webkit'

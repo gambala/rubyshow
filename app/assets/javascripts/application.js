@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require jquery.raty
-//= require ratyrate
 //= require_tree .
+
+$(document).on('ready page:change', function() {
+    $('[data-toggle="tooltip"]').tooltip()
+});

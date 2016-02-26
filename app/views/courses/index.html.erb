@@ -13,7 +13,12 @@
     <tbody>
       <% @paid_courses.each do |course| %>
         <tr>
-          <td><%= link_to course.title, course %></td>
+          <td>
+            <%= link_to course.title, course %>
+            <span class="rating" data-toggle='tooltip' data-placement='top' title='Средний рейтинг курса'>
+              <%= rating_in_gems(course.rating) %>
+            </span>
+          </td>
           <td>
             <%= course.users.count %>
           </td>
