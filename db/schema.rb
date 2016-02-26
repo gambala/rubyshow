@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 20160226100837) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
-    t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "content",    default: "", null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.integer  "course_id"
     t.integer  "rating"
   end
@@ -30,15 +30,17 @@ ActiveRecord::Schema.define(version: 20160226100837) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "courses", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "language"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.boolean  "paid"
-    t.boolean  "approved",    default: false, null: false
+    t.string   "title",       default: "",        null: false
+    t.text     "description", default: "",        null: false
+    t.string   "language",    default: "Русский", null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "paid",        default: false
+    t.boolean  "approved",    default: false,     null: false
     t.string   "url"
   end
+
+  add_index "courses", ["title"], name: "index_courses_on_title", unique: true, using: :btree
 
   create_table "graduates", force: :cascade do |t|
     t.boolean  "finished"

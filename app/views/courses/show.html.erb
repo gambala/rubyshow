@@ -18,7 +18,7 @@
             <%= link_to 'Я здесь учился!', graduate_course_path(@course), class: 'btn btn-success', remote: true, method: :post %>
           <% end %>
         <% else %>
-          <a href="#" class='btn btn-success disabled' data-toggle='tooltip' data-placement='bottom' title='Сначала нужно авторизоваться'>Я здесь учился!</a>
+          <a href="#" class='btn btn-success disabled' data-toggle='tooltip' data-placement='right' title='Сначала нужно авторизоваться'>Я здесь учился!</a>
         <% end %>
       </div>
     </p>
@@ -28,10 +28,7 @@
     </p>
     <p>
       <strong>Сайт курса:</strong>
-      <%= link_to @course.url do %>
-        <img src='<%= "#{@course.url}/favicon.ico" %>' width='20' height='20'>
-        <%= @course.url %>
-      <% end %>
+      <%= link_to @course.url, @course.url %>
     </p>
 
     <div class="course-description">
