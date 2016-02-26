@@ -131,6 +131,8 @@ Devise.setup do |config|
   config.reset_password_keys = [ :username ]
   config.confirmation_keys = [ :username ]
 
+  config.omniauth :github, ENV['GITHUB_CLIENT_KEY'], ENV['GITHUB_CLIENT_SECRET'], scope: 'user:email'
+
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
   # config.remember_for = 2.weeks

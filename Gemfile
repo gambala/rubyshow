@@ -26,6 +26,10 @@ group :test do
   gem 'shoulda-matchers', '~> 2.8'
 end
 
+group :development do
+  gem 'web-console', '~> 3.0'
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'factory_girl_rails'
