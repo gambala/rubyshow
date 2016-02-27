@@ -30,4 +30,8 @@ module ApplicationHelper
   def unapproved_courses
     Course.where(approved: false).count
   end
+
+  def title(page_title)
+    content_for :title, page_title.to_s
+  end
 end

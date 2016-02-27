@@ -19,6 +19,8 @@ gem 'figaro'
 
 gem 'omniauth-github', :github => 'intridea/omniauth-github'
 
+gem 'unicorn', '~> 4.8.3'
+
 group :test do
   gem 'capybara', '~> 2.4.0'
   gem 'capybara-webkit'
@@ -27,7 +29,15 @@ group :test do
 end
 
 group :development do
-  gem 'web-console', '~> 3.0'
+  gem 'capistrano', '~> 3.2.1'
+  # rails specific capistrano functions
+  gem 'capistrano-rails', '~> 1.1.0'
+  # integrate bundler with capistrano
+  gem 'capistrano-bundler'
+  # if you are using Rbenv
+  gem 'capistrano-rbenv', "~> 2.0"
+  # include helper tasks
+  gem 'capistrano-cookbook'
 end
 
 group :development, :test do
