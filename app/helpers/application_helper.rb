@@ -13,8 +13,8 @@ module ApplicationHelper
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
   end
 
-  def is_graduate?(user, course)
-    'Выпускник курса' if user.courses.include?(course)
+  def is_graduate?(comment)
+    'Выпускник курса' if comment.graduate?
   end
 
   def rating_in_gems(rating)

@@ -11,18 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160226163435) do
+ActiveRecord::Schema.define(version: 20160227212938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
-    t.text     "content",    default: "", null: false
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.text     "content",    default: "",    null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.integer  "course_id"
     t.integer  "rating"
+    t.boolean  "graduate",   default: false
   end
 
   add_index "comments", ["course_id"], name: "index_comments_on_course_id", using: :btree

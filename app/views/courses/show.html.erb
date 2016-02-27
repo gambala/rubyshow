@@ -1,7 +1,7 @@
 <div class="clearfix">
   <div class="col-md-8">
     <p>
-      <h1 class='course-title'>
+      <h1 class='course-title h2'>
         <%= @course.title %>
         <span class="rating" data-toggle='tooltip' data-placement='top' title='Средний рейтинг курса'>
           <%= rating_in_gems(@rating) %>
@@ -51,7 +51,7 @@
 
 </div>
 
-<div class="col-md-6">
+<div class="col-md-7">
   <h3>Комментарии</h3>
 
   <% if @comments.any? %>
@@ -63,8 +63,9 @@
       <h4>Вы уже оставили комментарий к этому курсу</h4>
     <% elsif signed_in? %>
       <%= form_for [@course, @comment] do |f| %>
-        <%= f.text_area :content, class: 'form-control' %>
-        <div class='rate-course'>
+        <%= f.text_area :content, rows: 4, class: 'form-control' %>
+        <br>
+        <div class="col-md-6 rate-course">
           Оценка курса:
           <% (1..5).each do |value| %>
             <label>
@@ -73,7 +74,11 @@
             </label>
           <% end %>
         </div>
-        <%= f.submit 'Сохранить', class: 'btn btn-default' %>
+        <div class="col-md-6">
+          <%= f.check_box :graduate %>
+          <%= f.label :graduate, 'Я закончил этот курс!' %>
+        </div>
+        <%= f.submit 'Отправить', class: 'btn btn-default' %>
       <% end %>
     <% else %>
       <h4>Для оставления комментариев необходимо авторизоваться</h4>
