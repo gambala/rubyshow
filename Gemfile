@@ -37,7 +37,7 @@ group :development do
   # if you are using Rbenv
   gem 'capistrano-rbenv', "~> 2.0"
   # include helper tasks
-  gem 'capistrano-cookbook'
+  gem 'capistrano-cookbook', require: false
 end
 
 group :development, :test do

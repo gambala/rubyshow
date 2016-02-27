@@ -10,6 +10,7 @@ class Ability
       elsif user.role == 'user'
         can :create, Comment
         can :create, Course
+        can :graduate, Course
         can :read, Course, approved: true
       else
         can :read, :all
