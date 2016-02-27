@@ -21,6 +21,8 @@ gem 'omniauth-github', :github => 'intridea/omniauth-github'
 
 gem 'unicorn', '~> 4.8.3'
 
+gem 'rollbar'
+
 group :test do
   gem 'capybara', '~> 2.4.0'
   gem 'capybara-webkit'

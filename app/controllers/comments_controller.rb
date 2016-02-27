@@ -10,11 +10,11 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html do
-          redirect_to @course, notice: 'Спасибо за ваш комментарий!.'
+          redirect_to @course, notice: 'Спасибо за ваш комментарий!'
         end
         format.json { render :show, status: :created, location: @comment }
       else
-        format.html { render :new }
+        format.html { redirect_to :back, notice: @comment.errors }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end

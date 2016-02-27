@@ -7,6 +7,6 @@ class Course < ActiveRecord::Base
 
   def rating
     scores = self.comments.pluck(:rating)
-    scores.inject{ |sum, el| sum + el } / scores.size if scores.any?
+    scores.any? ? scores.inject{ |sum, el| sum + el } / scores.size : 0
   end
 end

@@ -3,8 +3,8 @@ class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy, :graduate]
 
   def index
-    @paid_courses = Course.where(paid: true, approved: true)
-    @free_courses = Course.where(paid: false, approved: true)
+    @paid_courses = Course.where(paid: true, approved: true).sort_by {|course| course.rating }.reverse
+    @free_courses = Course.where(paid: false, approved: true).sort_by {|course| course.rating }.reverse
   end
 
   def show
