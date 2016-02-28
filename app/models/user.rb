@@ -8,8 +8,6 @@ class User < ActiveRecord::Base
          authentication_keys: [:login]
 
   has_many :comments
-  has_many :graduates
-  has_many :courses, through: :graduates
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup

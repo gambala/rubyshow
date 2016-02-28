@@ -1,7 +1,5 @@
 class Course < ActiveRecord::Base
   has_many :comments, dependent: :destroy
-  has_many :graduates
-  has_many :users, through: :graduates
 
   validates :url, :title, :description, :language, presence: true
 

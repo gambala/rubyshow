@@ -22,7 +22,7 @@
             </span>
           </td>
           <td>
-            <%= course.users.count %>
+            <%= course.comments.pluck(:graduate).count %>
           </td>
         </tr>
       <% end %>
