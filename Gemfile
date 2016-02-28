@@ -16,6 +16,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'cancancan', '~> 1.10'
 gem 'figaro'
+gem 'russian'
 
 gem 'omniauth-github', :github => 'intridea/omniauth-github'
 

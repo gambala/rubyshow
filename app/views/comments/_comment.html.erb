@@ -14,6 +14,10 @@
         <small class='text-success'>
           <%= is_graduate?(comment) %>
         </small>
+        |
+        <small>
+          <%= Russian::strftime(comment.created_at, "%e %B %Y") %>
+        </small>
       </h4>
       <p>
         <%= comment.content %>
