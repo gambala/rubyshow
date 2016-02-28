@@ -38,7 +38,7 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.save
-        redirect_to @course, notice: 'Спасибо за предложенный курс!'
+        redirect_to root_path, notice: 'Спасибо за предложенный курс!'
       else
         render :new
       end
