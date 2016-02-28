@@ -10,17 +10,6 @@
           <%= current_user.courses.include?(@course) ? '<i class="glyphicon glyphicon-ok" id="course-done"></i>'.html_safe : '' %>
         <% end %>
       </h1>
-      <div id='<%= dom_id @course %>'>
-        <% if signed_in? %>
-          <% if current_user.courses.include?(@course) %>
-            <%= link_to 'Я здесь не учился!', graduate_course_path(@course), class: 'btn btn-success', remote: true, method: :post %>
-          <% else %>
-            <%= link_to 'Я здесь учился!', graduate_course_path(@course), class: 'btn btn-success', remote: true, method: :post %>
-          <% end %>
-        <% else %>
-          <a href="#" class='btn btn-success disabled' data-toggle='tooltip' data-placement='right' title='Сначала нужно авторизоваться'>Я здесь учился!</a>
-        <% end %>
-      </div>
     </p>
     <p>
       <strong>Язык курсов:</strong>
@@ -51,7 +40,7 @@
 
 </div>
 
-<div class="col-md-7">
+<div class="col-md-8">
   <h3>Комментарии</h3>
 
   <% if @comments.any? %>
@@ -83,7 +72,9 @@
         <%= f.submit 'Отправить', class: 'btn btn-default' %>
       <% end %>
     <% else %>
-      <h4>Для оставления комментариев необходимо авторизоваться</h4>
+      <h4>
+        Чтобы оставить комментарий и оценку курса, необходимо <%= link_to 'войти', new_user_session_path %> или <%= link_to 'зарегистрироваться', new_user_registration_path %>.
+      </h4>
     <% end %>
   </div>
 </div>

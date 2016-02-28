@@ -1,11 +1,11 @@
-<h2>Sign up</h2>
+<h2>Регистрация</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
     <p>
-      <%= f.label :username %><br />
+      <%= f.label :username, 'Логин' %><br />
       <%= f.text_field :username %>
     </p>
   </div>
@@ -16,20 +16,20 @@
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password, 'Пароль' %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(Не менее <%= @minimum_password_length %> символов)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, 'Подтверждение пароля' %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Зарегистрироваться" %>
   </div>
 <% end %>
 

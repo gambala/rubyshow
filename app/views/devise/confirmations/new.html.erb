@@ -1,10 +1,10 @@
-<h2>Resend confirmation instructions</h2>
+<h2>Повторная отправка подтверждения</h2>
 
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <p><%= f.label :username %><br />
+    <p><%= f.label :username, 'Логин' %><br />
     <%= f.text_field :username %></p>
   </div>
 
@@ -14,7 +14,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
+    <%= f.submit "Повторная отправка подтверждения" %>
   </div>
 <% end %>
 
