@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   def create
     @comment = @course.comments.build(comment_params)
     @comment.user_id = current_user.id
-    @comment.rating = nil unless current_user.courses.include?(@course)
+    @comment.rating = nil unless @comment.graduate?
 
     respond_to do |format|
       if @comment.save

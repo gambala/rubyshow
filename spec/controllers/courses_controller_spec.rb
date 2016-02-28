@@ -131,29 +131,4 @@ RSpec.describe CoursesController, type: :controller do
       expect(response).to redirect_to(courses_url)
     end
   end
-
-  describe 'POST #graduate' do
-    let(:course) { create(:course) }
-    let(:user)   { create(:user) }
-
-    before(:each) do
-      @request.env["devise.mapping"] = Devise.mappings[:user]
-      sign_in user
-    end
-
-    it 'adds new user to course and new course to user via Graduate model' do
-      expect do
-        post :graduate, id: course.id, user: user, format: :js
-      end.to change(Graduate, :count).by(1)
-
-      expect do
-        post :graduate, id: course.id, user: user, format: :js
-      end.to change(user.courses, :count).by(-1)
-
-      expect do
-        post :graduate, id: course.id, user: user, format: :js
-      end.to change(course.users, :count).by(1)
-    end
-  end
-
 end

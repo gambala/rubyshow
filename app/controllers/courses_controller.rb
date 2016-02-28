@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   load_and_authorize_resource
-  before_action :set_course, only: [:show, :edit, :update, :destroy, :graduate]
+  before_action :set_course, only: [:show, :edit, :update, :destroy]
 
   def index
     @paid_courses = Course.where(paid: true, approved: true).sort_by {|course| course.rating }.reverse
@@ -26,7 +26,7 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.save
-        redirect_to @course, notice: 'Спасибо за предоженный курс!'
+        redirect_to @course, notice: 'Спасибо за предложенный курс!'
       else
         render :new
       end
@@ -39,18 +39,6 @@ class CoursesController < ApplicationController
         redirect_to @course, notice: 'Кур был успешно обновлен.'
       else
         render :edit
-      end
-    end
-  end
-
-  def graduate
-    respond_to do |format|
-      if current_user.courses.include?(@course)
-        format.js do
-          Graduate.find_by(user_id: current_user.id, course: @course).destroy
-        end
-      else
-        format.js { Graduate.create(user_id: current_user.id, course: @course ) }
       end
     end
   end
