@@ -31,7 +31,7 @@
   <div class="col-md-4">
     <h3>Статистика</h3>
     <p>
-      <strong>Количество учеников: <%= @course.users.count %></strong>
+      <strong>Количество учеников: <%= @course.comments.pluck(:graduate).count %></strong>
     </p>
     <p>
       <strong>Средняя оценка: <%= @rating || 0 %>/5</strong>
