@@ -7,7 +7,7 @@
           <%= rating_in_gems(@rating) %>
         </span>
         <% if signed_in? %>
-          <%= current_user.courses.include?(@course) ? '<i class="glyphicon glyphicon-ok" id="course-done"></i>'.html_safe : '' %>
+          <%= current_user.comments.pluck(:course_id).include?(@course.id) ? '<i class="glyphicon glyphicon-ok" id="course-done"></i>'.html_safe : '' %>
         <% end %>
       </h1>
     </p>
@@ -69,7 +69,7 @@
         </div>
         <br>
         <br>
-        <%= f.submit 'Отправить', class: 'btn btn-default' %>
+        <%= f.submit 'Отправить', class: 'btn btn-default', id: 'submit_comment', disabled: true %>
       <% end %>
     <% else %>
       <h4>
