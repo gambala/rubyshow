@@ -50,7 +50,7 @@
 
   <div class="well">
     <% if signed_in? && current_user.comments.pluck(:course_id).include?(@course.id) %>
-      <h4>Вы уже оставили комментарий к этому курсу</h4>
+      <h4>Вы уже оставили комментарий к этому курсу.</h4>
     <% elsif signed_in? %>
       <%= form_for [@course, @comment] do |f| %>
         <%= f.text_area :content, rows: 4, class: 'form-control' %>

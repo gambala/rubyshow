@@ -7,6 +7,8 @@
       <tr>
         <th>#</th>
         <th>Название</th>
+        <th>Язык</th>
+        <th>Платность</th>
         <th>Количество учеников</th>
       </tr>
     </thead>
@@ -21,6 +23,8 @@
               <%= rating_in_gems(course.rating) %>
             </span>
           </td>
+          <td><%= course.language %></td>
+          <td><%= course.paid? ? 'Платный' : 'Бесплатный' %></td>
           <td>
             <%= course.comments.pluck(:graduate).count %>
           </td>

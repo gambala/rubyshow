@@ -3,8 +3,8 @@ class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy, :approve]
 
   def index
-    @courses = Course.approved.first(25)
-    @type = 'Лучшие курсы'
+    @courses = Course.approved
+    @type = 'Все курсы'
   end
 
   def paid
