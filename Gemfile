@@ -6,7 +6,7 @@ gem 'coffee-rails'
 gem 'devise'
 gem 'dragonfly', '~> 1.0.12'
 gem 'figaro'
-gem 'font-awesome-sass'
+gem 'font-awesome-rails'
 gem 'jbuilder'
 gem 'jquery-rails'
 gem 'omniauth-github', github: 'intridea/omniauth-github'
@@ -14,7 +14,7 @@ gem 'pg'
 gem 'rails', '~> 4.2.5'
 gem 'rollbar'
 gem 'russian'
-gem 'sassc-rails', '~> 1.1.0'
+gem 'sassc-rails'
 gem 'uglifier'
 gem 'unicorn', '~> 4.8.3'
 
@@ -29,8 +29,14 @@ group :development do
   gem 'capistrano', '~> 3.2.1'
   gem 'capistrano-rails', '~> 1.1.0'
   gem 'capistrano-bundler'
-  gem 'capistrano-rbenv', "~> 2.0"
+  gem 'capistrano-rbenv', '~> 2.0'
   gem 'capistrano-cookbook', require: false
+  gem 'guard', require: false
+  gem 'guard-bundler', require: false
+  gem 'guard-livereload', require: false
+  gem 'guard-rails', require: false
+  gem 'guard-rspec', require: false
+  gem 'rack-livereload'
 end
 
 group :development, :test do
