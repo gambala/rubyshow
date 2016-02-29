@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
          authentication_keys: [:login]
 
   has_many :comments
+  validates :username, presence: true
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
