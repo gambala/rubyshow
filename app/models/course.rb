@@ -27,4 +27,8 @@ class Course < ActiveRecord::Base
   def self.approved
     where(approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
   end
+
+  def self.unapproved
+    where(approved: false)
+  end
 end

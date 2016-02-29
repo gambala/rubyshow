@@ -60,4 +60,8 @@ module ApplicationHelper
   def total_comments
     Comment.count
   end
+
+  def course_status(course)
+    course.paid? ? 'Платный' : 'Бесплатный'
+  end
 end

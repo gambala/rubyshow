@@ -1,23 +1,23 @@
 <h1 class='text-center'><%= @type %></h1>
-<div class="col-md-12">
-  <div class="well">
-    <form class="form-inline">
-      <div class="form-group">
-        <label class="sr-only" for="course_name">Название</label>
-        <input type="text" class="form-control" id="course_name" name='title' placeholder="Название">
-        <select class="form-control" name='language'>
+<div class='col-md-12'>
+  <div class='well'>
+    <form class='form-inline'>
+      <div class='form-group'>
+        <label class='sr-only' for='course_name'>Название</label>
+        <input type='text' class='form-control' id='course_name' name='title' placeholder='Название'>
+        <select class='form-control' name='language'>
           <option disabled selected>Язык курса</option>
           <option>Русский</option>
           <option>English</option>
         </select>
-        <select class="form-control" name='paid'>
+        <select class='form-control' name='paid'>
           <option disabled selected>Платность курса</option>
           <option value='1'>Платный</option>
           <option value='0'>Бесплатный</option>
         </select>
       </div>
-      <div class="pull-right">
-        <button type="submit" class="btn btn-primary">Применить фильтр</button>
+      <div class='pull-right'>
+        <button type='submit' class='btn btn-primary'>Применить фильтр</button>
         <%= link_to 'Сбросить фильтр', root_path, class: 'btn btn-default' %>
       </div>
     </form>
@@ -44,12 +44,12 @@
           </td>
           <td>
             <%= link_to course.title, course %>
-            <span class="rating" data-toggle='tooltip' data-placement='top' title='Средний рейтинг курса'>
+            <span class='rating' data-toggle='tooltip' data-placement='top' title='Средний рейтинг курса'>
               <%= rating_in_gems(course.rating) %>
             </span>
           </td>
           <td><%= course.language %></td>
-          <td><%= course.paid? ? 'Платный' : 'Бесплатный' %></td>
+          <td><%= course_status(course) %></td>
           <td>
             <%= link_to course.comments.pluck(:graduate).count, course_path(course, anchor: 'comments') %>
           </td>
@@ -58,3 +58,11 @@
     </tbody>
   </table>
 </div>
+
+<% if can? :approve, Course %>
+  <ul>
+    <% Course.unapproved.each do |course| %>
+      <li><%= link_to course.title, course %></li>
+    <% end %>
+  </ul>
+<% end %>
