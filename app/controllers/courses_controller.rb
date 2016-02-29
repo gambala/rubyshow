@@ -3,18 +3,18 @@ class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy, :approve]
 
   def index
-    @courses = Course.where(approved: true).sort_by {|course| course.rating }.reverse.first(25)
+    @courses = Course.approved.first(25)
     @type = 'Лучшие курсы'
   end
 
   def paid
-    @courses = Course.where(paid: true, approved: true).sort_by {|course| course.rating }.reverse
+    @courses = Course.paid
     @type = 'Платные курсы'
     render :index
   end
 
   def free
-    @courses = Course.where(paid: false, approved: true).sort_by {|course| course.rating }.reverse
+    @courses = Course.free
     @type = 'Бесплатные курсы'
     render :index
   end
