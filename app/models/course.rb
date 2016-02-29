@@ -4,9 +4,9 @@ class Course < ActiveRecord::Base
   validates :url, :title, :description, :language, presence: true
 
   def rating
-    scores = self.comments.pluck(:rating)
+    scores = self.comments.pluck(:rating).compact
     if scores && scores.any?
-      scores.inject{ |sum, el| sum + el } / scores.size
+      scores.inject{ |sum, element| sum + element } / scores.size
     else
       0
     end
