@@ -17,14 +17,14 @@ class Course < ActiveRecord::Base
   end
 
   def self.paid
-    where(paid: true, approved: true).sort_by {|course| course.rating }.reverse
+    where(paid: true, approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
   end
 
   def self.free
-    where(paid: false, approved: true).sort_by {|course| course.rating }.reverse
+    where(paid: false, approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
   end
 
   def self.approved
-    where(approved: true).sort_by {|course| course.rating }.reverse
+    where(approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
   end
 end
