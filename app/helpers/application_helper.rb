@@ -43,4 +43,8 @@ module ApplicationHelper
       end
     end
   end
+
+  def total_comments
+    Comment.count
+  end
 end

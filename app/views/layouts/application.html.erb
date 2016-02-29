@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= content_for(:title) ? yield(:title) : 'Рейтинг курсов по Ruby и Ruby on Rails' %></title>
+  <title>
+    <%= content_for(:title) ? yield(:title) : 'Рейтинг курсов по Ruby и Ruby on Rails' %>
+  </title>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -12,6 +14,10 @@
 <%= render 'shared/navbar' %>
 <%= render partial: 'shared/flash_messages', flash: flash %>
 <%= yield %>
+
+<div class="text-center">
+  Уже <%= total_comments %> отзывов и мнений о курсах Ruby on Rails.
+</div>
 
 <%= render 'shared/metrics' %>
 </body>
