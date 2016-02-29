@@ -7,4 +7,8 @@ class Course < ActiveRecord::Base
     scores = self.comments.pluck(:rating)
     scores.any? ? scores.inject{ |sum, el| sum + el } / scores.size : 0
   end
+
+  def approve!
+    update!(approved: true)
+  end
 end

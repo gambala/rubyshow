@@ -15,6 +15,7 @@ class Ability
         can :read, Course, approved: true
       else
         can :read, :all
+        cannot :read, Course, approved: false
       end
     #
     # The first argument to `can` is the action you are giving the user

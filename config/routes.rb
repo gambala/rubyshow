@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       get :paid
       get :free
     end
+    put :approve, on: :member
   end
   root 'courses#index'
 end

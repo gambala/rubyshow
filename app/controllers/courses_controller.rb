@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   load_and_authorize_resource
-  before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :set_course, only: [:show, :edit, :update, :destroy, :approve]
 
   def index
     @courses = Course.where(approved: true).sort_by {|course| course.rating }.reverse.first(25)
@@ -20,7 +20,6 @@ class CoursesController < ApplicationController
   end
 
   def show
-    redirect_to root_path, notice: 'Этот курс еще не одобрен.' unless @course.approved?
     @comments = @course.comments
     @comment = @course.comments.build
     @rating = @course.rating
@@ -36,23 +35,24 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new(course_params)
 
-    respond_to do |format|
-      if @course.save
-        redirect_to root_path, notice: 'Спасибо за предложенный курс!'
-      else
-        render :new
-      end
+    if @course.save
+      redirect_to root_path, notice: 'Спасибо за предложенный курс!'
+    else
+      render :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @course.update(course_params)
-        redirect_to @course, notice: 'Кур был успешно обновлен.'
-      else
-        render :edit
-      end
+    if @course.update(course_params)
+      redirect_to @course, notice: 'Кур был успешно обновлен.'
+    else
+      render :edit
     end
+  end
+
+  def approve
+    @course.approve!
+    redirect_to @course, notice: 'Курс был одобрен.'
   end
 
   private

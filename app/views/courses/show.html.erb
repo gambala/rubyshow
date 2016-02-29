@@ -36,6 +36,7 @@
     <p>
       <strong>Средняя оценка: <%= @rating || 0 %>/5</strong>
     </p>
+    <%= approve_block(current_user, @course) %>
   </div>
 
 </div>
@@ -84,4 +85,4 @@
 </div>
 
 
-<% title @course.title %>
+<% title "#{@course.title}, отзывы и мнения" %>

@@ -34,4 +34,13 @@ module ApplicationHelper
   def title(page_title)
     content_for :title, page_title.to_s
   end
+
+  def approve_block(user, course)
+    if user.present? && user.role == 'admin' && !course.approved?
+      content_tag(:div, '', class: 'well') do
+        link_to 'Одобрить курс', approve_course_path(course),
+          method: :put, class: 'text-danger'
+      end
+    end
+  end
 end
