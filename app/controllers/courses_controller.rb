@@ -3,7 +3,7 @@ class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy, :approve]
 
   def index
-    @courses = Course.approved
+    @courses = filter_courses(Course.includes(:comments)).approved
     @type = 'Все курсы'
   end
 
@@ -63,5 +63,16 @@ class CoursesController < ApplicationController
 
   def course_params
     params.require(:course).permit(:title, :description, :language, :url, :paid)
+  end
+
+  def filter_courses(courses)
+    title = params[:title] unless params[:title].blank?
+    paid = params[:paid] if %w(1 0).include?(params[:paid])
+    language = params[:language] if %w(Русский English).include?(params[:language])
+
+    courses = courses.where('title ILIKE ?', "%#{title}%") if title.present?
+    courses = courses.where(paid: paid) if paid.present?
+    courses = courses.where(language: language) if language.present?
+    courses
   end
 end
