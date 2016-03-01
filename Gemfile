@@ -16,6 +16,7 @@ gem 'rails', '~> 4.2.5'
 gem 'rollbar'
 gem 'russian'
 gem 'sassc-rails', '~> 1.1.0'
+gem 'slim'
 gem 'uglifier'
 gem 'unicorn', '~> 4.8.3'
 

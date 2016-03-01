@@ -1,0 +1,56 @@
+h1.text-center = @type
+.col-md-12
+  .well
+    form.form-inline
+      .form-group
+        label.sr-only[for="course_name"]
+          | Название
+        input#course_name.form-control[type="text" name="title" placeholder="Название"]
+        select.form-control[name="language"]
+          option[disabled selected]
+            | Язык курса
+          option
+            | Русский
+          option
+            | English
+        select.form-control[name="paid"]
+          option[disabled selected]
+            | Платность курса
+          option[value="1"]
+            | Платный
+          option[value="0"]
+            | Бесплатный
+      .pull-right
+        button.btn.btn-primary[type="submit"]
+          | Применить фильтр
+        = link_to 'Сбросить фильтр', root_path, class: 'btn btn-default'
+  table.table.table-bordered.table-hover
+    thead
+      tr
+
+      tr
+        th
+          | #
+        th
+          | Название
+        th
+          | Язык
+        th
+          | $
+        th
+          | Отзывы
+    tbody
+      - @courses.each.with_index(1) do |course, index|
+        tr
+          td.text-center
+            = top_three(index)
+          td
+            = link_to course.title, course
+            span.rating[data-toggle="tooltip" data-placement="top" title="Средний рейтинг курса"]
+              = rating_in_gems(course.rating)
+          td
+            = language_flag(course.language)
+          td
+            = course.paid? ? 'Платный' : 'Бесплатный'
+          td
+            = link_to course.comments.pluck(:graduate).count, course_path(course, anchor: 'comments')
