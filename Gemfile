@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'bootstrap-sass'
+gem 'bourbon'
 gem 'cancancan', '~> 1.10'
 gem 'coffee-rails'
 gem 'devise'
@@ -14,7 +15,7 @@ gem 'pg'
 gem 'rails', '~> 4.2.5'
 gem 'rollbar'
 gem 'russian'
-gem 'sassc-rails'
+gem 'sassc-rails', '~> 1.1.0'
 gem 'uglifier'
 gem 'unicorn', '~> 4.8.3'
 
@@ -45,4 +46,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'spring'
   gem 'launchy'
+end
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-normalize-css'
 end

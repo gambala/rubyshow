@@ -1,0 +1,6 @@
+// None-style focus
+
+@mixin tab-focus {
+  outline: none;
+  outline-offset: 0;
+}
