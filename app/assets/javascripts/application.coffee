@@ -1,0 +1,9 @@
+#= require jquery
+#= require jquery_ujs
+#= require bootstrap/transition
+#= require bootstrap/affix
+#= require bootstrap/collapse
+#= require bootstrap/dropdown
+#= require bootstrap/tooltip
+#= require responsive-toolkit
+#= require_tree ./components

@@ -1,0 +1,18 @@
+ru:
+  words:
+    course:
+      one: 'курс'
+      few: 'курса'
+      many: 'курсов'
+      other: 'курсов'
+    courses_suffix:
+      one: 'по нему'
+      few: 'по ним'
+      many: 'по ним'
+      other: 'по ним'
+    comment:
+      one: 'отзыв'
+      few: 'отзыва'
+      many: 'отзывов'
+      other: 'отзывов'
+  hello: "Hello world"

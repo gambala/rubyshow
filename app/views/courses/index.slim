@@ -1,56 +1,63 @@
-h1.text-center = @type
-.col-md-12
-  .well
-    form.form-inline
-      .form-group
-        label.sr-only[for="course_name"]
-          | Название
-        input#course_name.form-control[type="text" name="title" placeholder="Название"]
-        select.form-control[name="language"]
-          option[disabled selected]
-            | Язык курса
-          option
-            | Русский
-          option
-            | English
-        select.form-control[name="paid"]
-          option[disabled selected]
-            | Платность курса
-          option[value="1"]
-            | Платный
-          option[value="0"]
-            | Бесплатный
-      .pull-right
-        button.btn.btn-primary[type="submit"]
-          | Применить фильтр
-        = link_to 'Сбросить фильтр', root_path, class: 'btn btn-default'
-  table.table.table-bordered.table-hover
-    thead
-      tr
-
-      tr
-        th
-          | #
-        th
-          | Название
-        th
-          | Язык
-        th
-          | $
-        th
-          | Отзывы
-    tbody
-      - @courses.each.with_index(1) do |course, index|
-        tr
-          td.text-center
-            = top_three(index)
-          td
-            = link_to course.title, course
-            span.rating[data-toggle="tooltip" data-placement="top" title="Средний рейтинг курса"]
-              = rating_in_gems(course.rating)
-          td
-            = language_flag(course.language)
-          td
-            = course.paid? ? 'Платный' : 'Бесплатный'
-          td
-            = link_to course.comments.pluck(:graduate).count, course_path(course, anchor: 'comments')
+section.section-red-promo
+  .container
+    .row
+      .col-xs-12.col-sm-8.col-md-8.col-lg-9
+        h1.section-title = courses_title
+        .section-subtitle = courses_search_title
+        p = courses_overview_title
+      .col-sm-4.col-md-4.col-lg-3.hidden-xs
+        .text-center
+          .icon.icon-ruby
+/ = render 'shared/navbar'
+section.section-padded
+  .container
+    .row
+      .col-md-8.col-lg-9
+        - courses.each.with_index(1) do |course, index|
+          .media.media-stack-overflow
+            .media-left
+              .media-object
+                = link_to course_path(course),
+                          class: 'object-rating',
+                          title: 'Средний рейтинг курса',
+                          data: { toggle: 'tooltip', placement: 'right' } do
+                  / = star_rating(course.rating)
+                  / span.fa.fa-trophy
+                  span = course.rating
+            .media-body
+              .media-heading = link_to course.title, course
+              p
+                = language_flag(course.language)
+                span = course.paid? ? 'Платный' : 'Бесплатный'
+                = link_to course_path(course, anchor: 'comments'),
+                          class: 'object-comments',
+                          title: 'Отзывов о курсе',
+                          data: { toggle: 'tooltip', placement: 'right' } do
+                    span.fa.fa-comment-o
+                    span = course.comments.pluck(:graduate).count
+      .col-md-4.col-lg-3
+        / p = link_to new_course_path, class: 'btn btn-primary btn-block' do
+        /   | Добавить курс
+        / p.hr
+        /   span или
+        .affix-aside-wrapper
+          .affix-aside
+            form
+              .panel.panel-default
+                .panel-body
+                  .form-group
+                    input.form-control id='course_name' type='text' name='title' placeholder='Найти по названию'
+                  .form-group
+                    select.form-control name='language'
+                      option[disabled selected] На всех языках
+                      option Русский
+                      option English
+                  .form-group
+                    select.form-control name='paid'
+                      option[disabled selected] И платные, и бесплатные
+                      option value='1' Только платные
+                      option value='0' Только бесплатные
+                  .form-group
+                    .text-right
+                      = link_to 'Показать все курсы', root_path, class: 'btn btn-link'
+                      button.btn.btn-primary[type="submit"] Найти

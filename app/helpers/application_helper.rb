@@ -17,6 +17,16 @@ module ApplicationHelper
     'Выпускник курса' if comment.graduate?
   end
 
+  def star_rating(rating)
+    return if rating.blank?
+
+    star_full = content_tag(:i, '', class: 'glyphicon glyphicon-star')
+    star_empty = content_tag(:i, '', class: 'glyphicon glyphicon-star-empty')
+    stars = star_full * rating.round + star_empty * (5 - rating.round)
+
+    content_tag(:span, stars.html_safe, class: 'block stars')
+  end
+
   def rating_in_gems(rating)
     if rating.present?
       r = ''
@@ -25,19 +35,6 @@ module ApplicationHelper
       end
       r.html_safe
     end
-  end
-
-  def top_three(index)
-    r = case index
-        when 1
-          content_tag(:i, '', class: 'fa fa-trophy fa-3x')
-        when 2
-          content_tag(:i, '', class: 'fa fa-trophy fa-2x')
-        when 3
-          content_tag(:i, '', class: 'fa fa-trophy fa-lg')
-        else
-          index
-        end
   end
 
   def unapproved_courses

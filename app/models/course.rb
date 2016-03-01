@@ -16,14 +16,6 @@ class Course < ActiveRecord::Base
     update!(approved: true)
   end
 
-  def self.paid
-    where(paid: true, approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
-  end
-
-  def self.free
-    where(paid: false, approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
-  end
-
   def self.approved
     where(approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
   end
