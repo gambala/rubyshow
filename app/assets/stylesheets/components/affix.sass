@@ -1,7 +1,9 @@
 @import 'variables'
+@import 'breakpoint-sass'
 
 .affix-aside-wrapper
-  margin-top: -50px
+  +breakpoint($screen-md-min)
+    margin-top: -50px
 
 .affix-aside
   &.affix-top
