@@ -23,6 +23,7 @@ group :test do
   gem 'capybara-webkit'
   gem 'database_cleaner', '~> 1.3'
   gem 'shoulda-matchers', '~> 2.8'
+  gem 'codeclimate-test-reporter', require: nil
 end
 
 group :development do
