@@ -60,4 +60,13 @@ module ApplicationHelper
   def total_comments
     Comment.count
   end
+
+  def language_flag(language)
+    case language
+    when 'English'
+      content_tag(:span, '', class: 'flag-icon flag-icon-us', title: language)
+    when 'Русский'
+      content_tag(:span, '', class: 'flag-icon flag-icon-ru', title: language)
+    end
+  end
 end

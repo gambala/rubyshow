@@ -225,6 +225,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.5.1)
       sprockets-rails
+    rails-assets-flag-icon-css (1.3.0)
     rails-assets-normalize-css (3.0.3)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
@@ -348,6 +349,7 @@ DEPENDENCIES
   pg
   rack-livereload
   rails (~> 4.2.5)
+  rails-assets-flag-icon-css!
   rails-assets-normalize-css!
   rollbar
   rspec-rails

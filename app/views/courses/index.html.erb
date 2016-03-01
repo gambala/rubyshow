@@ -48,7 +48,7 @@
               <%= rating_in_gems(course.rating) %>
             </span>
           </td>
-          <td><%= course.language %></td>
+          <td><%= language_flag(course.language) %></td>
           <td><%= course.paid? ? 'Платный' : 'Бесплатный' %></td>
           <td>
             <%= link_to course.comments.pluck(:graduate).count, course_path(course, anchor: 'comments') %>
