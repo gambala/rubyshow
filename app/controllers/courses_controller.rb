@@ -33,15 +33,20 @@ class CoursesController < ApplicationController
 
   def update
     if @course.update(course_params)
-      redirect_to @course, notice: 'Курс был успешно обновлен.'
+      redirect_to @course, notice: 'Курс успешно обновлен.'
     else
       render :edit
     end
   end
 
+  def destroy
+    @course.destroy!
+    redirect_to root_path, notice: 'Курс удален.'
+  end
+
   def approve
     @course.approve!
-    redirect_to @course, notice: 'Курс был одобрен.'
+    redirect_to @course, notice: 'Курс одобрен.'
   end
 
   private

@@ -36,7 +36,13 @@
     <p>
       <strong>Средняя оценка: <%= @rating || 0 %>/5</strong>
     </p>
-    <%= approve_block(current_user, @course) %>
+    <% if current_user.present? && current_user.role == 'admin' && !@course.approved? %>
+      <div class="well">
+        <%= link_to 'Одобрить курс', approve_course_path(@course), method: :put, class: 'text-danger' %>
+        <br>
+        <%= link_to 'Удалить курс', @course, method: :delete, data: {confirm: 'Точно удалить?'} %>
+      </div>
+    <% end %>
   </div>
 
 </div>

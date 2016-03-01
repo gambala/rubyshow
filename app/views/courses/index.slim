@@ -8,7 +8,6 @@ section.section-red-promo
       .col-sm-4.col-md-4.col-lg-3.hidden-xs
         .text-center
           .icon.icon-ruby
-/ = render 'shared/navbar'
 section.section-padded
   .container
     .row
@@ -28,7 +27,7 @@ section.section-padded
               .media-heading = link_to course.title, course
               p
                 = language_flag(course.language)
-                span = course.paid? ? 'Платный' : 'Бесплатный'
+                span = course_status(course)
                 = link_to course_path(course, anchor: 'comments'),
                           class: 'object-comments',
                           title: 'Отзывов о курсе',
@@ -61,3 +60,8 @@ section.section-padded
                     .text-right
                       = link_to 'Показать все курсы', root_path, class: 'btn btn-link'
                       button.btn.btn-primary[type="submit"] Найти
+- if can? :approve, Course
+  .container
+    ul
+      - Course.unapproved.each do |course|
+        li = link_to course.title, course

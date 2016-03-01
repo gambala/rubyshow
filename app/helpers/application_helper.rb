@@ -45,15 +45,6 @@ module ApplicationHelper
     content_for :title, page_title.to_s
   end
 
-  def approve_block(user, course)
-    if user.present? && user.role == 'admin' && !course.approved?
-      content_tag(:div, '', class: 'well') do
-        link_to 'Одобрить курс', approve_course_path(course),
-          method: :put, class: 'text-danger'
-      end
-    end
-  end
-
   def total_comments
     Comment.count
   end
@@ -65,5 +56,9 @@ module ApplicationHelper
     when 'Русский'
       content_tag(:span, '', class: 'flag-icon flag-icon-ru', title: language)
     end
+  end
+
+  def course_status(course)
+    course.paid? ? 'Платный' : 'Бесплатный'
   end
 end
