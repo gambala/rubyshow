@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', github: 'gambala/bootstrap-sass'
 gem 'bourbon'
 gem 'cancancan', '~> 1.10'
 gem 'coffee-rails'

@@ -1,9 +1,0 @@
-@function gg($width: 1, $qwazi: true, $width-base: $gg) {
-  @if (unitless($width)) {
-    $gutter-width: $width-base;
-    @return $width*$gutter-width;
-  } @else {
-    $gutter-width: if($qwazi, $width-base/2, $width-base);
-    @return ceil($width/$gutter-width)*$gutter-width;
-  }
-}
