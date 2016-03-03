@@ -18,6 +18,8 @@ gem 'sassc-rails'
 gem 'uglifier'
 gem 'unicorn', '~> 4.8.3'
 
+gem 'rack-attack'
+
 group :test do
   gem 'capybara', '~> 2.4.0'
   gem 'capybara-webkit'

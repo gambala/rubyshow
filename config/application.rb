@@ -38,5 +38,6 @@ module RubyCourses
                        routing_specs: false
     end
 
+    config.middleware.use Rack::Attack
   end
 end

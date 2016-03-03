@@ -209,6 +209,8 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     rack (1.6.4)
+    rack-attack (4.4.1)
+      rack
     rack-livereload (0.3.16)
       rack
     rack-test (0.6.3)
@@ -350,6 +352,7 @@ DEPENDENCIES
   launchy
   omniauth-github!
   pg
+  rack-attack
   rack-livereload
   rails (~> 4.2.5)
   rollbar
