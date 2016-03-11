@@ -28,16 +28,16 @@ module ApplicationHelper
   end
 
   def top_three(index)
-    r = case index
-        when 1
-          content_tag(:i, '', class: 'fa fa-trophy fa-3x')
-        when 2
-          content_tag(:i, '', class: 'fa fa-trophy fa-2x')
-        when 3
-          content_tag(:i, '', class: 'fa fa-trophy fa-lg')
-        else
-          index
-        end
+    case index
+    when 1
+      content_tag(:i, '', class: 'fa fa-trophy fa-3x')
+    when 2
+      content_tag(:i, '', class: 'fa fa-trophy fa-2x')
+    when 3
+      content_tag(:i, '', class: 'fa fa-trophy fa-lg')
+    else
+      index
+    end
   end
 
   def unapproved_courses
