@@ -47,12 +47,12 @@ section.section-padded
                   .form-group
                     input.form-control id='course_name' type='text' name='title' placeholder='Найти по названию'
                   .form-group
-                    select.form-control name='language'
+                    select.form-control.selectize-default name='language'
                       option[disabled selected] На всех языках
-                      option Русский
-                      option English
+                      option value='Русский' Русский
+                      option value='English' English
                   .form-group
-                    select.form-control name='paid'
+                    select.form-control.selectize-default name='paid'
                       option[disabled selected] И платные, и бесплатные
                       option value='1' Только платные
                       option value='0' Только бесплатные

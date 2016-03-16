@@ -6,4 +6,5 @@
 #= require bootstrap/dropdown
 #= require bootstrap/tooltip
 #= require responsive-toolkit
+#= require selectize/standalone/selectize
 #= require_tree ./components
