@@ -1,5 +1,6 @@
 class Course < ActiveRecord::Base
   has_many :comments, dependent: :destroy
+  has_many :questions, dependent: :destroy
 
   validates :url, :title, :description, :language, presence: true
 
