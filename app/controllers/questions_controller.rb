@@ -1,8 +1,7 @@
 class QuestionsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index]
   before_action :set_course, only: [:new, :create, :index]
   def new
-    @course = Course.find(params[:course_id])
     @question = Question.new
   end
 

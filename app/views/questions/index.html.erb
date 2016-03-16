@@ -1,9 +1,14 @@
-<ul>
+<h1>Вопросы по курсу</h1>
+<% if @questions.empty? %>
+  <div class='well'>
+    <h3>Вопросов пока нет</p>
+  </div>
+<% else %>
   <% @questions.each do |question| %>
-    <li>
-      <p>
-        <%= question.content %>
-      </p>
-    </li>
+    <div class='well'>
+      <p><%= question.content %></p>
+      <p><%= question.user.username %></p>
+    </div>
     <% end %>
-</ul>
+<% end %>
+<%= link_to 'Задать новый вопрос', new_course_question_path(@course), class: 'btn btn-primary'%>

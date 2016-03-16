@@ -1,7 +1,9 @@
 FactoryGirl.define do
+  sequence(:content) { |n| "test_content#{n}" }
+
   factory :question do
-    user nil
+    user
     course nil
-    content "MyString"
+    content
   end
 end

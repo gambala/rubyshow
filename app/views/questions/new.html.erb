@@ -1,20 +1,22 @@
 <div class="col-md-6 col-md-offset-3">
   <%= form_for [@course, @question], html: { class: 'form-horizontal center' } do |f| %>
-    <!-- <div id="error_explanation">
-      <% if @course.errors.any? %>
+    <div id="error_explanation">
+      <% if @question.errors.any? %>
          <h3>Возникли следующие ошибки:</h3>
          <ul>
-           <% @course.errors.full_messages.each do |msg| %>
+           <% @question.errors.full_messages.each do |msg| %>
              <li> * <%= msg %></li>
            <% end %>
          </ul>
         <% end %>
-    </div> -->
-    <div class='form-group'>
-      <%= f.label :content, 'Ваш вопрос' %><br>
-      <%= f.text_field :content, class: 'form-control' %>
     </div>
-    <div class="actions">
-      <%= f.submit 'Задать вопрос', class: 'btn btn-default' %>
+    <div class='well'>
+      <div class='form-group'>
+        <%= f.label :content, 'Ваш вопрос' %><br>
+        <%= f.text_area :content, rows: 4, class: 'form-control' %>
+      </div>
+      <div class="actions">
+        <%= f.submit 'Задать вопрос', class: 'btn btn-default' %>
+      </div>
     </div>
   <% end %>

@@ -29,23 +29,42 @@
   </div>
 
   <div class="col-md-4">
-    <h3>Статистика</h3>
-    <p>
-      <strong>Количество учеников: <%= @course.comments.pluck(:graduate).count %></strong>
-    </p>
-    <p>
-      <strong>Средняя оценка: <%= @rating || 0 %>/5</strong>
-    </p>
-    <% if current_user.present? && current_user.role == 'admin' && !@course.approved? %>
-      <div class="well">
-        <%= link_to 'Одобрить курс', approve_course_path(@course), method: :put, class: 'text-danger' %>
-        <br>
-        <%= link_to 'Удалить курс', @course, method: :delete, data: {confirm: 'Точно удалить?'} %>
+    <div>
+      <h3>Статистика</h3>
+      <p>
+        <strong>Количество учеников: <%= @course.comments.pluck(:graduate).count %></strong>
+      </p>
+      <p>
+        <strong>Средняя оценка: <%= @rating || 0 %>/5</strong>
+      </p>
+      <% if current_user.present? && current_user.role == 'admin' && !@course.approved? %>
+        <div class="well">
+          <%= link_to 'Одобрить курс', approve_course_path(@course), method: :put, class: 'text-danger' %>
+          <br>
+          <%= link_to 'Удалить курс', @course, method: :delete, data: {confirm: 'Точно удалить?'} %>
+        </div>
+      <% end %>
+    </div>
+    <div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Вопросы по курсу</h3>
+        </div>
+        <% if @course.questions.any? %>
+          <% @course.questions.each do |question|%>
+            <div class="panel-body">
+              <%= question.content %>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="panel-body">
+            Вопросов пока нет
+          </div>
+        <% end%>
+        <%= link_to 'Посмотреть вопросы', course_questions_path(@course), class: 'btn btn-default questions-index' %>
       </div>
-    <% end %>
+    </div>
   </div>
-
-</div>
 
 <div class="col-md-8">
   <h3 id='comments'>Комментарии</h3>

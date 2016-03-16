@@ -5,5 +5,6 @@ FactoryGirl.define do
     language "English"
     url 'http://example.com'
     paid true
+    approved true
   end
 end
