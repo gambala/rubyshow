@@ -1,0 +1,70 @@
+- title "#{@course.title}, отзывы и мнения"
+section.section-red-promo
+  .container
+    .row
+      .col-xs-12.col-sm-8.col-md-8.col-lg-9
+        h1.section-title = @course.title
+        .section-subtitle = link_to @course.url, @course.url
+        p = @course.description
+        - if signed_in?
+          = current_user.comments.pluck(:course_id).include?(@course.id) ? '<i class="glyphicon glyphicon-ok" id="course-done"></i>'.html_safe : ''
+      .col-sm-4.col-md-4.col-lg-3.hidden-xs
+        .text-center
+          .icon.icon-ruby
+section.section-padded
+  .container
+    .row
+      .col-md-8.col-lg-9
+        h3#comments
+          | Комментарии
+        - if @comments.any?
+          = render partial: 'comments/comment', collection: @comments, locals: { course: @course }
+        - if signed_in? && current_user.comments.pluck(:course_id).include?(@course.id)
+          h4 Вы уже оставили комментарий к этому курсу.
+        - elsif signed_in?
+          = form_for [@course, @comment] do |f|
+            .form-group
+              = f.text_area :content, rows: 4, class: 'form-control'
+            .row
+              .col-md-6
+                .form-group
+                  = f.check_box :graduate
+                  = f.label :graduate, 'Я закончил этот курс!'
+              .col-md-6.rate-course
+                .form-group
+                  ' Оценка курса:
+                  - (1..5).each do |value|
+                    label
+                      = value
+                      = f.radio_button(:rating, value)
+            .form-group
+              = f.submit 'Отправить', class: 'btn btn-default', id: 'submit_comment',
+                         disabled: true
+        - else
+          h4
+            ' Чтобы оставить комментарий и оценку курса, необходимо
+            = link_to 'войти', new_user_session_path
+            '  или
+            = link_to 'зарегистрироваться', new_user_registration_path
+            | .
+      .col-md-4.col-lg-3
+        .affix-aside-wrapper
+          .affix-aside
+            .panel.panel-default
+              .panel-body
+                dl.dl-inline
+                  dt Количество учеников:
+                  dd = @course.comments.pluck(:graduate).count
+                dl.dl-inline
+                  dt Средняя оценка:
+                  dd #{@rating || 0}/5
+                dl.dl-inline
+                  dt Язык курсов:
+                  dd = @course.language
+        - if can? :edit, Course
+          = link_to 'Редактировать', edit_course_path(@course)
+        - if current_user.present? && current_user.role == 'admin' && !@course.approved?
+          .well
+            = link_to 'Одобрить курс', approve_course_path(@course), method: :put, class: 'text-danger'
+            br
+            = link_to 'Удалить курс', @course, method: :delete, data: {confirm: 'Точно удалить?'}
