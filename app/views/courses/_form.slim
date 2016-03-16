@@ -1,34 +1,29 @@
-.col-md-6.col-md-offset-3
-  = form_for @course, html: { class: 'form-horizontal center' } do |f|
+= form_for @course do |f|
+  - if @course.errors.any?
     #error_explanation
-      - if @course.errors.any?
-        h3 Возникли следующие ошибки:
-        ul
-          - @course.errors.full_messages.each do |msg|
-            li * #{msg}
-    .form-group
-      = f.label :title, 'Название'
-      br
-      = f.text_field :title, class: 'form-control'
-    .form-group
-      = f.label :url, 'Ссылка на курс'
-      br
-      = f.text_field :url, class: 'form-control'
-    .form-group
-      = f.label :description, 'Описание'
-      br
-      = f.text_area :description, rows: 10, class: 'form-control'
-    .form-group
-      .col-md-6
+      h3 Возникли следующие ошибки:
+      ul
+        - @course.errors.full_messages.each do |msg|
+          li * #{msg}
+  .form-group
+    = f.label :title, 'Название'
+    = f.text_field :title, class: 'form-control'
+  .form-group
+    = f.label :url, 'Ссылка на курс'
+    = f.text_field :url, class: 'form-control'
+  .form-group
+    = f.label :description, 'Описание'
+    = f.text_area :description, rows: 10, class: 'form-control'
+  .row
+    .col-md-6
+      .form-group
         = f.label :language, 'Язык'
-        br
-        = f.select(:language, %w(Русский English), {}, { class: 'form-control' })
-      .col-md-6
+        = f.select(:language, %w(Русский English), {}, { class: 'form-control selectize-default' })
+    .col-md-6
+      .form-group
         = f.label :paid, 'Доступность курса'
-        br
-        - [{ 'Платный' => true }, { 'Бесплатный' => false }].each do |hash|
-          label
-            = hash.keys.first.to_s
-            = f.radio_button(:paid, hash.values.first)
-    .actions
-      = f.submit 'Сохранить', class: 'btn btn-default'
+        = f.select :paid, [['Платный', true], ['Бесплатный', false]],
+                   { prompt: 'Выберите один из вариантов' },
+                   class: 'form-control selectize-default', required: true
+  .form-group
+    = f.submit 'Сохранить', class: 'btn btn-default'
