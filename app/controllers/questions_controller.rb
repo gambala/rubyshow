@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_course, only: [:new, :create, :index]
   def new
     @question = Question.new
@@ -18,6 +18,10 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = @course.questions
+  end
+
+  def show
+    @question = Question.find(params[:id])
   end
 
   private

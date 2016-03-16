@@ -53,7 +53,7 @@
         <% if @course.questions.any? %>
           <% @course.questions.each do |question|%>
             <div class="panel-body">
-              <%= question.content %>
+              <%= link_to "#{question.content}", question_path(question) %>
             </div>
           <% end %>
         <% else %>

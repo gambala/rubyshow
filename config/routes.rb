@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   resources :courses do
     resources :comments
-    resources :questions, only: [:new, :create, :index]
+    resources :questions, only: [:new, :create, :index, :show], shallow: true
     collection do
       get :paid
       get :free

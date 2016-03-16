@@ -3,7 +3,7 @@ FactoryGirl.define do
 
   factory :question do
     user
-    course nil
+    course
     content
   end
 end
