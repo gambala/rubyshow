@@ -1,0 +1,15 @@
+- if comment.user.present?
+  .media
+    .media-left
+      = image_tag avatar_url(comment.user.email, 75), class: 'media-object'
+    .media-body
+      .media-heading
+        = comment.user.username || comment.user.email
+        small.rating data-toggle="tooltip" data-placement="top" title="Оценка пользователя"
+          = rating_in_gems(comment.rating)
+        small
+          span.text-success = is_graduate?(comment)
+          '  |
+          span = Russian::strftime(comment.created_at, "%e %B %Y")
+      p = comment.content
+  hr
