@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  sequence(:content) { |n| "test_content#{n}" }
+  sequence(:content) { |n| "question_content#{n}" }
 
   factory :question do
     user

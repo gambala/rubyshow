@@ -1,4 +1,38 @@
-<div class='well'>
-  <p><%= @question.content %></p>
-  <p><%= @question.user.username %></p>
+<div class='row'>
+  <div class='well col-md-6'>
+    <h4>Вопрос</h4>
+    <p><%= @question.content %></p>
+    <p><%= @question.user.username %></p>
+  </div>
 </div>
+<% @question.answers.each do |answer| %>
+  <div class='row answer' >
+    <div class='well col-md-6 col-md-offset-6'>
+      <h4>Ответ</h4>
+      <p><%= answer.content %></p>
+      <p><%= answer.user.username %></p>
+    </div>
+  </div>
+<% end %>
+<div>
+  <%= form_for [@question, @answer], html: { class: 'form-horizontal center' }, remote: true do |f| %>
+    <div id="error_explanation">
+      <% if @answer.errors.any? %>
+         <h3>Возникли следующие ошибки:</h3>
+         <ul>
+           <% @answer.errors.full_messages.each do |msg| %>
+             <li> * <%= msg %></li>
+           <% end %>
+         </ul>
+        <% end %>
+    </div>
+    <div class='well'>
+      <div class='form-group'>
+        <%= f.label :content, 'Ответ' %><br>
+        <%= f.text_area :content, rows: 4, class: 'form-control' %>
+      </div>
+      <div class="actions">
+        <%= f.submit 'Создать ответ', class: 'btn btn-default create-answer-btn' %>
+      </div>
+    </div>
+  <% end %>
