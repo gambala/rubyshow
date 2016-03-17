@@ -3,6 +3,7 @@ require 'spec_helper'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'shoulda/matchers'
+require 'capybara/rspec'
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
@@ -24,6 +25,9 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include Capybara::DSL
   config.include Devise::TestHelpers, type: :controller
+  # Подлючаем login хелпер в тесты
+  config.include AcceptanceMacros, type: :feature
+  config.extend ControllerMacros, type: :controller
   # Подключаем хелперы url в тесты
   config.include Rails.application.routes.url_helpers
 
