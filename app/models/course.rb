@@ -17,18 +17,33 @@ class Course < ActiveRecord::Base
   end
 
   def self.paid
-    where(paid: true, approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
+    includes(:comments).where(paid: true, approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
   end
 
   def self.free
-    where(paid: false, approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
+    includes(:comments).where(paid: false, approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
   end
 
   def self.approved
-    where(approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
+    includes(:comments).where(approved: true).sort_by {|course| course.sort_of_rating }.reverse
   end
 
   def self.unapproved
-    where(approved: false)
+    includes(:comments).where(approved: false)
+  end
+
+  def sort_of_rating
+    five = comments.where(rating: 5).count
+    four = comments.where(rating: 4).count
+    three = comments.where(rating: 3).count
+    two = comments.where(rating: 2).count
+    one = comments.where(rating: 1).count
+
+    total_comments = five+four+three+two+one
+
+    return 0 if total_comments == 0
+
+    rating = ((5*five + 4*four + 3*three + 2*two + 1*one) / (total_comments)).to_f
+    rating ||= 0
   end
 end
