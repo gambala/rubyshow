@@ -8,13 +8,13 @@ class CoursesController < ApplicationController
   end
 
   def paid
-    @courses = Course.paid
+    @courses = filter_courses(Course.where(paid: true).includes(:comments)).approved
     @type = 'Платные курсы'
     render :index
   end
 
   def free
-    @courses = Course.free
+    @courses = filter_courses(Course.where(paid: false).includes(:comments)).approved
     @type = 'Бесплатные курсы'
     render :index
   end
