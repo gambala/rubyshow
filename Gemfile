@@ -18,8 +18,6 @@ gem 'sassc-rails'
 gem 'uglifier'
 gem 'unicorn', '~> 4.8.3'
 
-gem 'statistics2'
-
 gem 'rack-attack'
 
 group :test do
