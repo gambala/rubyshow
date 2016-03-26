@@ -17,15 +17,18 @@ class Course < ActiveRecord::Base
   end
 
   def self.paid
-    includes(:comments).where(paid: true, approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
+    where(paid: true, approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
+    # includes(:comments).where(paid: true, approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
   end
 
   def self.free
-    includes(:comments).where(paid: false, approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
+    where(paid: false, approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
+    # includes(:comments).where(paid: false, approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
   end
 
   def self.approved
-    includes(:comments).where(approved: true).sort_by {|course| course.sort_of_rating }.reverse
+    where(approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
+    # includes(:comments).where(approved: true).sort_by {|course| course.sort_of_rating }.reverse
   end
 
   def self.unapproved
