@@ -58,8 +58,9 @@ section.section-padded
                       option value='0' Только бесплатные
                   .form-group
                     .text-right
-                      = link_to 'Показать все курсы', root_path, class: 'btn btn-link'
-                      button.btn.btn-primary[type="submit"] Найти
+                      = link_to 'Показать все курсы', root_path,
+                                class: 'btn btn-link', id: 'reset_filter'
+                      button.btn.btn-primary type="submit" id='apply_filter' Найти
 - if can? :approve, Course
   .container
     ul
