@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
   helper_method :courses_title, :courses_search_title, :courses_overview_title
 
   def index
-    courses = filter_courses(Course.includes(:comments)).approved
+    courses = CoursesQuery.new(courses_filter_params, Course.includes(:comments))
     render locals: { courses: courses, courses_title: courses_title }
   end
 
@@ -113,14 +113,7 @@ class CoursesController < ApplicationController
     params.require(:course).permit(:title, :description, :language, :url, :paid)
   end
 
-  def filter_courses(courses)
-    title = params[:title] unless params[:title].blank?
-    paid = params[:paid] if %w(1 0).include?(params[:paid])
-    language = params[:language] if %w(Русский English).include?(params[:language])
-
-    courses = courses.where('title ILIKE ?', "%#{title}%") if title.present?
-    courses = courses.where(paid: paid) if paid.present?
-    courses = courses.where(language: language) if language.present?
-    courses
+  def courses_filter_params
+    params.permit(:title, :language, :paid)
   end
 end
