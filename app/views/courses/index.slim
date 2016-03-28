@@ -11,7 +11,32 @@ section.section-red-promo
 section.section-padded
   .container
     .row
-      .col-md-8.col-lg-9
+      .col-md-4.col-md-push-8.col-lg-3.col-lg-push-9
+        / p = link_to new_course_path, class: 'btn btn-primary btn-block' do
+        /   | Добавить курс
+        / p.hr
+        /   span или
+        .affix-aside-wrapper
+          .affix-aside
+            = form_tag courses_path, method: :get
+              .panel.panel-default
+                .panel-body
+                  .form-group
+                    = text_field_tag :title, params[:title], class: 'form-control',
+                                     placeholder: 'Найти по названию'
+                  .form-group
+                    = select_tag :language,
+                                 options_for_select(language_options, params[:language]),
+                                 { class: 'form-control selectize-default' }
+                  .form-group
+                    = select_tag :paid,
+                                 options_for_select(paid_options, params[:paid]),
+                                 { class: 'form-control selectize-default' }
+                  .form-group
+                    .text-right
+                      = link_to 'Показать все курсы', root_path, class: 'btn btn-link'
+                      = button_tag 'Найти', class: 'btn btn-primary ladda-button'
+      .col-md-8.col-md-pull-4.col-lg-9.col-lg-pull-3
         - courses.each.with_index(1) do |course, index|
           .media.media-stack-overflow
             .media-left
@@ -34,33 +59,6 @@ section.section-padded
                           data: { toggle: 'tooltip', placement: 'right' } do
                     span.fa.fa-comment-o
                     span = course.comments.pluck(:graduate).count
-      .col-md-4.col-lg-3
-        / p = link_to new_course_path, class: 'btn btn-primary btn-block' do
-        /   | Добавить курс
-        / p.hr
-        /   span или
-        .affix-aside-wrapper
-          .affix-aside
-            form
-              .panel.panel-default
-                .panel-body
-                  .form-group
-                    input.form-control id='course_name' type='text' name='title' placeholder='Найти по названию'
-                  .form-group
-                    select.form-control.selectize-default name='language'
-                      option[disabled selected] На всех языках
-                      option value='Русский' Русский
-                      option value='English' English
-                  .form-group
-                    select.form-control.selectize-default name='paid'
-                      option[disabled selected] И платные, и бесплатные
-                      option value='1' Только платные
-                      option value='0' Только бесплатные
-                  .form-group
-                    .text-right
-                      = link_to 'Показать все курсы', root_path,
-                                class: 'btn btn-link', id: 'reset_filter'
-                      button.btn.btn-primary type="submit" id='apply_filter' Найти
 - if can? :approve, Course
   .container
     ul
