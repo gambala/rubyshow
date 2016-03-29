@@ -2,6 +2,7 @@
 #= require jquery_ujs
 #= require bootstrap/transition
 #= require bootstrap/affix
+#= require bootstrap/alert
 #= require bootstrap/collapse
 #= require bootstrap/dropdown
 #= require bootstrap/tooltip
