@@ -1,4 +1,9 @@
 ru:
+  activerecord:
+    errors:
+      messages:
+        blank: 'поле нужно заполнить'
+        empty: 'поле нужно заполнить'
   words:
     course:
       one: 'курс'
@@ -20,4 +25,3 @@ ru:
       few: 'отзыва и мнения'
       many: 'отзывов и мнений'
       other: 'отзывов и мнений'
-  hello: "Hello world"

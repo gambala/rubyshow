@@ -1,19 +1,12 @@
 = form_for @course do |f|
-  - if @course.errors.any?
-    #error_explanation
-      h3 Возникли следующие ошибки:
-      ul
-        - @course.errors.full_messages.each do |msg|
-          li * #{msg}
-  .form-group
+  = form_field_group :title, @course do
     = f.label :title, 'Название'
     = f.text_field :title, class: 'form-control'
-  .form-group
+    = form_field_error :title, @course
+  = form_field_group :url, @course do
     = f.label :url, 'Ссылка на курс'
     = f.text_field :url, class: 'form-control'
-  .form-group
-    = f.label :description, 'Описание'
-    = f.text_area :description, rows: 10, class: 'form-control'
+    = form_field_error :url, @course
   .row
     .col-md-6
       .form-group
@@ -25,5 +18,9 @@
         = f.select :paid, [['Платный', true], ['Бесплатный', false]],
                    { prompt: 'Выберите один из вариантов' },
                    class: 'form-control selectize-default', required: true
+  = form_field_group :description, @course do
+    = f.label :description, 'Описание'
+    = f.text_area :description, rows: 5, class: 'form-control'
+    = form_field_error :description, @course
   .form-group
     = f.submit 'Сохранить', class: 'btn btn-default'
