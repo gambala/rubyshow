@@ -4,9 +4,8 @@ class CoursesController < ApplicationController
   helper_method :language_options, :paid_options
 
   def index
-    courses = CoursesQuery.new(courses_filter_params, Course.includes(:comments))
-    page_titles = CoursesFilterTitlingService.new(courses_filter_params, courses)
-    render locals: { courses: courses, page_titles: page_titles }
+    queried_courses = CoursesQuery.new(courses_query_params, Course.all)
+    render locals: { queried_courses: queried_courses }
   end
 
   def show
@@ -70,7 +69,7 @@ class CoursesController < ApplicationController
     params.require(:course).permit(:title, :description, :language, :url, :paid)
   end
 
-  def courses_filter_params
+  def courses_query_params
     params.permit(:title, :language, :paid)
   end
 end

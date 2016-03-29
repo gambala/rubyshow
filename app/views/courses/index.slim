@@ -36,15 +36,16 @@ section.section-padded
                       = link_to 'Показать все курсы', root_path, class: 'btn btn-link'
                       = button_tag 'Найти', class: 'btn btn-primary ladda-button'
       .col-sm-12.col-md-8.col-md-pull-4.col-lg-9.col-lg-pull-3
-        - if page_titles.any_titles?
-          .well
-            dl.dl-inline
-              dt По запросу:
-              dd = page_titles.query_request_title
-            dl.dl-inline
-              dt Найдено:
-              dd = page_titles.query_result_title
-        - courses.each.with_index(1) do |course, index|
+        - present queried_courses do |courses_query_presenter|
+          - if courses_query_presenter.any_titles?
+            .well
+              dl.dl-inline
+                dt По запросу:
+                dd = courses_query_presenter.request_title
+              dl.dl-inline
+                dt Найдено:
+                dd = courses_query_presenter.response_title
+        - queried_courses.each do |course|
           .media.media-stack-overflow
             .media-left
               .media-object
@@ -52,8 +53,6 @@ section.section-padded
                           class: 'object-rating',
                           title: 'Средний рейтинг курса',
                           data: { toggle: 'tooltip', placement: 'right' } do
-                  / = star_rating(course.rating)
-                  / span.fa.fa-trophy
                   span = course.rating
             .media-body
               .media-heading = link_to course.title, course
