@@ -11,5 +11,6 @@ Rails.application.configure do
   config.i18n.fallbacks = true
   config.log_formatter = ::Logger::Formatter.new
   config.log_level = :debug
+  config.middleware.use Rack::Attack
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
 end
