@@ -52,13 +52,15 @@ class CoursesController < ApplicationController
   private
 
   def language_options
-    language_options ||= [['На всех языках', 'all'], 'Русский', 'English']
+    @language_options ||= [['На всех языках', 'all'],
+                           ['На русском', 'Русский'],
+                           ['На английском', 'English']]
   end
 
   def paid_options
-    paid_options ||= [['И платные, и бесплатные', 'all'],
-                      ['Только платные', '1'],
-                      ['Только бесплатные', '0']]
+    @paid_options ||= [['Платные и бесплатные', 'all'],
+                       ['Только платные', '1'],
+                       ['Только бесплатные', '0']]
   end
 
   def set_course
