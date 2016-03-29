@@ -56,7 +56,6 @@ end
 source 'https://rails-assets.org' do
   gem 'rails-assets-breakpoint-sass'
   gem 'rails-assets-flag-icon-css'
-  gem 'rails-assets-normalize-css'
   gem 'rails-assets-responsive-toolkit'
   gem 'rails-assets-selectize'
   gem 'rails-assets-webfontloader'
