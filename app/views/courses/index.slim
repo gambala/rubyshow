@@ -2,9 +2,8 @@ section.section-red-promo
   .container
     .row
       .col-xs-12.col-sm-8.col-md-8.col-lg-9
-        h1.section-title = courses_title
-        .section-subtitle = courses_search_title
-        p = courses_overview_title
+        h1.section-title Каталог курсов по Ruby
+        p Собрано уже #{total_comments} #{t('words.comments_suffix', count: total_comments)} о курсах.
       .col-sm-4.col-md-4.col-lg-3.hidden-xs
         .text-center
           .icon.icon-ruby
@@ -37,6 +36,14 @@ section.section-padded
                       = link_to 'Показать все курсы', root_path, class: 'btn btn-link'
                       = button_tag 'Найти', class: 'btn btn-primary ladda-button'
       .col-md-8.col-md-pull-4.col-lg-9.col-lg-pull-3
+        - if page_titles.any_titles?
+          .well
+            dl.dl-inline
+              dt По запросу:
+              dd = page_titles.query_request_title
+            dl.dl-inline
+              dt Найдено:
+              dd = page_titles.query_result_title
         - courses.each.with_index(1) do |course, index|
           .media.media-stack-overflow
             .media-left

@@ -15,4 +15,9 @@ ru:
       few: 'отзыва'
       many: 'отзывов'
       other: 'отзывов'
+    comments_suffix:
+      one: 'отзыв и мнение'
+      few: 'отзыва и мнения'
+      many: 'отзывов и мнений'
+      other: 'отзывов и мнений'
   hello: "Hello world"
