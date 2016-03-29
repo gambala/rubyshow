@@ -1,4 +1,4 @@
-class Query < SimpleDelegator
+class ApplicationQuery < SimpleDelegator
   attr_accessor :options
 
   def initialize(options = {}, relation)

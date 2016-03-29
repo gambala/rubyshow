@@ -1,4 +1,4 @@
-class BasePresenter
+class ApplicationPresenter
   def initialize(object, template)
     @object = object
     @template = template

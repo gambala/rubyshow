@@ -1,4 +1,4 @@
-class CoursesQueryPresenter < BasePresenter
+class CoursesQueryPresenter < ApplicationPresenter
   presents :queried_courses
 
   def any_titles?
