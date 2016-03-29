@@ -1,5 +1,6 @@
 class CoursesQuery < Query
-  action :filter_by_language,
+  action :with_comments,
+         :filter_by_language,
          :filter_by_paid,
          :filter_by_title,
          :filter_only_approved
@@ -21,5 +22,9 @@ class CoursesQuery < Query
 
   def filter_only_approved
     approved
+  end
+
+  def with_comments
+    includes(:comments)
   end
 end
