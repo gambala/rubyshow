@@ -40,10 +40,9 @@ section.section-padded
                                data: {confirm: 'Точно удалить?'},
                                class: 'btn btn-link btn-sm'
       .col-sm-12.col-md-8.col-md-pull-4.col-lg-9.col-lg-pull-3
-        section.section-with-margin
+        section.section-with-margin id='comments'
           - if @comments.any?
-            = render partial: 'comments/comment', collection: @comments,
-                     locals: { course: @course }
+            = render @comments, locals: { course: @course }
         .well
           - if signed_in? && current_user.comments.pluck(:course_id).include?(@course.id)
             p Вы уже оставляли комментарий к этому курсу.
