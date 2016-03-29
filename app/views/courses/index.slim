@@ -1,20 +1,16 @@
 section.section-red-promo
   .container
     .row
-      .col-xs-12.col-sm-8.col-md-8.col-lg-9
+      .col-sm-8.col-lg-9
         h1.section-title Каталог курсов по Ruby
         p Собрано уже #{total_comments} #{t('words.comments_suffix', count: total_comments)} о курсах.
-      .col-sm-4.col-md-4.col-lg-3.hidden-xs
+      .col-sm-4.col-lg-3.hidden-xs
         .text-center
           .icon.icon-ruby
 section.section-padded
   .container
     .row
       .col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-0.col-md-push-8.col-lg-3.col-lg-push-9
-        / p = link_to new_course_path, class: 'btn btn-primary btn-block' do
-        /   | Добавить курс
-        / p.hr
-        /   span или
         .affix-aside-wrapper
           .affix-aside
             = form_tag courses_path, method: :get
@@ -45,26 +41,31 @@ section.section-padded
               dl.dl-inline
                 dt Найдено:
                 dd = courses_query_presenter.response_title
-        - queried_courses.each do |course|
-          .media.media-stack-overflow
-            .media-left
-              .media-object
-                = link_to course_path(course),
-                          class: 'object-rating',
-                          title: 'Средний рейтинг курса',
-                          data: { toggle: 'tooltip', placement: 'right' } do
-                  span = course.rating
-            .media-body
-              .media-heading = link_to course.title, course
-              p
-                = language_flag(course.language)
-                span = course_status(course)
-                = link_to course_path(course, anchor: 'comments'),
-                          class: 'object-comments',
-                          title: 'Отзывов о курсе',
-                          data: { toggle: 'tooltip', placement: 'right' } do
-                    span.fa.fa-comment-o
-                    span = course.comments.pluck(:graduate).count
+        section.section-with-margin
+          - queried_courses.each do |course|
+            .media.media-stack-overflow
+              .media-left
+                .media-object
+                  = link_to course_path(course),
+                            class: 'object-rating',
+                            title: 'Средний рейтинг курса',
+                            data: { toggle: 'tooltip', placement: 'right' } do
+                    span = course.rating
+              .media-body
+                .media-heading = link_to course.title, course
+                p
+                  = language_flag(course.language)
+                  span = course_status(course)
+                  = link_to course_path(course, anchor: 'comments'),
+                            class: 'object-comments',
+                            title: 'Отзывов о курсе',
+                            data: { toggle: 'tooltip', placement: 'right' } do
+                      span.fa.fa-comment-o
+                      span = course.comments.pluck(:graduate).count
+        .well
+          p
+            ' Знаете о курсе, которого нет в списке?
+            = link_to 'Добавьте его.', new_course_path, class: 'b'
 - if can? :approve, Course
   .container
     ul

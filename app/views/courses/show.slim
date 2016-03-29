@@ -2,13 +2,13 @@
 section.section-red-promo
   .container
     .row
-      .col-xs-12.col-sm-8.col-md-8.col-lg-9
+      .col-sm-8.col-lg-9
         h1.section-title = @course.title
         .section-subtitle = link_to @course.url, @course.url
         p = @course.description
         - if signed_in?
           = current_user.comments.pluck(:course_id).include?(@course.id) ? '<i class="glyphicon glyphicon-ok" id="course-done"></i>'.html_safe : ''
-      .col-sm-4.col-md-4.col-lg-3.hidden-xs
+      .col-sm-4.col-lg-3.hidden-xs
         .text-center
           .icon.icon-ruby
 section.section-padded
