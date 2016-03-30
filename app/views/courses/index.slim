@@ -51,7 +51,7 @@ section.section-padded
                           data: { toggle: 'tooltip', placement: 'right' } do
                   span = course.rating
               .media-body
-                .media-heading = link_to course.title, course
+                .media-heading = link_to course.title, course, class: 'text-info'
                 p
                   = language_flag(course.language)
                   span = course_status(course)
