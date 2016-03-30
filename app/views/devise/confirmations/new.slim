@@ -1,0 +1,20 @@
+- title 'Повторная отправка подтверждения'
+section.section-padded
+  .container
+    .panel.panel-default.panel-screen-centered
+      .panel-heading
+        .panel-title Повторная отправка подтверждения
+      .panel-body
+        = form_for resource, as: resource_name, url: confirmation_path(resource_name),
+                   html: { method: :post } do |f|
+          = devise_error_messages!
+          .form-group
+            = f.label :username, 'Логин'
+            = f.text_field :username, class: 'form-control'
+          .form-group
+            = f.label :email
+            = f.email_field :email, class: 'form-control', autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
+          .form-group
+            = f.submit 'Повторная отправка подтверждения', class: 'btn btn-default'
+    .text-center
+      = render 'devise/shared/links'

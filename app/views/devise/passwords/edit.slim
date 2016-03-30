@@ -1,0 +1,25 @@
+- title 'Смена пароля'
+section.section-padded
+  .container
+    .panel.panel-default.panel-screen-centered
+      .panel-heading
+        .panel-title Смена пароля
+      .panel-body
+        = form_for resource, as: resource_name, url: password_path(resource_name),
+                   html: { method: :put } do |f|
+          = devise_error_messages!
+          = f.hidden_field :reset_password_token
+          .form-group
+            = f.label :password, 'Новый пароль'
+            = f.password_field :password, class: 'form-control',
+                               autofocus: true, autocomplete: 'off'
+            - if @minimum_password_length
+              .help-block Не менее #{@minimum_password_length} символов
+          .form-group
+            = f.label :password_confirmation, 'Подтвердите пароль'
+            = f.password_field :password_confirmation, class: 'form-control',
+                               autocomplete: 'off'
+          .form-group
+            = f.submit 'Сменить пароль', class: 'btn btn-default'
+    .text-center
+      = render 'devise/shared/links'

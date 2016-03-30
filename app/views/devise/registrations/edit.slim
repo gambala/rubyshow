@@ -1,0 +1,37 @@
+- title "Редактирование #{resource_name.to_s.humanize}"
+section.section-padded
+  .container
+    .panel.panel-default.panel-screen-centered
+      .panel-heading
+        .panel-title Редактирование #{resource_name.to_s.humanize}
+      .panel-body
+        = form_for resource, as: resource_name, url: registration_path(resource_name),
+                             html: { method: :put } do |f|
+          = devise_error_messages!
+          .form-group
+            = f.label :username, 'Логин'
+            = f.text_field :username, class: 'form-control'
+          .form-group
+            = f.label :email
+            = f.email_field :email, class: 'form-control', autofocus: true
+            - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+              .help-block Ждем подтверждения для: #{resource.unconfirmed_email}
+          .form-group
+            = f.label :password, 'Пароль'
+            = f.password_field :password, class: 'form-control', autocomplete: 'off'
+            .help-block Оставьте пустым, если не хотите менять
+          .form-group
+            = f.label :password_confirmation, 'Подтверждение пароля'
+            = f.password_field :password_confirmation, class: 'form-control',
+                               autocomplete: 'off'
+          .form-group
+            = f.label :current_password, 'Ваш текущий пароль'
+            = f.password_field :current_password, class: 'form-control', autocomplete: 'off'
+            .help-block Введите текущий пароль для подтверждения внесения изменений
+          .form-group
+            = f.submit 'Обновить', class: 'btn btn-default'
+    .text-center
+      p
+        ' Не нравится ресурс?
+        = button_to 'Удалить аккаунт', registration_path(resource_name),
+                    data: { confirm: 'Точно?' }, method: :delete
