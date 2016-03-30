@@ -17,7 +17,7 @@ section.section-padded
               .panel.panel-default
                 .panel-body
                   .form-group
-                    = text_field_tag :title, params[:title], class: 'form-control',
+                    = text_field_tag :title, params[:title], class: 'form-control', id: 'course_name',
                                      placeholder: 'Найти по названию'
                   .form-group
                     = select_tag :language,
@@ -29,8 +29,8 @@ section.section-padded
                                  { class: 'form-control selectize-default' }
                   .form-group
                     .text-right
-                      = link_to 'Показать все курсы', root_path, class: 'btn btn-link'
-                      = button_tag 'Найти', class: 'btn btn-primary ladda-button'
+                      = link_to 'Показать все курсы', root_path, class: 'btn btn-link', id: 'reset_filter'
+                      = button_tag 'Найти', class: 'btn btn-primary ladda-button', id: 'apply_filter'
       .col-sm-12.col-md-8.col-md-pull-4.col-lg-9.col-lg-pull-3
         - present queried_courses do |courses_query_presenter|
           - if courses_query_presenter.any_titles?
