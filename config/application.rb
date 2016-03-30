@@ -30,14 +30,20 @@ module RubyCourses
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.action_view.field_error_proc = proc { |html_tag, _instance| html_tag }
     config.active_record.raise_in_transactional_callbacks = true
+    config.autoload_paths += %W(
+      #{config.root}/app/presenters
+      #{config.root}/app/queries
+    )
     config.generators do |g|
       g.test_framework :rspec,
                        view_specs:    false,
                        request_specs: false,
                        routing_specs: false
     end
-
-    config.middleware.use Rack::Attack
+    config.encoding = 'utf-8'
+    config.i18n.available_locales = [:ru, :en]
+    config.i18n.default_locale = :ru
   end
 end

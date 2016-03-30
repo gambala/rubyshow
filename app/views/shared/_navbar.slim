@@ -1,0 +1,44 @@
+nav.navbar.navbar-default
+  .container
+    .navbar-header
+      button { class = 'navbar-toggle collapsed'
+               type = 'button'
+               data-toggle = 'collapse'
+               data-target = '#navbar-collapse'
+               aria-expanded = 'false'
+             }
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to 'Ruby Courses', root_path, class: 'navbar-brand'
+    .collapse.navbar-collapse id='navbar-collapse'
+      ul.nav.navbar-nav
+        li = link_to 'Платные курсы', root_path(paid: '1')
+        li = link_to 'Бесплатные курсы', root_path(paid: '0')
+        li
+          = link_to new_course_path do
+            span Добавить курс
+            span { class = 'badge'
+                   data-toggle = 'tooltip'
+                   data-placement = 'right'
+                   title = 'Количество курсов на рассмотрении'
+                 }
+              = unapproved_courses_amount
+      ul.nav.navbar-nav.navbar-right
+        - if signed_in?
+          li.dropdown
+            a.dropdown-toggle href='#' data-toggle='dropdown'
+              i.glyphicon.glyphicon-th-large
+              span.caret
+            ul.dropdown-menu role='menu'
+              li = link_to 'Настройки', edit_user_registration_path
+              li = link_to 'Выход', destroy_user_session_path, data: { method: :delete }
+        - else
+          li.dropdown
+            a.dropdown-toggle href='#' data-toggle='dropdown'
+              i.glyphicon.glyphicon-lock
+              span.caret
+            ul.dropdown-menu role='menu'
+              li = link_to 'Вход', new_user_session_path
+              li = link_to 'Регистрация', new_user_registration_path

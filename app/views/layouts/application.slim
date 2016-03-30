@@ -1,0 +1,16 @@
+doctype html
+html.with-sticky-footer
+  head
+    meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0'
+    = csrf_meta_tags
+    title = content_for?(:title) ? yield(:title) : 'Рейтинг курсов по Ruby и Ruby on Rails'
+    = render 'shared/favicons'
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'modernizr-custom'
+    = javascript_include_tag 'application'
+  body
+    = render 'shared/navbar'
+    = render partial: 'shared/flash_messages', flash: flash
+    = yield
+    = render 'shared/metrics'
+    = render 'shared/footer'

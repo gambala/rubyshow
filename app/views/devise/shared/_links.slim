@@ -1,0 +1,15 @@
+ul.list-inline
+  - if controller_name != 'sessions'
+    li = link_to 'Вход', new_session_path(resource_name)
+  - if devise_mapping.registerable? && controller_name != 'registrations'
+    li = link_to 'Регистрация', new_registration_path(resource_name)
+  - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+    li = link_to 'Забыли пароль?', new_password_path(resource_name)
+  - if devise_mapping.confirmable? && controller_name != 'confirmations'
+    li = link_to 'Не получили инструкции по активации?', new_confirmation_path(resource_name)
+  - if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks'
+    li = link_to 'Не получили инструкции по разблокировке?', new_unlock_path(resource_name)
+  - if devise_mapping.omniauthable?
+    - resource_class.omniauth_providers.each do |provider|
+      li = link_to "Войти через #{OmniAuth::Utils.camelize(provider)}",
+                   omniauth_authorize_path(resource_name, provider)

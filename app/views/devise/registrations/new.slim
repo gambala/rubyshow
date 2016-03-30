@@ -1,0 +1,28 @@
+- title 'Регистрация'
+section.section-padded
+  .container
+    .panel.panel-default.panel-screen-centered
+      .panel-heading
+        .panel-title Регистрация
+      .panel-body
+        = form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
+          = devise_error_messages!
+          .form-group
+            = f.label :username, 'Логин'
+            = f.text_field :username, class: 'form-control'
+          .form-group
+            = f.label :email
+            = f.email_field :email, class: 'form-control', autofocus: true
+          .form-group
+            = f.label :password, 'Пароль'
+            = f.password_field :password, class: 'form-control', autocomplete: 'off'
+            - if @minimum_password_length
+              .help-block Не менее #{@minimum_password_length} символов
+          .form-group
+            = f.label :password_confirmation, 'Подтверждение пароля'
+            = f.password_field :password_confirmation, class: 'form-control',
+                               autocomplete: 'off'
+          .form-group
+            = f.submit 'Зарегистрироваться', class: 'btn btn-default'
+    .text-center
+      = render 'devise/shared/links'

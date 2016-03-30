@@ -1,0 +1,64 @@
+@import 'variables'
+@import 'breakpoint-sass'
+@import 'settings/prefixer'
+@import 'addons/prefixer'
+@import 'bootstrap/mixins/rhythm'
+@import 'css3/transition'
+
+.media-stack-overflow
+  +transition(background 0.25s)
+  margin: 0 -10px
+  padding: rh(0.5) 10px
+
+  .media-left
+    padding: 0
+
+    .media-object
+      background: $body-bg
+      border-radius: 4px
+      border: 1px solid #EFD0C7
+      color: #EF917E
+      display: block
+      font-size: 24px
+      height: rh(2)
+      line-height: rh(2)
+      text-align: center
+      width: rh(2)
+
+    .media-object-lg
+      height: rh(3)
+      line-height: rh(3)
+      width: rh(3)
+
+  .media-body
+    padding: 0 10px
+
+    .media-heading
+      font-weight: $sans-medium
+      line-height: rh()
+      margin-bottom: 0
+
+      span, small
+        & +
+          span, small
+            margin-left: 5px
+
+      small
+        font-size: 14px
+        font-weight: $sans-regular
+
+      +breakpoint($screen-sm-min)
+        font-size: 16px
+
+    p
+      color: #555
+      line-height: rh()
+      margin-bottom: 0
+
+      span, a
+        & +
+          span, a
+            margin-left: 5px
+
+  &:hover
+    background: darken($body-bg, 2%)

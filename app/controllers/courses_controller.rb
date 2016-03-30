@@ -1,22 +1,11 @@
 class CoursesController < ApplicationController
   load_and_authorize_resource
   before_action :set_course, only: [:show, :edit, :update, :destroy, :approve]
+  helper_method :language_options, :paid_options
 
   def index
-    @courses = filter_courses(Course.includes(:comments)).approved
-    @type = 'Все курсы'
-  end
-
-  def paid
-    @courses = filter_courses(Course.where(paid: true).includes(:comments)).approved
-    @type = 'Платные курсы'
-    render :index
-  end
-
-  def free
-    @courses = filter_courses(Course.where(paid: false).includes(:comments)).approved
-    @type = 'Бесплатные курсы'
-    render :index
+    queried_courses = CoursesQuery.new(courses_query_params, Course.all)
+    render locals: { queried_courses: queried_courses }
   end
 
   def show
@@ -62,6 +51,18 @@ class CoursesController < ApplicationController
 
   private
 
+  def language_options
+    @language_options ||= [['На всех языках', 'all'],
+                           ['На русском', 'Русский'],
+                           ['На английском', 'English']]
+  end
+
+  def paid_options
+    @paid_options ||= [['Платные и бесплатные', 'all'],
+                       ['Только платные', '1'],
+                       ['Только бесплатные', '0']]
+  end
+
   def set_course
     @course = Course.find(params[:id])
   end
@@ -70,14 +71,7 @@ class CoursesController < ApplicationController
     params.require(:course).permit(:title, :description, :language, :url, :paid)
   end
 
-  def filter_courses(courses)
-    title = params[:title] unless params[:title].blank?
-    paid = params[:paid] if %w(1 0).include?(params[:paid])
-    language = params[:language] if %w(Русский English).include?(params[:language])
-
-    courses = courses.where('title ILIKE ?', "%#{title}%") if title.present?
-    courses = courses.where(paid: paid) if paid.present?
-    courses = courses.where(language: language) if language.present?
-    courses
+  def courses_query_params
+    params.permit(:title, :language, :paid)
   end
 end

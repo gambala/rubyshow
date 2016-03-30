@@ -1,0 +1,25 @@
+@import 'variables'
+@import 'bootstrap/mixins/rhythm'
+
+footer
+  background: #444
+  color: #eee
+  border-top: 2px solid $brand-primary
+  padding: rh()-2px 0 rh()
+
+html.with-sticky-footer
+  height: auto
+  min-height: 100%
+  position: relative
+
+  body
+    height: auto
+    margin-bottom: rh(3)
+    position: initial
+
+    footer
+      bottom: 0
+      height: rh(3)
+      min-width: 100%
+      position: fixed
+      z-index: -1

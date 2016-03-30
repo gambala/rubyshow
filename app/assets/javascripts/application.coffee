@@ -1,0 +1,11 @@
+#= require jquery
+#= require jquery_ujs
+#= require bootstrap/transition
+#= require bootstrap/affix
+#= require bootstrap/alert
+#= require bootstrap/collapse
+#= require bootstrap/dropdown
+#= require bootstrap/tooltip
+#= require responsive-toolkit
+#= require selectize/standalone/selectize
+#= require_tree ./components

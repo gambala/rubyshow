@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', github: 'gambala/bootstrap-sass'
+gem 'bourbon'
 gem 'cancancan', '~> 1.10'
 gem 'coffee-rails'
 gem 'devise'
@@ -11,14 +12,16 @@ gem 'jbuilder'
 gem 'jquery-rails'
 gem 'omniauth-github', github: 'intridea/omniauth-github'
 gem 'pg'
+gem 'pry'
+gem 'pry-rails'
+gem 'rack-attack'
 gem 'rails', '~> 4.2.5'
 gem 'rollbar'
 gem 'russian'
-gem 'sassc-rails'
+gem 'sassc-rails', '~> 1.1.0'
+gem 'slim'
 gem 'uglifier'
 gem 'unicorn', '~> 4.8.3'
-
-gem 'rack-attack'
 
 group :test do
   gem 'capybara', '~> 2.4.0'
@@ -48,4 +51,12 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'spring'
   gem 'launchy'
+end
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-breakpoint-sass'
+  gem 'rails-assets-flag-icon-css'
+  gem 'rails-assets-responsive-toolkit'
+  gem 'rails-assets-selectize'
+  gem 'rails-assets-webfontloader'
 end

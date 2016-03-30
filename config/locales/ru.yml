@@ -1,0 +1,27 @@
+ru:
+  activerecord:
+    errors:
+      messages:
+        blank: 'поле нужно заполнить'
+        empty: 'поле нужно заполнить'
+  words:
+    course:
+      one: 'курс'
+      few: 'курса'
+      many: 'курсов'
+      other: 'курсов'
+    courses_suffix:
+      one: 'по нему'
+      few: 'по ним'
+      many: 'по ним'
+      other: 'по ним'
+    comment:
+      one: 'отзыв'
+      few: 'отзыва'
+      many: 'отзывов'
+      other: 'отзывов'
+    comments_suffix:
+      one: 'отзыв и мнение'
+      few: 'отзыва и мнения'
+      many: 'отзывов и мнений'
+      other: 'отзывов и мнений'
