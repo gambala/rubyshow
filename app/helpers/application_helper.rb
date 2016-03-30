@@ -1,10 +1,10 @@
 module ApplicationHelper
   def alert_class_for(flash_type)
     {
-      :success => 'alert-success',
-      :error => 'alert-danger',
-      :alert => 'alert-warning',
-      :notice => 'alert-info'
+      success: 'alert-success',
+      error: 'alert-danger',
+      alert: 'alert-warning',
+      notice: 'alert-info'
     }[flash_type.to_sym] || flash_type.to_s
   end
 
@@ -13,39 +13,18 @@ module ApplicationHelper
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
   end
 
-  def is_graduate?(comment)
-    'Выпускник курса' if comment.graduate?
-  end
-
-  def star_rating(rating)
-    return if rating.blank?
-
-    star_full = content_tag(:i, '', class: 'glyphicon glyphicon-star')
-    star_empty = content_tag(:i, '', class: 'glyphicon glyphicon-star-empty')
-    stars = star_full * rating.round + star_empty * (5 - rating.round)
-
-    content_tag(:span, stars.html_safe, class: 'block stars')
-  end
-
   def rating_in_gems(rating)
-    if rating.present?
-      r = ''
-      rating.times do
-        r += content_tag(:i, '', class: 'fa fa-diamond')
-      end
-      r.html_safe
-    end
+    return if rating.blank?
+    diamond = content_tag(:i, '', class: 'fa fa-diamond')
+    diamonds = diamond * rating.round
+    diamonds.html_safe
   end
 
-  def unapproved_courses
+  def unapproved_courses_amount
     Course.where(approved: false).count
   end
 
-  def title(page_title)
-    content_for :title, page_title.to_s
-  end
-
-  def total_comments
+  def comments_amount
     Comment.count
   end
 
