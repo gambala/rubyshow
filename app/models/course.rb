@@ -3,50 +3,29 @@ class Course < ActiveRecord::Base
 
   validates :url, :title, :description, :language, presence: true
 
-  def rating
-    scores = self.comments.pluck(:rating).compact
-    if scores && scores.any?
-      scores.inject{ |sum, element| sum + element } / scores.size
-    else
-      0
-    end
-  end
+  scope :approved, -> { where(approved: true) }
+  scope :unapproved, -> { where(approved: false) }
 
   def approve!
     update!(approved: true)
   end
 
-  def self.paid
-    where(paid: true, approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
-    # includes(:comments).where(paid: true, approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
+  def graduates
+    comments.pluck(:graduate)
   end
 
-  def self.free
-    where(paid: false, approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
-    # includes(:comments).where(paid: false, approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
+  def rated?
+    scores.any?
   end
 
-  def self.approved
-    where(approved: true).sort_by {|course| [course.rating, course.comments.count] }.reverse
-    # includes(:comments).where(approved: true).sort_by {|course| course.sort_of_rating }.reverse
+  def rating
+    return 0 unless scores.any?
+    (scores.inject { |sum, element| sum + element }.to_f / scores.size).try(:round, 1)
   end
 
-  def self.unapproved
-    includes(:comments).where(approved: false)
-  end
+  private
 
-  def sort_of_rating
-    five = comments.where(rating: 5).count
-    four = comments.where(rating: 4).count
-    three = comments.where(rating: 3).count
-    two = comments.where(rating: 2).count
-    one = comments.where(rating: 1).count
-
-    total_comments = five+four+three+two+one
-
-    return 0 if total_comments == 0
-
-    rating = ((5*five + 4*four + 3*three + 2*two + 1*one) / (total_comments)).to_f
-    rating ||= 0
+  def scores
+    @scores ||= comments.pluck(:rating).compact
   end
 end

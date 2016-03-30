@@ -3,7 +3,8 @@ class CoursesQuery < ApplicationQuery
          :filter_by_language,
          :filter_by_paid,
          :filter_by_title,
-         :filter_only_approved
+         :filter_only_approved,
+         :sort_by_rating
 
   def filter_by_language
     return unless options[:language].in?(%w(Русский English))
@@ -22,6 +23,10 @@ class CoursesQuery < ApplicationQuery
 
   def filter_only_approved
     approved
+  end
+
+  def sort_by_rating
+    sort_by(&:rating).reverse
   end
 
   def with_comments
