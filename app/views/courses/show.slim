@@ -60,9 +60,9 @@ section.section-padded
                   .form-group
                     ' Оценка курса:
                     - (1..5).each do |value|
-                      label
-                        = value
-                        = f.radio_button(:rating, value)
+                      label>
+                        => value
+                        => f.radio_button(:rating, value)
               .form-group
                 = f.submit 'Отправить', class: 'btn btn-default', id: 'submit_comment',
                            disabled: true
