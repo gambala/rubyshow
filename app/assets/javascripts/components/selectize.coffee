@@ -3,4 +3,4 @@ initSelectize = ->
     labelField: 'title'
     valueField: 'id'
 
-$(document).on 'ready page:load page:partial-load', initSelectize
+document.addEventListener 'turbolinks:load', initSelectize

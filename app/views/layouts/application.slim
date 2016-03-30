@@ -5,12 +5,13 @@ html.with-sticky-footer
     = csrf_meta_tags
     title = content_for?(:title) ? yield(:title) : 'Рейтинг курсов по Ruby и Ruby on Rails'
     = render 'shared/favicons'
-    = stylesheet_link_tag 'application', media: 'all'
-    = javascript_include_tag 'modernizr-custom'
-    = javascript_include_tag 'application'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload'
+    = javascript_include_tag 'modernizr-custom', 'data-turbolinks-track' => 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
   body
     = render 'shared/navbar'
     = render partial: 'shared/flash_messages', flash: flash
     = yield
     = render 'shared/metrics'
     = render 'shared/footer'
+    = render 'shared/responsive_js_helpers'
