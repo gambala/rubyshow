@@ -31,6 +31,12 @@ section.section-padded
                     .text-right
                       = link_to 'Показать все курсы', root_path, class: 'btn btn-link', id: 'reset_filter'
                       = button_tag 'Найти', class: 'btn btn-primary ladda-button', id: 'apply_filter'
+        - if can? :approve, Course
+          section
+            span.b Новые курсы
+            ul.list-unstyled
+              - Course.unapproved.each do |course|
+                li = link_to course.title, course
       .col-sm-12.col-md-8.col-md-pull-4.col-lg-9.col-lg-pull-3
         - present queried_courses do |courses_query_presenter|
           - if courses_query_presenter.any_titles?
@@ -70,8 +76,3 @@ section.section-padded
           p
             ' Знаете о курсе, которого нет в списке?
             = link_to 'Добавьте его.', new_course_path, class: 'b'
-- if can? :approve, Course
-  .container
-    ul
-      - Course.unapproved.each do |course|
-        li = link_to course.title, course
