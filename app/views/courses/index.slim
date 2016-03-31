@@ -45,11 +45,17 @@ section.section-padded
           - queried_courses.each do |course|
             .media.media-stack-overflow
               .media-left
-                = link_to course_path(course),
-                          class: 'media-object',
-                          title: 'Средний рейтинг курса',
-                          data: { toggle: 'tooltip', placement: 'right' } do
-                  span = course.rating
+                - if course.rated?
+                  = link_to course_path(course),
+                            class: 'media-object',
+                            title: 'Средний рейтинг курса',
+                            data: { toggle: 'tooltip', placement: 'right' } do
+                    span = course.rating
+                - else
+                  = link_to course_path(course),
+                            class: 'media-object',
+                            title: 'Пока без оценок',
+                            data: { toggle: 'tooltip', placement: 'right' } do
               .media-body
                 .media-heading = link_to course.title, course
                 p
