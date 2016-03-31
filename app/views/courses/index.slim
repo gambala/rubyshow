@@ -22,11 +22,11 @@ section.section-padded
                   .form-group
                     = select_tag :language,
                                  options_for_select(language_options, params[:language]),
-                                 { class: 'form-control selectize-default' }
+                                 { class: 'form-control' }
                   .form-group
                     = select_tag :paid,
                                  options_for_select(paid_options, params[:paid]),
-                                 { class: 'form-control selectize-default' }
+                                 { class: 'form-control' }
                   .form-group
                     .text-right
                       = link_to 'Показать все курсы', root_path, class: 'btn btn-link'

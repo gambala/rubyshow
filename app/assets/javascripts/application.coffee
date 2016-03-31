@@ -6,6 +6,5 @@
 #= require bootstrap/collapse
 #= require bootstrap/dropdown
 #= require bootstrap/tooltip
-#= require selectize/standalone/selectize
 #= require_tree ./components
 #= require turbolinks

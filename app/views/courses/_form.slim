@@ -11,13 +11,13 @@
     .col-md-6
       .form-group
         = f.label :language, 'Язык'
-        = f.select(:language, %w(Русский English), {}, { class: 'form-control selectize-default' })
+        = f.select(:language, %w(Русский English), {}, { class: 'form-control' })
     .col-md-6
       .form-group
         = f.label :paid, 'Доступность курса'
         = f.select :paid, [['Платный', true], ['Бесплатный', false]],
                    { prompt: 'Выберите один из вариантов' },
-                   class: 'form-control selectize-default', required: true
+                   class: 'form-control', required: true
   = form_field_group :description, @course do
     = f.label :description, 'Описание'
     = f.text_area :description, rows: 5, class: 'form-control'
