@@ -4,8 +4,13 @@ class CoursesController < ApplicationController
   helper_method :language_options, :paid_options
 
   def index
-    queried_courses = CoursesQuery.new(courses_query_params, Course.all)
-    render locals: { queried_courses: queried_courses }
+    respond_to do |format|
+      format.html do
+        queried_courses = CoursesQuery.new(courses_query_params, Course.all)
+        render locals: { queried_courses: queried_courses }
+      end
+      format.js { render js: "Turbolinks.visit('#{request.original_url}');" }
+    end
   end
 
   def show

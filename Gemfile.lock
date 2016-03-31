@@ -240,16 +240,7 @@ GEM
     rails-assets-breakpoint-sass (2.7.0)
       rails-assets-sassy-maps (< 1.0.0)
     rails-assets-flag-icon-css (1.3.0)
-    rails-assets-jquery (2.2.1)
-    rails-assets-microplugin (0.0.3)
-    rails-assets-responsive-toolkit (2.5.1)
-      rails-assets-jquery (>= 1.9.1)
     rails-assets-sassy-maps (0.4.0)
-    rails-assets-selectize (0.12.1)
-      rails-assets-jquery (>= 1.7.0)
-      rails-assets-microplugin (~> 0.0.0)
-      rails-assets-sifter (~> 0.4.0)
-    rails-assets-sifter (0.4.5)
     rails-assets-webfontloader (1.6.21)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
@@ -334,6 +325,9 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
+    turbolinks (5.0.0.beta2)
+      turbolinks-source
+    turbolinks-source (5.0.0.beta2)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.2)
@@ -388,8 +382,6 @@ DEPENDENCIES
   rails (~> 4.2.5)
   rails-assets-breakpoint-sass!
   rails-assets-flag-icon-css!
-  rails-assets-responsive-toolkit!
-  rails-assets-selectize!
   rails-assets-webfontloader!
   rollbar
   rspec-rails
@@ -398,6 +390,7 @@ DEPENDENCIES
   shoulda-matchers (~> 2.8)
   slim
   spring
+  turbolinks (~> 5.0.0.beta)
   uglifier
   unicorn (~> 4.8.3)
 

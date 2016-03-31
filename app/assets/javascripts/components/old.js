@@ -1,4 +1,4 @@
-$(document).on('ready page:change', function() {
+document.addEventListener("turbolinks:load", function() {
   $('[data-toggle="tooltip"]').tooltip()
   $('.rate-course').hide();
 

@@ -20,6 +20,7 @@ gem 'rollbar'
 gem 'russian'
 gem 'sassc-rails', '~> 1.1.0'
 gem 'slim'
+gem 'turbolinks', '~> 5.0.0.beta'
 gem 'uglifier'
 gem 'unicorn', '~> 4.8.3'
 
@@ -56,7 +57,5 @@ end
 source 'https://rails-assets.org' do
   gem 'rails-assets-breakpoint-sass'
   gem 'rails-assets-flag-icon-css'
-  gem 'rails-assets-responsive-toolkit'
-  gem 'rails-assets-selectize'
   gem 'rails-assets-webfontloader'
 end
