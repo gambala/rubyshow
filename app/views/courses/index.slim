@@ -1,3 +1,5 @@
+- present queried_courses do |courses_query_presenter|
+  - title courses_query_presenter.request_title if courses_query_presenter.any_titles?
 section.section-red-promo
   .container
     .row
