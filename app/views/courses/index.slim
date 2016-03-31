@@ -31,8 +31,8 @@ section.section-padded
                                  { class: 'form-control' }
                   .form-group
                     .text-right
-                      = link_to 'Показать все курсы', root_path, class: 'btn btn-link'
-                      = button_tag 'Найти', class: 'btn btn-primary'
+                      = link_to 'Показать все курсы', root_path, class: 'btn btn-link', id: 'reset_filter'
+                      = button_tag 'Найти', class: 'btn btn-primary', id: 'apply_filter'
         - if can? :approve, Course
           section
             span.b Новые курсы
