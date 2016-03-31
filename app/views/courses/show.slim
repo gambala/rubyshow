@@ -23,12 +23,22 @@ section.section-padded
                               class: 'btn btn-default btn-xs' do
                       span.fa.fa-pencil
                 section.section-with-margin
-                  dl.dl-inline
-                    dt Количество учеников:
-                    dd = @course.comments.pluck(:graduate).count
-                  dl.dl-inline
-                    dt Средняя оценка:
-                    dd #{@rating || 0}/5
+                  - if @course.graduates.any?
+                    dl.dl-inline
+                      dt Количество учеников:
+                      dd = @course.graduates.count
+                  - else
+                    dl.dl-inline
+                      dt Учеников пока не найдено
+                      dd
+                  - if @course.rated?
+                    dl.dl-inline
+                      dt Средняя оценка:
+                      dd = @rating || 'пока без оценки'
+                  - else
+                    dl.dl-inline
+                      dt Оценок пока нет
+                      dd
                   dl.dl-inline
                     dt Язык курсов:
                     dd = @course.language
@@ -60,9 +70,9 @@ section.section-padded
                   .form-group
                     ' Оценка курса:
                     - (1..5).each do |value|
-                      label
-                        = value
-                        = f.radio_button(:rating, value)
+                      label>
+                        => value
+                        => f.radio_button(:rating, value)
               .form-group
                 = f.submit 'Отправить', class: 'btn btn-default', id: 'submit_comment',
                            disabled: true

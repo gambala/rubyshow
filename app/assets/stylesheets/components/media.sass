@@ -25,10 +25,11 @@
       text-align: center
       width: rh(2)
 
-    .media-object-lg
-      height: rh(3)
-      line-height: rh(3)
-      width: rh(3)
+    .media-object-responsive
+      +breakpoint($screen-sm-min)
+        height: rh(3)
+        line-height: rh(3)
+        width: rh(3)
 
   .media-body
     padding: 0 10px
