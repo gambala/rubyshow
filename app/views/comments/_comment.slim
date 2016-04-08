@@ -7,6 +7,9 @@
         .pull-right.text-right
           p
             small.text-muted = Russian::strftime(comment.created_at, "%e %B %Y")
+            - if params[:controller] == 'comments'
+              br
+              small = link_to comment.course.title, comment.course
           - if comment.graduate?
             p
               small.text-success Выпускник курса
