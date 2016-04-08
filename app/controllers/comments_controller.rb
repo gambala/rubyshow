@@ -2,6 +2,10 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:update, :destroy]
   before_action :set_course, only: [:create, :update, :destroy]
 
+  def index
+    @comments = Comment.paginate(page: params[:page], per_page: 6)
+  end
+
   def create
     @comment = @course.comments.build(comment_params)
     @comment.user_id = current_user.id
@@ -41,15 +45,16 @@ class CommentsController < ApplicationController
   end
 
   private
-    def set_comment
-      @comment = Comment.find(params[:id])
-    end
 
-    def set_course
-      @course = Course.find(params[:course_id])
-    end
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
 
-    def comment_params
-      params.require(:comment).permit(:content, :rating, :graduate)
-    end
+  def set_course
+    @course = Course.find(params[:course_id])
+  end
+
+  def comment_params
+    params.require(:comment).permit(:content, :rating, :graduate)
+  end
 end

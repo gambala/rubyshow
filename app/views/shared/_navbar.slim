@@ -25,6 +25,7 @@ nav.navbar.navbar-default
                    title = 'Количество курсов на рассмотрении'
                  }
               = unapproved_courses_amount
+        li = link_to 'Последние отзывы', comments_path
       ul.nav.navbar-nav.navbar-right
         - if signed_in?
           li.dropdown

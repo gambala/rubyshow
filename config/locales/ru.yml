@@ -25,3 +25,8 @@ ru:
       few: 'отзыва и мнения'
       many: 'отзывов и мнений'
       other: 'отзывов и мнений'
+
+  will_paginate:
+    previous_label: "&#8592; Туда"
+    next_label: "Сюда &#8594;"
+    page_gap: "&hellip;"
