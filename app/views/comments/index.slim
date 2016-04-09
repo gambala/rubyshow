@@ -1,5 +1,4 @@
-.col-sm-12.col-md-8.col-lg-9
-  section.section-with-margin id='comments'
+section.section-padded id='comments'
+  .container
     = render @comments
-
-  .text-center = will_paginate @comments
+    .text-center = will_paginate @comments, renderer: BootstrapPagination::Rails
