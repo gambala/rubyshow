@@ -3,8 +3,8 @@ isBreakpoint = (alias) ->
 
 document.addEventListener 'turbolinks:load', ->
   $('.affix-aside').each ->
-    align = =>
-      if $(this).hasClass('affix')
+    align = (is_affix) =>
+      if is_affix
         $(this).css({ left: $(this).parent().offset().left })
       else
         $(this).css({ left: 'auto' })
@@ -13,15 +13,15 @@ document.addEventListener 'turbolinks:load', ->
       $(this).parent().outerHeight( $(this).outerHeight() )
       $(this).outerWidth( $(this).parent().outerWidth() )
       $(this).affix('checkPosition')
-      align()
+      align($(this).hasClass('affix'))
 
     $(window).resize resize
 
-    $(this).on('affixed.bs.affix', (e) ->
-      align()
+    $(this).on('affix.bs.affix', (e) ->
+      align(true)
     )
-    $(this).on('affixed-top.bs.affix', (e) ->
-      align()
+    $(this).on('affix-top.bs.affix', (e) ->
+      align(false)
     )
 
     $(this).affix offset:
