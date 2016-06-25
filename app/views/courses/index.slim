@@ -67,7 +67,7 @@ section.section-padded
               .media-body
                 .media-heading(itemprop='name') = link_to course.title, course, class: 'text-info'
                 p
-                  span(itemprop='inLanguage') = language_flag(course.language)
+                  span = language_flag(course.language)
                   span = course_status(course)
                   = link_to course_path(course, anchor: 'comments'),
                             title: 'Отзывов о курсе',

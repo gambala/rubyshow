@@ -1,5 +1,5 @@
 - if comment.user.present?
-  .media.media-stack-overflow
+  .media.media-stack-overflow(itemscope itemtype='http://schema.org/Comment')
     .media-left
       = image_tag avatar_url(comment.user.email, 144),
                   class: 'media-object media-object-responsive'
@@ -14,7 +14,7 @@
           - if comment.graduate?
             p
               small.text-success Выпускник курса
-        span = comment.user.username || comment.user.email
+        span(itemprop='author') = comment.user.username || comment.user.email
       p
         small { class = 'text-primary'
                 data-toggle = 'tooltip'
@@ -22,4 +22,4 @@
                 title = 'Оценка пользователя'
               }
           = rating_in_gems(comment.rating)
-      p = comment.content
+      p(itemprop='text') = comment.content
