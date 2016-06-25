@@ -51,23 +51,23 @@ section.section-padded
                 dd = courses_query_presenter.response_title
         section.section-with-margin
           - queried_courses.each do |course|
-            .media.media-stack-overflow
+            .media.media-stack-overflow(itemscope itemtype='http://schema.org/EducationEvent')
               .media-left
                 - if course.rated?
                   = link_to course_path(course),
                             class: 'media-object',
                             title: 'Средний рейтинг курса',
                             data: { toggle: 'tooltip', placement: 'right' } do
-                    span = course.rating
+                    span(itemprop='aggregateRating') = course.rating
                 - else
                   = link_to course_path(course),
                             class: 'media-object',
                             title: 'Пока без оценок',
                             data: { toggle: 'tooltip', placement: 'right' } do
               .media-body
-                .media-heading = link_to course.title, course, class: 'text-info'
+                .media-heading(itemprop='name') = link_to course.title, course, class: 'text-info'
                 p
-                  = language_flag(course.language)
+                  span(itemprop='inLanguage') = language_flag(course.language)
                   span = course_status(course)
                   = link_to course_path(course, anchor: 'comments'),
                             title: 'Отзывов о курсе',
