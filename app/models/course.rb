@@ -26,7 +26,7 @@ class Course < ActiveRecord::Base
                                         (SELECT count(comments.id) AS count_votes
                                          FROM comments
                                          LEFT JOIN courses ON comments.course_id=courses.id
-                                         GROUP BY courses.id) t), 0.2)), count(com.id)))+rating)/2, 2) AS actual_raiting
+                                         GROUP BY courses.id) t), 0.2)), count(com.id)))+rating)/2, 1) AS actual_raiting
           FROM courses c
           LEFT JOIN comments com ON c.id=com.course_id
           WHERE c.id=#{id} GROUP BY c.id, com.rating").first['actual_raiting']
