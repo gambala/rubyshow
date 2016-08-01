@@ -20,16 +20,7 @@ class Course < ActiveRecord::Base
 
   def rating
     return 0 unless scores.any?
-    ActiveRecord::Base.connection.exec_query("SELECT round(((LOG(
-                     (SELECT power((SELECT MAX(count_votes)
-                                      FROM
-                                        (SELECT count(comments.id) AS count_votes
-                                         FROM comments
-                                         LEFT JOIN courses ON comments.course_id=courses.id
-                                         GROUP BY courses.id) t), 0.2)), count(com.id)))+rating)/2, 1) AS actual_raiting
-          FROM courses c
-          LEFT JOIN comments com ON c.id=com.course_id
-          WHERE c.id=#{id} GROUP BY c.id, com.rating").first['actual_raiting']
+    (scores.inject { |sum, element| sum + element }.to_f / scores.size).try(:round, 1)
   end
 
   private
