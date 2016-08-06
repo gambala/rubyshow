@@ -13,8 +13,11 @@
               small = link_to comment.course.title, comment.course
           - if comment.graduate?
             p
-              small.text-success Выпускник курса
-        span(itemprop='author') = comment.user.username || comment.user.email
+              small.text-success
+                ' Выпускник курса
+                = link_to comment.course.title, comment.course if params[:controller] == 'users'
+        span(itemprop='author')
+          = link_to (comment.user.username || comment.user.email), comment.user
       p
         small { class = 'text-primary'
                 data-toggle = 'tooltip'

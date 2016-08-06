@@ -1,0 +1,12 @@
+.container
+  .col-md-2
+    .text-center
+      = image_tag avatar_url(@user.email, 144)
+      h1.h3 = @user.username
+      - if @user.github_name
+        = link_to "https://github.com/#{@user.github_name}" do
+          = "github.com/#{@user.github_name}"
+  .col-md-7
+    - if @comments.any?
+      h4 Отзывы пользователя
+      = render @comments
