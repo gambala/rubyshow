@@ -1,10 +1,6 @@
 #= require jquery
 #= require jquery_ujs
-#= require bootstrap/transition
-#= require bootstrap/affix
-#= require bootstrap/alert
-#= require bootstrap/collapse
-#= require bootstrap/dropdown
-#= require bootstrap/tooltip
+#= require jquery
+#= require bootstrap-sprockets
 #= require_tree ./components
 #= require turbolinks

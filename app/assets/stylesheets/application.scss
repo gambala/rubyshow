@@ -1,5 +1,7 @@
 /*
 *= require flag-icon-css
 *= require font-awesome
-*= require_tree ./components
 */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
