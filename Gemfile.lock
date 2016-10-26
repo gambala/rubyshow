@@ -1,12 +1,4 @@
 GIT
-  remote: git://github.com/gambala/bootstrap-sass.git
-  revision: e95c5bd9df8b87589af7a2d1750aae5f1a31943e
-  specs:
-    bootstrap-sass (3.3.6)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
-
-GIT
   remote: git://github.com/intridea/omniauth-github.git
   revision: 45f2fc73d6d06f30863adac0e6aa112bcaaadf67
   specs:
@@ -55,9 +47,12 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     arel (6.0.3)
-    autoprefixer-rails (6.3.5)
+    autoprefixer-rails (6.5.1.1)
       execjs
     bcrypt (3.1.10)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     bourbon (4.2.6)
       sass (~> 3.4)
       thor (~> 0.19)
@@ -349,7 +344,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass!
+  bootstrap-sass
   bourbon
   byebug
   cancancan (~> 1.10)
@@ -400,4 +395,4 @@ DEPENDENCIES
   will_paginate-bootstrap
 
 BUNDLED WITH
-   1.11.2
+   1.13.2
