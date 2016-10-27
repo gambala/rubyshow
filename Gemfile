@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.3.0'
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'cancancan', '~> 1.10'
@@ -35,10 +37,10 @@ group :test do
 end
 
 group :development do
-  gem 'capistrano', '~> 3.2.1'
-  gem 'capistrano-rails', '~> 1.1.0'
+  gem 'capistrano'
+  gem 'capistrano-rails'
   gem 'capistrano-bundler'
-  gem 'capistrano-rbenv', '~> 2.0'
+  gem 'capistrano-rbenv'
   gem 'capistrano-cookbook', require: false
   gem 'guard', require: false
   gem 'guard-bundler', require: false

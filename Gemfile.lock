@@ -353,11 +353,11 @@ DEPENDENCIES
   bullet
   byebug
   cancancan (~> 1.10)
-  capistrano (~> 3.2.1)
+  capistrano
   capistrano-bundler
   capistrano-cookbook
-  capistrano-rails (~> 1.1.0)
-  capistrano-rbenv (~> 2.0)
+  capistrano-rails
+  capistrano-rbenv
   capybara (~> 2.4.0)
   capybara-webkit
   codeclimate-test-reporter
