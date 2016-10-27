@@ -1,14 +1,11 @@
 @import 'variables'
 @import 'breakpoint-sass'
-@import 'settings/prefixer'
-@import 'addons/prefixer'
 @import 'mixins/rh'
-@import 'css3/transition'
 
 .media-stack-overflow
-  +transition(background 0.25s)
   margin: 0 -10px
   padding: rh(0.5) 10px
+  transition: background 0.25s
 
   .media-left
     padding: 0

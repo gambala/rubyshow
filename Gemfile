@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
-gem 'bourbon'
 gem 'cancancan', '~> 1.10'
 gem 'coffee-rails'
 gem 'devise'

@@ -1,12 +1,9 @@
 @import 'variables'
 @import 'mixins/retina-svg'
 @import 'mixins/rh'
-@import 'bootstrap/mixins/vendor-prefixes'
-@import 'settings/prefixer'
-@import 'addons/prefixer'
 
 input[type="checkbox"]
-  +prefixer(appearance, none, spec moz ms o webkit)
+  appearance: none
   background-color: $input-bg
   border-radius: $border-radius-base
   border: 1px solid $input-border
