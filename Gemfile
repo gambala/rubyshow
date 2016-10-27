@@ -54,6 +54,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'spring'
   gem 'launchy'
+  gem 'bullet'
 end
 
 source 'https://rails-assets.org' do

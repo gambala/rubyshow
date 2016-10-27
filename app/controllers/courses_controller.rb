@@ -6,7 +6,9 @@ class CoursesController < ApplicationController
   def index
     respond_to do |format|
       format.html do
-        queried_courses = CoursesQuery.new(courses_query_params, Course.all)
+        queried_courses = CoursesQuery.new(
+          courses_query_params, Course.includes(:comments)
+        )
         render locals: { queried_courses: queried_courses }
       end
       format.js { render js: "Turbolinks.visit('#{request.original_url}');" }
@@ -69,7 +71,7 @@ class CoursesController < ApplicationController
   end
 
   def set_course
-    @course = Course.find(params[:id])
+    @course = Course.includes(:comments).find(params[:id])
   end
 
   def course_params

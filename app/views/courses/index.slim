@@ -65,7 +65,8 @@ section.section-padded
                             title: 'Пока без оценок',
                             data: { toggle: 'tooltip', placement: 'right' } do
               .media-body
-                .media-heading(itemprop='name') = link_to course.title, course, class: 'text-info'
+                .media-heading(itemprop='name')
+                  = link_to course.title, course, class: 'text-info'
                 p
                   span = language_flag(course.language)
                   span = course_status(course)
