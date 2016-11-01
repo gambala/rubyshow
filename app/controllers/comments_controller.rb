@@ -3,7 +3,8 @@ class CommentsController < ApplicationController
   before_action :set_course, only: [:create, :update, :destroy]
 
   def index
-    @comments = Comment.order(created_at: :desc)
+    @comments = Comment.includes(:course, :user)
+                       .order(created_at: :desc)
                        .paginate(page: params[:page], per_page: 6)
   end
 

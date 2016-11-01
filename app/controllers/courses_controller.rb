@@ -7,7 +7,7 @@ class CoursesController < ApplicationController
     respond_to do |format|
       format.html do
         queried_courses = CoursesQuery.new(
-          courses_query_params, Course.includes(:comments)
+          courses_query_params, Course.all
         )
         render locals: { queried_courses: queried_courses }
       end
@@ -71,7 +71,7 @@ class CoursesController < ApplicationController
   end
 
   def set_course
-    @course = Course.includes(:comments).find(params[:id])
+    @course = Course.find(params[:id])
   end
 
   def course_params
