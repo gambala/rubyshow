@@ -8,6 +8,12 @@ class User < ActiveRecord::Base
   has_many :comments
   validates :username, presence: true
 
+  def admin?
+    role == 'admin'
+  end
+
+  # Devise Omniauth methods
+
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)

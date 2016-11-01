@@ -26,10 +26,13 @@ class CoursesController < ApplicationController
   end
 
   def edit
+    authorize @course, :edit?
   end
 
   def create
     @course = Course.new(course_params)
+
+    authorize @course, :create?
 
     if @course.save
       redirect_to root_path, notice: 'Спасибо за предложенный курс!'
@@ -39,6 +42,8 @@ class CoursesController < ApplicationController
   end
 
   def update
+    authorize @course, :update?
+
     if @course.update(course_params)
       redirect_to @course, notice: 'Курс успешно обновлен.'
     else
@@ -47,11 +52,15 @@ class CoursesController < ApplicationController
   end
 
   def destroy
+    authorize @course, :destroy?
+
     @course.destroy!
     redirect_to root_path, notice: 'Курс удален.'
   end
 
   def approve
+    authorize @course, :approve?
+
     @course.approve!
     redirect_to @course, notice: 'Курс одобрен.'
   end

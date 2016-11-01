@@ -18,10 +18,9 @@ section(itemscope itemtype='http://schema.org/EducationEvent')
             .affix-aside
               .panel.panel-default
                 .panel-body
-                  - if can? :edit, Course
+                  - if policy(@course).edit?
                     .pull-right
-                      = link_to edit_course_path(@course), title: 'Редактировать курс',
-                                class: 'btn btn-default btn-xs' do
+                      = link_to edit_course_path(@course), title: 'Редактировать курс', class: 'btn btn-default btn-xs' do
                         span.fa.fa-pencil
                   section.section-with-margin
                     - if @course.graduates.any?
@@ -43,7 +42,7 @@ section(itemscope itemtype='http://schema.org/EducationEvent')
                     dl.dl-inline
                       dt Язык курсов:
                       dd(itemprop='inLanguage') = @course.language
-                  - if can?(:manage, Course) && !@course.approved?
+                  - if policy(@course).approve?
                     p
                       = link_to 'Одобрить курс', approve_course_path(@course), method: :put,
                                 class: 'btn btn-primary btn-sm'
@@ -51,7 +50,7 @@ section(itemscope itemtype='http://schema.org/EducationEvent')
                                  data: {confirm: 'Точно удалить?'},
                                  class: 'btn btn-link btn-sm'
         .col-sm-12.col-md-8.col-md-pull-4.col-lg-9.col-lg-pull-3
-          section.section-with-margin id='comments'
+          section.section-with-margin#comments
             - if @comments.any?
               = render @comments, locals: { course: @course }
           .well
