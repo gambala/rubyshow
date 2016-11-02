@@ -5,6 +5,8 @@ class Course < ActiveRecord::Base
 
   scope :approved, -> { where(approved: true) }
   scope :unapproved, -> { where(approved: false) }
+  scope :free, -> { approved.where(paid: false) }
+  scope :paid, -> { approved.where(paid: true) }
 
   def approve!
     update!(approved: true)
@@ -20,7 +22,8 @@ class Course < ActiveRecord::Base
 
   def rating
     return 0 unless scores.any?
-    (scores.inject { |sum, element| sum + element }.to_f / scores.size).try(:round, 1)
+    (scores.inject { |sum, element| sum + element }.to_f / scores.size)
+      .try(:round, 1)
   end
 
   private

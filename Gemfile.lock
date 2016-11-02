@@ -60,7 +60,6 @@ GEM
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.10.0)
     byebug (9.0.6)
-    cancancan (1.15.0)
     capistrano (3.6.1)
       airbrussh (>= 1.0.0)
       capistrano-harrow
@@ -221,6 +220,8 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
+    pundit (1.1.0)
+      activesupport (>= 3.0.0)
     rack (1.6.4)
     rack-attack (5.0.1)
       rack
@@ -357,7 +358,6 @@ DEPENDENCIES
   bootstrap-sass
   bullet
   byebug
-  cancancan (~> 1.10)
   capistrano
   capistrano-bundler
   capistrano-cookbook
@@ -385,6 +385,7 @@ DEPENDENCIES
   pg
   pry
   pry-rails
+  pundit
   rack-attack
   rack-livereload
   rails (~> 4.2.5)
