@@ -10,6 +10,9 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @course.comments.build(comment_params)
+
+    authorize @comment, :create?
+
     @comment.user_id = current_user.id
     @comment.rating = nil unless @comment.graduate?
 
@@ -27,6 +30,8 @@ class CommentsController < ApplicationController
   end
 
   def update
+    authorize @comment, :update?
+
     respond_to do |format|
       if @comment.update(comment_params)
         format.html { redirect_to @comment, notice: 'Комментарий успешно обновлен.' }
@@ -39,7 +44,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    authorize @comment, :destroy?
+
     @comment.destroy
+
     respond_to do |format|
       format.html { redirect_to comments_url, notice: 'Комментарий успешно удален.' }
       format.json { head :no_content }

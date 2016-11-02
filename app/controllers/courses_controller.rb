@@ -1,5 +1,4 @@
 class CoursesController < ApplicationController
-  load_and_authorize_resource
   before_action :set_course, only: [:show, :edit, :update, :destroy, :approve]
   helper_method :language_options, :paid_options
 
@@ -16,6 +15,8 @@ class CoursesController < ApplicationController
   end
 
   def show
+    authorize @course, :show?
+
     @comments = @course.comments
     @comment = @course.comments.build
     @rating = @course.rating
