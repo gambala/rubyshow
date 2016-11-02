@@ -4,7 +4,6 @@ ruby '2.3.0'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
-gem 'cancancan', '~> 1.10'
 gem 'pundit'
 gem 'coffee-rails'
 gem 'devise'
