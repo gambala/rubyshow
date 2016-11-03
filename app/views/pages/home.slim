@@ -23,14 +23,28 @@
 
   .row
     .col-xs-12.col-sm-6.col-md-6.col-lg-6.text-center.h4
-      h3 Случайный курс:
-      h2 = @random_course.title
+      h2 Случайный курс:
+      h3 = link_to @random_course.title, @random_course
       small #{@random_course.comments.count} отзывов
       p = @random_course.description
 
     .col-xs-12.col-sm-6.col-md-6.col-lg-6.text-center.h4
-      h3 Случайный отзыв:
-      h2 = @random_comment.user.username
-      small Курс: #{@random_comment.course.title}
+      h2 Случайный отзыв:
+      h3 = link_to @random_comment.user.username, @random_comment.user
+      small
+        ' Курс:
+        = link_to @random_comment.course.title, @random_comment.course
+      br
       small Оценка: #{@random_comment.rating}/5
       p = @random_comment.content
+
+  .row
+    .col-xs-12.col-sm-6.col-md-6.col-lg-6
+      h2 Пять лучших бесплатных курсов
+
+      = render 'courses/list', courses: @top_5_free
+
+    .col-xs-12.col-sm-6.col-md-6.col-lg-6
+      h2 Пять лучших платных курсов
+
+      = render 'courses/list', courses: @top_5_paid
