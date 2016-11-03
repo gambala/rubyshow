@@ -9,9 +9,10 @@ html.with-sticky-footer
     = javascript_include_tag 'modernizr-custom', 'data-turbolinks-track' => 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
   body
-    = render 'shared/navbar'
-    = render partial: 'shared/flash_messages', flash: flash
-    = yield
-    = render 'shared/metrics'
+    .body-before-footer
+      = render 'shared/navbar'
+      = render partial: 'shared/flash_messages', flash: flash
+      = yield
     = render 'shared/footer'
+    = render 'shared/metrics'
     = render 'shared/responsive_js_helpers'
