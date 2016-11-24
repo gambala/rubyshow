@@ -18,6 +18,7 @@ gem 'pry'
 gem 'pry-rails'
 gem 'rack-attack'
 gem 'rails', '~> 4.2.5'
+gem "recaptcha", require: "recaptcha/rails"
 gem 'rollbar'
 gem 'russian'
 gem 'sassc-rails', '~> 1.1.0'

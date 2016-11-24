@@ -2,6 +2,7 @@ class Course < ActiveRecord::Base
   has_many :comments, dependent: :destroy
 
   validates :url, :title, :description, :language, presence: true
+  validates :title, uniqueness: true
 
   scope :approved, -> { where(approved: true) }
   scope :unapproved, -> { where(approved: false) }
