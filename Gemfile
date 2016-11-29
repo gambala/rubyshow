@@ -38,10 +38,9 @@ end
 
 group :development do
   gem 'capistrano'
-  gem 'capistrano-rails'
   gem 'capistrano-bundler'
-  gem 'capistrano-rbenv'
-  gem 'capistrano-cookbook', require: false
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm', github: 'capistrano/rvm'
   gem 'guard', require: false
   gem 'guard-bundler', require: false
   gem 'guard-livereload', require: false

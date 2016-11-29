@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/capistrano/rvm.git
+  revision: 9cfef39cf0022839dca6b5b330dfefeb5fc363e7
+  specs:
+    capistrano-rvm (0.1.2)
+      capistrano (~> 3.0)
+      sshkit (~> 1.2)
+
+GIT
   remote: git://github.com/intridea/omniauth-github.git
   revision: 45f2fc73d6d06f30863adac0e6aa112bcaaadf67
   specs:
@@ -69,15 +77,10 @@ GEM
     capistrano-bundler (1.2.0)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
-    capistrano-cookbook (0.2.1)
-      capistrano (~> 3.2)
     capistrano-harrow (0.5.3)
     capistrano-rails (1.2.0)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
-    capistrano-rbenv (2.0.4)
-      capistrano (~> 3.1)
-      sshkit (~> 1.3)
     capybara (2.4.4)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -360,9 +363,8 @@ DEPENDENCIES
   byebug
   capistrano
   capistrano-bundler
-  capistrano-cookbook
   capistrano-rails
-  capistrano-rbenv
+  capistrano-rvm!
   capybara (~> 2.4.0)
   capybara-webkit
   codeclimate-test-reporter
