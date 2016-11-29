@@ -7,3 +7,4 @@
 /config/application.yml
 /log/*
 /tmp
+/server
