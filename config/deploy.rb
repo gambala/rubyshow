@@ -1,5 +1,5 @@
 set :application, 'rubycourses'
-set :repo_url, 'git@github.com:Freika/nick.git'
+set :repo_url, 'git@github.com:Freika/ruby_courses.git'
 
 set :deploy_to, '/home/deploy/var/www/rubycourses'
 
