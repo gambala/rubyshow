@@ -3,7 +3,7 @@ set :repo_url, 'git@github.com:Freika/ruby_courses.git'
 
 set :deploy_to, '/home/deploy/var/www/rubycourses'
 
-set :linked_files, %w{config/database.yml}
+set :linked_files, %w{config/database.yml config/application.yml}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 namespace :deploy do
