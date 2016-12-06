@@ -63,9 +63,15 @@ section(itemscope itemtype='http://schema.org/EducationEvent')
             section.tab-pane.active.section-with-margin#opinions role='tabpanel'
               - if @comments.any?
                 = render @comments, locals: { course: @course }
+              .well
+                = render partial: 'comments/form',
+                  locals: { course: @course, comment: @comment }
             section.tab-pane.section-with-margin#comments role='tabpanel'
-              | comments
+              .well
+                = render partial: 'comments/form',
+                  locals: { course: @course, comment: @comment }
             section.tab-pane.section-with-margin#questions role='tabpanel'
-              | questions
-            .well
-              = render 'comments/form'
+              .well
+                = render partial: 'comments/form',
+                  locals: { course: @course, comment: @question }
+

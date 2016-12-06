@@ -17,8 +17,11 @@ class CoursesController < ApplicationController
   def show
     authorize @course, :show?
 
-    @comments = @course.comments
+    @comments = @course.comments.comment
+    @opinions = @course.comments.opinion
+    @questions = @course.comments.question
     @comment = @course.comments.build
+    @question = @course.comments.build(kind: Comment.kinds[:question])
     @rating = @course.rating
   end
 

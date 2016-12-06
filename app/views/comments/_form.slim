@@ -1,9 +1,9 @@
-- if signed_in? && current_user.comments.pluck(:course_id).include?(@course.id)
+- if signed_in? && current_user.comments.pluck(:course_id).include?(course.id)
   p Вы уже оставляли комментарий к этому курсу.
 - elsif signed_in?
-  = form_for [@course, @comment] do |f|
+  = form_for [course, comment] do |f|
     .form-group
-      = f.label :content, 'Ваш отзыв о курсе'
+      = f.label :content, comment_label(comment)
       = f.text_area :content, rows: 3, class: 'form-control'
     .row
       .col-md-6
