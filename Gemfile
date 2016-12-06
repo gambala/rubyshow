@@ -18,14 +18,13 @@ gem 'pry'
 gem 'pry-rails'
 gem 'rack-attack'
 gem 'rails', '~> 4.2.5'
-gem "recaptcha", require: "recaptcha/rails"
+gem 'recaptcha', require: 'recaptcha/rails'
 gem 'rollbar'
 gem 'russian'
 gem 'sassc-rails', '~> 1.1.0'
 gem 'slim'
 gem 'turbolinks', '~> 5.0.0.beta'
 gem 'uglifier'
-gem 'unicorn', '~> 4.8.3'
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
 
@@ -48,6 +47,7 @@ group :development do
   gem 'guard-rails', require: false
   gem 'guard-rspec', require: false
   gem 'rack-livereload'
+  gem 'puma'
 end
 
 group :development, :test do
