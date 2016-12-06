@@ -9,12 +9,12 @@
                     rows: 3,
                     class: 'form-control new-comment',
                     id: text_area_id(comment)
-    .row
-      .col-md-6
-        .form-group
-          = f.check_box :graduate
-          = f.label :graduate, 'Я закончил этот курс!'
-      - if policy(comment).rate?
+    - if policy(comment).rate?
+      .row
+        .col-md-6
+          .form-group
+            = f.check_box :graduate
+            = f.label :graduate, 'Я закончил этот курс!'
         .col-md-6.rate-course
           .form-group
             ' Оценка курса:
