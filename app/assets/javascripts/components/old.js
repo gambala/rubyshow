@@ -2,6 +2,8 @@ document.addEventListener("turbolinks:load", function() {
   $('[data-toggle="tooltip"]').tooltip()
   $('.rate-course').hide();
 
+
+  // Comments graduate rating
   $('#comment_graduate').change(function(){
     if(this.checked)
       $('.rate-course').fadeIn('fast');
@@ -9,8 +11,9 @@ document.addEventListener("turbolinks:load", function() {
       $('.rate-course').fadeOut('fast');
   });
 
-  $('#comment_content').keyup(function() {
 
+  // Validating comment length
+  $('#comment_content').keyup(function() {
     var empty = false;
     $('#comment_content').each(function() {
       if ($(this).val().length == 0) {
