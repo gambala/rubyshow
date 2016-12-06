@@ -4,7 +4,7 @@ class CoursePolicy < ApplicationPolicy
   end
 
   def show?
-    record.approved
+    record.approved || admin?
   end
 
   def edit?
