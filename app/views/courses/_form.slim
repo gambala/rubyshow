@@ -22,5 +22,10 @@
     = f.label :description, 'Описание'
     = f.text_area :description, rows: 5, class: 'form-control'
     = form_field_error :description, @course
-  .form-group
-    = f.submit 'Сохранить', class: 'btn btn-default'
+  .row
+    .col-md-6
+      .form-group
+        = recaptcha_tags
+    .col-md-6
+      .form-group
+        = f.submit 'Сохранить', class: 'btn btn-default'

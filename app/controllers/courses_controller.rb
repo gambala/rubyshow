@@ -35,7 +35,7 @@ class CoursesController < ApplicationController
 
     authorize @course, :create?
 
-    if @course.save
+    if verify_recaptcha(model: @course) && @course.save
       redirect_to root_path, notice: 'Спасибо за предложенный курс!'
     else
       render :new
