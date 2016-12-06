@@ -25,4 +25,8 @@ class CommentPolicy < ApplicationPolicy
         .pluck(:course_id)
         .include?(record.course.id)
   end
+
+  def rate?
+    user? && record.opinion?
+  end
 end

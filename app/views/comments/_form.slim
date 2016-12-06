@@ -3,22 +3,27 @@
 - elsif policy(comment).create?
   = form_for [course, comment] do |f|
     .form-group
+      = f.hidden_field :kind, value: comment.kind
       = f.label :content, comment_label(comment)
-      = f.text_area :content, rows: 3, class: 'form-control'
+      = f.text_area :content,
+                    rows: 3,
+                    class: 'form-control new-comment',
+                    id: text_area_id(comment)
     .row
       .col-md-6
         .form-group
           = f.check_box :graduate
           = f.label :graduate, 'Я закончил этот курс!'
-      .col-md-6.rate-course
-        .form-group
-          ' Оценка курса:
-          - (1..5).each do |value|
-            label>
-              => value
-              => f.radio_button(:rating, value)
+      - if policy(comment).rate?
+        .col-md-6.rate-course
+          .form-group
+            ' Оценка курса:
+            - (1..5).each do |value|
+              label>
+                => value
+                => f.radio_button(:rating, value)
     .form-group
-      = f.submit 'Отправить', class: 'btn btn-default', id: 'submit_comment',
+      = f.submit 'Отправить', class: 'btn btn-default', id: submit_button_id(comment),
                  disabled: true
 - else
   p

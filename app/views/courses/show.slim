@@ -65,8 +65,6 @@ section(itemscope itemtype='http://schema.org/EducationEvent')
                 = render partial: 'comments/comment',
                   locals: { course: @course },
                   collection: @opinions
-              - else
-                | Пока нет ни одного отзыва
               .well
                 = render partial: 'comments/form',
                   locals: { course: @course, comment: @opinion }
@@ -75,8 +73,6 @@ section(itemscope itemtype='http://schema.org/EducationEvent')
                 = render partial: 'comments/comment',
                   locals: { course: @course },
                   collection: @comments
-              - else
-                | Пока нет ни одного комментария
               .well
                 = render partial: 'comments/form',
                   locals: { course: @course, comment: @comment }
@@ -85,8 +81,6 @@ section(itemscope itemtype='http://schema.org/EducationEvent')
                 = render partial: 'comments/comment',
                   locals: { course: @course },
                   collection: @questions
-              - else
-                | Пока нет ни одного вопроса
               .well
                 = render partial: 'comments/form',
                   locals: { course: @course, comment: @question }
