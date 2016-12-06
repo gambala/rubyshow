@@ -17,7 +17,8 @@
         ' отзывов к ним.
 
     .col-xs-12.col-sm-6.col-md-6.col-lg-6.h4
-      p Вы можете задать интересующие вас вопросы напрямую авторам #{@courses_number} курсов из #{@courses_number}
+      p
+        | Вы можете задать интересующие вас вопросы напрямую авторам #{@courses_number} курсов из #{@courses_number}
 
   .row
     .col-xs-12.col-sm-6.col-md-6.col-lg-6
@@ -31,7 +32,7 @@
       = render 'courses/list', courses: @top_5_paid
 
   .row
-    = link_to 'Все курсы', courses_path, class: 'btn btn-default col-sm-12 col-md-12 col-xs-12 col-lg-12'
+    = link_to 'Посмотреть все курсы', courses_path, class: 'all-courses btn btn-default col-sm-12 col-md-12 col-xs-12 col-lg-12'
 
   .row
     .col-xs-12.col-sm-6.col-md-6.col-lg-6.text-center.h4
