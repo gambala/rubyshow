@@ -20,7 +20,8 @@ class CoursesController < ApplicationController
     @comments = @course.comments.comment
     @opinions = @course.comments.opinion
     @questions = @course.comments.question
-    @comment = @course.comments.build
+    @comment = @course.comments.build(kind: Comment.kinds[:comment])
+    @opinion = @course.comments.build(kind: Comment.kinds[:opinion])
     @question = @course.comments.build(kind: Comment.kinds[:question])
     @rating = @course.rating
   end

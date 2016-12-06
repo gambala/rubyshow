@@ -1,6 +1,6 @@
-- if signed_in? && current_user.comments.pluck(:course_id).include?(course.id)
+- if signed_in? && policy(comment).comment?
   p Вы уже оставляли комментарий к этому курсу.
-- elsif signed_in?
+- elsif policy(comment).create?
   = form_for [course, comment] do |f|
     .form-group
       = f.label :content, comment_label(comment)
