@@ -6,6 +6,7 @@ describe User, type: :model do
     it { should validate_presence_of :email }
     it { should validate_presence_of :password }
     it { should validate_uniqueness_of :email }
+    it { should have_many(:comments).dependent(:destroy) }
   end
 
   describe 'attribute reader tests' do
@@ -49,7 +50,7 @@ describe User, type: :model do
   describe 'relation tests' do
     it { should have_many :comments }
   end
-  
+
   describe 'method tests' do
     it 'admin if role is admin' do
       user = User.new

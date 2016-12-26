@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:github],
          authentication_keys: [:login]
 
-  has_many :comments
+  has_many :comments, dependent: :destroy
   validates :username, presence: true
 
   def admin?
