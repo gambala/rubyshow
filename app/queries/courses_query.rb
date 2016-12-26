@@ -26,7 +26,7 @@ class CoursesQuery < ApplicationQuery
   end
 
   def sort_by_rating
-    includes(:comments).sort_by do |course|
+    sort_by do |course|
       [course.rating, course.comments.count]
     end.reverse
   end

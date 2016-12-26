@@ -23,8 +23,8 @@ class CommentsController < ApplicationController
         end
         format.json { render :show, status: :created, location: @comment }
       else
-        format.html { redirect_to :back, notice: @comment.errors }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+        format.html { redirect_to :back, notice: @comment.errors.full_messages }
+        format.json { render json: @comment.errors.full_messages, status: :unprocessable_entity }
       end
     end
   end
@@ -38,7 +38,7 @@ class CommentsController < ApplicationController
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+        format.json { render json: @comment.errors.full_messages, status: :unprocessable_entity }
       end
     end
   end
@@ -65,6 +65,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:content, :rating, :graduate)
+    params.require(:comment).permit(:content, :rating, :graduate, :kind)
   end
 end

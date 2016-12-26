@@ -1,4 +1,6 @@
-section.section-padded id='comments'
+section.section-padded#comments
   .container
+    h1 Последние отзывы о курсах
+
     = render @comments
     .text-center = will_paginate @comments, renderer: BootstrapPagination::Rails

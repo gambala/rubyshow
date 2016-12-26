@@ -1,0 +1,52 @@
+#home-bg
+  .container
+    .col-xs-12.col-sm-12.col-md-12.col-lg-10.col-lg-offset-1
+      h1 RubyCourses.ru
+      h3 Здесь вы найдете объемный список курсов, на которых можно обучиться Ruby и Ruby on Rails с отзывами выпускников этих курсов.
+      h3 Это поможет вам выбрать подходящий курс и позволит сэкономить время.
+      - # h3 Также, вскоре вы сможете задать вопросы авторам курсов.
+
+.container
+  .row
+    .col-xs-12.col-sm-6.col-md-6.col-lg-6.text-center.h4
+      p
+        ' Сейчас у нас есть
+        span.text-danger => @courses_number
+        ' курсов и
+        span.text-danger => @comments_number
+        ' отзывов к ним.
+
+    .col-xs-12.col-sm-6.col-md-6.col-lg-6.h4
+      p
+        | Вы можете задать интересующие вас вопросы напрямую авторам #{@courses_number} курсов из #{@courses_number}
+
+  .row
+    .col-xs-12.col-sm-6.col-md-6.col-lg-6
+      h2 Пять лучших бесплатных курсов
+
+      = render 'courses/list', courses: @top_5_free
+
+    .col-xs-12.col-sm-6.col-md-6.col-lg-6
+      h2 Пять лучших платных курсов
+
+      = render 'courses/list', courses: @top_5_paid
+
+  .row
+    = link_to 'Посмотреть все курсы', courses_path, class: 'all-courses btn btn-default col-sm-12 col-md-12 col-xs-12 col-lg-12'
+
+  .row
+    .col-xs-12.col-sm-6.col-md-6.col-lg-6.text-center.h4
+      h2 Случайный курс:
+      h3 = link_to @random_course.title, @random_course
+      small #{@random_course.comments.count} отзывов
+      p = @random_course.description
+
+    .col-xs-12.col-sm-6.col-md-6.col-lg-6.text-center.h4
+      h2 Случайный отзыв:
+      h3 = link_to @random_comment.user.username, @random_comment.user
+      small
+        ' Курс:
+        = link_to @random_comment.course.title, @random_comment.course
+      br
+      small Оценка: #{@random_comment.rating}/5
+      p = @random_comment.content

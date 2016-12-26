@@ -31,7 +31,7 @@ section.section-padded
                                  { class: 'form-control' }
                   .form-group
                     .text-right
-                      = link_to 'Показать все курсы', root_path, class: 'btn btn-link', id: 'reset_filter'
+                      = link_to 'Показать все курсы', courses_path, class: 'btn btn-link', id: 'reset_filter'
                       = button_tag 'Найти', class: 'btn btn-primary', id: 'apply_filter'
         - if policy(Course.new).approve?
           section
@@ -51,31 +51,8 @@ section.section-padded
                 dt Найдено:
                 dd = courses_query_presenter.response_title
         section.section-with-margin
-          - queried_courses.each do |course|
-            .media.media-stack-overflow(itemscope itemtype='http://schema.org/EducationEvent')
-              .media-left
-                - if course.rated?
-                  = link_to course_path(course),
-                            class: 'media-object',
-                            title: 'Средний рейтинг курса',
-                            data: { toggle: 'tooltip', placement: 'right' } do
-                    span(itemprop='aggregateRating') = course.rating
-                - else
-                  = link_to course_path(course),
-                            class: 'media-object',
-                            title: 'Пока без оценок',
-                            data: { toggle: 'tooltip', placement: 'right' } do
-              .media-body
-                .media-heading(itemprop='name')
-                  = link_to course.title, course, class: 'text-info'
-                p
-                  span = language_flag(course.language)
-                  span = course_status(course)
-                  = link_to course_path(course, anchor: 'comments'),
-                            title: 'Отзывов о курсе',
-                            data: { toggle: 'tooltip', placement: 'right' } do
-                      span.fa.fa-comment-o
-                      span = course.comments.pluck(:graduate).count
+          = render 'courses/list', courses: queried_courses
+
         .well
           p
             ' Знаете о курсе, которого нет в списке?

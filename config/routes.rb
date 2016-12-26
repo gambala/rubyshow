@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
 
   get '/opinions', to: 'comments#index', as: :comments
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
 
   get '/free', to: 'courses#free'
   get '/paid', to: 'courses#paid'
+  get 'pages/home'
 
-  root 'courses#index'
+  root 'pages#home'
 end

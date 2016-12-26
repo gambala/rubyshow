@@ -1,9 +1,17 @@
 ru:
   activerecord:
+    attributes:
+      comment:
+        graduate: 'Поле "Я закончил этот курс!"'
     errors:
       messages:
         blank: 'поле нужно заполнить'
         empty: 'поле нужно заполнить'
+      models:
+        comment:
+          attributes:
+            graduate:
+              accepted: 'должно быть отмечено, если вы хотите оставить отзыв.'
   words:
     course:
       one: 'курс'

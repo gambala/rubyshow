@@ -13,7 +13,7 @@ describe 'Filtering feature' do
     before do
       create_list :free_course, 10
       create_list :paid_course, 10
-      apply_filter(root_path, 'Free')
+      apply_filter(courses_path, 'Free')
     end
 
     it 'shows courses that match filtering constraint' do
