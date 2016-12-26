@@ -59,4 +59,8 @@ document.addEventListener("turbolinks:load", function() {
       $('#submit_question').removeAttr('disabled');
     }
   });
+
+  $('li.disabled').click(function(event) {
+    event.preventDefault;
+  });
 });

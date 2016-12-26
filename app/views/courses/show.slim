@@ -56,8 +56,9 @@ section(itemscope itemtype='http://schema.org/EducationEvent')
               a href='#opinions' role='tab' data-toggle='tab' Отзывы
             li role='presentation'
               a href='#comments' role='tab' data-toggle='tab' Комментарии
-            li role='presentation'
-              a href='#questions' role='tab' data-toggle='tab' Вопросы и ответы
+            li.disabled role='presentation'
+              a href='#' Вопросы и ответы
+              / a href='#questions' role='tab' data-toggle='tab' Вопросы и ответы
 
           .tab-content
             section.tab-pane.active.section-with-margin#opinions role='tabpanel'
@@ -76,11 +77,11 @@ section(itemscope itemtype='http://schema.org/EducationEvent')
               .well
                 = render partial: 'comments/form',
                   locals: { course: @course, comment: @comment }
-            section.tab-pane.section-with-margin#questions role='tabpanel'
-              - if @questions.any?
-                = render partial: 'comments/comment',
-                  locals: { course: @course },
-                  collection: @questions
+            / section.tab-pane.section-with-margin#questions role='tabpanel'
+            /   - if @questions.any?
+            /     = render partial: 'comments/comment',
+            /       locals: { course: @course },
+            /       collection: @questions
               .well
                 = render partial: 'comments/form',
                   locals: { course: @course, comment: @question }
