@@ -1,6 +1,10 @@
 FactoryGirl.define do
   factory :comment do
-    user_id 1
     content "MyText"
+
+    factory :opinion_comment do
+      kind 2
+      graduate true
+    end
   end
 end
