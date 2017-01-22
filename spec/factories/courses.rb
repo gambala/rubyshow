@@ -1,29 +1,27 @@
 FactoryGirl.define do
-  sequence :free_title do |n|
-    "Free_Course_#{n}"
-  end
-
-  sequence :paid_title do |n|
-    "Paid_Course_#{n}"
-  end
-
-end
-
-FactoryGirl.define do
   factory :course do
     description "Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, error."
     language "English"
     url 'http://example.com'
+    sequence(:title) { |n| "Free_Course_#{n}" }
 
-    factory :free_course do
-      title { generate(:free_title) }
+    factory :unapproved_course do
+      sequence(:title) { |n| "Unapproved_Free_Course_#{n}" }
+      url 'https://example.com/unapproved_course'
+      description 'some description'
     end
 
-    factory :paid_course do
-      title { generate(:paid_title) }
-      paid true
-    end
+    factory :approved_course do
+      factory :free_course do
+        sequence(:title) { |n| "Approved_Free_Course_#{n}" }
+      end
 
-    after(:create) { |c| c.approve! }
+      factory :paid_course do
+        sequence(:title) { |n| "Paid_Course_#{n}" }
+        paid true
+      end
+      
+      after(:create) { |c| c.approve! }
+    end
   end
 end
