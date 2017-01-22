@@ -28,6 +28,8 @@ gem 'uglifier'
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
 
+gem 'capistrano-rails-console', require: false
+
 group :test do
   gem 'capybara', '~> 2.4.0'
   gem 'capybara-webkit'
