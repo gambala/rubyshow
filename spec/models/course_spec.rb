@@ -10,7 +10,7 @@ describe Course, type: :model do
   end
 
   describe 'attribute reader tests' do
-    let(:course) { 
+    let(:course) {
       FactoryGirl.create(
         :course,
         title: 'Simple title',
@@ -58,7 +58,7 @@ describe Course, type: :model do
       @approved_paid_course = FactoryGirl.create(:paid_course)
       @unapproved_course = FactoryGirl.create(:unapproved_course)
     end
-    
+
     it 'scope approved' do
       expect(Course.approved.count).to eq(2)
       expect(Course.approved).to include(@approved_free_course)
@@ -74,7 +74,7 @@ describe Course, type: :model do
       expect(Course.free.count).to eq(1)
       expect(Course.free).to include(@approved_free_course)
     end
-    
+
     it 'scope paid' do
       expect(Course.paid.count).to eq(1)
       expect(Course.paid).to include(@approved_paid_course)
@@ -84,10 +84,10 @@ describe Course, type: :model do
   describe 'method tests' do
     before(:all) do
       @course = FactoryGirl.create(:free_course)
-      FactoryGirl.create( :opinion_comment, course: @course, rating: 2, user: FactoryGirl.create(:user) )
-      FactoryGirl.create( :opinion_comment, course: @course, rating: 3, user: FactoryGirl.create(:user) )
-      FactoryGirl.create( :opinion_comment, course: @course, rating: 4, user: FactoryGirl.create(:user) )
-      FactoryGirl.create( :opinion_comment, course: @course, rating: 3, user: FactoryGirl.create(:user) )
+      FactoryGirl.create(:opinion_comment, course: @course, rating: 2, user: FactoryGirl.create(:user))
+      FactoryGirl.create(:opinion_comment, course: @course, rating: 3, user: FactoryGirl.create(:user))
+      FactoryGirl.create(:opinion_comment, course: @course, rating: 4, user: FactoryGirl.create(:user))
+      FactoryGirl.create(:opinion_comment, course: @course, rating: 3, user: FactoryGirl.create(:user))
     end
 
     it 'approve!' do
@@ -118,7 +118,7 @@ describe Course, type: :model do
     it 'rating with comments' do
       expect(@course.rating).to eq(3)
     end
-    
+
     it 'rating without comments' do
       course = FactoryGirl.create(:free_course)
       expect(course.rating).to eq(0)
@@ -126,7 +126,7 @@ describe Course, type: :model do
 
     describe 'private methods' do
       it 'scores' do
-        expect(@course.send(:scores)).to eq([3,4,3,2])
+        expect(@course.send(:scores)).to eq([2,3,4,3])
       end
     end
   end
