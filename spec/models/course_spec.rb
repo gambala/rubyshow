@@ -10,43 +10,40 @@ describe Course, type: :model do
   end
 
   describe 'attribute reader tests' do
-    before(:all) do
-      @course = Course.create!(
+    let(:course) { 
+      FactoryGirl.create(
+        :course,
         title: 'Simple title',
         description: 'Some descriptin for course',
         language: 'English',
         paid: true,
-        url: 'https://example.com/best-rails-course/'
+        url: 'https://example.com/best-rails-course/',
+        approved: true
       )
-      @course.approve!
-    end
+    }
 
     it 'has attribute title' do
-      expect(@course.title).to eq('Simple title')
+      expect(course.title).to eq('Simple title')
     end
 
     it 'has attribute description' do
-      expect(@course.description).to eq('Some descriptin for course')
+      expect(course.description).to eq('Some descriptin for course')
     end
 
     it 'has attribute language' do
-      expect(@course.language).to eq('English')
+      expect(course.language).to eq('English')
     end
 
     it 'has attribute paid' do
-      expect(@course.paid).to eq(true)
+      expect(course.paid).to eq(true)
     end
 
     it 'has attribute url' do
-      expect(@course.url).to eq('https://example.com/best-rails-course/')
+      expect(course.url).to eq('https://example.com/best-rails-course/')
     end
 
     it 'has attribute approve' do
-      expect(@course.approved).to eq(true)
-    end
-
-    after(:all) do
-      @course.destroy
+      expect(course.approved).to eq(true)
     end
   end
 

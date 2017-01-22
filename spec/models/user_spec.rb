@@ -9,8 +9,8 @@ describe User, type: :model do
   end
 
   describe 'attribute reader tests' do
-    before(:all) do
-      @user = FactoryGirl.create(
+    let(:user) {
+      FactoryGirl.create(
         :user,
         email: 'admin@example.com',
         role: 'admin',
@@ -19,30 +19,30 @@ describe User, type: :model do
         username: 'ivan ivanov',
         github_name: 'ivan_ivanov'
       )
-    end
+    }
 
     it 'has attribute email' do
-      expect(@user.email).to eq('admin@example.com')
+      expect(user.email).to eq('admin@example.com')
     end
 
     it 'has attribute role' do
-      expect(@user.role).to eq('admin')
+      expect(user.role).to eq('admin')
     end
 
     it 'has attribute provider' do
-      expect(@user.provider).to eq('any provider')
+      expect(user.provider).to eq('any provider')
     end
 
     it 'has attribute uid' do
-      expect(@user.uid).to eq('1234567890')
+      expect(user.uid).to eq('1234567890')
     end
 
     it 'has attribute username' do
-      expect(@user.username).to eq('ivan ivanov')
+      expect(user.username).to eq('ivan ivanov')
     end
 
     it 'has attribute github_name' do
-      expect(@user.github_name).to eq('ivan_ivanov')
+      expect(user.github_name).to eq('ivan_ivanov')
     end
   end
 

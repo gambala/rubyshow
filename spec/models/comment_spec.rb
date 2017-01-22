@@ -13,27 +13,27 @@ describe Comment, type: :model do
   end
 
   describe 'attribute reader tests' do
-    before(:all) do
-      @comment = FactoryGirl.create(
+    let(:comment) {
+      FactoryGirl.create(
         :comment,
         content: "just comment",
         kind: 2,
         graduate: true,
         rating: 3,
       )
-    end
+    }
 
     it 'has attribute content' do
-      expect(@comment.content).to eq("just comment")
+      expect(comment.content).to eq("just comment")
     end
     it 'has attribute kind' do
-      expect(@comment.kind).to eq('opinion')
+      expect(comment.kind).to eq('opinion')
     end
     it 'has attribute graduate' do
-      expect(@comment.graduate).to be_truthy
+      expect(comment.graduate).to be_truthy
     end
     it 'has attribute rating' do
-      expect(@comment.rating).to eq(3)
+      expect(comment.rating).to eq(3)
     end
   end
 
