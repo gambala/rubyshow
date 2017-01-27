@@ -1,134 +1,102 @@
 require 'rails_helper'
 
 RSpec.describe CoursesController, type: :controller do
+  let(:user) { create :admin }
+  let(:course) { create :course }
 
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attrs) { attributes_for(:course) }
+  let(:invalid_attrs) { attributes_for(:course, language: '') }
+  let(:update_attrs) { attributes_for(:course, language: 'new language') }
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  before(:each) { sign_in user }
 
-  let(:valid_session) { {} }
+  describe 'GET #index' do
+    before(:each) { get :index }
 
-  describe "GET #index" do
-    it "assigns all courses as @courses" do
-      course = Course.create! valid_attributes
-      get :index, {}, valid_session
-      expect(assigns(:courses)).to eq([course])
-    end
+    it { is_expected.to render_template :index }
   end
 
-  describe "GET #show" do
-    it "assigns the requested course as @course" do
-      course = Course.create! valid_attributes
-      get :show, {:id => course.to_param}, valid_session
-      expect(assigns(:course)).to eq(course)
-    end
+  describe 'GET #new' do
+    before(:each) { get :new }
+
+    it { is_expected.to render_template :new }
   end
 
-  describe "GET #new" do
-    it "assigns a new course as @course" do
-      get :new, {}, valid_session
-      expect(assigns(:course)).to be_a_new(Course)
-    end
+  describe 'GET #show' do
+    before(:each) { get :show, id: course.id }
+
+    it { is_expected.to render_template :show }
   end
 
-  describe "GET #edit" do
-    it "assigns the requested course as @course" do
-      course = Course.create! valid_attributes
-      get :edit, {:id => course.to_param}, valid_session
-      expect(assigns(:course)).to eq(course)
-    end
+  describe 'GET #edit' do
+    before(:each) { get :edit, id: course.id }
+
+    it { is_expected.to render_template :edit }
   end
 
-  describe "POST #create" do
-    context "with valid params" do
-      it "creates a new Course" do
-        expect {
-          post :create, {:course => valid_attributes}, valid_session
+  describe 'POST #create' do
+    context 'with valid params' do
+      it "creates a new course" do
+        expect{
+          post :create, course: valid_attrs
         }.to change(Course, :count).by(1)
       end
 
-      it "assigns a newly created course as @course" do
-        post :create, {:course => valid_attributes}, valid_session
-        expect(assigns(:course)).to be_a(Course)
-        expect(assigns(:course)).to be_persisted
-      end
+      it "redirects to the root_path" do
+        post :create, course: valid_attrs
 
-      it "redirects to the created course" do
-        post :create, {:course => valid_attributes}, valid_session
-        expect(response).to redirect_to(Course.last)
+        expect(response).to redirect_to root_path
       end
     end
 
-    context "with invalid params" do
-      it "assigns a newly created but unsaved course as @course" do
-        post :create, {:course => invalid_attributes}, valid_session
-        expect(assigns(:course)).to be_a_new(Course)
+    context 'with invalid params' do
+      it "does not save the new course" do
+        expect{
+          post :create, course: invalid_attrs
+        }.to_not change(Comment,:count)
       end
 
-      it "re-renders the 'new' template" do
-        post :create, {:course => invalid_attributes}, valid_session
-        expect(response).to render_template("new")
+      it "redirects back" do
+        post :create, course: invalid_attrs
+
+        expect(response).to render_template :new
       end
     end
   end
 
-  describe "PUT #update" do
-    context "with valid params" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
+  describe 'PUT #update' do
+    context 'with valid params' do
+      before(:each) { put :update, id: course.id, course: update_attrs }
 
-      it "updates the requested course" do
-        course = Course.create! valid_attributes
-        put :update, {:id => course.to_param, :course => new_attributes}, valid_session
+      it "changes course's attributes" do
         course.reload
-        skip("Add assertions for updated state")
+        expect(course.language).to eq(update_attrs[:language])
       end
 
-      it "assigns the requested course as @course" do
-        course = Course.create! valid_attributes
-        put :update, {:id => course.to_param, :course => valid_attributes}, valid_session
-        expect(assigns(:course)).to eq(course)
-      end
-
-      it "redirects to the course" do
-        course = Course.create! valid_attributes
-        put :update, {:id => course.to_param, :course => valid_attributes}, valid_session
-        expect(response).to redirect_to(course)
-      end
+      it { is_expected.to redirect_to course }
     end
 
-    context "with invalid params" do
-      it "assigns the course as @course" do
-        course = Course.create! valid_attributes
-        put :update, {:id => course.to_param, :course => invalid_attributes}, valid_session
-        expect(assigns(:course)).to eq(course)
+    context 'with invalid params' do
+      before(:each) { put :update, id: course.id, course: invalid_attrs }
+
+      it "does not change course's attributes" do
+        course.reload
+        expect(course.language).to_not eq(invalid_attrs[:language])
       end
 
-      it "re-renders the 'edit' template" do
-        course = Course.create! valid_attributes
-        put :update, {:id => course.to_param, :course => invalid_attributes}, valid_session
-        expect(response).to render_template("edit")
-      end
+      it { is_expected.to render_template :edit }
     end
   end
 
-  describe "DELETE #destroy" do
-    it "destroys the requested course" do
-      course = Course.create! valid_attributes
-      expect {
-        delete :destroy, {:id => course.to_param}, valid_session
-      }.to change(Course, :count).by(-1)
-    end
+  describe 'PUT #approve' do
+    before(:each) { put :approve, id: course.id }
 
-    it "redirects to the courses list" do
-      course = Course.create! valid_attributes
-      delete :destroy, {:id => course.to_param}, valid_session
-      expect(response).to redirect_to(courses_url)
-    end
+    it { is_expected.to redirect_to course }
+  end
+
+  describe 'DELETE #destroy' do
+    before(:each) { delete :destroy, id: course.id }
+
+    it { is_expected.to redirect_to root_path}
   end
 end
