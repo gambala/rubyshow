@@ -42,7 +42,7 @@ RSpec.describe CommentsController, type: :controller do
       it "does not save the new comment" do
         expect{
           post :create, course_id: course.id, comment: invalid_attrs
-        }.to_not change(Comment,:count)
+        }.to_not change(Comment, :count)
       end
 
       it "redirects back" do
