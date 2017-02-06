@@ -42,7 +42,7 @@
           small #{@random_course.try(:comments).try(:count) || 0} отзывов
           p = @random_course.description
         - else
-          h3 К сожалению нет курсов
+          h3 К сожалению, курсов пока нет
     
     .col-xs-12.col-sm-6.col-md-6.col-lg-6.text-center.h4
       h2 Случайный отзыв:
@@ -56,4 +56,4 @@
         small Оценка: #{@random_comment.rating}/5
         p = @random_comment.content
       - else
-        h3 К сожалению нет отзывов
+        h3 К сожалению, отзывов пока нет

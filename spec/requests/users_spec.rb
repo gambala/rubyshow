@@ -1,19 +1,16 @@
 require 'rails_helper'
 
-RSpec.describe "Users", type: :request do
+RSpec.describe 'Users', type: :request do
   
   describe 'user without github_name and comments' do
-    let(:user){ FactoryGirl.create(
-      :user,
-      username: 'petr ivanov'
-    )}
+    let(:user){ FactoryGirl.create(:user, username: 'petr ivanov') }
 
     it 'render only username' do
       get "/user/#{user.id}"
-      expect(response.code).to eq("200")
-      expect(response.body).to include("petr ivanov")
-      expect(response.body).not_to include("Отзывы пользователя")
-      expect(response.body).not_to include("github.com/")
+      expect(response.code).to eq('200')
+      expect(response.body).to include('petr ivanov')
+      expect(response.body).not_to include('Отзывы пользователя')
+      expect(response.body).not_to include('github.com/')
     end
   end
 
@@ -34,10 +31,10 @@ RSpec.describe "Users", type: :request do
       )
 
       get "/user/#{user.id}"
-      expect(response.code).to eq("200")
-      expect(response.body).to include("petr ivanov")
+      expect(response.code).to eq('200')
+      expect(response.body).to include('petr ivanov')
       expect(response.body).to include("github.com/#{user.github_name}")
-      expect(response.body).to include("Отзывы пользователя")
+      expect(response.body).to include('Отзывы пользователя')
     end
   end    
 end
