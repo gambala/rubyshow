@@ -39,7 +39,7 @@
       h2 Случайный курс:
         - if @random_course.present?
           h3 = link_to @random_course.title, @random_course
-          small #{@random_course.try(:comments).try(:count) || 0} отзывов
+          small #{course_comment_count(@random_course)} отзывов
           p = @random_course.description
         - else
           h3 К сожалению, курсов пока нет

@@ -3,43 +3,50 @@ require 'rails_helper'
 RSpec.describe 'Courses', type: :request do
   describe 'listring courses' do
     before(:all) do
-      FactoryGirl.create(:course,
+      FactoryGirl.create(
+        :course,
         title: 'ruby-course for juniors',
         language: 'Русский',
         approved: true,
         paid: false
       )
-      FactoryGirl.create(:course,
+      FactoryGirl.create(
+        :course,
         title: 'ruby-course for middle developers',
         language: 'Русский',
         approved: true,
         paid: true
       )
-      FactoryGirl.create(:course,
+      FactoryGirl.create(
+        :course,
         title: 'ruby-course for middle seniors',
         language: 'Русский',
         approved: true,
         paid: true
       )
-      FactoryGirl.create(:course,
+      FactoryGirl.create(
+        :course,
         title: 'ruby for zombie 1',
         language: 'English',
         approved: true,
         paid: false
       )
-      FactoryGirl.create(:course,
+      FactoryGirl.create(
+        :course,
         title: 'ruby for zombie 2',
         language: 'English',
         approved: true,
         paid: true
       )
-      FactoryGirl.create(:course,
+      FactoryGirl.create(
+        :course,
         title: 'RoR for one week',
         language: 'English',
         approved: true,
         paid: true
       )
-      FactoryGirl.create(:course,
+      FactoryGirl.create(
+        :course,
         title: 'unapproved course',
         language: 'English',
         approved: false
@@ -97,59 +104,63 @@ RSpec.describe 'Courses', type: :request do
       end
     end
   end
-
   describe 'show course' do
-    before(:all){
-      @course = FactoryGirl.create(:course, 
+    let(:course) do
+      FactoryGirl.create(
+        :course,
         title: 'ruby-course for juniors part two',
         url: 'http://www.some_site.org/courses/ruby_course_for_juniors',
         language: 'Русский',
         approved: true,
         paid: false
       )
-
-      FactoryGirl.create(:comment,
+    end
+    before(:each) do
+      FactoryGirl.create(
+        :comment,
         kind: 2,
         graduate: true,
         rating: 3,
         content: 'good course',
-        course_id: @course.id
+        course_id: course.id
       )
-      FactoryGirl.create(:comment,
+      FactoryGirl.create(
+        :comment,
         kind: 2,
         graduate: true,
         rating: 5,
         content: 'perfect course, I need one more',
-        course_id: @course.id
+        course_id: course.id
       )
-      FactoryGirl.create(:comment,
+      FactoryGirl.create(
+        :comment,
         kind: 2,
         graduate: true,
         content: 'i really like it',
         rating: 4,
-        course_id: @course.id
+        course_id: course.id
       )
-    }
+    end
 
     it 'contain course title, url, description and language' do
-      get "/courses/#{@course.id}"
-      
+      get "/courses/#{course.id}"
+
       expect(response.code).to eq('200')
-      expect(response.body).to include(@course.title)
-      expect(response.body).to include(@course.url)
-      expect(response.body).to include(@course.description)
-      expect(response.body).to include("<dd itemprop=\"inLanguage\">#{@course.language}</dd>")
+      expect(response.body).to include(course.title)
+      expect(response.body).to include(course.url)
+      expect(response.body).to include(course.description)
+      expect(response.body).to include("<dd itemprop=\"inLanguage\">#{course.language}</dd>")
     end
 
     it 'show graduates count' do
-      get "/courses/#{@course.id}"
+      get "/courses/#{course.id}"
 
       expect(response.code).to eq('200')
       expect(response.body).to include('<dt>Количество учеников:</dt><dd>3</dd>')
     end
-    
+
     it 'show rating' do
-      get "/courses/#{@course.id}"
+      get "/courses/#{course.id}"
 
       expect(response.code).to eq('200')
       expect(response.body).to include('<dt>Средняя оценка:</dt><dd itemprop="aggregateRating">4.0</dd>')
@@ -157,8 +168,8 @@ RSpec.describe 'Courses', type: :request do
   end
 
   describe 'create course' do
-    let(:user){ FactoryGirl.create(:user, role: 'admin' ) }
-    before(:each){ sign_in user }
+    let(:user) { FactoryGirl.create(:user, role: 'admin') }
+    before(:each) { sign_in user }
 
     it 'create course by admin with valid params' do
       post '/courses', course: {
@@ -173,7 +184,8 @@ RSpec.describe 'Courses', type: :request do
       follow_redirect!
 
       expect(response.code).to eq('200')
-      expect( Course.find_by(title: 'new course about ruby') ).not_to eq(nil)
+      course = Course.find_by(title: 'new course about ruby')
+      expect(course).not_to eq(nil)
     end
 
     it 'doe not create course by admin with invalid params' do
@@ -190,7 +202,8 @@ RSpec.describe 'Courses', type: :request do
   describe 'update course' do
     it 'update course by admin with valid params' do
       user = FactoryGirl.create(:user, role: 'admin')
-      course = FactoryGirl.create(:course,
+      course = FactoryGirl.create(
+        :course,
         title: 'ruby course',
         description: 'just one course',
         language: 'English',
@@ -204,7 +217,7 @@ RSpec.describe 'Courses', type: :request do
         description: 'описание курса',
         language: 'Русский',
         url: 'http://www.ruby-course.ru/first',
-        paid: 'true' 
+        paid: 'true'
       }
 
       expect(response).to redirect_to(course_path(course))
@@ -222,13 +235,15 @@ RSpec.describe 'Courses', type: :request do
     it 'does not update course by guest' do
       course = FactoryGirl.create(:course, title: 'ruby course')
 
-      patch "/courses/#{course.id}", course: {title: 'Новый супер курс 2'}
+      patch "/courses/#{course.id}", course: { title: 'Новый супер курс 2' }
 
       expect(response).to redirect_to(root_path)
       follow_redirect!
       expect(response.code).to eq('200')
-      expect( Course.find_by(title: 'Новый супер курс 2') ).to eq(nil)
-      expect( Course.find_by(title: 'ruby course') ).not_to eq(nil)
+      new_course = Course.find_by(title: 'Новый супер курс 2')
+      ruby_course = Course.find_by(title: 'ruby course')
+      expect(new_course).to eq(nil)
+      expect(ruby_course).not_to eq(nil)
     end
   end
 
@@ -239,20 +254,20 @@ RSpec.describe 'Courses', type: :request do
       sign_in user
 
       delete "/courses/#{course.id}"
-      expect( Course.find_by(title: 'ruby course v2') ).to eq(nil)
+      expect(Course.find_by(title: 'ruby course v2')).to eq(nil)
     end
-    
+
     it 'does not destroy course by guest' do
       course = FactoryGirl.create(:course, title: 'ruby course v3')
       delete "/courses/#{course.id}"
 
       expect(response).to redirect_to(root_path)
-      expect( Course.find_by(title: 'ruby course v3') ).not_to eq(nil)
+      expect(Course.find_by(title: 'ruby course v3')).not_to eq(nil)
     end
   end
 
   describe 'approve course' do
-    let(:user){ FactoryGirl.create(:user, role: 'admin') }
+    let(:user) { FactoryGirl.create(:user, role: 'admin') }
 
     it 'approved course by admin' do
       course = FactoryGirl.create(:course, approved: false)
@@ -263,7 +278,8 @@ RSpec.describe 'Courses', type: :request do
       expect(response).to redirect_to(course_path(course))
       follow_redirect!
       expect(response.code).to eq('200')
-      expect(Course.find(course.id).approved).to eq(true)
+      course = Course.find(course.id)
+      expect(course.approved).to eq(true)
     end
 
     it 'does not approve approved course by admin' do

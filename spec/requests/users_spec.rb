@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
-  
   describe 'user without github_name and comments' do
-    let(:user){ FactoryGirl.create(:user, username: 'petr ivanov') }
+    let(:user) { FactoryGirl.create(:user, username: 'petr ivanov') }
 
     it 'render only username' do
       get "/user/#{user.id}"
@@ -15,12 +14,14 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'user with github_name and comments' do
-    let(:user){ FactoryGirl.create(
-      :user,
-      username: 'petr ivanov',
-      github_name: 'petr_hacker'
-    )}
-    
+    let(:user) do
+      FactoryGirl.create(
+        :user,
+        username: 'petr ivanov',
+        github_name: 'petr_hacker'
+      )
+    end
+
     it 'render username, github_name and comments' do
       course = FactoryGirl.create(:course)
       FactoryGirl.create(
@@ -36,5 +37,5 @@ RSpec.describe 'Users', type: :request do
       expect(response.body).to include("github.com/#{user.github_name}")
       expect(response.body).to include('Отзывы пользователя')
     end
-  end    
+  end
 end
