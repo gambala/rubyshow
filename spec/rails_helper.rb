@@ -2,6 +2,8 @@ ENV['RAILS_ENV'] ||= 'test'
 require 'spec_helper'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
+require 'devise'
+require_relative "support/devise_request_spec_helpers.rb"
 require 'factory_girl_rails'
 require 'shoulda/matchers'
 
@@ -21,6 +23,7 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include Capybara::DSL
   config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include DeviseRequestSpecHelpers, type: :request
   config.include Rails.application.routes.url_helpers
 
   config.before(:all) { FactoryGirl.reload }

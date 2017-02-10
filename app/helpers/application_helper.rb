@@ -41,6 +41,10 @@ module ApplicationHelper
     course.paid? ? 'Платный' : 'Бесплатный'
   end
 
+  def course_comment_count(course)
+    course&.comments&.count || 0
+  end
+
   def present(object, klass = nil)
     klass ||= "#{object.class}Presenter".constantize
     presenter = klass.new(object, self)

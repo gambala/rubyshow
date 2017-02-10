@@ -37,16 +37,23 @@
   .row
     .col-xs-12.col-sm-6.col-md-6.col-lg-6.text-center.h4
       h2 Случайный курс:
-      h3 = link_to @random_course.title, @random_course
-      small #{@random_course.comments.count} отзывов
-      p = @random_course.description
-
+        - if @random_course.present?
+          h3 = link_to @random_course.title, @random_course
+          small #{course_comment_count(@random_course)} отзывов
+          p = @random_course.description
+        - else
+          h3 К сожалению, курсов пока нет
+    
     .col-xs-12.col-sm-6.col-md-6.col-lg-6.text-center.h4
       h2 Случайный отзыв:
-      h3 = link_to @random_comment.user.username, @random_comment.user
-      small
-        ' Курс:
-        = link_to @random_comment.course.title, @random_comment.course
-      br
-      small Оценка: #{@random_comment.rating}/5
-      p = @random_comment.content
+      - if @random_comment.present?
+        - if @random_comment.user.present?
+          h3 = link_to @random_comment.user.username, @random_comment.user
+        small
+          ' Курс:
+          = link_to @random_comment.course.title, @random_comment.course
+        br
+        small Оценка: #{@random_comment.rating}/5
+        p = @random_comment.content
+      - else
+        h3 К сожалению, отзывов пока нет
