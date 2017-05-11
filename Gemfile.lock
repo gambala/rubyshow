@@ -60,6 +60,7 @@ GEM
     autoprefixer-rails (7.0.1)
       execjs
     bcrypt (3.1.11)
+    bcrypt_pbkdf (1.0.0)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -276,6 +277,8 @@ GEM
       ffi (>= 0.5.0)
     rbnacl (4.0.2)
       ffi
+    rbnacl-libsodium (1.0.11)
+      rbnacl (>= 3.0.1)
     recaptcha (4.3.1)
       json
     responders (2.4.0)
@@ -369,6 +372,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
+  bcrypt_pbkdf
   better_errors
   binding_of_caller
   bootstrap-sass
@@ -410,6 +414,7 @@ DEPENDENCIES
   rails-assets-flag-icon-css!
   rails-assets-webfontloader!
   rbnacl
+  rbnacl-libsodium
   recaptcha
   rollbar
   rspec-rails

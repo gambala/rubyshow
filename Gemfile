@@ -30,6 +30,8 @@ gem 'will_paginate-bootstrap'
 
 # Security
 gem 'rbnacl'
+gem 'rbnacl-libsodium'
+gem 'bcrypt_pbkdf'
 
 gem 'capistrano-rails-console', require: false
 
