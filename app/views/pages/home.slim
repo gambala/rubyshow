@@ -37,12 +37,12 @@
   .row
     .col-xs-12.col-sm-6.col-md-6.col-lg-6.text-center.h4
       h2 Случайный курс:
-        - if @random_course.present?
-          h3 = link_to @random_course.title, @random_course
-          small #{course_comment_count(@random_course)} отзывов
-          p = @random_course.description
-        - else
-          h3 К сожалению, курсов пока нет
+      - if @random_course.present?
+        h3 = link_to @random_course.title, @random_course
+        small #{course_comment_count(@random_course)} отзывов
+        p = @random_course.description
+      - else
+        h3 К сожалению, курсов пока нет
 
     .col-xs-12.col-sm-6.col-md-6.col-lg-6.text-center.h4
       h2 Случайный отзыв:
