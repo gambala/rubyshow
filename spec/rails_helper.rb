@@ -9,7 +9,7 @@ require_relative 'support/devise_request_spec_helpers.rb'
 require 'factory_girl_rails'
 require 'shoulda/matchers'
 
-Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
 
 ActiveRecord::Migration.maintain_test_schema!
 

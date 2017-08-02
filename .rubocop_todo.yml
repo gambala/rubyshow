@@ -128,11 +128,6 @@ Rails/Blank:
   Exclude:
     - 'app/queries/courses_query.rb'
 
-# Offense count: 1
-Rails/FilePath:
-  Exclude:
-    - 'spec/rails_helper.rb'
-
 # Offense count: 47
 # Configuration parameters: Include.
 # Include: app/**/*.rb, config/**/*.rb, db/**/*.rb, lib/**/*.rb
