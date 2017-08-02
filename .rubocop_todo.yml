@@ -221,14 +221,6 @@ Style/IfInsideElse:
   Exclude:
     - 'app/models/user.rb'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: MaxLineLength.
-Style/IfUnlessModifier:
-  Exclude:
-    - 'config/initializers/rack_attack.rb'
-    - 'config/initializers/rollbar.rb'
-
 # Offense count: 1
 Style/MethodMissing:
   Exclude:
