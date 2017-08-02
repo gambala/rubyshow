@@ -166,14 +166,6 @@ Rails/OutputSafety:
     - 'app/helpers/application_helper.rb'
 
 # Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: referer, referrer
-Rails/RequestReferer:
-  Exclude:
-    - 'app/controllers/application_controller.rb'
-
-# Offense count: 1
 # Configuration parameters: Include.
 # Include: db/migrate/*.rb
 Rails/ReversibleMigration:
