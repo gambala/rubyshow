@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/opinions', to: 'comments#index', as: :comments
   get 'user/:id', to: 'users#show', as: :user
   resources :courses do
-    resources :comments, except: [:show, :edit, :new, :index]
+    resources :comments, except: %i(show edit new index)
     put :approve, on: :member
   end
 

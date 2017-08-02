@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CoursesController < ApplicationController
-  before_action :set_course, only: [:show, :edit, :update, :destroy, :approve]
+  before_action :set_course, only: %i(show edit update destroy approve)
   helper_method :language_options, :paid_options
 
   def index

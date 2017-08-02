@@ -49,13 +49,6 @@ Style/OptionalArguments:
   Exclude:
     - 'app/queries/application_query.rb'
 
-# Offense count: 8
-# Cop supports --auto-correct.
-# Configuration parameters: MinSize, SupportedStyles.
-# SupportedStyles: percent, brackets
-Style/SymbolArray:
-  EnforcedStyle: brackets
-
 # Offense count: 3
 # Cop supports --auto-correct.
 # Configuration parameters: IgnoredMethods.

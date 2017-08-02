@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:update, :destroy]
-  before_action :set_course, only: [:create, :update, :destroy]
+  before_action :set_comment, only: %i(update destroy)
+  before_action :set_course, only: %i(create update destroy)
 
   def index
     @comments = Comment.includes(:course, :user)
