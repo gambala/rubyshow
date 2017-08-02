@@ -2,6 +2,7 @@
 
 require 'capistrano/setup'
 require 'capistrano/deploy'
+require 'capistrano/scm/git'
 require 'capistrano/bundler'
 require 'capistrano/rails'
 require 'capistrano/rails/console'
@@ -10,3 +11,4 @@ set :rvm_type, :user
 set :rvm_ruby_version, '2.4.1'
 
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
+install_plugin Capistrano::SCM::Git
