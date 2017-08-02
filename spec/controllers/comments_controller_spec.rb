@@ -21,13 +21,13 @@ RSpec.describe CommentsController, type: :controller do
 
   describe 'POST #create' do
     context 'with valid params' do
-      it "creates a new comment" do
+      it 'creates a new comment' do
         expect{
           post :create, course_id: course.id, comment: valid_attrs
         }.to change(Comment,:count).by(1)
       end
 
-      it "redirects to the course" do
+      it 'redirects to the course' do
         post :create, course_id: course.id, comment: valid_attrs
 
         expect(response).to redirect_to course
@@ -38,16 +38,16 @@ RSpec.describe CommentsController, type: :controller do
       let(:referer) { "courses/#{course.id}" }
 
       before(:each) do
-        request.env["HTTP_REFERER"] = referer
+        request.env['HTTP_REFERER'] = referer
       end
 
-      it "does not save the new comment" do
+      it 'does not save the new comment' do
         expect{
           post :create, course_id: course.id, comment: invalid_attrs
         }.to_not change(Comment, :count)
       end
 
-      it "redirects back" do
+      it 'redirects back' do
         post :create, course_id: course.id, comment: invalid_attrs
 
         expect(response).to redirect_to referer

@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :course do
-    description "Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, error."
-    language "English"
+    description 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, error.'
+    language 'English'
     url 'http://example.com'
     sequence(:title) { |n| "Free_Course_#{n}" }
 

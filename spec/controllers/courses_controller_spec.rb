@@ -38,13 +38,13 @@ RSpec.describe CoursesController, type: :controller do
 
   describe 'POST #create' do
     context 'with valid params' do
-      it "creates a new course" do
+      it 'creates a new course' do
         expect{
           post :create, course: valid_attrs
         }.to change(Course, :count).by(1)
       end
 
-      it "redirects to the root_path" do
+      it 'redirects to the root_path' do
         post :create, course: valid_attrs
 
         expect(response).to redirect_to root_path
@@ -52,13 +52,13 @@ RSpec.describe CoursesController, type: :controller do
     end
 
     context 'with invalid params' do
-      it "does not save the new course" do
+      it 'does not save the new course' do
         expect{
           post :create, course: invalid_attrs
         }.to_not change(Comment,:count)
       end
 
-      it "redirects back" do
+      it 'redirects back' do
         post :create, course: invalid_attrs
 
         expect(response).to render_template :new

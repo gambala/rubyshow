@@ -442,7 +442,7 @@ p "#{course.title} created, paid? #{course.paid}"
 
 course = Course.create(
   title: 'OneMonth: Web Security',
-  description: "By the end of One Month Web Security, you will be able to review your own applications for security issues and ensure the code is properly hardened against malicious attacks. You will also be able to design new applications with security in mind, significantly lowering the risk and cost associated with deploying new applications.",
+  description: 'By the end of One Month Web Security, you will be able to review your own applications for security issues and ensure the code is properly hardened against malicious attacks. You will also be able to design new applications with security in mind, significantly lowering the risk and cost associated with deploying new applications.',
   url: 'https://onemonth.com/courses/web-security',
   paid: true,
   language: 'English'

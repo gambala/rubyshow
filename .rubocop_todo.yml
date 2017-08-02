@@ -255,26 +255,6 @@ Style/RedundantSelf:
     - 'app/models/comment.rb'
     - 'app/queries/application_query.rb'
 
-# Offense count: 30
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, ConsistentQuotesInMultiline.
-# SupportedStyles: single_quotes, double_quotes
-Style/StringLiterals:
-  Exclude:
-    - 'app/models/user.rb'
-    - 'config/application.rb'
-    - 'config/routes.rb'
-    - 'db/migrate/20160216130243_devise_create_users.rb'
-    - 'db/seeds.rb'
-    - 'spec/controllers/comments_controller_spec.rb'
-    - 'spec/controllers/courses_controller_spec.rb'
-    - 'spec/controllers/pages_controller_spec.rb'
-    - 'spec/controllers/users_controller_spec.rb'
-    - 'spec/factories/comments.rb'
-    - 'spec/factories/courses.rb'
-    - 'spec/models/comment_spec.rb'
-    - 'spec/rails_helper.rb'
-
 # Offense count: 8
 # Cop supports --auto-correct.
 # Configuration parameters: MinSize, SupportedStyles.

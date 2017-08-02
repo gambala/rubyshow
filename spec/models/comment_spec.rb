@@ -18,7 +18,7 @@ describe Comment, type: :model do
     let(:comment) {
       FactoryGirl.create(
         :comment,
-        content: "just comment",
+        content: 'just comment',
         kind: 2,
         graduate: true,
         rating: 3,
@@ -26,7 +26,7 @@ describe Comment, type: :model do
     }
 
     it 'has attribute content' do
-      expect(comment.content).to eq("just comment")
+      expect(comment.content).to eq('just comment')
     end
     it 'has attribute kind' do
       expect(comment.kind).to eq('opinion')

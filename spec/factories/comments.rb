@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :comment do
-    content "MyText"
+    content 'MyText'
 
     factory :opinion_comment do
       kind 2
