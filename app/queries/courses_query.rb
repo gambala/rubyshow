@@ -19,7 +19,7 @@ class CoursesQuery < ApplicationQuery
   end
 
   def filter_by_title
-    return unless options[:title].present?
+    return if options[:title].blank?
     where('title ILIKE ?', "%#{options[:title]}%")
   end
 
