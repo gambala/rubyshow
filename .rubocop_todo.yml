@@ -217,11 +217,6 @@ Style/EmptyCaseCondition:
     - 'app/helpers/comments_helper.rb'
 
 # Offense count: 1
-Style/IfInsideElse:
-  Exclude:
-    - 'app/models/user.rb'
-
-# Offense count: 1
 Style/MethodMissing:
   Exclude:
     - 'app/presenters/application_presenter.rb'
