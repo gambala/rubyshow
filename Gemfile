@@ -33,8 +33,6 @@ gem 'rbnacl'
 gem 'rbnacl-libsodium'
 gem 'bcrypt_pbkdf'
 
-gem 'capistrano-rails-console', require: false
-
 group :test do
   gem 'capybara', '~> 2.4.0'
   gem 'capybara-webkit'
@@ -47,6 +45,7 @@ group :development do
   gem 'capistrano'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
+  gem 'capistrano-rails-console', require: false
   gem 'capistrano-rvm', github: 'capistrano/rvm'
   gem 'guard', require: false
   gem 'guard-bundler', require: false
