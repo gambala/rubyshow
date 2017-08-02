@@ -25,16 +25,6 @@ Layout/EmptyLines:
     - 'db/migrate/20160216130243_devise_create_users.rb'
     - 'db/seeds.rb'
 
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: empty_lines, no_empty_lines
-Layout/EmptyLinesAroundBlockBody:
-  Exclude:
-    - 'config/deploy.rb'
-    - 'config/routes.rb'
-    - 'spec/features/filtering_spec.rb'
-
 # Offense count: 4
 Metrics/AbcSize:
   Max: 22

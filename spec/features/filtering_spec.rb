@@ -11,7 +11,6 @@ end
 
 describe 'Filtering feature' do
   context 'when user goes to main page' do
-
     before do
       create_list :free_course, 10
       create_list :paid_course, 10
