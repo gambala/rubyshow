@@ -141,18 +141,6 @@ Rails/FindBy:
   Exclude:
     - 'app/models/user.rb'
 
-# Offense count: 26
-# Cop supports --auto-correct.
-# Configuration parameters: Include.
-# Include: spec/**/*, test/**/*
-Rails/HttpPositionalArguments:
-  Exclude:
-    - 'spec/controllers/comments_controller_spec.rb'
-    - 'spec/controllers/courses_controller_spec.rb'
-    - 'spec/controllers/users_controller_spec.rb'
-    - 'spec/requests/comments_spec.rb'
-    - 'spec/requests/courses_spec.rb'
-
 # Offense count: 47
 # Configuration parameters: Include.
 # Include: app/**/*.rb, config/**/*.rb, db/**/*.rb, lib/**/*.rb

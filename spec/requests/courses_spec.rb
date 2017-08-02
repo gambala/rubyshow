@@ -174,13 +174,13 @@ RSpec.describe 'Courses', type: :request do
     before(:each) { sign_in user }
 
     it 'create course by admin with valid params' do
-      post '/courses', course: {
+      post '/courses', params: { course: {
         title: 'new course about ruby',
         description: 'new really free great course',
         language: 'English',
         url: 'http://www.courses',
         paid: 'false'
-      }
+      } }
 
       expect(response).to redirect_to(root_path)
       follow_redirect!
@@ -192,9 +192,9 @@ RSpec.describe 'Courses', type: :request do
 
     it 'doe not create course by admin with invalid params' do
       courses_count = Course.all.count
-      post '/courses', course: {
+      post '/courses', params: { course: {
         title: 'ruby-course'
-      }
+      } }
 
       expect(response.code).to eq('200')
       expect(Course.all.count).to eq(courses_count)
@@ -214,13 +214,13 @@ RSpec.describe 'Courses', type: :request do
       )
       sign_in user
 
-      patch "/courses/#{course.id}", course: {
+      patch "/courses/#{course.id}", params: { course: {
         title: 'Новый супер курс',
         description: 'описание курса',
         language: 'Русский',
         url: 'http://www.ruby-course.ru/first',
         paid: 'true'
-      }
+      } }
 
       expect(response).to redirect_to(course_path(course))
       follow_redirect!
@@ -237,7 +237,7 @@ RSpec.describe 'Courses', type: :request do
     it 'does not update course by guest' do
       course = FactoryGirl.create(:course, title: 'ruby course')
 
-      patch "/courses/#{course.id}", course: { title: 'Новый супер курс 2' }
+      patch "/courses/#{course.id}", params: { course: { title: 'Новый супер курс 2' } }
 
       expect(response).to redirect_to(root_path)
       follow_redirect!

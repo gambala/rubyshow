@@ -23,12 +23,12 @@ RSpec.describe CommentsController, type: :controller do
     context 'with valid params' do
       it 'creates a new comment' do
         expect do
-          post :create, course_id: course.id, comment: valid_attrs
+          post :create, params: { course_id: course.id, comment: valid_attrs }
         end.to change(Comment,:count).by(1)
       end
 
       it 'redirects to the course' do
-        post :create, course_id: course.id, comment: valid_attrs
+        post :create, params: { course_id: course.id, comment: valid_attrs }
 
         expect(response).to redirect_to course
       end
@@ -43,12 +43,12 @@ RSpec.describe CommentsController, type: :controller do
 
       it 'does not save the new comment' do
         expect do
-          post :create, course_id: course.id, comment: invalid_attrs
+          post :create, params: { course_id: course.id, comment: invalid_attrs }
         end.to_not change(Comment, :count)
       end
 
       it 'redirects back' do
-        post :create, course_id: course.id, comment: invalid_attrs
+        post :create, params: { course_id: course.id, comment: invalid_attrs }
 
         expect(response).to redirect_to referer
       end
@@ -59,8 +59,7 @@ RSpec.describe CommentsController, type: :controller do
   describe 'PUT #update' do
     context 'with valid params' do
       before(:each) do
-        put :update, course_id: course.id, id: comment.id, comment: update_attrs,
-        format: :json
+        put :update, params: { course_id: course.id, id: comment.id, comment: update_attrs, format: :json }
       end
 
       # it "changes comment's attributes" do
@@ -75,8 +74,7 @@ RSpec.describe CommentsController, type: :controller do
 
     context 'with invalid params' do
       before(:each) do
-        put :update, course_id: course.id, id: comment.id, comment: invalid_attrs,
-        format: :json
+        put :update, params: { course_id: course.id, id: comment.id, comment: invalid_attrs, format: :json }
       end
 
       it "does not change comment's attributes" do
@@ -93,7 +91,7 @@ RSpec.describe CommentsController, type: :controller do
   describe 'DELETE #destroy' do
     context 'when :html format' do
       it 'redirects to comments' do
-        delete :destroy, course_id: course.id, id: comment.id
+        delete :destroy, params: { course_id: course.id, id: comment.id }
 
         expect(response).to redirect_to comments_path
       end
@@ -101,7 +99,7 @@ RSpec.describe CommentsController, type: :controller do
 
     context 'when :json format' do
       it 'returns http no_content status' do
-        delete :destroy, course_id: course.id, id: comment, format: :json
+        delete :destroy, params: { course_id: course.id, id: comment, format: :json }
 
         expect(response).to have_http_status :no_content
       end

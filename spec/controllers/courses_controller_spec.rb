@@ -25,13 +25,13 @@ RSpec.describe CoursesController, type: :controller do
   end
 
   describe 'GET #show' do
-    before(:each) { get :show, id: course.id }
+    before(:each) { get :show, params: { id: course.id } }
 
     it { is_expected.to render_template :show }
   end
 
   describe 'GET #edit' do
-    before(:each) { get :edit, id: course.id }
+    before(:each) { get :edit, params: { id: course.id } }
 
     it { is_expected.to render_template :edit }
   end
@@ -40,12 +40,12 @@ RSpec.describe CoursesController, type: :controller do
     context 'with valid params' do
       it 'creates a new course' do
         expect do
-          post :create, course: valid_attrs
+          post :create, params: { course: valid_attrs }
         end.to change(Course, :count).by(1)
       end
 
       it 'redirects to the root_path' do
-        post :create, course: valid_attrs
+        post :create, params: { course: valid_attrs }
 
         expect(response).to redirect_to root_path
       end
@@ -54,12 +54,12 @@ RSpec.describe CoursesController, type: :controller do
     context 'with invalid params' do
       it 'does not save the new course' do
         expect do
-          post :create, course: invalid_attrs
+          post :create, params: { course: invalid_attrs }
         end.to_not change(Comment,:count)
       end
 
       it 'redirects back' do
-        post :create, course: invalid_attrs
+        post :create, params: { course: invalid_attrs }
 
         expect(response).to render_template :new
       end
@@ -68,7 +68,7 @@ RSpec.describe CoursesController, type: :controller do
 
   describe 'PUT #update' do
     context 'with valid params' do
-      before(:each) { put :update, id: course.id, course: update_attrs }
+      before(:each) { put :update, params: { id: course.id, course: update_attrs } }
 
       it "changes course's attributes" do
         course.reload
@@ -79,7 +79,7 @@ RSpec.describe CoursesController, type: :controller do
     end
 
     context 'with invalid params' do
-      before(:each) { put :update, id: course.id, course: invalid_attrs }
+      before(:each) { put :update, params: { id: course.id, course: invalid_attrs } }
 
       it "does not change course's attributes" do
         course.reload
@@ -91,13 +91,13 @@ RSpec.describe CoursesController, type: :controller do
   end
 
   describe 'PUT #approve' do
-    before(:each) { put :approve, id: course.id }
+    before(:each) { put :approve, params: { id: course.id } }
 
     it { is_expected.to redirect_to course }
   end
 
   describe 'DELETE #destroy' do
-    before(:each) { delete :destroy, id: course.id }
+    before(:each) { delete :destroy, params: { id: course.id } }
 
     it { is_expected.to redirect_to root_path}
   end

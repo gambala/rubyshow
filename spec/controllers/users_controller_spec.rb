@@ -6,7 +6,7 @@ RSpec.describe UsersController, type: :controller do
   let(:user) { create :user }
 
   describe 'GET #show' do
-    before(:each) { get :show, id: user.id }
+    before(:each) { get :show, params: { id: user.id } }
 
     it { is_expected.to render_template(:show) }
   end
