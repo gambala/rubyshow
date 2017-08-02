@@ -17,14 +17,6 @@ Layout/AlignHash:
     - 'app/models/user.rb'
     - 'spec/controllers/comments_controller_spec.rb'
 
-# Offense count: 13
-# Cop supports --auto-correct.
-Layout/EmptyLines:
-  Exclude:
-    - 'config/deploy/staging.rb'
-    - 'db/migrate/20160216130243_devise_create_users.rb'
-    - 'db/seeds.rb'
-
 # Offense count: 4
 Metrics/AbcSize:
   Max: 22

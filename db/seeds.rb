@@ -349,7 +349,6 @@ course = Course.create(
 )
 p "#{course.title} created, paid? #{course.paid}"
 
-
 course = Course.create(
   title: 'Evil Martians: Брейнвошинг: Разработка на Ruby on Rails',
   description: 'https://brainwashing.pro/rails',
@@ -358,7 +357,6 @@ course = Course.create(
   language: 'Русский'
 )
 p "#{course.title} created, paid? #{course.paid}"
-
 
 course = Course.create(
   title: 'RubyNinja',
@@ -369,7 +367,6 @@ course = Course.create(
 )
 p "#{course.title} created, paid? #{course.paid}"
 
-
 course = Course.create(
   title: 'GeekBrains: Программист Ruby',
   description: 'Только GeekBrains имеет более 30 компаний-партнеров в сфере ИТ для стажировки наших выпускников. Сразу после завершения обучения Вы сможете выбрать наиболее интересную стажировку для работы над реальным проектом.',
@@ -378,7 +375,6 @@ course = Course.create(
   language: 'Русский'
 )
 p "#{course.title} created, paid? #{course.paid}"
-
 
 course = Course.create(
   title: 'Moscow Coding School: Основы Ruby on Rails',
@@ -389,7 +385,6 @@ course = Course.create(
 )
 p "#{course.title} created, paid? #{course.paid}"
 
-
 course = Course.create(
   title: 'RubyGarage: Курсы по Ruby/Rails',
   description: "Курс создан для тех, кто хочет освоить профессию 'WEB разработчик'. Цель курса — дать участникам необходимый уровень знаний и навыков, когда их можно будет смело брать на работу. Программа курса основана на требованиях работодателей и сфокусирована на процессах, подходах и лучших практиках опытных разработчиков. Основная наша задача — научить участников создавать качественные WEB-приложения на базе Ruby on Rails, привить лучшие практики и культуру разработки.",
@@ -398,7 +393,6 @@ course = Course.create(
   language: 'Русский'
 )
 p "#{course.title} created, paid? #{course.paid}"
-
 
 course = Course.create(
   title: 'Pragmatic Studio: Ruby on Rails: Level I',
@@ -409,7 +403,6 @@ course = Course.create(
 )
 p "#{course.title} created, paid? #{course.paid}"
 
-
 course = Course.create(
   title: 'Pragmatic Studio: Ruby Programming',
   description: "You'll discover how to build your own Ruby program from beginning to end, incorporate Ruby principles and techniques in your design, write your own Ruby gem, and make sense of the “magic” behind Rails. All of the topics and syntax in this course work seamlessly with both Ruby 2.0 and 1.9.",
@@ -418,7 +411,6 @@ course = Course.create(
   language: 'English'
 )
 p "#{course.title} created, paid? #{course.paid}"
-
 
 course = Course.create(
   title: 'Pragmatic Studio: Ruby on Rails: Level II',
@@ -429,7 +421,6 @@ course = Course.create(
 )
 p "#{course.title} created, paid? #{course.paid}"
 
-
 course = Course.create(
   title: 'OneMonth: Ruby on Rails',
   description: "One Month's Ruby on Rails tutorials are a series of video lessons and tutorials that show anyone (even a total beginner) how to build their first web application (a simple photo-sharing app). When you sign up, you immediately get access to a member's area where you can take each lesson at your own pace. Along the way, you'll learn Ruby on Rails, HTML, CSS, JavaScript, and much more.",
@@ -438,7 +429,6 @@ course = Course.create(
   language: 'English'
 )
 p "#{course.title} created, paid? #{course.paid}"
-
 
 course = Course.create(
   title: 'OneMonth: Web Security',
