@@ -21,7 +21,7 @@ describe Comment, type: :model do
         content: 'just comment',
         kind: 2,
         graduate: true,
-        rating: 3,
+        rating: 3
       )
     end
 

@@ -48,11 +48,3 @@ Style/MethodMissing:
 Style/OptionalArguments:
   Exclude:
     - 'app/queries/application_query.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleForMultiline, SupportedStylesForMultiline.
-# SupportedStylesForMultiline: comma, consistent_comma, no_comma
-Style/TrailingCommaInArguments:
-  Exclude:
-    - 'spec/models/comment_spec.rb'
