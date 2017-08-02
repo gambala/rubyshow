@@ -239,15 +239,6 @@ Style/OptionalArguments:
   Exclude:
     - 'app/queries/application_query.rb'
 
-# Offense count: 7
-# Cop supports --auto-correct.
-# Configuration parameters: PreferredDelimiters.
-Style/PercentLiteralDelimiters:
-  Exclude:
-    - 'config/deploy.rb'
-    - 'config/deploy/production.rb'
-    - 'config/deploy/staging.rb'
-
 # Offense count: 8
 # Cop supports --auto-correct.
 # Configuration parameters: MinSize, SupportedStyles.
