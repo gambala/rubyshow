@@ -4,8 +4,8 @@ class User < ApplicationRecord
   attr_accessor :login
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:github],
-         authentication_keys: [:login]
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable,
+         omniauth_providers: [:github], authentication_keys: [:login]
 
   has_many :comments, dependent: :destroy
   validates :username, presence: true
