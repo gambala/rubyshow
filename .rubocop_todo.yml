@@ -210,12 +210,6 @@ Style/BracesAroundHashParameters:
   Exclude:
     - 'spec/models/comment_spec.rb'
 
-# Offense count: 3
-# Cop supports --auto-correct.
-Style/EmptyCaseCondition:
-  Exclude:
-    - 'app/helpers/comments_helper.rb'
-
 # Offense count: 1
 Style/MethodMissing:
   Exclude:
