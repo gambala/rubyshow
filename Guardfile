@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 interactor :simple
 
 guard :livereload do

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module CommentsHelper
   def comment_label(comment)
     case

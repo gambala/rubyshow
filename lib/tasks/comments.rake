@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :comments do
   desc 'Set types to existing comments'
   task set_kind: :environment do

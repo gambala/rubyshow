@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.shared_context 'normally working filter' do
   it 'shows courses that match filtering constraint' do
     expect(page).to have_content('Course_A')

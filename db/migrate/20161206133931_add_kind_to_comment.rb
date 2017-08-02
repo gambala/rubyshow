@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddKindToComment < ActiveRecord::Migration
   def change
     add_column :comments, :kind, :integer, null: false, default: 1

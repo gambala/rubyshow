@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 set :application, 'rubycourses'
 set :repo_url, 'git@github.com:Freika/ruby_courses.git'
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationQuery < SimpleDelegator
   attr_accessor :options
 

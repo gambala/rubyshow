@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module FormsHelper
   def form_field_error(field_name, form_record)
     return unless form_record.errors[field_name].any?

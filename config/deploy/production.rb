@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 set :stage, :production
 
 # Replace 127.0.0.1 with your server's IP address!

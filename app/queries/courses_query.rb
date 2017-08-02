@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CoursesQuery < ApplicationQuery
   action :with_comments,
          :filter_by_language,

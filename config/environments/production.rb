@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   config.action_controller.perform_caching = true
   config.active_record.dump_schema_after_migration = false

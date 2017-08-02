@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CoursesQueryPresenter < ApplicationPresenter
   presents :queried_courses
 

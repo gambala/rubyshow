@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryGirl.define do
   factory :course do
     description "Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, error."

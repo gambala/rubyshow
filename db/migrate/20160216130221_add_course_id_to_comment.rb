@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddCourseIdToComment < ActiveRecord::Migration
   def change
     add_column :comments, :course_id, :integer

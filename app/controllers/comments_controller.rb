@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:update, :destroy]
   before_action :set_course, only: [:create, :update, :destroy]
