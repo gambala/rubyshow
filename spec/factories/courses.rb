@@ -23,7 +23,7 @@ FactoryGirl.define do
         paid true
       end
 
-      after(:create) { |c| c.approve! }
+      after(:create, &:approve!)
     end
   end
 end
