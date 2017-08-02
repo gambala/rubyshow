@@ -248,13 +248,6 @@ Style/PercentLiteralDelimiters:
     - 'config/deploy/production.rb'
     - 'config/deploy/staging.rb'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-Style/RedundantSelf:
-  Exclude:
-    - 'app/models/comment.rb'
-    - 'app/queries/application_query.rb'
-
 # Offense count: 8
 # Cop supports --auto-correct.
 # Configuration parameters: MinSize, SupportedStyles.

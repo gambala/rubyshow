@@ -11,6 +11,6 @@ class Comment < ActiveRecord::Base
   enum kind: { comment: 1, opinion: 2, question: 3 }
 
   def grad
-    self.opinion?
+    opinion?
   end
 end

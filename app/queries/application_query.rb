@@ -41,7 +41,7 @@ class ApplicationQuery < SimpleDelegator
   end
 
   def apply_actions
-    self.actions.each do |action|
+    actions.each do |action|
       self.relation = evaluate_action(action) || relation
     end
   end
