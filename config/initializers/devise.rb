@@ -130,8 +130,8 @@ Devise.setup do |config|
 
   # Defines which key will be used when confirming an account
   # config.confirmation_keys = [:email]
-  config.reset_password_keys = [ :username ]
-  config.confirmation_keys = [ :username ]
+  config.reset_password_keys = [:username]
+  config.confirmation_keys = [:username]
 
   config.omniauth :github, ENV['GITHUB_CLIENT_KEY'], ENV['GITHUB_CLIENT_SECRET'], scope: 'user:email'
 

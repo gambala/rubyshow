@@ -128,7 +128,7 @@ describe Course, type: :model do
 
     describe 'private methods' do
       it 'scores' do
-        expect(@course.send(:scores)).to eq([2,3,4,3])
+        expect(@course.send(:scores)).to eq([2, 3, 4, 3])
       end
     end
   end

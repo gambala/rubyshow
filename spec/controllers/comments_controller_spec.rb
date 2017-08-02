@@ -24,7 +24,7 @@ RSpec.describe CommentsController, type: :controller do
       it 'creates a new comment' do
         expect do
           post :create, params: { course_id: course.id, comment: valid_attrs }
-        end.to change(Comment,:count).by(1)
+        end.to change(Comment, :count).by(1)
       end
 
       it 'redirects to the course' do

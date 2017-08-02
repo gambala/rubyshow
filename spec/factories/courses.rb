@@ -22,7 +22,7 @@ FactoryGirl.define do
         sequence(:title) { |n| "Paid_Course_#{n}" }
         paid true
       end
-      
+
       after(:create) { |c| c.approve! }
     end
   end

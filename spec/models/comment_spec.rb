@@ -6,7 +6,7 @@ describe Comment, type: :model do
   describe 'validation tests' do
     it { should validate_inclusion_of(:rating).in_range(1..5).allow_nil }
     it { should validate_presence_of :content }
-    it { should define_enum_for(:kind).with( comment: 1, opinion: 2, question: 3 ) }
+    it { should define_enum_for(:kind).with(comment: 1, opinion: 2, question: 3) }
 
     describe 'with grad' do
       subject { Comment.new(kind: 2) }

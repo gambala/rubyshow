@@ -55,7 +55,7 @@ RSpec.describe CoursesController, type: :controller do
       it 'does not save the new course' do
         expect do
           post :create, params: { course: invalid_attrs }
-        end.to_not change(Comment,:count)
+        end.to_not change(Comment, :count)
       end
 
       it 'redirects back' do
@@ -99,6 +99,6 @@ RSpec.describe CoursesController, type: :controller do
   describe 'DELETE #destroy' do
     before(:each) { delete :destroy, params: { id: course.id } }
 
-    it { is_expected.to redirect_to root_path}
+    it { is_expected.to redirect_to root_path }
   end
 end
