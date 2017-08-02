@@ -188,14 +188,6 @@ Rails/SkipsModelValidations:
     - 'db/seeds.rb'
 
 # Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: braces, no_braces, context_dependent
-Style/BracesAroundHashParameters:
-  Exclude:
-    - 'spec/models/comment_spec.rb'
-
-# Offense count: 1
 Style/MethodMissing:
   Exclude:
     - 'app/presenters/application_presenter.rb'
