@@ -4,7 +4,6 @@ ruby '2.4.1'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
-gem 'pundit'
 gem 'coffee-rails'
 gem 'devise'
 gem 'dragonfly', '~> 1.0.12'
@@ -16,6 +15,7 @@ gem 'omniauth-github', github: 'intridea/omniauth-github'
 gem 'pg'
 gem 'pry'
 gem 'pry-rails'
+gem 'pundit'
 gem 'rack-attack'
 gem 'rails', '~> 4.2.8'
 gem 'recaptcha', require: 'recaptcha/rails'
@@ -29,19 +29,21 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
 
 # Security
+gem 'bcrypt_pbkdf'
 gem 'rbnacl'
 gem 'rbnacl-libsodium'
-gem 'bcrypt_pbkdf'
 
 group :test do
   gem 'capybara', '~> 2.4.0'
   gem 'capybara-webkit'
+  gem 'codeclimate-test-reporter', require: nil
   gem 'database_cleaner', '~> 1.3'
   gem 'shoulda-matchers', '~> 2.8'
-  gem 'codeclimate-test-reporter', require: nil
 end
 
 group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'capistrano'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
@@ -52,19 +54,17 @@ group :development do
   gem 'guard-livereload', require: false
   gem 'guard-rails', require: false
   gem 'guard-rspec', require: false
-  gem 'rack-livereload'
   gem 'puma'
-  gem 'better_errors'
-  gem 'binding_of_caller'
+  gem 'rack-livereload'
 end
 
 group :development, :test do
+  gem 'bullet'
   gem 'byebug'
   gem 'factory_girl_rails'
+  gem 'launchy'
   gem 'rspec-rails'
   gem 'spring'
-  gem 'launchy'
-  gem 'bullet'
 end
 
 source 'https://rails-assets.org' do
