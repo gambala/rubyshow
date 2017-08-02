@@ -15,7 +15,7 @@ describe Comment, type: :model do
   end
 
   describe 'attribute reader tests' do
-    let(:comment) {
+    let(:comment) do
       FactoryGirl.create(
         :comment,
         content: 'just comment',
@@ -23,7 +23,7 @@ describe Comment, type: :model do
         graduate: true,
         rating: 3,
       )
-    }
+    end
 
     it 'has attribute content' do
       expect(comment.content).to eq('just comment')

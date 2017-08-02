@@ -12,7 +12,7 @@ describe Course, type: :model do
   end
 
   describe 'attribute reader tests' do
-    let(:course) {
+    let(:course) do
       FactoryGirl.create(
         :course,
         title: 'Simple title',
@@ -22,7 +22,7 @@ describe Course, type: :model do
         url: 'https://example.com/best-rails-course/',
         approved: true
       )
-    }
+    end
 
     it 'has attribute title' do
       expect(course.title).to eq('Simple title')

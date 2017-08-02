@@ -22,9 +22,9 @@ RSpec.describe CommentsController, type: :controller do
   describe 'POST #create' do
     context 'with valid params' do
       it 'creates a new comment' do
-        expect{
+        expect do
           post :create, course_id: course.id, comment: valid_attrs
-        }.to change(Comment,:count).by(1)
+        end.to change(Comment,:count).by(1)
       end
 
       it 'redirects to the course' do
@@ -42,9 +42,9 @@ RSpec.describe CommentsController, type: :controller do
       end
 
       it 'does not save the new comment' do
-        expect{
+        expect do
           post :create, course_id: course.id, comment: invalid_attrs
-        }.to_not change(Comment, :count)
+        end.to_not change(Comment, :count)
       end
 
       it 'redirects back' do

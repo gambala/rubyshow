@@ -12,7 +12,7 @@ describe User, type: :model do
   end
 
   describe 'attribute reader tests' do
-    let(:user) {
+    let(:user) do
       FactoryGirl.create(
         :user,
         email: 'admin@example.com',
@@ -22,7 +22,7 @@ describe User, type: :model do
         username: 'ivan ivanov',
         github_name: 'ivan_ivanov'
       )
-    }
+    end
 
     it 'has attribute email' do
       expect(user.email).to eq('admin@example.com')
