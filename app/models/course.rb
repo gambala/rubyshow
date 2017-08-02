@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Course < ActiveRecord::Base
+class Course < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   validates :url, :title, :description, :language, presence: true

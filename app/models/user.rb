@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   attr_accessor :login
 
   devise :database_authenticatable, :registerable,
