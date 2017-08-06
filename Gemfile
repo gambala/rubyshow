@@ -57,6 +57,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rails-console', require: false
   gem 'capistrano-rvm', github: 'capistrano/rvm'
+  gem 'foreman'
   gem 'guard', require: false
   gem 'guard-bundler', require: false
   gem 'guard-livereload', require: false
