@@ -229,8 +229,20 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-doc (0.10.0)
+      pry (~> 0.9)
+      yard (~> 0.9)
+    pry-highlight (0.1.0)
+      coderay
+      json
+      nokogiri
+      pry
+    pry-pretty-numeric (0.1.1)
+      pry
     pry-rails (0.3.6)
       pry (>= 0.10.4)
+    pry-theme (1.2.0)
+      coderay (~> 1.1)
     public_suffix (2.0.5)
     puma (3.8.2)
     pundit (1.1.0)
@@ -366,6 +378,7 @@ GEM
       will_paginate (>= 3.0.3)
     xpath (2.0.0)
       nokogiri (~> 1.3)
+    yard (0.9.9)
 
 PLATFORMS
   ruby
@@ -404,7 +417,11 @@ DEPENDENCIES
   omniauth-github!
   pg
   pry
+  pry-doc
+  pry-highlight
+  pry-pretty-numeric
   pry-rails
+  pry-theme
   puma
   pundit
   rack-attack
@@ -432,4 +449,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.14.6
+   1.15.3
