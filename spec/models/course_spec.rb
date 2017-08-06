@@ -133,3 +133,22 @@ describe Course, type: :model do
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: courses
+#
+#  id          :integer          not null, primary key
+#  title       :string           default(""), not null
+#  description :text             default(""), not null
+#  language    :string           default("Русский"), not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  paid        :boolean          default(FALSE)
+#  approved    :boolean          default(FALSE), not null
+#  url         :string
+#
+# Indexes
+#
+#  index_courses_on_title  (title) UNIQUE
+#
