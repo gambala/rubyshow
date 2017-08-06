@@ -443,6 +443,7 @@ DEPENDENCIES
   rollbar
   rspec-rails
   russian
+  sass
   sassc-rails (~> 1.1.0)
   shoulda-matchers (~> 2.8)
   slim
