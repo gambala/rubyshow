@@ -2,6 +2,10 @@
 
 interactor :simple
 
+guard :bundler do
+  watch('Gemfile')
+end
+
 guard :livereload do
   watch(%r{app/views/.+.(erb|slim)$})
   watch(%r{app/helpers/.+.rb})
@@ -15,15 +19,6 @@ guard :livereload do
   watch(%r{(app|vendor)(/assets/\w+/(.+\.(coffee))).*}) do |m|
     "/assets/#{m[3].sub!('.coffee', '.js')}"
   end
-end
-
-guard :bundler do
-  watch('Gemfile')
-end
-
-guard :rails do
-  watch('Gemfile.lock')
-  watch(%r{^config|lib|api/.*})
 end
 
 guard :rspec, cmd: 'spring rspec --color --format progress --fail-fast',

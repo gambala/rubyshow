@@ -60,7 +60,6 @@ group :development do
   gem 'guard', require: false
   gem 'guard-bundler', require: false
   gem 'guard-livereload', require: false
-  gem 'guard-rails', require: false
   gem 'guard-rspec', require: false
   gem 'puma'
   gem 'rack-livereload'
