@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 ruby '2.4.1'
 
 gem 'autoprefixer-rails'
+gem 'bootsnap'
 gem 'bootstrap-sass'
 gem 'coffee-rails'
 gem 'devise'
