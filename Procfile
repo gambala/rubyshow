@@ -1,1 +1,2 @@
-rls: PORT=3000 bundle exec rails s
+rails: PORT=3000 bundle exec rails s
+guard: bundle exec guard
