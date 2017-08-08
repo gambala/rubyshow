@@ -66,6 +66,7 @@ group :development do
   gem 'guard-rspec', require: false
   gem 'puma'
   gem 'rack-livereload'
+  gem 'rubocop-template', require: false
 end
 
 group :development, :test do
