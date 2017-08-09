@@ -12,17 +12,11 @@ ru:
           attributes:
             graduate:
               accepted: 'должно быть отмечено, если вы хотите оставить отзыв.'
+  will_paginate:
+    next_label: "Сюда &#8594;"
+    page_gap: "&hellip;"
+    previous_label: "&#8592; Туда"
   words:
-    course:
-      one: 'курс'
-      few: 'курса'
-      many: 'курсов'
-      other: 'курсов'
-    courses_suffix:
-      one: 'по нему'
-      few: 'по ним'
-      many: 'по ним'
-      other: 'по ним'
     comment:
       one: 'отзыв'
       few: 'отзыва'
@@ -33,8 +27,13 @@ ru:
       few: 'отзыва и мнения'
       many: 'отзывов и мнений'
       other: 'отзывов и мнений'
-
-  will_paginate:
-    previous_label: "&#8592; Туда"
-    next_label: "Сюда &#8594;"
-    page_gap: "&hellip;"
+    course:
+      one: 'курс'
+      few: 'курса'
+      many: 'курсов'
+      other: 'курсов'
+    courses_suffix:
+      one: 'по нему'
+      few: 'по ним'
+      many: 'по ним'
+      other: 'по ним'
