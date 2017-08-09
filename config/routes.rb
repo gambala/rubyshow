@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   get 'user/:id', to: 'users#show', as: :user
   get '/free', to: 'courses#free'
   get '/paid', to: 'courses#paid'
-  get 'pages/home'
 
   root 'pages#home'
 end
