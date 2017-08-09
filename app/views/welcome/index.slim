@@ -11,9 +11,9 @@
     .col-xs-12.col-sm-6.col-md-6.col-lg-6.col-sm-offset-3.col-md-offset-3.col-lg-offset-3.text-center.h4
       p
         ' Сейчас у нас есть
-        span.text-danger => @courses_size
+        span.text-danger => courses_size
         ' курсов и
-        span.text-danger => @comments_size
+        span.text-danger => comments_size
         ' отзывов к ним.
 
     / .col-xs-12.col-sm-6.col-md-6.col-lg-6.h4
@@ -24,12 +24,12 @@
     .col-xs-12.col-sm-6.col-md-6.col-lg-6
       h2 Пять лучших бесплатных курсов
 
-      = render 'courses/list', courses: @top_5_free_courses
+      = render 'courses/list', courses: top_5_free_courses
 
     .col-xs-12.col-sm-6.col-md-6.col-lg-6
       h2 Пять лучших платных курсов
 
-      = render 'courses/list', courses: @top_5_paid_courses
+      = render 'courses/list', courses: top_5_paid_courses
 
   .row
     = link_to 'Посмотреть все курсы', courses_path, class: 'all-courses btn btn-default col-sm-12 col-md-12 col-xs-12 col-lg-12'
@@ -37,23 +37,23 @@
   .row
     .col-xs-12.col-sm-6.col-md-6.col-lg-6.text-center.h4
       h2 Случайный курс:
-      - if @random_course.present?
-        h3 = link_to @random_course.title, @random_course
-        small #{course_comment_count(@random_course)} отзывов
-        p = @random_course.description
+      - if random_course.present?
+        h3 = link_to random_course.title, random_course
+        small #{course_comment_count(random_course)} отзывов
+        p = random_course.description
       - else
         h3 К сожалению, курсов пока нет
 
     .col-xs-12.col-sm-6.col-md-6.col-lg-6.text-center.h4
       h2 Случайный отзыв:
-      - if @random_comment.present?
-        - if @random_comment.user.present?
-          h3 = link_to @random_comment.user.username, @random_comment.user
+      - if random_comment.present?
+        - if random_comment.user.present?
+          h3 = link_to random_comment.user.username, random_comment.user
         small
           ' Курс:
-          = link_to @random_comment.course.title, @random_comment.course
+          = link_to random_comment.course.title, random_comment.course
         br
-        small Оценка: #{@random_comment.rating}/5
-        p = @random_comment.content
+        small Оценка: #{random_comment.rating}/5
+        p = random_comment.content
       - else
         h3 К сожалению, отзывов пока нет
