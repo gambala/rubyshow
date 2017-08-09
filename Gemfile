@@ -44,6 +44,12 @@ gem 'bcrypt_pbkdf'
 gem 'rbnacl'
 gem 'rbnacl-libsodium'
 
+group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'launchy'
+  gem 'rspec-rails'
+end
+
 group :test do
   gem 'capybara', '~> 2.4.0'
   gem 'capybara-webkit'
@@ -54,8 +60,8 @@ end
 
 group :development do
   gem 'annotate'
-  gem 'better_errors'
-  gem 'binding_of_caller'
+  gem 'bullet'
+  gem 'byebug', platform: :mri
   gem 'capistrano'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
@@ -65,18 +71,14 @@ group :development do
   gem 'guard-bundler', require: false
   gem 'guard-livereload', require: false
   gem 'guard-rspec', require: false
+  gem 'listen'
+  gem 'meta_request'
   gem 'puma'
   gem 'rack-livereload'
   gem 'rubocop-template', require: false
-end
-
-group :development, :test do
-  gem 'bullet'
-  gem 'byebug'
-  gem 'factory_girl_rails'
-  gem 'launchy'
-  gem 'rspec-rails'
   gem 'spring'
+  gem 'spring-watcher-listen'
+  gem 'web-console'
 end
 
 source 'https://rails-assets.org' do
