@@ -5,7 +5,7 @@ class CoursesQuery
 
   def initialize(courses = Course.all, params = {})
     @courses = courses
-    @params = params
+    @params = params.to_h
   end
 
   def apply_all_filters
