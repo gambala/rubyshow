@@ -1,11 +1,7 @@
 doctype html
 html.with-sticky-footer
   head
-    meta name='viewport' content='width=device-width, initial-scale=1'
-    = csrf_meta_tags
-    title = content_for?(:title) ? yield(:title) : 'Рейтинг курсов по Ruby и Ruby on Rails'
-    = render 'application/favicons'
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload'
+    = render 'head'
   body
     .body-before-footer
       = render 'application/navbar'
