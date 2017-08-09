@@ -6,13 +6,10 @@ html.with-sticky-footer
     title = content_for?(:title) ? yield(:title) : 'Рейтинг курсов по Ruby и Ruby on Rails'
     = render 'application/favicons'
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload'
-    = javascript_include_tag 'modernizr-custom', 'data-turbolinks-track' => 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
   body
     .body-before-footer
       = render 'application/navbar'
       = render 'application/flashes'
       = yield
     = render 'application/footer'
-    = render 'application/metrics'
-    = render 'application/responsive_js_helpers'
+    = render 'body'
