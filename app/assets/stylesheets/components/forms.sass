@@ -1,5 +1,5 @@
 @import 'variables'
-@import 'mixins/retina-svg'
+@import 'stlr/mixins/svg-bg'
 
 input[type="checkbox"]
   appearance: none
@@ -21,7 +21,7 @@ input[type="checkbox"]
     padding: 0 0 0 8px
 
   &:checked
-    +svg-cover('check.png', 'check.svg')
+    +svg-bg('check', $size: 20px 20px)
 
 .form-control
   box-shadow: none
