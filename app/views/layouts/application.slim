@@ -11,7 +11,7 @@ html.with-sticky-footer
   body
     .body-before-footer
       = render 'application/navbar'
-      = render partial: 'application/flash_messages', flash: flash
+      = render 'application/flashes'
       = yield
     = render 'application/footer'
     = render 'application/metrics'
