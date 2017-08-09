@@ -20,25 +20,31 @@ class CoursesQuery
 
   def filter_by_language
     @courses = courses.where(language: params[:language]) if params[:language].in?(%w(Русский English))
+    self
   end
 
   def filter_by_paid
     @courses = courses.where(paid: params[:paid]) if params[:paid].in?(%w(1 0))
+    self
   end
 
   def filter_by_title
     @courses = courses.where('title ILIKE ?', "%#{params[:title]}%") if params[:title].present?
+    self
   end
 
   def filter_only_approved
     @courses = courses.approved
+    self
   end
 
   def sort_by_rating
     @courses = courses.sort_by { |course| [course.rating, course.comments.count] }.reverse
+    self
   end
 
   def with_comments
     @courses = courses.includes(:comments)
+    self
   end
 end
