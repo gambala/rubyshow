@@ -1,10 +1,9 @@
 @import 'variables'
 @import 'breakpoint-sass'
-@import 'mixins/rh'
 
 .media-stack-overflow
   margin: 0 -10px
-  padding: rh(0.5) 10px
+  padding: 12px 10px
   transition: background 0.25s
 
   .media-left
@@ -17,23 +16,23 @@
       color: #EF917E
       display: block
       font-size: 24px
-      height: rh(2)
-      line-height: rh(2)
+      height: 48px
+      line-height: 48px
       text-align: center
-      width: rh(2)
+      width: 48px
 
     .media-object-responsive
       +breakpoint($screen-sm-min)
-        height: rh(3)
-        line-height: rh(3)
-        width: rh(3)
+        height: 72px
+        line-height: 72px
+        width: 72px
 
   .media-body
     padding: 0 10px
 
     .media-heading
       font-weight: 600
-      line-height: rh()
+      line-height: 24px
       margin-bottom: 0
 
       span, small
@@ -50,7 +49,7 @@
 
     p
       color: #555
-      line-height: rh()
+      line-height: 24px
       margin-bottom: 0
 
       span, a

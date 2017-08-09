@@ -1,11 +1,10 @@
 @import 'variables'
-@import 'mixins/rh'
 
 footer
   background: #444
   color: #eee
   border-top: 2px solid $brand-primary
-  padding: rh()-2px 0 rh()
+  padding: (24px - 2px) 0 24px
 
 html.with-sticky-footer
   height: auto
@@ -14,7 +13,7 @@ html.with-sticky-footer
 
   body
     height: auto
-    margin-bottom: rh(4)
+    margin-bottom: 96px
     position: initial
 
     .body-before-footer
@@ -22,7 +21,7 @@ html.with-sticky-footer
 
     footer
       bottom: 0
-      height: rh(4)
+      height: 96px
       min-width: 100%
       position: fixed
       z-index: -1
