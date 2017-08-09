@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
+additional_paths = ["#{Gem.loaded_specs['breakpoint'].full_gem_path}/stylesheets"]
+
+Rails.application.config.assets.paths += additional_paths
 Rails.application.config.assets.precompile += %w(modernizr-custom.js)
 Rails.application.config.assets.version = '1.0'
-
-# Rails.application.config.assets.paths << Emoji.images_path

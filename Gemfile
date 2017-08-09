@@ -9,6 +9,7 @@ ruby '2.4.1'
 gem 'autoprefixer-rails'
 gem 'bootsnap'
 gem 'bootstrap-sass'
+gem 'breakpoint'
 gem 'coffee-rails'
 gem 'devise'
 gem 'dragonfly', '~> 1.0.12'
@@ -81,7 +82,6 @@ group :development do
 end
 
 source 'https://rails-assets.org' do
-  gem 'rails-assets-breakpoint-sass'
   gem 'rails-assets-flag-icon-css'
   gem 'rails-assets-webfontloader'
 end
