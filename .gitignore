@@ -3,6 +3,7 @@
 .idea
 
 /config/application.yml
+/coverage
 /log/*
 /server
 /tmp/*
