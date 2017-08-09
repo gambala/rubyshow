@@ -4,8 +4,8 @@ html.with-sticky-footer
     = render 'head'
   body
     .body-before-footer
-      = render 'application/navbar'
-      = render 'application/flashes'
+      = render 'navbar'
+      = render 'flashes'
       = yield
-    = render 'application/footer'
+    = render 'footer'
     = render 'body'
