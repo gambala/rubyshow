@@ -1,53 +1,7 @@
-@mixin img-retina($file-1x, $file-2x, $width-1x, $height-1x) {
-  background-image: url(image-path("#{$file-1x}"));
-
-  @media
-  only screen and (min-resolution: 2dppx) {
-    background-image: url(image-path("#{$file-2x}"));
-    background-size: $width-1x $height-1x;
-  }
-}
-
 @mixin background-cover($top:center, $left:center) {
   background-position: $top $left;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-@mixin image($image, $image-width, $image-height) {
-  background-image: image_url($image);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  height: $image-height;
-  width: $image-width;
-}
-
-@mixin retina-bg($lq-image, $hq-image, $repeat, $image-width, $image-height) {
-  background-image: image_url($lq-image);
-  background-repeat: $repeat;
-  @media
-  only screen and (min-resolution: 1.3dppx) {
-    background-image: image_url($hq-image);
-    background-size: $image-width $image-height;
-  }
-}
-
-@mixin retina-cover($lq-image, $hq-image) {
-  @include background-cover();
-  background-image: image_url($lq-image);
-  @media
-  only screen and (min-resolution: 1.3dppx) {
-    background-image: image_url($hq-image);
-  }
-}
-
-@mixin retina-image($lq-image, $hq-image, $image-width, $image-height) {
-  @include image($lq-image, $image-width, $image-height);
-  @media
-  only screen and (min-resolution: 1.3dppx) {
-    background-image: image_url($hq-image);
-    background-size: 100%;
-  }
 }
 
 @mixin svg-cover($bitmap-image, $svg-image) {
