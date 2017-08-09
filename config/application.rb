@@ -18,7 +18,6 @@ Bundler.require(*Rails.groups)
 module RubyCourses
   class Application < Rails::Application
     config.action_view.field_error_proc = proc { |html_tag, _instance| html_tag }
-    config.active_record.raise_in_transactional_callbacks = true
     config.autoload_paths += %W(
       #{config.root}/app/presenters
       #{config.root}/app/queries
@@ -26,6 +25,7 @@ module RubyCourses
     config.encoding = 'utf-8'
     config.i18n.available_locales = %i(ru en)
     config.i18n.default_locale = :ru
+    config.load_defaults 5.1
 
     config.generators do |g|
       g.test_framework :rspec, view_specs: false, request_specs: false, routing_specs: false
