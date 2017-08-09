@@ -8,6 +8,7 @@ class User < ApplicationRecord
          omniauth_providers: [:github], authentication_keys: [:login]
 
   has_many :comments, dependent: :destroy
+
   validates :username, presence: true
 
   def admin?

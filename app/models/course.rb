@@ -25,9 +25,7 @@ class Course < ApplicationRecord
 
   def rating
     return 0 unless scores.any?
-
-    (scores.inject { |sum, element| sum + element }.to_f / scores.size)
-      .try(:round, 1)
+    (scores.inject { |sum, element| sum + element }.to_f / scores.size).try(:round, 1)
   end
 
   private
