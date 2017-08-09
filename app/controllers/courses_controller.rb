@@ -7,8 +7,8 @@ class CoursesController < ApplicationController
   def index
     respond_to do |format|
       format.html do
-        query = CoursesQuery.new(Course.all, courses_query_params).call
-        render locals: { query: query }
+        courses_query = CoursesQuery.new(Course.all, courses_query_params).call
+        render locals: { courses_query: courses_query }
       end
       format.js { render js: "Turbolinks.visit('#{request.original_url}');" }
     end

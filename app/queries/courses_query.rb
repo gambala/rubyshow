@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class CoursesQuery
-  attr_reader :query, :params
+  attr_reader :courses, :params
 
-  def initialize(initial_query = Course.all, params = {})
-    @query = initial_query
+  def initialize(courses = Course.all, params = {})
+    @courses = courses
     @params = params
   end
 
@@ -19,26 +19,26 @@ class CoursesQuery
   end
 
   def filter_by_language
-    @query = query.where(language: params[:language]) if params[:language].in?(%w(Русский English))
+    @courses = courses.where(language: params[:language]) if params[:language].in?(%w(Русский English))
   end
 
   def filter_by_paid
-    @query = query.where(paid: params[:paid]) if params[:paid].in?(%w(1 0))
+    @courses = courses.where(paid: params[:paid]) if params[:paid].in?(%w(1 0))
   end
 
   def filter_by_title
-    @query = query.where('title ILIKE ?', "%#{params[:title]}%") if params[:title].present?
+    @courses = courses.where('title ILIKE ?', "%#{params[:title]}%") if params[:title].present?
   end
 
   def filter_only_approved
-    @query = query.approved
+    @courses = courses.approved
   end
 
   def sort_by_rating
-    @query = query.sort_by { |course| [course.rating, course.comments.count] }.reverse
+    @courses = courses.sort_by { |course| [course.rating, course.comments.count] }.reverse
   end
 
   def with_comments
-    @query = query.includes(:comments)
+    @courses = courses.includes(:comments)
   end
 end
