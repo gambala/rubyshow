@@ -1,0 +1,5 @@
+demo:
+  email: demo@mail.ru
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'demo') %>
+  role: admin
+  username: Демо Аккаунт

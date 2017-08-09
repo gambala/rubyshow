@@ -1,0 +1,28 @@
+comment_about_free_russian_course:
+  course: free_russian_course
+  user: demo
+  rating: 4
+  content: Норм курс
+  kind: 1
+
+comment_about_paid_russian_course:
+  course: paid_russian_course
+  user: demo
+  rating: 5
+  content: Супер курс!
+  kind: 2
+  graduate: true
+
+comment_about_free_english_course:
+  course: free_english_course
+  user: demo
+  rating: 3
+  content: Сносно
+  kind: 1
+
+comment_about_paid_english_course:
+  course: paid_english_course
+  user: demo
+  rating: 4
+  content: Лучше, чем бесплатная версия.
+  kind: 1
