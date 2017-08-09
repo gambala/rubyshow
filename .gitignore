@@ -1,8 +1,10 @@
-!/log/.keep
 .bundle
 .byebug_history
-.idea/**
+.idea
+
 /config/application.yml
 /log/*
-/tmp
 /server
+/tmp/*
+
+!/log/.keep
