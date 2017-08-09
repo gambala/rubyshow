@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-class PagesController < ApplicationController
-  def home
+class WelcomeController < ApplicationController
+  def index
     @courses_size = Course.count
     @comments_size = Comment.count
     @random_course = Course.all.sample

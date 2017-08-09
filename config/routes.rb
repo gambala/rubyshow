@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   get '/free', to: 'courses#free'
   get '/paid', to: 'courses#paid'
 
-  root 'pages#home'
+  root to: 'welcome#index'
 end
