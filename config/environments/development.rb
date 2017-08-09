@@ -11,7 +11,6 @@ Rails.application.configure do
   config.cache_classes = false
   config.consider_all_requests_local = true
   config.eager_load = false
-  config.middleware.use Rack::LiveReload
   config.sass.inline_source_maps = true
   config.sass.line_comments = false
   config.sass.preferred_syntax = :sass

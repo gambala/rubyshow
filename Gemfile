@@ -74,7 +74,6 @@ group :development do
   gem 'listen'
   gem 'meta_request'
   gem 'puma'
-  gem 'rack-livereload'
   gem 'rubocop-template', require: false
   gem 'spring'
   gem 'spring-watcher-listen'
