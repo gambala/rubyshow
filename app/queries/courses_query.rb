@@ -1,39 +1,44 @@
 # frozen_string_literal: true
 
-class CoursesQuery < ApplicationQuery
-  action :with_comments,
-         :filter_by_language,
-         :filter_by_paid,
-         :filter_by_title,
-         :filter_only_approved,
-         :sort_by_rating
+class CoursesQuery
+  attr_reader :query, :params
+
+  def initialize(initial_query = Course.all, params = {})
+    @query = initial_query
+    @params = params
+  end
+
+  def call
+    with_comments
+    filter_by_language
+    filter_by_paid
+    filter_by_title
+    filter_only_approved
+    sort_by_rating
+    self
+  end
 
   def filter_by_language
-    return unless options[:language].in?(%w(Русский English))
-    where(language: options[:language])
+    @query = query.where(language: params[:language]) if params[:language].in?(%w(Русский English))
   end
 
   def filter_by_paid
-    return unless options[:paid].in?(%w(1 0))
-    where(paid: options[:paid])
+    @query = query.where(paid: params[:paid]) if params[:paid].in?(%w(1 0))
   end
 
   def filter_by_title
-    return if options[:title].blank?
-    where('title ILIKE ?', "%#{options[:title]}%")
+    @query = query.where('title ILIKE ?', "%#{params[:title]}%") if params[:title].present?
   end
 
   def filter_only_approved
-    approved
+    @query = query.approved
   end
 
   def sort_by_rating
-    sort_by do |course|
-      [course.rating, course.comments.count]
-    end.reverse
+    @query = query.sort_by { |course| [course.rating, course.comments.count] }.reverse
   end
 
   def with_comments
-    includes(:comments)
+    @query = query.includes(:comments)
   end
 end

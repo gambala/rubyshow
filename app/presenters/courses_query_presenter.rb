@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class CoursesQueryPresenter < ApplicationPresenter
-  presents :queried_courses
+  presents :query
 
   def any_titles?
-    queried_courses.options.any?
+    query.params.any?
   end
 
   def request_title
@@ -20,21 +20,21 @@ class CoursesQueryPresenter < ApplicationPresenter
   private
 
   def courses_amount
-    "#{queried_courses.size} #{I18n.t('words.course', count: queried_courses.size)}"
+    "#{query.query.size} #{I18n.t('words.course', count: query.query.size)}"
   end
 
   def comments_amount
-    course_ids = queried_courses.map { |item| item[:id] }
+    course_ids = query.query.map { |item| item[:id] }
     comments_size = Comment.where(course_id: course_ids).size
     "и #{comments_size} #{I18n.t('words.comment', count: comments_size)}"
   end
 
   def courses_suffix_for_comments
-    I18n.t('words.courses_suffix', count: queried_courses.size)
+    I18n.t('words.courses_suffix', count: query.query.size)
   end
 
   def paid_option_title
-    case queried_courses.options[:paid]
+    case query.params[:paid]
     when '1'
       'Платные курсы'
     when '0'
@@ -47,7 +47,7 @@ class CoursesQueryPresenter < ApplicationPresenter
   end
 
   def language_option_title
-    case queried_courses.options[:language]
+    case query.params[:language]
     when 'Русский'
       'на русском'
     when 'English'
@@ -60,8 +60,8 @@ class CoursesQueryPresenter < ApplicationPresenter
   end
 
   def title_option_title
-    if queried_courses.options[:title].present?
-      ", созвучные с «#{queried_courses.options[:title]}»"
+    if query.params[:title].present?
+      ", созвучные с «#{query.params[:title]}»"
     else
       ''
     end

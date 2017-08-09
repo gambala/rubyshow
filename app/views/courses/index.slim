@@ -1,4 +1,4 @@
-- present queried_courses do |courses_query_presenter|
+- present query, CoursesQueryPresenter do |courses_query_presenter|
   - title courses_query_presenter.request_title if courses_query_presenter.any_titles?
 section.section-red-promo
   .container
@@ -41,7 +41,7 @@ section.section-padded
                 li = link_to course.title, course
 
       .col-sm-12.col-md-8.col-md-pull-4.col-lg-9.col-lg-pull-3
-        - present queried_courses do |courses_query_presenter|
+        - present query, CoursesQueryPresenter do |courses_query_presenter|
           - if courses_query_presenter.any_titles?
             .well
               dl.dl-inline
@@ -51,7 +51,7 @@ section.section-padded
                 dt Найдено:
                 dd = courses_query_presenter.response_title
         section.section-with-margin
-          = render 'courses/list', courses: queried_courses
+          = render 'courses/list', courses: query.query
 
         .well
           p
