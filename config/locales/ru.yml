@@ -12,6 +12,8 @@ ru:
           attributes:
             graduate:
               accepted: 'должно быть отмечено, если вы хотите оставить отзыв.'
+  site:
+    title: Рейтинг курсов по Ruby и Ruby on Rails
   will_paginate:
     next_label: "Сюда &#8594;"
     page_gap: "&hellip;"

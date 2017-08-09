@@ -1,6 +1,10 @@
 meta charset='utf-8'
 meta name='viewport' content='width=device-width, initial-scale=1'
-title = content_for?(:title) ? yield(:title) : 'Рейтинг курсов по Ruby и Ruby on Rails'
+= meta_for_description
+= meta_for_site_name
+= meta_for_title
+= meta_for_url
+= title_tag
 = csrf_meta_tags
 = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload'
 = render 'favicons'
