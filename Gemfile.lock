@@ -282,6 +282,9 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-i18n (4.0.9)
+      i18n (~> 0.7)
+      railties (~> 4.0)
     railties (4.2.9)
       actionpack (= 4.2.9)
       activesupport (= 4.2.9)
@@ -336,8 +339,6 @@ GEM
       rubocop (~> 0.49)
     ruby-progressbar (1.8.1)
     ruby_dep (1.5.0)
-    russian (0.6.0)
-      i18n (>= 0.5.0)
     sass (3.5.1)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -463,13 +464,13 @@ DEPENDENCIES
   rails (~> 4.2.8)
   rails-assets-flag-icon-css!
   rails-assets-webfontloader!
+  rails-i18n
   rbnacl
   rbnacl-libsodium
   recaptcha
   rollbar
   rspec-rails
   rubocop-template
-  russian
   sass
   sassc-rails
   shoulda-matchers (~> 2.8)
