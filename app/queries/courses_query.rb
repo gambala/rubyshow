@@ -8,7 +8,7 @@ class CoursesQuery
     @params = params
   end
 
-  def call
+  def apply_all_filters
     with_comments
     filter_by_language
     filter_by_paid
@@ -35,6 +35,19 @@ class CoursesQuery
 
   def filter_only_approved
     @courses = courses.approved
+    self
+  end
+
+  def filter_top_5
+    with_comments
+    filter_only_approved
+    sort_by_rating
+    first_5
+    self
+  end
+
+  def first_5
+    @courses = courses.first(5)
     self
   end
 

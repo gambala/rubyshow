@@ -6,7 +6,7 @@ class PagesController < ApplicationController
     @comments_number = Comment.count
     @random_course = Course.all.sample
     @random_comment = Comment.includes(:user, :course).all.sample
-    @top_5_free = CoursesQuery.new(Course.free).call.courses.first(5)
-    @top_5_paid = CoursesQuery.new(Course.paid).call.courses.first(5)
+    @top_5_free = CoursesQuery.new(Course.free).filter_top_5.courses
+    @top_5_paid = CoursesQuery.new(Course.paid).filter_top_5.courses
   end
 end
