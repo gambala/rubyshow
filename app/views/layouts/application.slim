@@ -4,15 +4,15 @@ html.with-sticky-footer
     meta name='viewport' content='width=device-width, initial-scale=1'
     = csrf_meta_tags
     title = content_for?(:title) ? yield(:title) : 'Рейтинг курсов по Ruby и Ruby on Rails'
-    = render 'shared/favicons'
+    = render 'application/favicons'
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload'
     = javascript_include_tag 'modernizr-custom', 'data-turbolinks-track' => 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
   body
     .body-before-footer
-      = render 'shared/navbar'
-      = render partial: 'shared/flash_messages', flash: flash
+      = render 'application/navbar'
+      = render partial: 'application/flash_messages', flash: flash
       = yield
-    = render 'shared/footer'
-    = render 'shared/metrics'
-    = render 'shared/responsive_js_helpers'
+    = render 'application/footer'
+    = render 'application/metrics'
+    = render 'application/responsive_js_helpers'
