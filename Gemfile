@@ -34,6 +34,7 @@ gem 'slim'
 gem 'stlr'
 gem 'turbolinks'
 gem 'uglifier'
+gem 'webpacker'
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
 
