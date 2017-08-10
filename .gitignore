@@ -5,7 +5,9 @@
 /config/application.yml
 /coverage
 /log/*
+/node_modules
 /server
 /tmp/*
+/yarn-error.log
 
 !/log/.keep
