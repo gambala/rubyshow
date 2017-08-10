@@ -80,6 +80,5 @@ group :development do
 end
 
 source 'https://rails-assets.org' do
-  gem 'rails-assets-flag-icon-css'
   gem 'rails-assets-webfontloader'
 end
