@@ -5,6 +5,7 @@
   "author": "Vitaliy Emeliyantsev <gambala.rus@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "flag-icon-css": "^2.8.0"
+    "flag-icon-css": "^2.8.0",
+    "webfontloader": "^1.6.28"
   }
 }

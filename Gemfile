@@ -78,7 +78,3 @@ group :development do
   gem 'spring-watcher-listen'
   gem 'web-console'
 end
-
-source 'https://rails-assets.org' do
-  gem 'rails-assets-webfontloader'
-end

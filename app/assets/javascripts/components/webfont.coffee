@@ -1,4 +1,4 @@
-//= require webfontloader
+//= require webfontloader/webfontloader
 
 document.addEventListener 'ready', ->
   WebFont.load
