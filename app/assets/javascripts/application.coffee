@@ -1,5 +1,5 @@
-#= require jquery
-#= require jquery_ujs
+#= require jquery/dist/jquery
+#= require rails-ujs
 #= require bootstrap/transition
 #= require bootstrap/affix
 #= require bootstrap/alert
