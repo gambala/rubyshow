@@ -1,4 +1,5 @@
 import 'bundles/modernizr';
+import 'element-closest';
 import Rails      from 'rails-ujs';
 import Turbolinks from 'turbolinks';
 
