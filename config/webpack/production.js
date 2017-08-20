@@ -2,28 +2,31 @@
 
 /* eslint global-require: 0 */
 
+const os = require('os');
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const CompressionPlugin = require('compression-webpack-plugin')
+const UglifyJsParallelPlugin = require('webpack-uglify-parallel');
 const sharedConfig = require('./shared.js')
 
 module.exports = merge(sharedConfig, {
   output: { filename: '[name]-[chunkhash].js' },
-  devtool: 'source-map',
+  devtool: 'cheap-source-map',
   stats: 'normal',
 
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
+    new UglifyJsParallelPlugin({
+      workers: os.cpus().length,
       minimize: true,
-      sourceMap: true,
+      sourceMap: false,
 
       compress: {
-        warnings: false
+        warnings: false,
       },
 
       output: {
-        comments: false
-      }
+        comments: false,
+      },
     }),
 
     new CompressionPlugin({
