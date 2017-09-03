@@ -12,3 +12,5 @@
 /yarn-error.log
 
 !/log/.keep
+
+.DS_Store
