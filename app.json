@@ -1,0 +1,12 @@
+// For now only postdeploy and predeploy tasks are working.
+// See http://dokku.viewdocs.io/dokku/advanced-usage/deployment-tasks/
+
+{
+  "name": "Ruby Courses application on Rails 5",
+  "scripts": {
+    "dokku": {
+      // "predeploy": "echo 'Hello world'",
+      "postdeploy": "bundle exec rake db:migrate"
+    }
+  }
+}

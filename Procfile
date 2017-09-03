@@ -1,3 +1,2 @@
-rails: PORT=3000 bundle exec rails s
-guard: bundle exec guard
-assets: ./bin/webpack-dev-server
+web: bundle exec puma -C config/puma.rb
+worker: bundle exec sidekiq -q default

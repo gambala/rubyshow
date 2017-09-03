@@ -24,6 +24,7 @@ gem 'pry-pretty-numeric'
 gem 'pry-rails'
 gem 'pry-theme'
 gem 'pundit'
+gem 'puma'
 gem 'rack-attack'
 gem 'rails', '>= 5.0.0.1'
 gem 'rails-i18n'
@@ -74,7 +75,6 @@ group :development do
   gem 'guard-rspec', require: false
   gem 'listen'
   gem 'meta_request'
-  gem 'puma'
   gem 'rubocop-template', require: false
   gem 'spring'
   gem 'spring-watcher-listen'
