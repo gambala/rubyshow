@@ -15,4 +15,10 @@ Rails.application.configure do
   config.log_level = :debug
   config.middleware.use Rack::Attack
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
+
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
+    logger           = ActiveSupport::Logger.new(STDOUT)
+    logger.formatter = config.log_formatter
+    config.logger = ActiveSupport::TaggedLogging.new(logger)
+  end
 end
