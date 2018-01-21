@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreateGraduates < ActiveRecord::Migration
+class CreateGraduates < ActiveRecord::Migration[4.2]
   def change
     create_table :graduates do |t|
       t.boolean :finished
