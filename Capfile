@@ -3,12 +3,17 @@
 require 'capistrano/setup'
 require 'capistrano/deploy'
 require 'capistrano/scm/git'
-require 'capistrano/bundler'
-require 'capistrano/rails'
-require 'capistrano/rails/console'
 require 'capistrano/rvm'
-set :rvm_type, :user
-set :rvm_ruby_version, '2.4.1'
+require 'capistrano/bundler'
+require 'capistrano/rails/assets'
+require 'capistrano/rails/migrations'
+require 'capistrano/rails/console'
+require 'capistrano/figaro_yml'
+require 'capistrano/touch-linked-files'
+require 'capistrano/puma'
 
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
 install_plugin Capistrano::SCM::Git
+install_plugin Capistrano::Puma
+install_plugin Capistrano::Puma::Monit
+install_plugin Capistrano::Puma::Nginx

@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
-set :stage, :production
+require_relative 'forbidden_locations'
 
-# Replace 127.0.0.1 with your server's IP address!
-server '163.172.176.28', user: 'deploy', roles: %w(web app)
+server ENV['deploy_host'], port: ENV['deploy_port'], user: ENV['deploy_user'], roles: %w(app db web)
+set :forbidden_locations, Deploy.forbidden_locations
+set :letsencrypt_path, 'rubycourses.gambala.pro'
+set :nginx_config_name, 'ruby_courses.production.nginx.conf'
+set :nginx_server_name, 'rubycourses.gambala.pro'
+set :nginx_use_ssl, false
+set :ssh_options, keys: %w(/home/gambala/.ssh/id_rsa),
+                  forward_agent: true,
+                  auth_methods: %w(publickey)

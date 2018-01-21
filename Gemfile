@@ -6,7 +6,7 @@ source 'https://rubygems.org'
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
 
-gem 'autoprefixer-rails'
+gem 'autoprefixer-rails', '7.2.3' # https://github.com/ai/autoprefixer-rails/issues/130
 gem 'bootsnap'
 gem 'bootstrap-sass'
 gem 'breakpoint'
@@ -16,15 +16,15 @@ gem 'dragonfly', '~> 1.0.12'
 gem 'figaro'
 gem 'font-awesome-rails'
 gem 'omniauth-github', github: 'intridea/omniauth-github'
-gem 'pg'
+gem 'pg', '~> 0.21.0'
 gem 'pry'
 gem 'pry-doc'
 gem 'pry-highlight'
 gem 'pry-pretty-numeric'
 gem 'pry-rails'
 gem 'pry-theme'
-gem 'pundit'
 gem 'puma'
+gem 'pundit'
 gem 'rack-attack'
 gem 'rails', '>= 5.0.0.1'
 gem 'rails-i18n'
@@ -66,9 +66,12 @@ group :development do
   gem 'byebug', platform: :mri
   gem 'capistrano'
   gem 'capistrano-bundler'
+  gem 'capistrano-figaro-yml'
   gem 'capistrano-rails'
   gem 'capistrano-rails-console', require: false
-  gem 'capistrano-rvm', github: 'capistrano/rvm'
+  gem 'capistrano-rvm'
+  gem 'capistrano-touch-linked-files'
+  gem 'capistrano3-puma'
   gem 'guard', require: false
   gem 'guard-bundler', require: false
   gem 'guard-livereload', require: false

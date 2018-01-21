@@ -1,19 +1,30 @@
 # frozen_string_literal: true
 
-set :application, 'rubycourses'
-set :deploy_to, '/home/deploy/var/www/rubycourses'
-set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system)
-set :linked_files, %w(config/database.yml config/application.yml)
-set :repo_url, 'git@github.com:Freika/ruby_courses.git'
+require 'figaro'
 
-namespace :deploy do
-  desc 'Restart application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      execute :touch, release_path.join('tmp/restart.txt')
-    end
-  end
+Figaro.application = Figaro::Application.new(environment: fetch(:stage),
+                                             path: File.expand_path('../application.yml', __FILE__))
+Figaro.load
 
-  after :publishing, 'deploy:restart'
-  after :finishing, 'deploy:cleanup'
-end
+set :application, 'ruby_courses'
+set :branch, (proc { `git rev-parse --abbrev-ref HEAD`.chomp })
+set :deploy_to, "/home/#{ENV['deploy_user']}/apps/#{fetch(:application)}-#{fetch(:stage)}"
+set :linked_dirs, %w(log
+                     node_modules
+                     public/assets
+                     public/system
+                     tmp/cache
+                     tmp/pids
+                     tmp/sockets
+                     vendor/bundle)
+set :linked_files, %w(config/application.yml
+                      config/database.yml)
+set :log_level, :info
+set :puma_bind, "unix://#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock"
+set :puma_init_active_record, true
+set :puma_preload_app, false
+set :puma_threads, [4, 16]
+set :puma_workers, 2
+set :repo_url, 'git@github.com:gambala/ruby_courses.git'
+set :support_email, 'hello@gambala.pro'
+set :user, ENV['deploy_user']
