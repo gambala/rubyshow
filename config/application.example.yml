@@ -2,7 +2,7 @@ development:
   app_host: http://localhost:3000
   postgres_host:
   postgres_password_plain:
-  postgres_pool: 5
+  postgres_pool: '5'
   postgres_username:
 
 production:
@@ -12,5 +12,6 @@ production:
   deploy_user: <get it from admin if needed>
   postgres_host:
   postgres_password_plain: <get it from admin if needed>
-  postgres_pool: 5
+  postgres_pool: '5'
   postgres_username: <get it from admin if needed>
+  secret_key_base: <rake secret>
