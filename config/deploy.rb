@@ -17,8 +17,7 @@ set :linked_dirs, %w(log
                      tmp/pids
                      tmp/sockets
                      vendor/bundle)
-set :linked_files, %w(config/application.yml
-                      config/database.yml)
+set :linked_files, %w(config/application.yml)
 set :log_level, :info
 set :puma_bind, "unix://#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock"
 set :puma_init_active_record, true
