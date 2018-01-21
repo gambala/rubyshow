@@ -1,0 +1,8 @@
+production:
+  app_host: <get it from admin if needed>
+  deploy_host: <get it from admin if needed>
+  deploy_port: <get it from admin if needed>
+  deploy_user: <get it from admin if needed>
+  postgres_host:
+  postgres_password_plain: <get it from admin if needed>
+  postgres_username: <get it from admin if needed>
