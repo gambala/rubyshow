@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-ruby '2.4.1'
-
 source 'https://rubygems.org'
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
@@ -72,10 +70,6 @@ group :development do
   gem 'capistrano-rvm'
   gem 'capistrano-touch-linked-files'
   gem 'capistrano3-puma'
-  gem 'guard', require: false
-  gem 'guard-bundler', require: false
-  gem 'guard-livereload', require: false
-  gem 'guard-rspec', require: false
   gem 'listen'
   gem 'meta_request'
   gem 'rubocop-template', require: false
