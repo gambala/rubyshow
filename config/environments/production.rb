@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.configure do
+  config.action_controller.asset_host = ENV['app_host']
+  config.action_controller.default_url_options = { host: ENV['app_host'] }
   config.action_controller.perform_caching = true
+  config.action_mailer.asset_host = ENV['app_host']
+  config.action_mailer.default_url_options = { host: ENV['app_host'] }
   config.action_mailer.perform_caching = false
   config.active_record.dump_schema_after_migration = false
   config.active_storage.service = :local
