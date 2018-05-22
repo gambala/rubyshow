@@ -1,18 +1,9 @@
 # frozen_string_literal: true
 
-require File.expand_path('../boot', __FILE__)
-
-require 'rails'
-require 'active_model/railtie'
-require 'active_job/railtie'
-require 'active_record/railtie'
-require 'action_controller/railtie'
-require 'action_mailer/railtie'
-require 'action_view/railtie'
-require 'sprockets/railtie'
+require_relative 'boot'
+require 'rails/all'
 require 'breakpoint'
 require 'rbnacl/libsodium'
-
 Bundler.require(*Rails.groups)
 
 module RubyCourses
@@ -25,7 +16,7 @@ module RubyCourses
     config.encoding = 'utf-8'
     config.i18n.available_locales = %i(ru en)
     config.i18n.default_locale = :ru
-    config.load_defaults 5.1
+    config.load_defaults 5.2
 
     config.generators do |g|
       g.test_framework :rspec, view_specs: false, request_specs: false, routing_specs: false

@@ -7,7 +7,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
 
 gem 'autoprefixer-rails', '7.2.3' # https://github.com/ai/autoprefixer-rails/issues/130
-gem 'bootsnap'
+gem 'bootsnap', require: false
 gem 'bootstrap-sass'
 gem 'breakpoint'
 gem 'coffee-rails'
@@ -26,7 +26,7 @@ gem 'pry-theme'
 gem 'puma'
 gem 'pundit'
 gem 'rack-attack'
-gem 'rails', '>= 5.0.0.1'
+gem 'rails', '~> 5.2.0'
 gem 'rails-i18n'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'rollbar'

@@ -3,6 +3,7 @@
 .idea
 
 /config/application.yml
+/config/master.key
 /coverage
 /log/*
 /node_modules
