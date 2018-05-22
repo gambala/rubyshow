@@ -82,6 +82,10 @@ server {
 <% end %>
   }
 
+  location /.well-known {
+    root /var/www/html;
+  }
+
   location ~ ^/(assets|packs)/ {
     add_header Cache-Control public;
     expires max;
@@ -96,12 +100,6 @@ server {
 
   location /nginx_status {
     stub_status;
-  }
-
-  location ~ /robots.txt {
-    if ($host = <%= fetch(:nginx_server_name) %>) {
-      rewrite ^/robots\.txt /robots.<%= fetch(:nginx_server_name) %>.txt last;
-    }
   }
 
   location ~ (<%= fetch(:forbidden_locations).join('|') %>) {

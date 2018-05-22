@@ -12,6 +12,7 @@ set :deploy_to, "/home/#{ENV['deploy_user']}/apps/#{fetch(:application)}-#{fetch
 set :linked_dirs, %w(log
                      node_modules
                      public/assets
+                     public/sitemaps
                      public/system
                      tmp/cache
                      tmp/pids
@@ -25,5 +26,5 @@ set :puma_preload_app, false
 set :puma_threads, [4, 16]
 set :puma_workers, 2
 set :repo_url, 'git@github.com:gambala/ruby_courses.git'
-set :support_email, 'hello@gambala.pro'
+set :support_email, 'support@gambala.pro'
 set :user, ENV['deploy_user']
