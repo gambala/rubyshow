@@ -1,5 +1,7 @@
 = render 'responsive_js_helpers'
 div id='js-permanent' data-turbolinks-permanent=''
-  = javascript_include_tag 'application', data: { turbolinks_track: 'reload' }
-  = javascript_pack_tag 'application', async: true, data: { turbolinks_track: 'reload' }
+  = javascript_include_tag 'application', data: { turbolinks_track: 'reload',
+                                                  turbolinks_suppress_warning: true }
+  = javascript_pack_tag 'application', async: true, data: { turbolinks_track: 'reload',
+                                                            turbolinks_suppress_warning: true }
   = render 'body_scripts'
