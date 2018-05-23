@@ -72,6 +72,8 @@ GEM
     breakpoint (2.7.1)
       sass (~> 3.3)
       sassy-maps (< 1.0.0)
+    bugsnag (6.7.3)
+      concurrent-ruby (~> 1.0)
     builder (3.2.3)
     bullet (5.7.2)
       activesupport (>= 3.0.0)
@@ -283,8 +285,6 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
-    rollbar (2.15.5)
-      multi_json
     rspec-core (3.7.1)
       rspec-support (~> 3.7.0)
     rspec-expectations (3.7.0)
@@ -405,6 +405,7 @@ DEPENDENCIES
   bootsnap
   bootstrap-sass
   breakpoint
+  bugsnag
   bullet
   byebug
   capistrano
@@ -444,7 +445,6 @@ DEPENDENCIES
   rbnacl
   rbnacl-libsodium
   recaptcha
-  rollbar
   rspec-rails
   rubocop-template
   sass
