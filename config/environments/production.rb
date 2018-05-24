@@ -22,6 +22,7 @@ Rails.application.configure do
   config.log_tags = [ :request_id ]
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
   config.require_master_key = true
+  config.webpacker.check_yarn_integrity = false
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     config.logger    = ActiveSupport::TaggedLogging.new(logger)

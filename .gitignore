@@ -1,6 +1,8 @@
 .bundle
 .byebug_history
 .idea
+.yarn-integrity
+yarn-debug.log*
 
 /config/application.yml
 /config/master.key
@@ -8,6 +10,7 @@
 /log/*
 /node_modules
 /public/packs
+/public/packs-test
 /server
 /tmp/*
 /yarn-error.log

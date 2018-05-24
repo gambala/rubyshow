@@ -20,6 +20,7 @@ Rails.application.configure do
   config.sass.inline_source_maps = true
   config.sass.line_comments = false
   config.sass.preferred_syntax = :sass
+  config.webpacker.check_yarn_integrity = true
 
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
     config.action_controller.perform_caching = true
