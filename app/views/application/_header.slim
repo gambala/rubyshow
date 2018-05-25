@@ -14,20 +14,16 @@ nav.navbar.navbar-default
       = link_to 'Ruby Courses', root_path, class: 'navbar-brand'
     .collapse.navbar-collapse id='navbar-collapse'
       ul.nav.navbar-nav
-        li = link_to 'Все курсы', courses_path
-        li = link_to 'Платные курсы', courses_path(paid: '1')
-        li = link_to 'Бесплатные курсы', courses_path(paid: '0')
-        li
-          = link_to new_course_path do
-            span Добавить курс
-            span { class = 'badge'
-                   data-toggle = 'tooltip'
-                   data-placement = 'bottom'
-                   title = 'Количество курсов на рассмотрении'
-                 }
-              = unapproved_courses_amount
         li = link_to 'Последние отзывы', comments_path
       ul.nav.navbar-nav.navbar-right
+        p.navbar-text Курсы:
+        li = link_to 'Все', courses_path
+        li = link_to 'Платные', courses_path(paid: '1')
+        li = link_to 'Бесплатные', courses_path(paid: '0')
+        li = link_to 'Добавить', new_course_path,
+                     title: "Количество курсов на рассмотрении: #{unapproved_courses_amount}",
+                     data: { toggle: 'tooltip', placement: 'bottom' }
+
         - if signed_in?
           li.dropdown
             a.dropdown-toggle href='#' data-toggle='dropdown'
