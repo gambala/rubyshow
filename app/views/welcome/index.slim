@@ -1,18 +1,24 @@
-#home-bg
+section.section-red-promo
   .container
-    .col-xs-12.col-sm-12.col-md-12.col-lg-10.col-lg-offset-1
-      h1 RubyCourses.ru
-      h3 Здесь вы найдете объемный список курсов, на которых можно обучиться Ruby и Ruby on Rails с отзывами выпускников этих курсов.
-      h3 Это поможет вам выбрать подходящий курс и позволит сэкономить время.
+    .row
+      .col-sm-8.col-lg-9
+        h1.section-title RubyCourses.ru
+        p Здесь вы найдете объемный список курсов, на которых можно обучиться Ruby и Ruby on Rails с отзывами выпускников этих курсов.
+        p Это поможет вам выбрать подходящий курс и позволит сэкономить время.
+        p
+          ' Сейчас у нас есть
+          span.text-danger => courses_size
+          ' курсов и
+          span.text-danger => comments_size
+          ' отзывов к ним.
+      .col-sm-4.col-lg-3.hidden-xs
+        .text-center
+          .icon.icon-ruby
+    br
+    br
 .container
-  .row
-    .col-xs-12.col-sm-6.col-md-6.col-lg-6.col-sm-offset-3.col-md-offset-3.col-lg-offset-3.text-center.h4
-      p
-        ' Сейчас у нас есть
-        span.text-danger => courses_size
-        ' курсов и
-        span.text-danger => comments_size
-        ' отзывов к ним.
+  br
+  br
   .row
     .col-xs-12.col-sm-6.col-md-6.col-lg-6
       h2 Пять лучших бесплатных курсов
@@ -22,7 +28,8 @@
       = render 'courses/list', courses: top_5_paid_courses
   .row
     = link_to 'Посмотреть все курсы', courses_path,
-              class: 'all-courses btn btn-default btn-block'
+              class: 'btn btn-default btn-block',
+              style: 'margin: 40px 0 30px;'
   .row
     .col-xs-12.col-sm-6.col-md-6.col-lg-6.text-center.h4
       h2 Случайный курс:
