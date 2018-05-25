@@ -73,7 +73,7 @@ end
 #  course_id  :integer
 #  rating     :integer
 #  graduate   :boolean          default(FALSE)
-#  kind       :integer          default(1), not null
+#  kind       :integer          default("comment"), not null
 #
 # Indexes
 #
