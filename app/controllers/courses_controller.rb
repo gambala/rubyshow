@@ -14,24 +14,8 @@ class CoursesController < ApplicationController
     end
   end
 
-  def show
-    authorize @course, :show?
-
-    @comments = @course.comments.comment
-    @opinions = @course.comments.opinion
-    @questions = @course.comments.question
-    @opinion = @course.comments.build(kind: Comment.kinds[:opinion])
-    @comment = @course.comments.build(kind: Comment.kinds[:comment])
-    @question = @course.comments.build(kind: Comment.kinds[:question])
-    @rating = @course.rating
-  end
-
   def new
     @course = Course.new
-  end
-
-  def edit
-    authorize @course, :edit?
   end
 
   def create
@@ -44,6 +28,22 @@ class CoursesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    authorize @course, :show?
+
+    @comments = @course.comments.comment
+    @opinions = @course.comments.opinion
+    @questions = @course.comments.question
+    @opinion = @course.comments.build(kind: Comment.kinds[:opinion])
+    @comment = @course.comments.build(kind: Comment.kinds[:comment])
+    @question = @course.comments.build(kind: Comment.kinds[:question])
+    @rating = @course.rating
+  end
+
+  def edit
+    authorize @course, :edit?
   end
 
   def update

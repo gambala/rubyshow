@@ -77,12 +77,3 @@ section(itemscope itemtype='https://schema.org/EducationEvent')
               .well
                 = render partial: 'comments/form',
                   locals: { course: @course, comment: @comment }
-            / section.tab-pane.section-with-margin#questions role='tabpanel'
-            /   - if @questions.any?
-            /     = render partial: 'comments/comment',
-            /       locals: { course: @course },
-            /       collection: @questions
-              .well
-                = render partial: 'comments/form',
-                  locals: { course: @course, comment: @question }
-

@@ -1,5 +1,6 @@
 .bundle
 .byebug_history
+.DS_Store
 .idea
 .yarn-integrity
 yarn-debug.log*
@@ -16,5 +17,3 @@ yarn-debug.log*
 /yarn-error.log
 
 !/log/.keep
-
-.DS_Store
