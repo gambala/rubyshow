@@ -1,7 +1,7 @@
 free_russian_course:
   title: Руссиш Курсиш
   description: Самый лучший курс в рунете. Бесплатная версия.
-  url: http://russish-kursish.ru
+  url: https://russish-kursish.ru
   paid: false
   language: Русский
   approved: true
@@ -9,7 +9,7 @@ free_russian_course:
 paid_russian_course:
   title: Руссиш Курсиш PRO
   description: Самый лучший курс в рунете. Платная продвинутая версия.
-  url: http://russish-kursish.ru
+  url: https://russish-kursish.ru
   paid: true
   language: Русский
   approved: true
@@ -17,7 +17,7 @@ paid_russian_course:
 free_english_course:
   title: Ruby Buby
   description: Best course in the internet. Free version.
-  url: http://ruby-buby.com
+  url: https://ruby-buby.com
   paid: false
   language: English
   approved: true
@@ -25,7 +25,7 @@ free_english_course:
 paid_english_course:
   title: Ruby Buby PRO
   description: Best course in the internet. Paid pro version.
-  url: http://ruby-buby.com
+  url: https://ruby-buby.com
   paid: true
   language: English
   approved: true
@@ -35,7 +35,7 @@ random_course_<%= i %>:
   id: <%= i %>
   title: Рандомный курс №<%= i %>
   description: Однообразное описание курса.
-  url: http://site.ru
+  url: https://site.ru
   paid: <%= [true, false].sample %>
   language: <%= %w(Русский English).sample %>
   approved: true

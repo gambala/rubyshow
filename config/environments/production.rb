@@ -30,7 +30,6 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
   end
 
-  # config.action_controller.asset_host = 'http://assets.example.com'
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
   # config.action_mailer.raise_delivery_errors = false

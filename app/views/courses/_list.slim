@@ -1,5 +1,5 @@
 - courses.each do |course|
-  .media.media-stack-overflow(itemscope itemtype='http://schema.org/EducationEvent')
+  .media.media-stack-overflow(itemscope itemtype='https://schema.org/EducationEvent')
     .media-left
       - if course.rated?
         = link_to course_path(course),
