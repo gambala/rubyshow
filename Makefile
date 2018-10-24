@@ -8,7 +8,9 @@ lint-security:
 	brakeman
 
 start:
-	overmind start
+	rails s
 
 watch:
 	overmind start
+
+s: start
