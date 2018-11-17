@@ -58,6 +58,7 @@ group :test do
 end
 
 group :development do
+  gem 'agoo'
   gem 'annotate'
   gem 'bullet'
   gem 'byebug', platform: :mri
