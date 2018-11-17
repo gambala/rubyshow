@@ -10,7 +10,7 @@ Devise.setup do |config|
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
   config.omniauth :github, ENV['GITHUB_CLIENT_KEY'], ENV['GITHUB_CLIENT_SECRET'], scope: 'user:email'
   config.password_length = 8..72
-  config.reconfirmable = true
+  config.reconfirmable = false
   config.reset_password_keys = [:username]
   config.reset_password_within = 6.hours
   config.secret_key = 'c727c65f38ba1922ef4a24613e6cb7111e766a1a9ce813b026d0c5d0a282bfc6dbb905da117bd6bb23c5c5ca196d1c79b28bd9c2f90f8444701b019e1ac6a480'

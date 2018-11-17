@@ -69,6 +69,7 @@ group :development do
   gem 'capistrano-rvm'
   gem 'capistrano-touch-linked-files'
   gem 'capistrano3-puma'
+  gem 'letter_opener'
   gem 'listen'
   gem 'meta_request'
   gem 'rubocop-template', require: false

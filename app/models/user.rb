@@ -3,7 +3,7 @@
 class User < ApplicationRecord
   attr_accessor :login
 
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable,
          omniauth_providers: [:github], authentication_keys: [:login]
 
@@ -69,9 +69,13 @@ end
 #  uid                    :string
 #  username               :string
 #  github_name            :string
+#  confirmation_token     :string
+#  confirmed_at           :datetime
+#  confirmation_sent_at   :datetime
 #
 # Indexes
 #
+#  index_users_on_confirmation_token    (confirmation_token) UNIQUE
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #  index_users_on_username              (username) UNIQUE
