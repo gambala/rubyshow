@@ -7,7 +7,7 @@ Devise.setup do |config|
   config.case_insensitive_keys = [:email]
   config.confirmation_keys = [:username]
   config.expire_all_remember_me_on_sign_out = true
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'noreply@rubycourses.ru'
   config.omniauth :github, ENV['GITHUB_CLIENT_KEY'], ENV['GITHUB_CLIENT_SECRET'], scope: 'user:email'
   config.password_length = 8..72
   config.reconfirmable = false
