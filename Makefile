@@ -1,3 +1,6 @@
+console:
+	bundle exec rails console
+
 lint-ruby-setup:
 	bundle exec rubocop --auto-gen-config
 
@@ -8,7 +11,7 @@ lint-security:
 	brakeman
 
 start:
-	rails s
+	bundle exec falcon serve -b http://localhost:3000 --threaded
 
 watch:
 	overmind start
