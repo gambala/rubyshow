@@ -8,7 +8,7 @@ Devise.setup do |config|
   config.confirmation_keys = [:username]
   config.expire_all_remember_me_on_sign_out = true
   config.mailer_sender = 'noreply@rubycourses.ru'
-  config.omniauth :github, ENV['GITHUB_CLIENT_KEY'], ENV['GITHUB_CLIENT_SECRET'], scope: 'user:email'
+  config.omniauth :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET'], scope: 'user:email'
   config.password_length = 8..72
   config.reconfirmable = false
   config.reset_password_keys = [:username]
