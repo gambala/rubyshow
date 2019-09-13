@@ -11,8 +11,7 @@ lint-security:
 	brakeman
 
 start:
-	bundle exec puma -t 1:1 -b tcp://0.0.0.0:3000
-# 	bundle exec falcon serve -b http://localhost:3000
+	bundle exec rails s
 
 watch:
 	overmind start

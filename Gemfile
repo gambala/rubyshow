@@ -42,7 +42,6 @@ gem 'rbnacl', '5.0'
 gem 'rbnacl-libsodium'
 
 group :development do
-  gem 'agoo'
   gem 'annotate'
   gem 'bullet'
   gem 'byebug', platform: :mri
@@ -54,7 +53,6 @@ group :development do
   gem 'capistrano-rvm'
   gem 'capistrano-touch-linked-files'
   gem 'capistrano3-puma'
-  gem 'falcon'
   gem 'letter_opener'
   gem 'listen'
   gem 'meta_request'
