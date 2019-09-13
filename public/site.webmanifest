@@ -3,12 +3,12 @@
     "short_name": "Ruby courses",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png?v=yyQQGygvO9",
+            "src": "/android-chrome-192x192.png?v=3eBBR0PRJd",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/android-chrome-512x512.png?v=yyQQGygvO9",
+            "src": "/android-chrome-512x512.png?v=3eBBR0PRJd",
             "sizes": "512x512",
             "type": "image/png"
         }
