@@ -41,20 +41,6 @@ gem 'bcrypt_pbkdf'
 gem 'rbnacl', '5.0'
 gem 'rbnacl-libsodium'
 
-group :development, :test do
-  gem 'factory_girl_rails'
-  gem 'launchy'
-  gem 'rspec-rails'
-end
-
-group :test do
-  gem 'capybara', '~> 2.4.0'
-  gem 'capybara-webkit'
-  gem 'codeclimate-test-reporter', require: nil
-  gem 'database_cleaner', '~> 1.3'
-  gem 'shoulda-matchers', '~> 2.8'
-end
-
 group :development do
   gem 'agoo'
   gem 'annotate'

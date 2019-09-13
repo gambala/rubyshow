@@ -17,9 +17,5 @@ module RubyCourses
     config.i18n.available_locales = %i(ru en)
     config.i18n.default_locale = :ru
     config.load_defaults 5.2
-
-    config.generators do |g|
-      g.test_framework :rspec, view_specs: false, request_specs: false, routing_specs: false
-    end
   end
 end
