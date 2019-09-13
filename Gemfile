@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
 
-gem 'autoprefixer-rails', '7.2.3' # https://github.com/ai/autoprefixer-rails/issues/130
+gem 'autoprefixer-rails'
 gem 'bootsnap', require: false
 gem 'bootstrap-sass'
 gem 'breakpoint'
@@ -12,16 +12,12 @@ gem 'bugsnag'
 gem 'coffee-rails'
 gem 'devise'
 gem 'dragonfly', '~> 1.0.12'
-gem 'falcon'
 gem 'figaro'
 gem 'font-awesome-rails'
 gem 'mailgun_rails'
 gem 'omniauth-github', github: 'intridea/omniauth-github'
 gem 'pg', '~> 0.21.0'
 gem 'pry'
-gem 'pry-doc'
-gem 'pry-highlight'
-gem 'pry-pretty-numeric'
 gem 'pry-rails'
 gem 'pry-theme'
 gem 'puma'
@@ -42,7 +38,7 @@ gem 'will_paginate-bootstrap'
 
 # Security
 gem 'bcrypt_pbkdf'
-gem 'rbnacl'
+gem 'rbnacl', '5.0'
 gem 'rbnacl-libsodium'
 
 group :development, :test do
@@ -72,6 +68,7 @@ group :development do
   gem 'capistrano-rvm'
   gem 'capistrano-touch-linked-files'
   gem 'capistrano3-puma'
+  gem 'falcon'
   gem 'letter_opener'
   gem 'listen'
   gem 'meta_request'
