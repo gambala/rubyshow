@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/gambala/flag-icons-rails.git
+  revision: dd6c68bb3a3d4be15f7bbad36d9f16366353633f
+  specs:
+    flag-icons-rails (3.1.0)
+      sass (~> 3.2)
+
+GIT
   remote: https://github.com/intridea/omniauth-github.git
   revision: 2e77639f32c35598e398c0c591ffab37691cdee7
   specs:
@@ -378,6 +385,7 @@ DEPENDENCIES
   devise
   dragonfly (~> 1.0.12)
   figaro
+  flag-icons-rails!
   font-awesome-rails
   letter_opener
   listen

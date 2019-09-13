@@ -1,5 +1,6 @@
 /*
-*= require flag-icon-css/css/flag-icon
+*= require flag-icon
 *= require font-awesome
 *= require_tree ./components
+*= require_tree ./ruby_courses/blocks
 */
