@@ -2,4 +2,5 @@ section.section-padded#comments
   .container
     h1 Последние отзывы о курсах
     = render @comments
-    .text-center = will_paginate @comments, renderer: BootstrapPagination::Rails
+    .text-center
+      == pagy_nav_js pagy_object if pagy_object.pages > 1

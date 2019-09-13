@@ -17,6 +17,8 @@ gem 'flag-icons-rails', github: 'gambala/flag-icons-rails'
 gem 'font-awesome-rails'
 gem 'mailgun_rails'
 gem 'omniauth-github', github: 'intridea/omniauth-github'
+gem 'oj' # pagy dependency
+gem 'pagy'
 gem 'pg', '~> 0.21.0'
 gem 'pry'
 gem 'pry-rails'
@@ -34,8 +36,6 @@ gem 'stlr'
 gem 'turbolinks'
 gem 'uglifier'
 gem 'webpacker'
-gem 'will_paginate', '~> 3.0.6'
-gem 'will_paginate-bootstrap'
 
 # Security
 gem 'bcrypt_pbkdf'

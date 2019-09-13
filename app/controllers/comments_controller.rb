@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
+  include WithPagy
+
   before_action :set_comment, only: %i(update destroy)
   before_action :set_course, only: %i(create update destroy)
 
   def index
-    @comments = Comment.includes(:course, :user)
-                       .order(created_at: :desc)
-                       .paginate(page: params[:page], per_page: 6)
+    @comments = Comment.includes(:course, :user).order(created_at: :desc)
+    @comments = paginate(@comments, items: 6)
   end
 
   def create
