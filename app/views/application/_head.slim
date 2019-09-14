@@ -8,3 +8,5 @@ meta name='viewport' content='width=device-width, initial-scale=1'
 = csrf_meta_tags
 = stylesheet_link_tag 'application', media: 'all', data: { turbolinks_track: 'reload' }
 = render 'favicons'
+= javascript_pack_tag 'application', data: { turbolinks_track: 'reload',
+                                             turbolinks_suppress_warning: true }
