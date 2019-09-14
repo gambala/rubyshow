@@ -953,6 +953,11 @@ bluebird@^3.5.1:
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.5.tgz#a8d0afd73251effbbd5fe384a77d73003c17a71f"
   integrity sha512-5am6HnnfN+urzt4yfg7IgTbotDjIT/u8AJpEt0sIU9FtXfVeezXAPKswrG+xKUCOYAINpSdgZVDU6QFh+cuH3w==
 
+blueimp-gallery@^2.31.0:
+  version "2.35.0"
+  resolved "https://registry.yarnpkg.com/blueimp-gallery/-/blueimp-gallery-2.35.0.tgz#96d5792138e3365ce83d0a4afd84a7f803612b29"
+  integrity sha512-/dT0K8Vh2FlmKW+PILbygoZ4ramOBM8x2e85JTHOXImI2v2flaBBInQNu7nPonCkWLFejfsf54oHdty1QQslog==
+
 bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.4.0:
   version "4.11.8"
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.8.tgz#2cde09eb5ee341f484746bb0309b3253b1b1442f"
@@ -2730,6 +2735,11 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
+fontfaceobserver@^2.0.13:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/fontfaceobserver/-/fontfaceobserver-2.1.0.tgz#e2705d293e2c585a6531c2a722905657317a2991"
+  integrity sha512-ReOsO2F66jUa0jmv2nlM/s1MiutJx/srhAe2+TE8dJCMi02ZZOcCTxTCQFr3Yet+uODUtnr4Mewg+tNQ+4V1Ng==
+
 for-in@^0.1.3:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-0.1.8.tgz#d8773908e31256109952b1fdb9b3fa867d2775e1"
@@ -3628,7 +3638,7 @@ isstream@~0.1.2:
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
   integrity sha1-R+Y/evVa+m+S4VAOaQ64uFKcCZo=
 
-jquery@^3.2.1:
+jquery@*, jquery@^3.2.1, jquery@^3.3.1:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.1.tgz#714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
   integrity sha512-36+AdBzCL+y6qjw5Tx7HgzeGCzC81MDDgaUP8ld2zhx58HdqXGoBd+tHdrBMiyjGQs0Hxs/MLZTu/eHNJJuWPw==
@@ -4455,6 +4465,11 @@ normalize-url@^3.0.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-3.3.0.tgz#b2e1c4dc4f7c6d57743df733a4f5978d18650559"
   integrity sha512-U+JJi7duF1o+u2pynbp2zXDW2/PADgC30f0GsHZtRh+HOcXHnw137TrNlyxxRvWW5fjKd3bcLHPxofWuCjaeZg==
+
+normalize.css@^8.0.0:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-8.0.1.tgz#9b98a208738b9cc2634caacbc42d131c97487bf3"
+  integrity sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==
 
 npm-bundled@^1.0.1:
   version "1.0.6"
@@ -5875,6 +5890,20 @@ rails-erb-loader@^5.5.2:
     loader-utils "^1.1.0"
     lodash.defaults "^4.2.0"
 
+"rails-plus@https://github.com/gambala/rails-plus#develop":
+  version "0.1.0"
+  resolved "https://github.com/gambala/rails-plus#e6623cb6c7f9cf4120d99cdd5628f9eab14a233e"
+  dependencies:
+    blueimp-gallery "^2.31.0"
+    element-closest "^2.0.2"
+    fontfaceobserver "^2.0.13"
+    jquery "^3.3.1"
+    normalize.css "^8.0.0"
+    remodal "^1.1.1"
+    smooth-scroll cferdinandi/smooth-scroll
+    what-input "^4.1.1"
+    whatwg-fetch "^2.0.3"
+
 rails-ujs@^5.1.3:
   version "5.2.3"
   resolved "https://registry.yarnpkg.com/rails-ujs/-/rails-ujs-5.2.3.tgz#4b65ea781a6befe62e96da6362165286a1fe4099"
@@ -6108,6 +6137,13 @@ regjsparser@^0.1.4:
   integrity sha1-fuj4Tcb6eS0/0K4ijSS9lJ6tIFw=
   dependencies:
     jsesc "~0.5.0"
+
+remodal@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/remodal/-/remodal-1.1.1.tgz#00f580b09417b2b7e7a425b17327ec10f3d596c3"
+  integrity sha1-APWAsJQXsrfnpCWxcyfsEPPVlsM=
+  dependencies:
+    jquery "*"
 
 remove-trailing-separator@^1.0.1:
   version "1.1.0"
@@ -6471,6 +6507,10 @@ slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
   integrity sha1-xB8vbDn8FtHNF61LXYlhFK5HDVU=
+
+smooth-scroll@cferdinandi/smooth-scroll:
+  version "16.1.0"
+  resolved "https://codeload.github.com/cferdinandi/smooth-scroll/tar.gz/31e7bc7bba8fbc145676fe07877de8ef84449b91"
 
 snapdragon-node@^2.0.1:
   version "2.1.1"
@@ -7295,6 +7335,7 @@ wbuf@^1.1.0, wbuf@^1.7.2:
 webfontloader@^1.6.28:
   version "1.6.28"
   resolved "https://registry.yarnpkg.com/webfontloader/-/webfontloader-1.6.28.tgz#db786129253cb6e8eae54c2fb05f870af6675bae"
+  integrity sha1-23hhKSU8tujq5UwvsF+HCvZnW64=
 
 webpack-dev-middleware@1.12.2:
   version "1.12.2"
@@ -7391,6 +7432,16 @@ websocket-driver@>=0.5.1:
 websocket-extensions@>=0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.1.tgz#76899499c184b6ef754377c2dbb0cd6cb55d29e7"
+
+what-input@^4.1.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/what-input/-/what-input-4.3.1.tgz#b8ea7554ba1d9171887c4c6addf28185fec3d31d"
+  integrity sha512-7KD71RWNRWI9M08shZ8+n/2UjO5amwsG9PMSXWz0iIlH8H2DVbHE8Z2tW1RqQa0kIwdeqdUIffFz7crDfkcbAw==
+
+whatwg-fetch@^2.0.3:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.4.tgz#dde6a5df315f9d39991aa17621853d720b85566f"
+  integrity sha512-dcQ1GWpOD/eEQ97k66aiEVpNnapVj90/+R+SXTPYGHpYBBypfKJEQjLrvMZ7YXbKm21gXd4NcuxUTjiv1YtLng==
 
 whet.extend@~0.9.9:
   version "0.9.9"

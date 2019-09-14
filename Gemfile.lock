@@ -6,6 +6,15 @@ GIT
       sass (~> 3.2)
 
 GIT
+  remote: https://github.com/gambala/rails-plus.git
+  revision: e6623cb6c7f9cf4120d99cdd5628f9eab14a233e
+  branch: develop
+  specs:
+    rails-plus (0.1.0)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
+
+GIT
   remote: https://github.com/intridea/omniauth-github.git
   revision: 2e77639f32c35598e398c0c591ffab37691cdee7
   specs:
@@ -325,9 +334,6 @@ GEM
       net-ssh (>= 2.8.0)
     sshkit-interactive (0.3.0)
       sshkit (~> 1.12)
-    stlr (2.0.0)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
     temple (0.8.2)
     thor (0.20.3)
     thread_safe (0.3.6)
@@ -402,6 +408,7 @@ DEPENDENCIES
   rack-attack
   rails (~> 5.2.0)
   rails-i18n
+  rails-plus!
   rbnacl (= 5.0)
   rbnacl-libsodium
   recaptcha
@@ -411,7 +418,6 @@ DEPENDENCIES
   slim
   spring
   spring-watcher-listen
-  stlr
   turbolinks
   uglifier
   web-console

@@ -1,5 +1,4 @@
-import 'bundles/modernizr';
-import 'element-closest';
+import 'rails-plus/es6/libs';
 import 'modules/pagy.js.erb';
 
 import Rails      from 'rails-ujs';
