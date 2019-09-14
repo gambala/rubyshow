@@ -37,11 +37,6 @@ gem 'turbolinks'
 gem 'uglifier'
 gem 'webpacker'
 
-# Security
-gem 'bcrypt_pbkdf'
-gem 'rbnacl', '5.0'
-gem 'rbnacl-libsodium'
-
 group :development do
   gem 'annotate'
   gem 'bullet'

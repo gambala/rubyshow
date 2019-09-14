@@ -78,7 +78,6 @@ GEM
     autoprefixer-rails (9.6.1.1)
       execjs
     bcrypt (3.1.13)
-    bcrypt_pbkdf (1.0.1)
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
@@ -275,10 +274,6 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    rbnacl (5.0.0)
-      ffi
-    rbnacl-libsodium (1.0.16)
-      rbnacl (>= 3.0.1)
     recaptcha (5.1.0)
       json
     responders (3.0.0)
@@ -371,7 +366,6 @@ PLATFORMS
 DEPENDENCIES
   annotate
   autoprefixer-rails
-  bcrypt_pbkdf
   bootsnap
   bootstrap-sass
   breakpoint
@@ -409,8 +403,6 @@ DEPENDENCIES
   rails (~> 5.2.0)
   rails-i18n
   rails-plus!
-  rbnacl (= 5.0)
-  rbnacl-libsodium
   recaptcha
   rubocop-template
   sass
