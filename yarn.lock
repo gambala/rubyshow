@@ -954,9 +954,9 @@ bluebird@^3.5.1:
   integrity sha512-5am6HnnfN+urzt4yfg7IgTbotDjIT/u8AJpEt0sIU9FtXfVeezXAPKswrG+xKUCOYAINpSdgZVDU6QFh+cuH3w==
 
 blueimp-gallery@^2.31.0:
-  version "2.35.0"
-  resolved "https://registry.yarnpkg.com/blueimp-gallery/-/blueimp-gallery-2.35.0.tgz#96d5792138e3365ce83d0a4afd84a7f803612b29"
-  integrity sha512-/dT0K8Vh2FlmKW+PILbygoZ4ramOBM8x2e85JTHOXImI2v2flaBBInQNu7nPonCkWLFejfsf54oHdty1QQslog==
+  version "2.36.0"
+  resolved "https://registry.yarnpkg.com/blueimp-gallery/-/blueimp-gallery-2.36.0.tgz#1775d6f480a5f18da5392519bc132fe3ada2a038"
+  integrity sha512-bicE9gIFXWjX0LButGDLhCRA0+XRBEjAtswnJSt2nHVPUx4Gd8WufNFl65P28YCevooO51KaTFGcbE2oeb8DbQ==
 
 bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.4.0:
   version "4.11.8"
@@ -2239,6 +2239,7 @@ electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.247, electron-to-chromium
 element-closest@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/element-closest/-/element-closest-2.0.2.tgz#72a740a107453382e28df9ce5dbb5a8df0f966ec"
+  integrity sha1-cqdAoQdFM4LijfnOXbtajfD5Zuw=
 
 elliptic@^6.0.0:
   version "6.5.1"
@@ -5892,7 +5893,7 @@ rails-erb-loader@^5.5.2:
 
 "rails-plus@https://github.com/gambala/rails-plus#develop":
   version "0.1.0"
-  resolved "https://github.com/gambala/rails-plus#e6623cb6c7f9cf4120d99cdd5628f9eab14a233e"
+  resolved "https://github.com/gambala/rails-plus#58e068eb21a89a2d03e2cf442c3a69e1ccf647e4"
   dependencies:
     blueimp-gallery "^2.31.0"
     element-closest "^2.0.2"
@@ -6509,8 +6510,8 @@ slash@^1.0.0:
   integrity sha1-xB8vbDn8FtHNF61LXYlhFK5HDVU=
 
 smooth-scroll@cferdinandi/smooth-scroll:
-  version "16.1.0"
-  resolved "https://codeload.github.com/cferdinandi/smooth-scroll/tar.gz/31e7bc7bba8fbc145676fe07877de8ef84449b91"
+  version "16.1.2"
+  resolved "https://codeload.github.com/cferdinandi/smooth-scroll/tar.gz/3d3e381864589601cb3b7417e1162a5b7d5bd286"
 
 snapdragon-node@^2.0.1:
   version "2.1.1"
