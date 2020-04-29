@@ -1,19 +1,19 @@
 - courses.each do |course|
-  .media.media-stack-overflow(itemscope itemtype='https://schema.org/EducationEvent')
+  .media.media-stack-overflow
     .media-left
       - if course.rated?
         = link_to course_path(course),
                   class: 'media-object',
                   title: 'Средний рейтинг курса',
                   data: { toggle: 'tooltip', placement: 'right' } do
-          span(itemprop='aggregateRating') = course.rating
+          span = course.rating
       - else
         = link_to course_path(course),
                   class: 'media-object',
                   title: 'Пока без оценок',
                   data: { toggle: 'tooltip', placement: 'right' } do
     .media-body
-      .media-heading(itemprop='name')
+      .media-heading
         = link_to course.title, course, class: 'text-info'
       p
         span = language_flag(course.language)
