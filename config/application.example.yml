@@ -1,17 +1,19 @@
 development:
   app_host: http://localhost:3000
-  postgres_host:
-  postgres_password_plain:
-  postgres_pool: '5'
-  postgres_username:
+  db_database:
+  db_host:
+  db_password_plain:
+  db_pool: '5'
+  db_username:
 
 production:
   app_host: <get it from admin if needed>
   deploy_host: <get it from admin if needed>
   deploy_port: <get it from admin if needed>
   deploy_user: <get it from admin if needed>
-  postgres_host:
-  postgres_password_plain: <get it from admin if needed>
-  postgres_pool: '5'
-  postgres_username: <get it from admin if needed>
+  db_database:
+  db_host:
+  db_password_plain: <get it from admin if needed>
+  db_pool: '5'
+  db_username: <get it from admin if needed>
   secret_key_base: <rake secret>

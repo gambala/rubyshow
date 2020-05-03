@@ -1,19 +1,17 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: <%= ENV["postgres_username"] %>
-  password: <%= ENV["postgres_password_plain"] %>
-  host: <%= ENV["postgres_host"] %>
-  pool: <%= ENV["postgres_pool"] %>
+  database: <%= ENV["db_database"] %>
+  username: <%= ENV["db_username"] %>
+  password: <%= ENV["db_password_plain"] %>
+  host: <%= ENV["db_host"] %>
+  pool: <%= ENV["db_pool"] %>
 
 development:
   <<: *default
-  database: ruby_courses_development
 
 test:
   <<: *default
-  database: ruby_courses_test
 
 production:
   <<: *default
-  database: ruby_courses_production
