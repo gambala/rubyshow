@@ -12,19 +12,15 @@ class ApplicationPolicy
     false
   end
 
-  def show?
-    scope.where(id: record.id).exists?
+  def new?
+    create?
   end
 
   def create?
     false
   end
 
-  def new?
-    create?
-  end
-
-  def update?
+  def show?
     false
   end
 
@@ -32,7 +28,23 @@ class ApplicationPolicy
     update?
   end
 
+  def update?
+    false
+  end
+
+  def delete?
+    destroy?
+  end
+
   def destroy?
+    false
+  end
+
+  def destroy_all?
+    false
+  end
+
+  def undelete?
     false
   end
 
@@ -51,5 +63,27 @@ class ApplicationPolicy
     def resolve
       scope
     end
+
+    def admin?
+      user.admin?
+    end
+
+    def authorized(some_scope)
+      Pundit.policy_scope(user, some_scope)
+    end
+  end
+
+  private
+
+  def admin?
+    user.admin?
+  end
+
+  def authorized(some_scope)
+    Pundit.policy_scope(user, some_scope)
+  end
+
+  def record_in_scope?
+    scope.where(id: record.id).exists?
   end
 end
