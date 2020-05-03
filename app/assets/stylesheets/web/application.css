@@ -3,5 +3,5 @@
 *= require font-awesome
 *= require rails-plus/application
 *= require_tree ./components
-*= require_tree ./ruby_courses/blocks
+*= require_tree ./blocks
 */
