@@ -3,7 +3,7 @@
 require 'figaro'
 
 Figaro.application = Figaro::Application.new(environment: fetch(:stage),
-                                             path: File.expand_path('../application.yml', __FILE__))
+                                             path: File.expand_path('../config/application.yml', __dir__))
 Figaro.load
 
 set :application, 'ruby_courses'
