@@ -1,5 +1,5 @@
 @import 'variables'
-@import 'breakpoint'
+@import 'rails-plus/mixins/media'
 
 .panel
   margin-bottom: 12px
@@ -14,5 +14,5 @@
   max-width: 500px
   width: 100%
 
-  +breakpoint($screen-sm-min)
+  +from($screen-sm-min)
     margin-top: 96px

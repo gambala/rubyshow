@@ -84,9 +84,6 @@ GEM
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
       sassc (>= 2.0.0)
-    breakpoint (2.7.1)
-      sass (~> 3.3)
-      sassy-maps (< 1.0.0)
     bugsnag (6.12.2)
       concurrent-ruby (~> 1.0)
     builder (3.2.4)
@@ -306,8 +303,6 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    sassy-maps (0.4.0)
-      sass (~> 3.3)
     slim (4.0.1)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
@@ -366,7 +361,6 @@ DEPENDENCIES
   autoprefixer-rails
   bootsnap
   bootstrap-sass
-  breakpoint
   bugsnag
   bullet
   byebug

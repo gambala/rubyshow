@@ -1,10 +1,10 @@
 @import 'variables'
-@import 'breakpoint'
+@import 'rails-plus/mixins/media'
 
 .affix-aside-wrapper
   margin-bottom: 12px
 
-  +breakpoint($screen-md-min)
+  +from($screen-md-min)
     margin-top: -50px
 
 .affix-aside

@@ -2,7 +2,6 @@
 
 require_relative 'boot'
 require 'rails/all'
-require 'breakpoint'
 Bundler.require(*Rails.groups)
 
 module RubyCourses

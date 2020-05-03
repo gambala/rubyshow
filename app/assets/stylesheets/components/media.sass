@@ -1,5 +1,5 @@
 @import 'variables'
-@import 'breakpoint'
+@import 'rails-plus/mixins/media'
 
 .media-stack-overflow
   margin: 0 -10px
@@ -22,7 +22,7 @@
       width: 48px
 
     .media-object-responsive
-      +breakpoint($screen-sm-min)
+      +from($screen-sm-min)
         height: 72px
         line-height: 72px
         width: 72px
@@ -44,7 +44,7 @@
         font-size: 14px
         font-weight: 400
 
-      +breakpoint($screen-sm-min)
+      +from($screen-sm-min)
         font-size: 16px
 
     p
