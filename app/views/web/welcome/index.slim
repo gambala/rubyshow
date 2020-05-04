@@ -24,10 +24,10 @@ section.section-red-promo
   .row
     .col-xs-12.col-sm-6.col-md-6.col-lg-6
       h2 Пять лучших бесплатных курсов
-      = render 'courses/list', courses: top_5_free_courses
+      = render 'web/courses/list', courses: top_5_free_courses
     .col-xs-12.col-sm-6.col-md-6.col-lg-6
       h2 Пять лучших платных курсов
-      = render 'courses/list', courses: top_5_paid_courses
+      = render 'web/courses/list', courses: top_5_paid_courses
   .row
     = link_to 'Посмотреть все курсы', courses_path,
               class: 'btn btn-default btn-block',
