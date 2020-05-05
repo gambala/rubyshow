@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@rails/webpacker": "3.5",
+    "@rails/webpacker": "5.0.1",
     "autoprefixer": "^9.7.6",
     "jquery": "^3.2.1",
     "rails-erb-loader": "^5.5.2",
@@ -10,7 +10,7 @@
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
-    "webpack-dev-server": "2.11.2"
+    "webpack-dev-server": "^3.2.1"
   },
   "private": true
 }
