@@ -2,7 +2,7 @@
   "dependencies": {
     "@rails/webpacker": "5.0.1",
     "autoprefixer": "^9.7.6",
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.0",
     "rails-erb-loader": "^5.5.2",
     "rails-plus": "https://github.com/gambala/rails-plus#develop",
     "rails-ujs": "^5.1.3",
