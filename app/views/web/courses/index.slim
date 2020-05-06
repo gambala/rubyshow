@@ -11,28 +11,8 @@ section.section-red-promo
           .icon.icon-ruby
 section.section-padded
   .container
-    .row
-      .col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-0.col-md-push-8.col-lg-3.col-lg-push-9
-        .affix-aside-wrapper
-          .affix-aside
-            = form_tag courses_path, method: :get, remote: true
-              .panel.panel-default
-                .panel-body
-                  .form-group
-                    = text_field_tag :title, params[:title], class: 'form-control', id: 'course_name',
-                                     placeholder: 'Найти по названию'
-                  .form-group
-                    = select_tag :language,
-                                 options_for_select(language_options, params[:language]),
-                                 { class: 'form-control' }
-                  .form-group
-                    = select_tag :paid,
-                                 options_for_select(paid_options, params[:paid]),
-                                 { class: 'form-control' }
-                  .form-group
-                    .text-right
-                      = link_to 'Показать все курсы', courses_path, class: 'btn btn-link', id: 'reset_filter'
-                      = button_tag 'Найти', class: 'btn btn-primary', id: 'apply_filter'
+    div class='lg:flex lg:flex-no-wrap'
+      div class='lg:order-last lg:ml-5' style='min-width: 300px; max-width: 500px;'
         - if policy(Course.new).approve?
           section
             span.b Новые курсы
@@ -40,7 +20,27 @@ section.section-padded
               - Course.unapproved.each do |course|
                 li = link_to course.title, course
 
-      .col-sm-12.col-md-8.col-md-pull-4.col-lg-9.col-lg-pull-3
+        .sticky-section
+          = form_tag courses_path, method: :get, remote: true
+            .panel.panel-default
+              .panel-body
+                .form-group
+                  = text_field_tag :title, params[:title], class: 'form-control', id: 'course_name',
+                                   placeholder: 'Найти по названию'
+                .form-group
+                  = select_tag :language,
+                               options_for_select(language_options, params[:language]),
+                               { class: 'form-control' }
+                .form-group
+                  = select_tag :paid,
+                               options_for_select(paid_options, params[:paid]),
+                               { class: 'form-control' }
+                .form-group
+                  .text-right
+                    = link_to 'Показать все курсы', courses_path, class: 'btn btn-link', id: 'reset_filter'
+                    = button_tag 'Найти', class: 'btn btn-primary', id: 'apply_filter'
+
+      div class='lg:order-first'
         - present courses_query do |courses_query_presenter|
           - if courses_query_presenter.any_titles?
             .well
