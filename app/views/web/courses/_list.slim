@@ -5,21 +5,22 @@
         = link_to course_path(course),
                   class: 'media-object',
                   title: 'Средний рейтинг курса',
-                  data: { toggle: 'tooltip', placement: 'right' } do
-          span = course.rating
+                  data: { toggle: 'tooltip', placement: 'right' }
+          span = course.comments.pluck(:graduate).count
       - else
         = link_to course_path(course),
                   class: 'media-object',
                   title: 'Пока без оценок',
-                  data: { toggle: 'tooltip', placement: 'right' } do
+                  data: { toggle: 'tooltip', placement: 'right' }
+          span
     .media-body
       .media-heading
         = link_to course.title, course, class: 'text-info'
       p
         span = language_flag(course.language)
         span = course_status(course)
-        = link_to course_path(course, anchor: 'comments'),
+        = link_to course_path(course),
                   title: 'Отзывов о курсе',
-                  data: { toggle: 'tooltip', placement: 'right' } do
-            span.fa.fa-comment-o
-            span = course.comments.pluck(:graduate).count
+                  data: { toggle: 'tooltip', placement: 'right' }
+            / span.fa.fa-comment-o
+            span = course.rating
