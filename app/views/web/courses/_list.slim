@@ -1,26 +1,23 @@
 - courses.each do |course|
-  .media.media-stack-overflow
-    .media-left
+  .so-media.flex
+    .mr-3
       - if course.rated?
-        = link_to course_path(course),
-                  class: 'media-object',
-                  title: 'Средний рейтинг курса',
-                  data: { toggle: 'tooltip', placement: 'right' }
-          span = course.comments.pluck(:graduate).count
+        = link_to course_path(course), class: 'so-digita text-red-500'
+          .so-digita__title = course.comments.pluck(:graduate).count
+          .so-digita__text отзывов
       - else
-        = link_to course_path(course),
-                  class: 'media-object',
-                  title: 'Пока без оценок',
-                  data: { toggle: 'tooltip', placement: 'right' }
+        = link_to course_path(course), class: 'so-digita text-red-500'
           span
-    .media-body
-      .media-heading
-        = link_to course.title, course, class: 'text-info'
-      p
-        span = language_flag(course.language)
-        span = course_status(course)
-        = link_to course_path(course),
-                  title: 'Отзывов о курсе',
-                  data: { toggle: 'tooltip', placement: 'right' }
-            / span.fa.fa-comment-o
-            span = course.rating
+    .flex-grow
+      .flex.flex-wrap.items-baseline.-mx-1
+        = link_to course.title, course, class: 'mx-1 text-lg font-medium text-blue-600 hover:text-blue-800 hover:no-underline'
+        span.mx-1.text-xs.text-red-500.whitespace-no-wrap = rating_in_gems(course.rating)
+      .flex.-m-1
+        .m-1 = language_flag(course.language)
+        .m-1 = course_status(course)
+        / - if course.rating > 0
+        /   = link_to course_path(course),
+        /             title: 'Средний рейтинг курса',
+        /             data: { toggle: 'tooltip', placement: 'right' },
+        /             class: 'm-1'
+        /     / span = course.rating
