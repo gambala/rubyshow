@@ -17,7 +17,6 @@ module Deploy
     ^/away
     ^/backup
     ^/bitrix
-    ^/browserconfig.xml
     ^/cache
     ^/cgi-sys
     ^/clientaccesspolicy
