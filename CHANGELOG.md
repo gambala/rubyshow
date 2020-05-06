@@ -1,5 +1,6 @@
 ## [2020.05.06](https://github.com/gambala/ruby_courses/commits?author=gambala&since=2020-05-06&until=2020-05-06)
 
+- Use Mina and speed up deploys
 - Install Tailwind CSS
 - Install PgHero and Rails Performance gems, setup Redis
 - Update yarn packages and fix security alerts

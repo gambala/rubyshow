@@ -15,6 +15,9 @@ gem 'figaro'
 gem 'flag-icons-rails', github: 'gambala/flag-icons-rails'
 gem 'font-awesome-rails'
 gem 'mailgun_rails'
+gem 'mina'
+gem 'mina-puma', require: false
+gem 'mina-scp',  require: false
 gem 'omniauth-github', github: 'intridea/omniauth-github'
 gem 'oj' # pagy dependency
 gem 'pagy'
