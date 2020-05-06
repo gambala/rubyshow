@@ -1,7 +1,22 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+
+
+  # = Mount engines, with and without auth =
+
+  authenticate :user, ->(user) { user.admin? } do
+    mount PgHero::Engine           , at: '/pghero'
+    mount RailsPerformance::Engine , at: '/rails/performance' , as: 'rails_performance'
+  end
+
+
+  # = Mount Devise =
+
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
+
+  # = All web routes within a module =
 
   scope module: :web do
     resources :courses do
