@@ -40,7 +40,7 @@ section.section-padded
                     = link_to 'Показать все курсы', courses_path, class: 'btn btn-link', id: 'reset_filter'
                     = button_tag 'Найти', class: 'btn btn-primary', id: 'apply_filter'
 
-      div class='lg:order-first'
+      div class='lg:order-first lg:flex-grow'
         - present courses_query do |courses_query_presenter|
           - if courses_query_presenter.any_titles?
             .well
