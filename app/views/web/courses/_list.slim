@@ -15,9 +15,3 @@
       .flex.-m-1
         .m-1 = language_flag(course.language)
         .m-1 = course_status(course)
-        / - if course.rating > 0
-        /   = link_to course_path(course),
-        /             title: 'Средний рейтинг курса',
-        /             data: { toggle: 'tooltip', placement: 'right' },
-        /             class: 'm-1'
-        /     / span = course.rating
