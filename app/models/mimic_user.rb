@@ -1,0 +1,2 @@
+class MimicUser < User
+end

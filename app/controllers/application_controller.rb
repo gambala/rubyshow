@@ -8,7 +8,16 @@ class ApplicationController < ActionController::Base
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
+  helper_method :mimic_user
+
   private
+
+  def mimic_user
+    return if current_user.blank?
+    return current_user unless ::Pundit.policy(current_user, ::MimicUser).index?
+    return nil if params[:mimic_user_id] == 'guest'
+    User.find_by(id: params[:mimic_user_id].to_i).presence || current_user
+  end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: %i(username email password password_confirmation remember_me))
