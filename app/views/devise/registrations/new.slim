@@ -9,18 +9,18 @@ section.section-padded
           = devise_error_messages!
           .form-group
             = f.label :username, 'Логин'
-            = f.text_field :username, class: 'form-control'
+            = f.text_field :username, class: 'input'
           .form-group
             = f.label :email
-            = f.email_field :email, class: 'form-control', autofocus: true
+            = f.email_field :email, class: 'input', autofocus: true
           .form-group
             = f.label :password, 'Пароль'
-            = f.password_field :password, class: 'form-control', autocomplete: 'off'
+            = f.password_field :password, class: 'input', autocomplete: 'off'
             - if @minimum_password_length
               .help-block Не менее #{@minimum_password_length} символов
           .form-group
             = f.label :password_confirmation, 'Подтверждение пароля'
-            = f.password_field :password_confirmation, class: 'form-control',
+            = f.password_field :password_confirmation, class: 'input',
                                autocomplete: 'off'
           .form-group
             = f.submit 'Зарегистрироваться', class: 'btn btn-default'

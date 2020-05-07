@@ -25,16 +25,16 @@ section.section-padded
             .panel.panel-default
               .panel-body
                 .form-group
-                  = text_field_tag :title, params[:title], class: 'form-control', id: 'course_name',
+                  = text_field_tag :title, params[:title], class: 'input', id: 'course_name',
                                    placeholder: 'Найти по названию'
                 .form-group
                   = select_tag :language,
                                options_for_select(language_options, params[:language]),
-                               { class: 'form-control' }
+                               { class: 'input' }
                 .form-group
                   = select_tag :paid,
                                options_for_select(paid_options, params[:paid]),
-                               { class: 'form-control' }
+                               { class: 'input' }
                 .form-group
                   .text-right
                     = link_to 'Показать все курсы', courses_path, class: 'btn btn-link', id: 'reset_filter'

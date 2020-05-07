@@ -10,23 +10,23 @@ section.section-padded
           = devise_error_messages!
           .form-group
             = f.label :username, 'Логин'
-            = f.text_field :username, class: 'form-control'
+            = f.text_field :username, class: 'input'
           .form-group
             = f.label :email
-            = f.email_field :email, class: 'form-control', autofocus: true
+            = f.email_field :email, class: 'input', autofocus: true
             - if devise_mapping.confirmable? && resource.pending_reconfirmation?
               .help-block Ждем подтверждения для: #{resource.unconfirmed_email}
           .form-group
             = f.label :password, 'Пароль'
-            = f.password_field :password, class: 'form-control', autocomplete: 'off'
+            = f.password_field :password, class: 'input', autocomplete: 'off'
             .help-block Оставьте пустым, если не хотите менять
           .form-group
             = f.label :password_confirmation, 'Подтверждение пароля'
-            = f.password_field :password_confirmation, class: 'form-control',
+            = f.password_field :password_confirmation, class: 'input',
                                autocomplete: 'off'
           .form-group
             = f.label :current_password, 'Ваш текущий пароль'
-            = f.password_field :current_password, class: 'form-control', autocomplete: 'off'
+            = f.password_field :current_password, class: 'input', autocomplete: 'off'
             .help-block Введите текущий пароль для подтверждения внесения изменений
           .form-group
             = f.submit 'Обновить', class: 'btn btn-default'

@@ -7,7 +7,7 @@
       = f.label :content, comment_label(comment)
       = f.text_area :content,
                     rows: 3,
-                    class: 'form-control new-comment',
+                    class: 'input new-comment',
                     id: text_area_id(comment)
     - if policy(comment).rate?
       .row

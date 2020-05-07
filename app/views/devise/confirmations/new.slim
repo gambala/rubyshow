@@ -10,10 +10,10 @@ section.section-padded
           = devise_error_messages!
           .form-group
             = f.label :username, 'Логин'
-            = f.text_field :username, class: 'form-control'
+            = f.text_field :username, class: 'input'
           .form-group
             = f.label :email
-            = f.email_field :email, class: 'form-control', autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
+            = f.email_field :email, class: 'input', autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
           .form-group
             = f.submit 'Повторная отправка подтверждения', class: 'btn btn-default'
     .text-center

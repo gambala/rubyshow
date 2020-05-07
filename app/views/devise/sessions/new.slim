@@ -8,10 +8,10 @@ section.section-padded
         = form_for resource, as: resource_name, url: session_path(resource_name) do |f|
           .form-group
             = f.label :login, 'Логин'
-            = f.text_field :login, class: 'form-control', autofocus: true
+            = f.text_field :login, class: 'input', autofocus: true
           .form-group
             = f.label :password, 'Пароль'
-            = f.password_field :password, class: 'form-control', autocomplete: 'off'
+            = f.password_field :password, class: 'input', autocomplete: 'off'
           - if devise_mapping.rememberable?
             .form-group
               = f.check_box :remember_me
