@@ -1,0 +1,23 @@
+@import rails-plus/mixins/media
+
+.soda-header
+  color: var(--soda-header--color)
+
+  .soda-header__row
+    align-items: center
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-between
+
+  .ios-button
+    color: var(--soda-header--color)
+
+    &:hover
+      background: var(--soda-header__hover--background)
+
+  .soda-header__link
+    color: var(--soda-header__link--color)
+    text-decoration: none
+
+  .language-group
+    margin-right: 10px

@@ -1,11 +1,13 @@
 doctype html
-html.with-sticky-footer lang='ru'
+html lang='ru'
   head
     = render 'head'
-  body
-    .body-before-footer
-      = render 'header'
-      = render 'flashes'
-      = yield
-    = render 'footer'
+  body { class = 'body soda-layout' }
+    .soda-main
+      .soda-main__content
+        = render 'header'
+        = render 'flashes'
+        = yield
+      .soda-main__footer
+        = render 'footer'
     = render 'body'
