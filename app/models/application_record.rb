@@ -3,7 +3,7 @@
 class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true
 
-  scope :order_randomly, -> { order("RANDOM()") }
+  scope :order_randomly, -> { order('RANDOM()') }
 
   # User.all.reject_duplicates(:email)
   # Order.all.reject_duplicates(:user_id, :email, field: :slug, selected_record: :first)
@@ -15,12 +15,12 @@ class ApplicationRecord < ActiveRecord::Base
 
     ids = self.select("#{query}(#{field}) as #{field}") # MAX(id) as id
               .group(*args)
-              .collect(&:id)
+              .map(&:id)
 
     where(id: ids)
   end
 
-  def self.ruby_select(&block)
+  def self.ruby_select
     where(id: select { |record| yield record }.map(&:id))
   end
 end

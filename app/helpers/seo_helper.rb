@@ -103,7 +103,7 @@ module SeoHelper
   private
 
   def page_title
-    content_for(:title) ? content_for(:title) : site_name
+    content_for(:title) || site_name
   end
 
   def site_name

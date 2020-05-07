@@ -14,7 +14,7 @@ class CommentPolicy < ApplicationPolicy
   end
 
   def user?
-    user && user.persisted?
+    user&.persisted?
   end
 
   def owner?

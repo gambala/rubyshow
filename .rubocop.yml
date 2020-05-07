@@ -22,6 +22,9 @@ AllCops:
     - 'vendor/**/*'
   TargetRubyVersion: 2.6
 
+GitHub/RailsControllerRenderActionSymbol:
+  Enabled: false
+
 Layout/EmptyLineAfterGuardClause:
   Enabled: false
 
@@ -32,9 +35,14 @@ Layout/ExtraSpacing:
     - 'config/routes.rb'  # resources :scope_records
     - 'config/sitemap.rb' # add       :scope_records
 
+Layout/HashAlignment:
+  Exclude:
+    - 'lib/tasks/auto_annotate_models.rake'
+
 Layout/LineLength:
   AutoCorrect: true
   Enabled: true
+  Max: 130
 
 Layout/SpaceBeforeComma:
   Exclude:

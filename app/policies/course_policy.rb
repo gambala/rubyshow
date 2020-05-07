@@ -22,10 +22,10 @@ class CoursePolicy < ApplicationPolicy
   end
 
   def create?
-    user && user.persisted?
+    user&.persisted?
   end
 
   def admin?
-    user && user.admin?
+    user&.admin?
   end
 end

@@ -70,7 +70,9 @@ task :deploy do
     on :launch do
       in_path(fetch(:current_path)) do
         command %(mkdir -p tmp/)
-        command %{~/.rvm/bin/rvm default do bundle exec pumactl -S #{fetch(:deploy_to)}/shared/tmp/pids/puma.state -F #{fetch(:deploy_to)}/shared/puma.rb phased-restart}
+        command '~/.rvm/bin/rvm default do bundle exec pumactl' \
+                " -S #{fetch(:deploy_to)}/shared/tmp/pids/puma.state" \
+                " -F #{fetch(:deploy_to)}/shared/puma.rb phased-restart"
       end
     end
   end

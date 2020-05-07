@@ -8,12 +8,12 @@ Devise.setup do |config|
   config.confirmation_keys = [:username]
   config.expire_all_remember_me_on_sign_out = true
   config.mailer_sender = 'noreply@rubycourses.ru'
-  config.omniauth :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET'], scope: 'user:email'
+  config.omniauth :github, ENV['github_key'], ENV['github_secret'], scope: 'user:email'
   config.password_length = 8..72
   config.reconfirmable = false
   config.reset_password_keys = [:username]
   config.reset_password_within = 6.hours
-  config.secret_key = 'c727c65f38ba1922ef4a24613e6cb7111e766a1a9ce813b026d0c5d0a282bfc6dbb905da117bd6bb23c5c5ca196d1c79b28bd9c2f90f8444701b019e1ac6a480'
+  config.secret_key = ENV['devise_secret']
   config.sign_out_via = :delete
   config.skip_session_storage = [:http_auth]
   config.stretches = Rails.env.test? ? 1 : 10
@@ -39,7 +39,7 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   # config.params_authenticatable = true
   # config.paranoid = true
-  # config.pepper = '7888a524958b0e15a6432b6fef18bdc681e0a7ba03b5eff63fd42d8b08790c74df85766cacfd3377c2e34f38e6b3fd33f8c04515472ddab961465770e8db3c48'
+  # config.pepper = 'rake secret'
   # config.remember_for = 2.weeks
   # config.rememberable_options = {}
   # config.request_keys = []

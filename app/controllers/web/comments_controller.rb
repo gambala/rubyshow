@@ -25,10 +25,10 @@ module Web
           format.html do
             redirect_to @course, notice: 'Спасибо за ваш комментарий!'
           end
-          format.json { render :show, status: :created, location: @comment }
+          format.json { render :show, status: 201, location: @comment }
         else
           format.html { redirect_to :back, notice: @comment.errors.full_messages }
-          format.json { render json: @comment.errors.full_messages, status: :unprocessable_entity }
+          format.json { render json: @comment.errors.full_messages, status: 422 }
         end
       end
     end
@@ -39,10 +39,10 @@ module Web
       respond_to do |format|
         if @comment.update(comment_params)
           format.html { redirect_to @comment, notice: 'Комментарий успешно обновлен.' }
-          format.json { render :show, status: :ok, location: @comment }
+          format.json { render :show, status: 200, location: @comment }
         else
           format.html { render :edit }
-          format.json { render json: @comment.errors.full_messages, status: :unprocessable_entity }
+          format.json { render json: @comment.errors.full_messages, status: 422 }
         end
       end
     end
