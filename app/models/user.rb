@@ -15,6 +15,10 @@ class User < ApplicationRecord
     role == 'admin'
   end
 
+  def sudo?
+    role == 'admin'
+  end
+
   # Devise Omniauth methods
 
   def self.find_first_by_auth_conditions(warden_conditions)

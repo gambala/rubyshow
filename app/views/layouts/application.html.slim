@@ -2,7 +2,9 @@ doctype html
 html lang='ru'
   head
     = render 'head'
-  body { class = 'body soda-layout' }
+  body { class = 'body soda-layout'
+         class = @body_mobile_class
+       }
     .soda-main
       .soda-main__content
         = render 'header'
