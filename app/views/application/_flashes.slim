@@ -1,5 +1,5 @@
-.alerts
-  - flash.each do |type, message|
-    .alert.fade.in class=alert_class_for(type)
-      button.close data-dismiss='alert' ×
+- flash.each do |type, message|
+  .flash-item class="flash-item_#{type}"
+    .flash-item__body class="flash-item__body_#{type}"
+      .flash-item__close
       = message

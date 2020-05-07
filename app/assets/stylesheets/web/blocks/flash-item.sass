@@ -1,0 +1,43 @@
+@import rails-plus/mixins/bg
+
+.flash-item
+  max-height: 20px * 10 + 12px * 2
+  opacity: 1
+  overflow: hidden
+  transition: margin-bottom 0.5s, max-height 0.5s, opacity 0.5s
+
+  .flash-item__body
+    border-radius: 3px
+    font-size: 14px
+    font-weight: 500
+    line-height: 20px
+    padding: 12px 10px
+
+  .flash-item__close
+    +bg('times-white', '.svg', $size: cover)
+    float: right
+    height: 12px
+    margin: 4px
+    margin-left: 14px
+    width: 12px
+
+  .flash-item__body_alert,
+  .flash-item__body_error,
+  .flash-item__body_recaptcha_error
+    background: #DA1717
+    color: #fff
+
+  .flash-item__body_notice,
+  .flash-item__body_info
+    background: #63ca76
+    color: #fff
+
+.flash-item_closed
+  max-height: 0
+  opacity: 0
+
+.flash-item_buttoned
+  text-align: center
+
+  .button
+    margin-top: 12px
