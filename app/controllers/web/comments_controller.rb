@@ -17,7 +17,7 @@ module Web
 
       authorize @comment, :create?
 
-      @comment.user_id = current_user.id
+      @comment.user_id = mimic_user.id
       @comment.rating = nil unless @comment.graduate?
 
       respond_to do |format|

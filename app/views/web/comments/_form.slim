@@ -1,4 +1,4 @@
-- if signed_in? && policy(comment).comment?
+- if mimic_user.present? && policy(comment).comment?
   p Вы уже оставляли комментарий к этому курсу.
 - elsif policy(comment).create?
   = form_for [course, comment] do |f|
