@@ -15,6 +15,22 @@ GIT
       sass (>= 3.3.4)
 
 GIT
+  remote: https://github.com/gambala/rubocop-github.git
+  revision: 4116f8a56deac3e3aee896ae039b35e4bb8a416a
+  specs:
+    rubocop-github (0.14.0)
+      rubocop (<= 0.81.0)
+      rubocop-performance (~> 1.0)
+      rubocop-rails (~> 2.0)
+
+GIT
+  remote: https://github.com/gambala/rubocop-template.git
+  revision: 8dd72439b0cfd5d80718b0fa5f2dfc672bdd7571
+  specs:
+    rubocop-template (1.2.0)
+      rubocop (~> 0.49)
+
+GIT
   remote: https://github.com/intridea/omniauth-github.git
   revision: 2e77639f32c35598e398c0c591ffab37691cdee7
   specs:
@@ -294,7 +310,7 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rexml (3.2.4)
-    rubocop (0.82.0)
+    rubocop (0.81.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.7.0.1)
@@ -302,8 +318,12 @@ GEM
       rexml
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 2.0)
-    rubocop-template (1.2.0)
-      rubocop (~> 0.49)
+    rubocop-performance (1.5.2)
+      rubocop (>= 0.71.0)
+    rubocop-rails (2.5.2)
+      activesupport
+      rack (>= 1.1)
+      rubocop (>= 0.72.0)
     ruby-progressbar (1.10.1)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -419,7 +439,11 @@ DEPENDENCIES
   recaptcha
   redis
   redis-namespace (~> 1.0)
-  rubocop-template
+  rubocop
+  rubocop-github!
+  rubocop-performance
+  rubocop-rails
+  rubocop-template!
   sass
   sassc-rails
   slim

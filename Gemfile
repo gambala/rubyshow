@@ -58,7 +58,11 @@ group :development do
   gem 'letter_opener'
   gem 'listen'
   gem 'meta_request'
-  gem 'rubocop-template', require: false
+  gem 'rubocop', require: false
+  gem 'rubocop-github', github: 'gambala/rubocop-github' # because of Metrics/LineLength warning fix
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-template', require: false, github: 'gambala/rubocop-template'
   gem 'spring'
   gem 'spring-watcher-listen'
   gem 'web-console'

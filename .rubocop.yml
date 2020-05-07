@@ -1,3 +1,140 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+
 inherit_gem:
   rubocop-template: default.yml
+  rubocop-github:
+    - config/default_edge.yml
+    - config/rails_edge.yml
+
 inherit_from: .rubocop_todo.yml
+
+AllCops:
+  Exclude:
+    - 'app/xlsx_docs/base_xlsx_doc.rb'
+    - 'bin/*'
+    - 'db/schema.rb'
+    - 'lib/snippets/*'
+    - 'node_modules/**/*'
+    - 'server/**/*'
+    - 'test/**/*'
+    - 'vendor/**/*'
+  TargetRubyVersion: 2.6
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+
+Layout/ExtraSpacing:
+  AllowBeforeTrailingComments: true
+  AllowForAlignment: true
+  Exclude:
+    - 'config/routes.rb'  # resources :scope_records
+    - 'config/sitemap.rb' # add       :scope_records
+
+Layout/LineLength:
+  AutoCorrect: true
+  Enabled: true
+
+Layout/SpaceBeforeComma:
+  Exclude:
+    - 'config/routes.rb' # only: %i(show) , path:
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/BlockNesting:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/ParameterLists:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Naming/AccessorMethodName:
+  Enabled: false
+
+Naming/PredicateName:
+  Enabled: false
+
+Rails/FilePath:
+  Enabled: false
+
+Rails/HttpStatus:
+  EnforcedStyle: numeric
+
+Rails/Output:
+  Exclude:
+    - 'app/admin/**/*'
+    - 'app/operations/*'
+    - 'app/xlsx_docs/*'
+
+Rails/OutputSafety:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/GlobalVars:
+  AllowedVariables:
+    - $redis
+    - redis
+
+Style/GuardClause:
+  Enabled: false
+
+Style/IfInsideElse:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Style/Lambda:
+  EnforcedStyle: literal
+
+Style/MixinUsage:
+  Exclude:
+    - 'config/routes.rb'
+
+Style/Next:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/NumericPredicate:
+  Enabled: false
+
+Style/TrivialAccessors:
+  Enabled: false
