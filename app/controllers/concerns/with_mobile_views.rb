@@ -17,7 +17,6 @@ module WithMobileViews
   end
 
   def mobile_device?
-    return false unless mimic_user&.sudo?
     return cookies.permanent[:mobile_override] == '1' if cookies.permanent[:mobile_override]
     (request.user_agent =~ /iPhone|iPod|Android|webOS|Mobile/) && (request.user_agent !~ /iPad/)
   end
