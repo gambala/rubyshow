@@ -1,0 +1,8 @@
+.flex.flex-wrap
+  .m-2.py-2.px-2.text-gray-600 Курсы:
+  = link_to 'Все', courses_path, class: 'm-2 py-2 px-2 rounded text-blue-600 hover:bg-blue-200 hover:no-underline hover:text-gray-700'
+  = link_to 'Платные', courses_path(paid: '1'), class: 'm-2 py-2 px-2 rounded text-blue-600 hover:bg-blue-200 hover:no-underline hover:text-gray-700'
+  = link_to 'Бесплатные', courses_path(paid: '0'), class: 'm-2 py-2 px-2 rounded text-blue-600 hover:bg-blue-200 hover:no-underline hover:text-gray-700'
+  = link_to 'Добавить', new_course_path, class: 'm-2 py-2 px-2 rounded text-blue-600 hover:bg-blue-200 hover:no-underline hover:text-gray-700',
+            title: "Количество курсов на рассмотрении: #{unapproved_courses_amount}",
+            data: { toggle: 'tooltip', placement: 'bottom' }

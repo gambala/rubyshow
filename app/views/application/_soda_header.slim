@@ -2,14 +2,10 @@
   .frame: .container
     .soda-header__row
       .flex.-m-2.my-1.items-baseline
-        = link_to 'Ruby Courses', root_path, class: 'text-lg font-medium my-2 py-4 px-2'
+        = link_to 'Ruby Courses', root_path, class: 'text-lg font-medium my-2 py-2 px-2'
         = link_to 'Последние отзывы', comments_path, class: 'm-2 py-2 px-2 rounded text-blue-600 hover:bg-blue-200 hover:no-underline hover:text-gray-700'
-      .flex.flex-wrap.-m-4.my-1.items-baseline
-        .m-2.py-2.px-2.text-gray-600 Курсы:
-        = link_to 'Все', courses_path, class: 'm-2 py-2 px-2 rounded text-blue-600 hover:bg-blue-200 hover:no-underline hover:text-gray-700'
-        = link_to 'Платные', courses_path(paid: '1'), class: 'm-2 py-2 px-2 rounded text-blue-600 hover:bg-blue-200 hover:no-underline hover:text-gray-700'
-        = link_to 'Бесплатные', courses_path(paid: '0'), class: 'm-2 py-2 px-2 rounded text-blue-600 hover:bg-blue-200 hover:no-underline hover:text-gray-700'
-        = link_to 'Добавить', new_course_path, class: 'm-2 py-2 px-2 rounded text-blue-600 hover:bg-blue-200 hover:no-underline hover:text-gray-700',
-                  title: "Количество курсов на рассмотрении: #{unapproved_courses_amount}",
-                  data: { toggle: 'tooltip', placement: 'bottom' }
-        = render 'dropdown_user'
+
+      - unless mobile_device?
+        .flex.flex-wrap.-m-4.my-1.items-baseline
+          = render 'nav_list'
+          .dropdown = render 'dropdown_user'
