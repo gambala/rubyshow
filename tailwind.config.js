@@ -3,6 +3,7 @@ module.exports = {
     container: false,
     preflight: false,
   },
+  purge: false,
   theme: {
     screens: {
       sm: '640px',
