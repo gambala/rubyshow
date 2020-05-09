@@ -1,14 +1,10 @@
-- if mimic_user.present?
-  a.button.ios-button href='#' data-toggle='dropdown'
-    .ios-button__icon: i.glyphicon.glyphicon-th-large
-    .ios-button__label Аккаунт
-  ul.dropdown-menu.dropdown-menu-right role='menu'
+a.button.ios-button href='#' data-toggle='dropdown'
+  .ios-button__icon: i.glyphicon.glyphicon-user
+  .ios-button__label Аккаунт
+ul.dropdown-menu.dropdown-menu-right role='menu'
+  - if mimic_user.present?
     li = link_to 'Настройки', edit_user_registration_path
     li = link_to 'Выход', destroy_user_session_path, data: { method: :delete }
-- else
-  a.button.ios-button href='#' data-toggle='dropdown'
-    .ios-button__icon: i.glyphicon.glyphicon-lock
-    .ios-button__label Аккаунт
-  ul.dropdown-menu.dropdown-menu-right role='menu'
+  - else
     li = link_to 'Вход', new_user_session_path
     li = link_to 'Регистрация', new_user_registration_path
