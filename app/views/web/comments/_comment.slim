@@ -5,7 +5,7 @@
                   class: 'media-object media-object-responsive'
     .media-body
       .media-heading
-        .pull-right.text-right
+        .float-right.text-right
           p
             small.text-muted = comment.created_at.strftime("%e %B %Y")
           - if params[:controller] == 'comments' || params[:controller] == 'users'

@@ -19,7 +19,7 @@ section(itemscope itemtype='https://schema.org/EducationEvent')
             .panel.panel-default
               .panel-body
                 - if policy(@course).edit?
-                  .pull-right
+                  .float-right
                     = link_to edit_course_path(@course), title: 'Редактировать курс', class: 'btn btn-default btn-xs' do
                       span.fa.fa-pencil
                 section.section-with-margin
