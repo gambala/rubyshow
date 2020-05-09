@@ -28,13 +28,9 @@ section.section-padded
                   = text_field_tag :title, params[:title], class: 'input', id: 'course_name',
                                    placeholder: 'Найти по названию'
                 .form-group
-                  = select_tag :language,
-                               options_for_select(language_options, params[:language]),
-                               { class: 'input' }
+                  .select-wrapper = select_tag :language, options_for_select(language_options, params[:language])
                 .form-group
-                  = select_tag :paid,
-                               options_for_select(paid_options, params[:paid]),
-                               { class: 'input' }
+                  .select-wrapper = select_tag :paid, options_for_select(paid_options, params[:paid])
                 .form-group
                   .text-right
                     = link_to 'Показать все курсы', courses_path, class: 'btn btn-link', id: 'reset_filter'

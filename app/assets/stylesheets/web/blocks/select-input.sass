@@ -1,0 +1,71 @@
+// Based on https://css-tricks.com/the-current-state-of-styling-selects-in-2019/
+
+\:root
+  --input--background: #fff
+  --input--color: #292d3c
+  --input--border-color: #ccc
+  --input__placeholder--color: #777
+  --input_disabled--color: #777
+
+
+.select-wrapper
+  color: var(--input--color)
+  position: relative
+
+  &::after
+    border-top: 4px dashed
+    border-top: 4px solid \9
+    border-right: 4px solid transparent
+    border-left: 4px solid transparent
+    content: ''
+    display: inline-block
+    height: 0
+    margin-left: 2px
+    margin-top: -2px
+    pointer-events: none
+    position: absolute
+    right: 10px
+    top: 50%
+    translate: transform 0.1s
+    vertical-align: middle
+    width: 0
+    z-index: 1
+
+
+.select-wrapper > select
+  appearance: none
+  background: var(--input--background)
+  border-radius: 3px
+  border: 1px solid
+  border-color: var(--input--border-color)
+  color: var(--input--color)
+  cursor: pointer
+  display: block
+  max-width: 100%
+  min-height: 36px
+  padding: ((36px - 24px) / 2 - 1px) (10px - 1px)
+  padding-right: 20px
+  width: 100%
+
+
+// Hide arrow icon in IE browsers
+.select-wrapper > select::-ms-expand
+  display: none
+
+// Set options to normal weight
+.select-wrapper > select option
+  font-weight: normal
+
+// Support for rtl text, explicit support for Arabic and Hebrew
+*[dir="rtl"] .select-wrapper > select,
+\:root:lang(ar) .select-wrapper > select,
+\ :root:lang(iw) .select-wrapper > select
+  background-position: left 10px top 50%
+  padding: ((36px - 24px) / 2 - 1px) (10px - 1px)
+  padding-left: 20px
+
+// Disabled styles
+.select-wrapper > select:disabled,
+.select-wrapper > select[aria-disabled=true]
+  color: var(--input_disabled--color)
+  cursor: not-allowed
