@@ -1,10 +1,18 @@
-a.button.ios-button href='#' data-toggle='dropdown'
-  .ios-button__icon: i.glyphicon.glyphicon-user
-  .ios-button__label Аккаунт
-ul.dropdown-menu.dropdown-menu-right role='menu'
-  - if mimic_user.present?
-    li = link_to 'Настройки', edit_user_registration_path
-    li = link_to 'Выход', destroy_user_session_path, data: { method: :delete }
-  - else
-    li = link_to 'Вход', new_user_session_path
-    li = link_to 'Регистрация', new_user_registration_path
+div
+  = link_to 'javascript:;',
+            class: 'button ios-button with-tooltip',
+            data: { template: 'user_menu', tippy_interactive: true, tippy_theme: 'light', tippy_maxWidth: 300 }
+    .ios-button__icon: i.glyphicon.glyphicon-user
+    .ios-button__label Аккаунт
+  .hidden id='user_menu' style='min-width: 200px;'
+    .p-2
+      - if mimic_user.present?
+        = link_to 'Настройки', edit_user_registration_path,
+                  class: 'block p-2 rounded text-blue-600 hover:no-underline hover:bg-blue-200 hover:text-gray-700'
+        = link_to 'Выход', destroy_user_session_path, data: { method: :delete },
+                  class: 'block p-2 rounded text-blue-600 hover:no-underline hover:bg-blue-200 hover:text-gray-700'
+      - else
+        = link_to 'Вход', new_user_session_path,
+                  class: 'block p-2 rounded text-blue-600 hover:no-underline hover:bg-blue-200 hover:text-gray-700'
+        = link_to 'Регистрация', new_user_registration_path,
+                  class: 'block p-2 rounded text-blue-600 hover:no-underline hover:bg-blue-200 hover:text-gray-700'

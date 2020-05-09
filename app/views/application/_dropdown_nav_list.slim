@@ -1,5 +1,8 @@
-a.button.ios-button href='#' data-toggle='dropdown'
-  .ios-button__icon: i.glyphicon.glyphicon-menu-hamburger
-  .ios-button__label Меню
-ul.dropdown-menu.li-less-dropdown-menu role='menu'
-  = render 'nav_list'
+div
+  = link_to 'javascript:;',
+            class: 'button ios-button with-tooltip',
+            data: { template: 'nav_menu', tippy_interactive: true, tippy_theme: 'light', tippy_maxWidth: 300 }
+    .ios-button__icon: i.glyphicon.glyphicon-menu-hamburger
+    .ios-button__label Меню
+  .hidden id='nav_menu' style='min-width: 200px;'
+    .flex-dropdown-menu = render 'nav_list'
