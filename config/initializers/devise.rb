@@ -9,6 +9,7 @@ Devise.setup do |config|
   config.expire_all_remember_me_on_sign_out = true
   config.mailer_sender = 'noreply@rubycourses.ru'
   config.omniauth :github, ENV['github_key'], ENV['github_secret'], scope: 'user:email'
+  config.parent_controller = 'Devisery::ApplicationController'
   config.password_length = 8..72
   config.reconfirmable = false
   config.reset_password_keys = [:username]

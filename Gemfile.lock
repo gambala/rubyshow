@@ -148,6 +148,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.9.1)
+      devise (>= 4.7.1)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.9.0)
@@ -411,6 +413,7 @@ DEPENDENCIES
   capistrano3-puma
   coffee-rails
   devise
+  devise-i18n
   figaro
   flag-icons-rails!
   font-awesome-rails

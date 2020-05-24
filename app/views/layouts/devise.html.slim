@@ -1,0 +1,15 @@
+doctype html
+html.html.no-js lang=I18n.locale
+  head
+    = render 'head'
+  body.body.soda-layout
+    .soda-main
+      .soda-main__content
+        = render 'soda_header'
+        .gap-section
+          .devise-card.card.card_white.p-5 class=content_for(:devise_card_classes)
+            = yield
+      .soda-main__footer
+        = render 'footer'
+    = render 'soda_mobile_menu'
+    = render 'body'

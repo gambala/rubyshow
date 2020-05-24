@@ -12,7 +12,7 @@ div
         = link_to 'Выход', destroy_user_session_path, data: { method: :delete },
                   class: 'block p-2 rounded text-blue-600 hover:no-underline hover:bg-blue-200 hover:text-gray-700'
       - else
-        = link_to 'Вход', new_user_session_path,
+        = link_to t('devise.shared.links.sign_in'), new_user_session_path,
                   class: 'block p-2 rounded text-blue-600 hover:no-underline hover:bg-blue-200 hover:text-gray-700'
-        = link_to 'Регистрация', new_user_registration_path,
+        = link_to t('devise.shared.links.sign_up'), new_user_registration_path,
                   class: 'block p-2 rounded text-blue-600 hover:no-underline hover:bg-blue-200 hover:text-gray-700'

@@ -1,0 +1,72 @@
+@import rails-plus/mixins/media
+
+.card
+  border-radius: 3px
+  border: 1px solid rgba(#000, 0.2)
+  position: relative
+
+  .card__bg
+    display: none
+
+  +from(840px)
+    .card__bg
+      bottom: 0
+      display: block
+      height: 80%
+      max-height: 150px
+      overflow: hidden
+      position: absolute
+      right: 0
+      width: 150px
+
+      img
+        width: 130%
+
+    .card__body
+      position: relative
+      margin-right: 150px
+
+  .card__title
+    color: rgba(#000, 0.5)
+    font-size: 11px
+    font-weight: 500
+    line-height: 18px
+    text-transform: uppercase
+
+  .card__sector.pos_a
+    left: 0
+    pointer-events: none
+    width: 100%
+
+    a
+      pointer-events: all
+
+  .card__sector_ov_h
+    overflow: hidden
+
+    .table-wrapper
+      margin: -1px
+
+  .html-section
+    padding-top: 12px
+
+a.card
+  text-decoration: none
+
+// Colors
+
+.card_grey
+  background: #f9f9f9
+
+.card_red
+  background: #F8E8E9
+
+.card_white
+  background: #fefefe
+
+.card_yellow
+  background: #fff9bb
+
+.card_transparent
+  background: none
+  border: none
