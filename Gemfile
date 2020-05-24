@@ -19,7 +19,7 @@ gem 'mina'
 gem 'mina-puma', require: false
 gem 'mina-scp',  require: false
 gem 'oj' # pagy dependency
-gem 'omniauth-github', github: 'intridea/omniauth-github'
+gem 'omniauth-github'
 gem 'pagy'
 gem 'pg', '~> 0.21.0'
 gem 'pghero'

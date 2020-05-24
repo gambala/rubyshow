@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+include RoutesHelper
+
 Rails.application.routes.draw do
   # = Mount engines, with and without auth =
 
