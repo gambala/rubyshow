@@ -1,0 +1,17 @@
+/ 1. Preemptively warm up the fonts’ origin.
+/
+/ 2. Initiate a high-priority, asynchronous fetch for the CSS file. Works in
+/    most modern browsers.
+/
+/ 3. Initiate a low-priority, asynchronous fetch that gets applied to the page
+/    only after it’s arrived. Works in all browsers with JavaScript enabled.
+/
+/ 4. In the unlikely event that a visitor has intentionally disabled
+/    JavaScript, fall back to the original method. The good news is that,
+/    although this is a render-blocking request, it can still make use of the
+/    preconnect which makes it marginally faster than the default.
+
+link rel="preconnect" crossorigin=true href="https://fonts.gstatic.com"
+link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=#{fonts}&display=swap"
+link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css?family=#{fonts}&display=swap"
+noscript: link rel="stylesheet" href="https://fonts.googleapis.com/css?family=#{fonts}&display=swap"
