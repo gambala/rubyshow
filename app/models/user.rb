@@ -49,6 +49,12 @@ class User < ApplicationRecord
       end
     end
   end
+
+  def self.send_reset_password_instructions(attributes={})
+    recoverable = find_or_initialize_with_errors([:email], attributes, :not_found)
+    recoverable.send_reset_password_instructions if recoverable.persisted?
+    recoverable
+  end
 end
 
 # == Schema Information
