@@ -51,11 +51,17 @@ lint-security:
 
 
 
+run-bundle-update:
+	gem_update
+
 run-command:
 	$(RUN_ARGS)
 
 run-console:
 	bundle exec rails console
+
+run-frontend-update:
+	yarn upgrade-interactive --latest
 
 run-generate:
 	bundle exec rails generate $(RUN_ARGS)
@@ -73,7 +79,11 @@ test:
 
 
 
+bu: run-bundle-update
+
 c: run-console
+
+fu: run-frontend-update
 
 g: run-generate
 
