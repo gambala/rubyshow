@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Course < ApplicationRecord
-  has_many :comments, dependent: :destroy
+  has_many :comments, -> { sorted_by_date },  dependent: :destroy
 
   validates :url, :title, :description, :language, presence: true
   validates :title, uniqueness: true
