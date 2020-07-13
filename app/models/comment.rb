@@ -10,6 +10,8 @@ class Comment < ApplicationRecord
   validates :graduate, acceptance: { accept: true }, if: :need_graduate?
   validates :rating, inclusion: { in: 1..5 }, allow_nil: true
 
+  scope :sorted_by_date, -> { order(created_at: :desc) }
+
   def need_graduate?
     opinion?
   end
