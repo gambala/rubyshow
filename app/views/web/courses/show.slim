@@ -7,7 +7,7 @@ section(itemscope itemtype='https://schema.org/EducationEvent')
         .col-sm-8.col-lg-9
           h1.section-title(itemprop='name') = @course.title
           .section-subtitle = link_to @course.url, @course.url, { itemprop: 'url' }
-          p(itemprop='description') = @course.description
+          p(itemprop='description') = simple_format @course.description
         .col-sm-4.col-lg-3.hidden-xs
           .text-center
             .icon.icon-ruby
