@@ -1,6 +1,27 @@
 # frozen_string_literal: true
 
 class ApplicationPolicy
+  class Scope
+    attr_reader :user, :scope
+
+    def initialize(user, scope)
+      @user = user
+      @scope = scope
+    end
+
+    def resolve
+      scope
+    end
+
+    def admin?
+      user.admin?
+    end
+
+    def authorized(some_scope)
+      Pundit.policy_scope(user, some_scope)
+    end
+  end
+
   attr_reader :user, :record
 
   def initialize(user, record)
@@ -50,27 +71,6 @@ class ApplicationPolicy
 
   def scope
     Pundit.policy_scope!(user, record.class)
-  end
-
-  class Scope
-    attr_reader :user, :scope
-
-    def initialize(user, scope)
-      @user = user
-      @scope = scope
-    end
-
-    def resolve
-      scope
-    end
-
-    def admin?
-      user.admin?
-    end
-
-    def authorized(some_scope)
-      Pundit.policy_scope(user, some_scope)
-    end
   end
 
   private

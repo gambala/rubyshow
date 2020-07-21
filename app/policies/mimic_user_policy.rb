@@ -1,12 +1,12 @@
 class MimicUserPolicy < ApplicationPolicy
-  def index?
-    authorized?
-  end
-
   class Scope < Scope
     def resolve
       return scope if user.admin?
     end
+  end
+
+  def index?
+    authorized?
   end
 
   private
