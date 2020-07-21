@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
 
+gem 'amazing_print'
 gem 'autoprefixer-rails'
 gem 'bootsnap', require: false
 gem 'bootstrap-sass'
@@ -40,6 +41,7 @@ gem 'sass'
 gem 'sassc-rails'
 gem 'slim'
 gem 'sprockets', '~> 3.7'
+gem 'table_print'
 gem 'turbolinks'
 gem 'uglifier'
 gem 'webpacker'

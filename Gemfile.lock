@@ -78,6 +78,7 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     airbrussh (1.4.0)
       sshkit (>= 1.6.1, != 1.7.0)
+    amazing_print (1.2.1)
     annotate (3.1.1)
       activerecord (>= 3.2, < 7.0)
       rake (>= 10.4, < 14.0)
@@ -355,6 +356,7 @@ GEM
       net-ssh (>= 2.8.0)
     sshkit-interactive (0.3.0)
       sshkit (~> 1.12)
+    table_print (1.5.7)
     temple (0.8.2)
     thor (1.0.1)
     thread_safe (0.3.6)
@@ -391,6 +393,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  amazing_print
   annotate
   autoprefixer-rails
   bootsnap
@@ -448,6 +451,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen
   sprockets (~> 3.7)
+  table_print
   turbolinks
   uglifier
   web-console
