@@ -5,6 +5,7 @@
   "dependencies": {
     "@rails/webpacker": "5.1.1",
     "autoprefixer": "^9.8.5",
+    "dom4": "^2.1.5",
     "jquery": "^3.5.1",
     "rails-erb-loader": "^5.5.2",
     "rails-plus": "https://github.com/gambala/rails-plus#develop",
