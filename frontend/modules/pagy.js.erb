@@ -1,4 +1,4 @@
 <%= Pagy.root.join('javascripts', 'pagy.js').read %>
 
-document.addEventListener('turbolinks:load', Pagy.init);
+document.addEventListener('page:load', Pagy.init);
 document.addEventListener('ajax:success', Pagy.init);
