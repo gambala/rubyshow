@@ -15,6 +15,7 @@ gem 'devise-i18n'
 gem 'figaro'
 gem 'flag-icons-rails', github: 'gambala/flag-icons-rails'
 gem 'font-awesome-rails'
+gem 'lograge'
 gem 'mailgun_rails'
 gem 'mina'
 gem 'mina-puma', require: false
