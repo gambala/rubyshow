@@ -13,7 +13,7 @@ const getContent = (node) => {
   const templateID = node.getAttribute('data-template');
 
   if (templateID) {
-    const template = document.getElementById(templateID);
+    const template = node.parentNode.querySelector(`#${templateID}`);
     template.classList.remove('hidden');
     return template;
   }
@@ -24,6 +24,7 @@ const initNode = (node) => {
     animation: 'shift-away',
     arrow: roundArrow,
     content: getContent(node),
+    theme: 'light',
     trigger: 'mouseenter focus click',
   }
 
