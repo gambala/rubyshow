@@ -63,7 +63,7 @@ section(itemscope itemtype='https://schema.org/EducationEvent')
           .tab-content
             section.tab-pane.active.section-with-margin#opinions role='tabpanel'
               - if @opinions.any?
-                = render partial: 'web/comments/comment',
+                = render partial: 'card_comment',
                   locals: { course: @course },
                   collection: @opinions
               .well
@@ -71,7 +71,7 @@ section(itemscope itemtype='https://schema.org/EducationEvent')
                   locals: { course: @course, comment: @opinion }
             section.tab-pane.section-with-margin#comments role='tabpanel'
               - if @comments.any?
-                = render partial: 'web/comments/comment',
+                = render partial: 'card_comment',
                   locals: { course: @course },
                   collection: @comments
               .well

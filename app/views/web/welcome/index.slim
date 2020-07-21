@@ -34,7 +34,7 @@ section.py-10
     - if random_comment.present?
       .my-10
         h2 Случайный отзыв:
-        = render 'web/comments/comment', course: random_comment.course, comment: random_comment
+        = render 'card_comment', course: random_comment.course, card_comment: random_comment
 
     - if random_course.present?
       .my-10

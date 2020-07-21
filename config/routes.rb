@@ -10,16 +10,21 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
+  get '/opinions', to: 'redirects#reviews'
+
   scope module: :web do
     resources :courses do
-      resources :comments, except: %i(show edit new index)
+      resources :comments, only: %i(create update destroy)
       put :approve, on: :member
     end
 
-    get '/opinions', to: 'comments#index', as: :comments
     get 'user/:id', to: 'users#show', as: :user
     get '/free', to: 'courses#free'
     get '/paid', to: 'courses#paid'
+
+    namespace :public, path: '' do
+      resources :reviews, only: %i(index)
+    end
 
     root to: 'welcome#index'
   end

@@ -2,15 +2,8 @@
 
 module Web
   class CommentsController < Web::ApplicationController
-    include WithPagy
-
     before_action :set_comment, only: %i(update destroy)
     before_action :set_course, only: %i(create update destroy)
-
-    def index
-      @comments = Comment.includes(:course, :user).order(created_at: :desc)
-      @comments = paginate(@comments, items: 6)
-    end
 
     def create
       @comment = @course.comments.build(comment_params)
