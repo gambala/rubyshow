@@ -3,7 +3,7 @@
     "resolutions": "because of Security Alerts on GitHub"
   },
   "dependencies": {
-    "@rails/webpacker": "5.0.1",
+    "@rails/webpacker": "5.1.1",
     "autoprefixer": "^9.8.5",
     "jquery": "^3.5.1",
     "rails-erb-loader": "^5.5.2",
