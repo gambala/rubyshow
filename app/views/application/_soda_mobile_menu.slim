@@ -1,4 +1,5 @@
 - if mobile_device?
   .soda-mobile-menu
     = render 'dropdown_nav_list'
-    = render 'dropdown_user'
+    = render 'dropdown_user'  if  mimic_user.present?
+    = render 'dropdown_guest' if !mimic_user.present?
