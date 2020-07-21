@@ -3,7 +3,12 @@ module.exports = {
     container: false,
     preflight: false,
   },
-  purge: false,
+  purge: [
+    './app/views/**/*.erb',
+    './app/views/**/*.html',
+    './app/views/**/*.slim',
+    './frontend/**/*.js',
+  ],
   theme: {
     screens: {
       sm: '640px',
