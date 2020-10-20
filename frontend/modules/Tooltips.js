@@ -1,5 +1,5 @@
 import tippy, { roundArrow } from 'tippy.js';
-import 'tippy.js/animations/shift-away.css';
+import 'tippy.js/animations/shift-toward-extreme.css';
 import 'tippy.js/dist/svg-arrow.css';
 import 'tippy.js/themes/light.css';
 
@@ -21,15 +21,15 @@ const getContent = (node) => {
 
 const initNode = (node) => {
   let params = {
-    animation: 'shift-away',
+    animation: 'shift-toward-extreme',
     arrow: roundArrow,
     content: getContent(node),
+    duration: [150, 200],
     theme: 'light',
     trigger: 'mouseenter focus click',
   }
 
-  // Uncomment for debug purposes
-  // params = {...params, hideOnClick: false, showOnCreate: true, trigger: 'click' };
+  // params = {...params, hideOnClick: false, showOnCreate: true, trigger: 'click' }; // Uncomment for debug purposes
 
   tippy(node, params);
   node.classList.add('with-tooltip_initialized');
