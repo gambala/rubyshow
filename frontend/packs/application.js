@@ -20,3 +20,9 @@ Tooltips.start();
 Turbolinks.start();
 
 PageEvent.delegate('turbolinks:load', 'page:load');
+
+if (document.readyState !== 'loading') {
+  const event = document.createEvent('Event');
+  event.initEvent('DOMContentLoaded', true, true);
+  window.document.dispatchEvent(event);
+}
