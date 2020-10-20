@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
 
 gem 'amazing_print'
-gem 'autoprefixer-rails'
+gem 'autoprefixer-rails', '9.8.5' # Because of https://github.com/ai/autoprefixer-rails/wiki/Deprecated
 gem 'bootsnap', require: false
 gem 'bootstrap-sass'
 gem 'bugsnag'
@@ -28,7 +28,7 @@ gem 'pghero'
 gem 'pry'
 gem 'pry-rails'
 gem 'pry-theme'
-gem 'puma'
+gem 'puma', '~> 4.0' # because of capistrano3-puma incompatible with 5.0
 gem 'pundit'
 gem 'rack-attack'
 gem 'rails', '~> 5.2.0'
@@ -37,7 +37,7 @@ gem 'rails-plus', github: 'gambala/rails-plus', branch: 'develop'
 gem 'rails_performance'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'redis'
-gem 'redis-namespace', '~> 1.0' # github.com/resque/redis-namespace#2x-planned-breaking-changes
+gem 'redis-namespace', '1.7.0' # because of Coverband: view_tracker failed to store, error Redis::CommandError
 gem 'sass'
 gem 'sassc-rails'
 gem 'slim'
@@ -45,7 +45,7 @@ gem 'sprockets', '~> 3.7'
 gem 'table_print'
 gem 'turbolinks'
 gem 'uglifier'
-gem 'webpacker'
+gem 'webpacker', '5.1.1' # because of ActionView::Template::Error (Webpacker can't find application.js
 
 group :development do
   gem 'annotate'

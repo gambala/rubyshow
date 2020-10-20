@@ -9,6 +9,13 @@ module.exports = {
     './app/views/**/*.slim',
     './frontend/**/*.js',
   ],
+  future: {
+    purgeLayersByDefault: true,
+    removeDeprecatedGapUtilities: true,
+  },
+  variants: {
+    gradientColorStops: ['responsive', 'hover', 'focus', 'active'],
+  },
   theme: {
     colors: {
       transparent: 'transparent',
