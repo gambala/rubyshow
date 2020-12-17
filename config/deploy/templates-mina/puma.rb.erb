@@ -1,0 +1,23 @@
+workers 2
+
+threads 0, 16
+
+preload_app!
+
+daemonize
+
+rackup      DefaultRackup
+environment ENV["RAILS_ENV"] || "production"
+
+bind "unix:<%= "#{fetch(:shared_path)}" %>/tmp/sockets/puma.sock"
+pidfile "<%= "#{fetch(:shared_path)}" %>/tmp/pids/puma.pid"
+state_path "<%= "#{fetch(:shared_path)}" %>/tmp/sockets/puma.state"
+
+stdout_redirect "<%= "#{fetch(:shared_path)}" %>/log/puma.stdout.log", "<%= "#{fetch(:shared_path)}" %>/log/puma.stderr.log", true
+activate_control_app "unix:<%= "#{fetch(:shared_path)}" %>/tmp/sockets/pumactl.sock", { no_token: true }
+
+on_worker_boot do
+  require "active_record"
+  ActiveRecord::Base.connection.disconnect! rescue ActiveRecord::ConnectionNotEstablished
+  ActiveRecord::Base.establish_connection
+end

@@ -1,23 +1,46 @@
-workers 2
+#!/usr/bin/env puma
 
-threads 0, 16
+<%= puma_bind %>
+directory '<%= current_path %>'
+environment '<%= fetch(:puma_env) %>'
+pidfile "<%=fetch(:puma_pid)%>"
+rackup "<%=fetch(:puma_rackup)%>"
+state_path "<%=fetch(:puma_state)%>"
+stdout_redirect '<%=fetch(:puma_access_log)%>', '<%=fetch(:puma_error_log)%>', true
+threads <%=fetch(:puma_threads).join(',')%>
+workers <%= puma_workers %>
 
+on_restart do
+  puts 'Refreshing Gemfile'
+  ENV["BUNDLE_GEMFILE"] = "<%= fetch(:bundle_gemfile, "#{current_path}/Gemfile") %>"
+end
+
+<% if puma_preload_app? %>
 preload_app!
+<% else %>
+prune_bundler
+<% end %>
 
-daemonize
+<% if fetch(:puma_tag) %>
+tag '<%= fetch(:puma_tag)%>'
+<% end %>
 
-rackup      DefaultRackup
-environment ENV["RAILS_ENV"] || "production"
+<% if fetch(:puma_control_app) %>
+activate_control_app "<%= fetch(:puma_default_control_app) %>"
+<% end %>
 
-bind "unix:<%= "#{fetch(:shared_path)}" %>/tmp/sockets/puma.sock"
-pidfile "<%= "#{fetch(:shared_path)}" %>/tmp/pids/puma.pid"
-state_path "<%= "#{fetch(:shared_path)}" %>/tmp/sockets/puma.state"
+<% if fetch(:puma_worker_timeout) %>
+worker_timeout <%= fetch(:puma_worker_timeout).to_i %>
+<% end %>
 
-stdout_redirect "<%= "#{fetch(:shared_path)}" %>/log/puma.stdout.log", "<%= "#{fetch(:shared_path)}" %>/log/puma.stderr.log", true
-activate_control_app "unix:<%= "#{fetch(:shared_path)}" %>/tmp/sockets/pumactl.sock", { no_token: true }
+<% if puma_preload_app? and fetch(:puma_init_active_record) %>
+before_fork do
+  ActiveRecord::Base.connection_pool.disconnect!
+end
 
 on_worker_boot do
-  require "active_record"
-  ActiveRecord::Base.connection.disconnect! rescue ActiveRecord::ConnectionNotEstablished
-  ActiveRecord::Base.establish_connection
+  ActiveSupport.on_load(:active_record) do
+    ActiveRecord::Base.establish_connection
+  end
 end
+<% end %>
