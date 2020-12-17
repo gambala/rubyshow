@@ -16,7 +16,7 @@ gem 'figaro'
 gem 'flag-icons-rails', github: 'gambala/flag-icons-rails'
 gem 'font-awesome-rails'
 gem 'lograge'
-gem 'mailgun_rails'
+gem 'mailgun-ruby'
 gem 'mina'
 gem 'mina-puma', require: false
 gem 'mina-scp',  require: false
