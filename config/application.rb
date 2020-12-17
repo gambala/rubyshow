@@ -4,7 +4,7 @@ require_relative 'boot'
 require 'rails/all'
 Bundler.require(*Rails.groups)
 
-module RubyCourses
+module Rubyshow
   class Application < Rails::Application
     config.action_view.field_error_proc = proc { |html_tag, _instance| html_tag }
     config.encoding = 'utf-8'

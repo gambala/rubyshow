@@ -6,7 +6,7 @@ Figaro.application = Figaro::Application.new(environment: fetch(:stage),
                                              path: File.expand_path('../config/application.yml', __dir__))
 Figaro.load
 
-set :application, 'ruby_courses'
+set :application, 'rubyshow'
 set :branch, (proc { `git rev-parse --abbrev-ref HEAD`.chomp })
 set :deploy_to, "/home/#{ENV['deploy_user']}/apps/#{fetch(:application)}-#{fetch(:stage)}"
 set :linked_dirs, %w(log

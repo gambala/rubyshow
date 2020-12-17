@@ -7,8 +7,7 @@ Rails.application.configure do
   config.action_mailer.asset_host = ENV['app_host']
   config.action_mailer.default_url_options = { host: ENV['app_host'] }
   config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = { api_key: ENV['mailgun_api_key'],
-                                            domain: 'mg.rubycourses.ru' }
+  config.action_mailer.mailgun_settings = { api_key: ENV['mailgun_api_key'], domain: 'mg.ruby.show' }
   config.action_mailer.perform_caching = false
   config.active_record.dump_schema_after_migration = false
   config.active_storage.service = :local
@@ -37,7 +36,7 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
   # config.action_mailer.raise_delivery_errors = false
   # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "ruby_courses_#{Rails.env}"
+  # config.active_job.queue_name_prefix = "rubyshow_#{Rails.env}"
   # config.assets.css_compressor = :sass
   # config.cache_store = :mem_cache_store
   # config.force_ssl = true

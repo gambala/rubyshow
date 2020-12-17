@@ -7,10 +7,10 @@ Figaro.application = Figaro::Application.new(environment: 'production',
                                              path: File.expand_path('application.yml', __dir__))
 Figaro.load
 
-set :application_name, 'ruby_courses'
+set :application_name, 'rubyshow'
 set :domain, ENV['deploy_host']
 set :port, ENV['deploy_port']
-set :deploy_to, '/home/deploy/apps/ruby_courses-production'
+set :deploy_to, '/home/deploy/apps/rubyshow-production'
 set :repository, 'git@github.com:gambala/rubyshow.git'
 set :branch, 'master'
 set :user, 'deploy'
