@@ -25,6 +25,6 @@ set :puma_init_active_record, true
 set :puma_preload_app, false
 set :puma_threads, [4, 16]
 set :puma_workers, 2
-set :repo_url, 'git@github.com:gambala/ruby_courses.git'
+set :repo_url, 'git@github.com:gambala/rubyshow.git'
 set :support_email, 'support@gambala.pro'
 set :user, ENV['deploy_user']

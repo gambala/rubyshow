@@ -11,7 +11,7 @@ set :application_name, 'ruby_courses'
 set :domain, ENV['deploy_host']
 set :port, ENV['deploy_port']
 set :deploy_to, '/home/deploy/apps/ruby_courses-production'
-set :repository, 'git@github.com:gambala/ruby_courses.git'
+set :repository, 'git@github.com:gambala/rubyshow.git'
 set :branch, 'master'
 set :user, 'deploy'
 set :forward_agent, true
