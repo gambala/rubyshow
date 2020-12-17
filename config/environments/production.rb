@@ -7,7 +7,8 @@ Rails.application.configure do
   config.action_mailer.asset_host = ENV['app_host']
   config.action_mailer.default_url_options = { host: ENV['app_host'] }
   config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = { api_key: ENV['mailgun_api_key'], domain: 'mg.ruby.show' }
+  config.action_mailer.mailgun_settings = { api_key: ENV['mailgun_api_key'], domain: 'mg.ruby.show',
+                                            api_host: 'api.eu.mailgun.net' }
   config.action_mailer.perform_caching = false
   config.active_record.dump_schema_after_migration = false
   config.active_storage.service = :local
