@@ -5,8 +5,7 @@ section.section-red-promo
     .row
       .col-sm-8.col-lg-9
         h1.text-red-600.font-bold.m-0.mb-2
-          span.text-5xl> Ruby.show
-          span.text-2xl = '(ex RubyCourses.ru)'
+          span.text-5xl Ruby.show
         p.max-w-3xl Здесь вы найдете объемный список курсов, на которых можно обучиться Ruby и Ruby on Rails с отзывами выпускников этих курсов.
         p Это поможет вам выбрать подходящий курс и позволит сэкономить время.
         p
@@ -23,11 +22,11 @@ section.section-red-promo
 
 section.py-10
   .container
-    .flex.-m-2
-      .flex-1.m-2
+    .flex.flex-wrap.-m-2
+      .flex-1.m-2 style='min-width: 300px;'
         h2 Пять лучших бесплатных курсов
         = render 'web/courses/list', courses: top_5_free_courses
-      .flex-1.m-2
+      .flex-1.m-2 style='min-width: 300px;'
         h2 Пять лучших платных курсов
         = render 'web/courses/list', courses: top_5_paid_courses
     .my-10
