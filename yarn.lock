@@ -2557,10 +2557,10 @@ dom-serializer@0:
     domelementtype "^2.0.1"
     entities "^2.0.0"
 
-dom4@^2.1.5:
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/dom4/-/dom4-2.1.5.tgz#f98a94eb67b340f0fa5b42b0ee9c38cda035428e"
-  integrity sha512-gJbnVGq5zaBUY0lUh0LUEVGYrtN75Ks8ZwpwOYvnVFrKy/qzXK4R/1WuLIFExWj/tBxbRAkTzZUGJHXmqsBNjQ==
+dom4@^2.1.6:
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/dom4/-/dom4-2.1.6.tgz#c90df07134aa0dbd81ed4d6ba1237b36fc164770"
+  integrity sha512-JkCVGnN4ofKGbjf5Uvc8mmxaATIErKQKSgACdBXpsQ3fY6DlIpAyWfiBSrGkttATssbDCp3psiAKWXk5gmjycA==
 
 domain-browser@^1.1.1:
   version "1.2.0"
@@ -6280,7 +6280,7 @@ rails-erb-loader@^5.5.2:
 
 "rails-plus@https://github.com/gambala/rails-plus#develop":
   version "0.1.0"
-  resolved "https://github.com/gambala/rails-plus#0b36e8c11de83e0b6bcda443e79afebca429965b"
+  resolved "https://github.com/gambala/rails-plus#e0fa0239439f6eaa83b97cefe7650090c995e896"
   dependencies:
     blueimp-gallery "^2.31.0"
     element-closest "^2.0.2"

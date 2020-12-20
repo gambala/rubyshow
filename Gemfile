@@ -23,7 +23,7 @@ gem 'mina-scp',  require: false
 gem 'oj' # pagy dependency
 gem 'omniauth-github'
 gem 'pagy'
-gem 'pg', '~> 0.21.0'
+gem 'pg', '~> 0.21'
 gem 'pghero'
 gem 'pry'
 gem 'pry-rails'
@@ -58,7 +58,7 @@ group :development do
   gem 'capistrano-rails-console', require: false
   gem 'capistrano-rvm'
   gem 'capistrano-touch-linked-files'
-  gem 'capistrano3-puma'
+  gem 'capistrano3-puma', '~> 4.0'
   gem 'letter_opener'
   gem 'listen'
   gem 'meta_request'
