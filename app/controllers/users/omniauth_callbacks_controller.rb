@@ -7,7 +7,7 @@ module Users
 
       if current_user
         current_user.update_omniauth_data oauth_data
-        redirect_to :back
+        redirect_back fallback_location: root_path
       elsif @user.persisted?
         # this will throw if @user is not activated
         sign_in_and_redirect @user, event: :authentication

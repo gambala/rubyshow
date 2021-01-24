@@ -20,7 +20,7 @@ module Web
           end
           format.json { render :show, status: 201, location: @comment }
         else
-          format.html { redirect_to :back, notice: @comment.errors.full_messages }
+          format.html { redirect_back fallback_location: root_path, notice: @comment.errors.full_messages.join("\n") }
           format.json { render json: @comment.errors.full_messages, status: 422 }
         end
       end
