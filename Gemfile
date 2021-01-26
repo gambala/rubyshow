@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
 
 gem 'amazing_print'
-gem 'autoprefixer-rails', '9.8.5' # Because of https://github.com/ai/autoprefixer-rails/wiki/Deprecated
+gem 'autoprefixer-rails'
 gem 'bootsnap', require: false
 gem 'bootstrap-sass'
 gem 'bugsnag'
@@ -13,7 +13,7 @@ gem 'coffee-rails'
 gem 'devise'
 gem 'devise-i18n'
 gem 'figaro'
-gem 'flag-icons-rails', github: 'gambala/flag-icons-rails'
+gem 'flag-icons-rails'
 gem 'font-awesome-rails'
 gem 'lograge'
 gem 'mailgun-ruby'
@@ -21,9 +21,9 @@ gem 'mina'
 gem 'mina-puma', require: false
 gem 'mina-scp',  require: false
 gem 'oj' # pagy dependency
-gem 'omniauth-github'
+gem 'omniauth-github', '~> 1.4'
 gem 'pagy'
-gem 'pg', '~> 0.21'
+gem 'pg'
 gem 'pghero'
 gem 'pry'
 gem 'pry-rails'
@@ -38,8 +38,7 @@ gem 'rails_performance'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'redis'
 gem 'redis-namespace', '1.7.0' # because of Coverband: view_tracker failed to store, error Redis::CommandError
-gem 'sass'
-gem 'sassc-rails'
+gem 'sass-rails', '>= 6.0'
 gem 'slim'
 gem 'sprockets', '~> 3.7'
 gem 'table_print'
