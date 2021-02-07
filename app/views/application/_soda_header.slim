@@ -1,8 +1,10 @@
 .soda-header.dn_print
-  .frame: .container
+  .frame
     .soda-header__row
-      .flex.-m-2.my-1.items-baseline
-        = link_to 'Ruby.show', root_path, class: 'font-mono text-lg font-medium my-2 py-2 px-2'
+      .flex.-m-2.my-1.items-center
+        = link_to root_path, class: 'text-lg font-semibold text-red-600 rounded my-2 p-2 hover:no-underline hover:bg-gray-800 hover:text-red-600'
+          = image_tag 'icon-ruby.svg', class: 'w-full mr-2', style: 'max-width: 32px;'
+          | Ruby.show
 
         - unless mobile_device?
           = render 'nav_list'
