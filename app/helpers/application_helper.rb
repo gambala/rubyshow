@@ -8,13 +8,6 @@ module ApplicationHelper
     "https://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
   end
 
-  def rating_in_gems(rating)
-    return if rating.blank?
-    diamond = content_tag(:i, '', class: 'fa fa-diamond')
-    diamonds = diamond * rating.round
-    diamonds.html_safe
-  end
-
   def unapproved_courses_amount
     Course.where(approved: false).count
   end

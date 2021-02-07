@@ -10,7 +10,6 @@
   .flex-grow
     .flex.flex-wrap.items-baseline.-mx-1
       = link_to course.title, course, class: 'mx-1 text-lg font-medium text-blue-600 hover:text-blue-800 hover:no-underline'
-      span.mx-1.text-xs.text-red-500.whitespace-no-wrap = rating_in_gems(course.rating)
     .flex.-m-1
       .m-1 = language_flag(course.language)
       .m-1 = course_status(course)

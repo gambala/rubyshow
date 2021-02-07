@@ -18,11 +18,4 @@
               small.text-success Выпускник курса
         span(itemprop='author')
           = link_to (comment.user.username || comment.user.email), comment.user
-      p
-        small { class = 'text-primary'
-                data-toggle = 'tooltip'
-                data-placement = 'right'
-                title = 'Оценка пользователя'
-              }
-          = rating_in_gems(comment.rating)
       p(itemprop='text') = comment.content
