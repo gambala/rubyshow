@@ -28,3 +28,17 @@ set :puma_workers, 2
 set :repo_url, 'git@github.com:gambala/rubyshow.git'
 set :support_email, 'support@gambala.pro'
 set :user, ENV['deploy_user']
+
+namespace :deploy do
+  task :tailwind do
+    on roles(:app) do
+      within "#{current_path}" do
+        with rails_env: "#{fetch(:stage)}" do
+          execute "echo >> #{current_path}/frontend/stylesheets/index.js"
+          invoke 'deploy:compile_assets'
+          invoke 'puma:restart'
+        end
+      end
+    end
+  end
+end
