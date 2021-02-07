@@ -6,10 +6,8 @@
           = image_tag 'icon-ruby.svg', class: 'w-full mr-2', style: 'max-width: 32px;'
           | Ruby.show
 
-        - unless mobile_device?
-          = render 'nav_list'
+        = render 'nav_list'
 
-      - unless mobile_device?
-        .flex.flex-wrap.-m-4.my-1.items-baseline
-          = render 'dropdown_user'  if  mimic_user.present?
-          = render 'dropdown_guest' if !mimic_user.present?
+      .flex.flex-wrap.-m-4.my-1.items-baseline
+        = render 'dropdown_user'  if  mimic_user.present?
+        = render 'dropdown_guest' if !mimic_user.present?
