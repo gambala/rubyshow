@@ -8,9 +8,6 @@ section(itemscope itemtype='https://schema.org/EducationEvent')
           h1.section-title(itemprop='name') = @course.title
           .section-subtitle = link_to @course.url, @course.url, { itemprop: 'url' }
           p(itemprop='description') = simple_format @course.description
-        .col-sm-4.col-lg-3.hidden-xs
-          .text-center
-            = image_tag 'icon-ruby.svg', class: 'w-full', style: 'max-width: 200px;'
   section.section-padded
     .container
       div class='lg:flex lg:flex-no-wrap'
