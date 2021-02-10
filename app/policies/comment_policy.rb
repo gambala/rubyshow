@@ -23,12 +23,11 @@ class CommentPolicy < ApplicationPolicy
 
   def comment?
     user.comments
-        .send(record.kind)
         .pluck(:course_id)
         .include?(record.course.id)
   end
 
   def rate?
-    user? && record.opinion?
+    user?
   end
 end

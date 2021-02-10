@@ -1,14 +1,12 @@
 - if mimic_user.present? && policy(comment).comment?
   p Вы уже оставляли комментарий к этому курсу.
+
 - elsif policy(comment).create?
   = form_for [course, comment] do |f|
     .form-group
-      = f.hidden_field :kind, value: comment.kind
-      = f.label :content, comment_label(comment)
-      = f.text_area :content,
-                    rows: 3,
-                    class: 'input new-comment',
-                    id: text_area_id(comment)
+      = f.label :content, 'Ваш отзыв или комментарий о курсе'
+      = f.text_area :content, required: true, rows: 3, class: 'input new-comment'
+
     - if policy(comment).rate?
       .row
         .col-md-6
@@ -23,8 +21,7 @@
                 => value
                 => f.radio_button(:rating, value)
     .form-group
-      = f.submit 'Отправить', class: 'btn btn-default', id: submit_button_id(comment),
-                 disabled: true
+      = f.submit 'Отправить', class: 'btn btn-default'
 - else
   p
     ' Хотите оставлять отзывы и оценивать курсы?

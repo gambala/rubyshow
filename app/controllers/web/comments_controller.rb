@@ -62,7 +62,7 @@ module Web
     end
 
     def comment_params
-      params.require(:comment).permit(:content, :rating, :graduate, :kind)
+      params.require(:comment).permit(:content, :rating, :graduate)
     end
   end
 end

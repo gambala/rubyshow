@@ -1,22 +1,19 @@
 # frozen_string_literal: true
 
 class Comment < ApplicationRecord
-  enum kind: { comment: 1, opinion: 2 }
-
   belongs_to :course
   belongs_to :user
 
   validates :content, presence: true
-  validates :graduate, acceptance: { accept: true }, if: :need_graduate?
   validates :rating, inclusion: { in: 1..5 }, allow_nil: true
 
   scope :sorted_by_date, -> { order(created_at: :desc) }
-
-  def need_graduate?
-    opinion?
-  end
 end
 
+# Deprecated
+#
+#  kind (Use graduate & rating 10.02.2021)
+#
 # == Schema Information
 #
 # Table name: comments

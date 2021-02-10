@@ -34,10 +34,8 @@ module Web
     def show
       authorize @course, :show?
 
-      @comments = @course.comments.comment
-      @opinions = @course.comments.opinion
-      @opinion = @course.comments.build(kind: Comment.kinds[:opinion])
-      @comment = @course.comments.build(kind: Comment.kinds[:comment])
+      @comments = @course.comments
+      @comment = @course.comments.build
       @rating = @course.rating
     end
 

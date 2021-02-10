@@ -48,26 +48,8 @@ section(itemscope itemtype='https://schema.org/EducationEvent')
                                class: 'btn btn-link btn-sm'
 
         div class='lg:order-first lg:flex-grow'
-          ul#comments_tabs.nav.nav-tabs role='tablist'
-            li.active role='presentation'
-              a href='#opinions' role='tab' data-toggle='tab' Отзывы
-            li role='presentation'
-              a href='#comments' role='tab' data-toggle='tab' Комментарии
+          .well
+            = render partial: 'web/comments/form', locals: { course: @course, comment: @comment }
 
-          .tab-content
-            section.tab-pane.active.section-with-margin#opinions role='tabpanel'
-              - if @opinions.any?
-                = render partial: 'card_comment',
-                  locals: { course: @course },
-                  collection: @opinions
-              .well
-                = render partial: 'web/comments/form',
-                  locals: { course: @course, comment: @opinion }
-            section.tab-pane.section-with-margin#comments role='tabpanel'
-              - if @comments.any?
-                = render partial: 'card_comment',
-                  locals: { course: @course },
-                  collection: @comments
-              .well
-                = render partial: 'web/comments/form',
-                  locals: { course: @course, comment: @comment }
+          - if @comments.any?
+            = render partial: 'card_comment', locals: { course: @course }, collection: @comments
