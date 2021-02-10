@@ -1,11 +1,9 @@
 - present courses_query do |courses_query_presenter|
   - title courses_query_presenter.request_title if courses_query_presenter.any_titles?
-section.section-red-promo
-  .container
-    .row
-      .col-sm-8.col-lg-9
-        h1.section-title Каталог курсов по Ruby
-        p Собрано уже #{comments_amount} #{t('words.comments_suffix', count: comments_amount)} о курсах.
+  section.bg-gray-800.py-6 class='md:py-12'
+    .container
+      h1.m-0.mb-2.text-2xl.leading-snug.font-semibold.text-red-500 class='md:text-3xl' Каталог курсов по Ruby
+      .text-gray-200 Собрано уже #{comments_amount} #{t('words.comments_suffix', count: comments_amount)} о курсах
 section.section-padded
   .container
     div class='lg:flex lg:flex-nowrap'

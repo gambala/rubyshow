@@ -1,13 +1,11 @@
 - title "#{@course.title}, отзывы и мнения"
 
 section(itemscope itemtype='https://schema.org/EducationEvent')
-  section.section-red-promo
+  section.bg-gray-800.py-6 class='md:py-12'
     .container
-      .row
-        .col-sm-8.col-lg-9
-          h1.section-title(itemprop='name') = @course.title
-          .section-subtitle = link_to @course.url, @course.url, { itemprop: 'url' }
-          p(itemprop='description') = simple_format @course.description
+      h1.m-0.mb-2.text-2xl.leading-snug.font-semibold.text-red-500 class='md:text-3xl' itemprop='name' = @course.title
+      .mb-4.font-semibold.text-red-500 class='md:text-lg' = link_to @course.url, @course.url, itemprop: 'url', class: 'text-yellow-400 hover:text-yellow-400'
+      .text-gray-200 itemprop='description' = simple_format @course.description
   section.section-padded
     .container
       div class='lg:flex lg:flex-nowrap'
