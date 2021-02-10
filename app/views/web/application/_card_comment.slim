@@ -3,8 +3,7 @@
 - if comment.user.present?
   .media.media-stack-overflow(itemscope itemtype='https://schema.org/Comment')
     .media-left
-      = image_tag avatar_url(comment.user.email, 144),
-                  class: 'media-object media-object-responsive'
+      = image_tag avatar_url(comment.user.email, 144), class: 'media-object media-object-responsive'
     .media-body
       .media-heading
         .float-right.text-right
@@ -18,4 +17,6 @@
               small.text-success Выпускник курса
         span(itemprop='author')
           = link_to (comment.user.username || comment.user.email), comment.user
+        div: small
+          = link_to comment.course.title, comment.course
       p(itemprop='text') = comment.content
