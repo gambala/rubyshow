@@ -6,8 +6,6 @@ module CommentsHelper
       'Ваш отзыв о курсе'
     elsif comment.comment?
       'Ваш комментарий к курсу'
-    elsif comment.question?
-      'Что вы хотите спросить у авторов курса?'
     end
   end
 
@@ -16,8 +14,6 @@ module CommentsHelper
       'submit_opinion'
     elsif comment.comment?
       'submit_comment'
-    elsif comment.question?
-      'submit_question'
     end
   end
 
@@ -26,8 +22,6 @@ module CommentsHelper
       'opinion_content'
     elsif comment.comment?
       'comment_content'
-    elsif comment.question?
-      'question_content'
     end
   end
 end

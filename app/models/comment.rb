@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Comment < ApplicationRecord
-  enum kind: { comment: 1, opinion: 2, question: 3 }
+  enum kind: { comment: 1, opinion: 2 }
 
   belongs_to :course
   belongs_to :user

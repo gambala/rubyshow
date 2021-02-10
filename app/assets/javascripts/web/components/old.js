@@ -44,22 +44,6 @@ document.addEventListener("page:load", function() {
     }
   });
 
-  // Validating comment length
-  $('#question_content').keyup(function() {
-    var empty = false;
-    $('#question_content').each(function() {
-      if ($(this).val().length == 0) {
-        empty = true;
-      }
-    });
-
-    if (empty) {
-      $('#submit_question').attr('disabled', 'disabled');
-    } else {
-      $('#submit_question').removeAttr('disabled');
-    }
-  });
-
   $('li.disabled').click(function(event) {
     event.preventDefault;
   });
