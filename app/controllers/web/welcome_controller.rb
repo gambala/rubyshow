@@ -3,7 +3,7 @@
 module Web
   class WelcomeController < Web::ApplicationController
     helper_method :reviews_size, :courses_size,
-                  :random_comment, :random_course,
+                  :random_comment,
                   :top_5_free_courses, :top_5_paid_courses
 
     def index; end
@@ -19,11 +19,7 @@ module Web
     end
 
     def random_comment
-      @random_comment ||= Comment.includes(:user, :course).all.sample
-    end
-
-    def random_course
-      @random_course ||= Course.all.sample
+      @random_comment ||= Comment.includes(:user, :course).all.order_randomly.first
     end
 
     def top_5_free_courses
