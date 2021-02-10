@@ -7,6 +7,7 @@ class Comment < ApplicationRecord
   validates :content, presence: true
   validates :rating, inclusion: { in: 1..5 }, allow_nil: true
 
+  scope :reviews, -> { where(graduate: true).or(where.not(rating: nil)) }
   scope :sorted_by_date, -> { order(created_at: :desc) }
 end
 

@@ -2,7 +2,7 @@
 
 module Web
   class WelcomeController < Web::ApplicationController
-    helper_method :comments_size, :courses_size,
+    helper_method :reviews_size, :courses_size,
                   :random_comment, :random_course,
                   :top_5_free_courses, :top_5_paid_courses
 
@@ -10,8 +10,8 @@ module Web
 
     private
 
-    def comments_size
-      @comments_size ||= Comment.count
+    def reviews_size
+      @reviews_size ||= Comment.reviews.count
     end
 
     def courses_size
