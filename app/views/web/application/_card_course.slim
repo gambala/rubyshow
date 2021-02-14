@@ -5,7 +5,7 @@
         .so-digita__title = course.comments.pluck(:graduate).count
         .so-digita__text отзывов
 
-        - if course.comments.pluck(:graduate).count > 50
+        - if course.suspicious?
           .absolute.top-0.-left-8.text-3xl.pointer-events-none 🤔
     - else
       = link_to course_path(course), class: 'so-digita text-red-500'

@@ -28,6 +28,11 @@ class Course < ApplicationRecord
     (scores.inject { |sum, element| sum + element }.to_f / scores.size)&.round(1)
   end
 
+  def suspicious?
+    return false if id.in?([161])
+    comments.pluck(:graduate).count > 50
+  end
+
   private
 
   def scores
