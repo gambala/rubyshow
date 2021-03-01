@@ -13,7 +13,7 @@
     "rails-plus": "https://github.com/gambala/rails-plus#develop",
     "rails-ujs": "^5.1.3",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-    "tippy.js": "^6.2.7",
+    "tippy.js": "^6.3.1",
     "turbolinks": "^5.0.3"
   },
   "devDependencies": {
