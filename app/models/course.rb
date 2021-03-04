@@ -29,7 +29,7 @@ class Course < ApplicationRecord
   end
 
   def suspicious?
-    return false if id.in?([161])
+    return false if id.in?([11, 161])
     comments.pluck(:graduate).count > 50
   end
 
