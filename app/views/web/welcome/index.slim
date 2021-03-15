@@ -20,9 +20,11 @@ section.bg-gray-800.text-gray-200.py-6.relative class='md:py-12'
     p
       ' Сейчас у нас есть
       span.text-red-500 => courses_size
-      ' курсов и
+      => t('words.course', count: courses_size)
+      ' и
       span.text-red-500 => reviews_size
-      ' отзывов к ним.
+      => t('words.comment', count: reviews_size)
+      ' к ним.
     br
     br
 
