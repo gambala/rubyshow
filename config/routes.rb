@@ -13,14 +13,17 @@ Rails.application.routes.draw do
   get '/opinions', to: 'redirects#reviews'
 
   scope module: :web do
+    get '/courses/free' , to: redirect('/courses?paid=0')
+    get '/courses/paid' , to: redirect('/courses?paid=1')
+    get '/free'         , to: redirect('/courses?paid=0')
+    get '/paid'         , to: redirect('/courses?paid=1')
+
     resources :courses do
       resources :comments, only: %i(create update destroy)
       put :approve, on: :member
     end
 
     get 'user/:id', to: 'users#show', as: :user
-    get '/free', to: 'courses#free'
-    get '/paid', to: 'courses#paid'
 
     namespace :public, path: '' do
       resources :reviews, only: %i(index)
