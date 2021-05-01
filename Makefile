@@ -52,7 +52,7 @@ lint-security:
 
 
 run-bundle-update:
-	gem_update
+	MAKE="make --jobs 8" gem_update
 
 run-command:
 	$(RUN_ARGS)
