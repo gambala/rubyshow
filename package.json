@@ -3,15 +3,15 @@
     "resolutions": "because of Security Alerts on GitHub"
   },
   "dependencies": {
-    "@rails/webpacker": "5.1.1",
+    "@rails/webpacker": "5.3.0",
     "@tailwindcss/postcss7-compat": "npm:@tailwindcss/postcss7-compat",
     "autoprefixer": "^9",
     "dom4": "^2.1.6",
-    "jquery": "^3.5.1",
+    "jquery": "^3.6.0",
     "postcss": "^7",
     "rails-erb-loader": "^5.5.2",
     "rails-plus": "https://github.com/gambala/rails-plus#develop",
-    "rails-ujs": "^5.1.3",
+    "rails-ujs": "^5.2.5",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "tippy.js": "^6.3.1",
     "turbolinks": "^5.0.3"

@@ -44,7 +44,7 @@ gem 'sprockets', '~> 3.7'
 gem 'table_print'
 gem 'turbolinks'
 gem 'uglifier'
-gem 'webpacker', '5.1.1' # because of ActionView::Template::Error (Webpacker can't find application.js
+gem 'webpacker'
 
 group :development do
   gem 'annotate'
