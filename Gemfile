@@ -40,7 +40,7 @@ gem 'redis'
 gem 'redis-namespace', '1.7.0' # because of Coverband: view_tracker failed to store, error Redis::CommandError
 gem 'sass-rails', '>= 6.0'
 gem 'slim'
-gem 'sprockets', '~> 3.7'
+gem 'sprockets'
 gem 'table_print'
 gem 'turbolinks'
 gem 'uglifier'
