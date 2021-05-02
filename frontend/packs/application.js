@@ -5,7 +5,7 @@ import 'dom4';
 import 'modules/pagy.js.erb';
 import 'stylesheets';
 
-import Rails      from 'rails-ujs';
+import Rails      from '@rails/ujs';
 import Turbolinks from 'turbolinks';
 
 import FlashItems from 'modules/FlashItems';

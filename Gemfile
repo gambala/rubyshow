@@ -31,7 +31,7 @@ gem 'pry-theme'
 gem 'puma', '~> 4.0' # because of capistrano3-puma incompatible with 5.0
 gem 'pundit'
 gem 'rack-attack'
-gem 'rails', '~> 5.2.0'
+gem 'rails', '~> 6.0.0'
 gem 'rails-i18n'
 gem 'rails-plus', github: 'gambala/rails-plus', branch: 'develop'
 gem 'rails_performance'
