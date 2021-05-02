@@ -31,7 +31,7 @@ gem 'pry-theme'
 gem 'puma', '~> 4.0' # because of capistrano3-puma incompatible with 5.0
 gem 'pundit'
 gem 'rack-attack'
-gem 'rails', '~> 6.0.0'
+gem 'rails', '~> 6.1.0'
 gem 'rails-i18n'
 gem 'rails-plus', github: 'gambala/rails-plus', branch: 'develop'
 gem 'rails_performance'
@@ -60,7 +60,6 @@ group :development do
   gem 'capistrano3-puma', '~> 4.0'
   gem 'letter_opener'
   gem 'listen'
-  gem 'meta_request'
   gem 'rubocop', require: false
   gem 'rubocop-github', github: 'gambala/rubocop-github' # because of Metrics/LineLength warning fix
   gem 'rubocop-performance', require: false
