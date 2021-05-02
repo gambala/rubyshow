@@ -6,12 +6,12 @@
     .hidden id='courses_menu' style='min-width: 200px;'
       .p-2
         = link_to 'Платные', courses_path(paid: '1'),
-                  class: 'block p-2 rounded text-blue-700 hover:bg-gray-300 hover:no-underline hover:text-blue-700'
+                  class: 'block p-2 rounded text-blue-600 hover:no-underline hover:bg-blue-200 hover:text-gray-700'
         = link_to 'Бесплатные', courses_path(paid: '0'),
-                  class: 'block p-2 rounded text-blue-700 hover:bg-gray-300 hover:no-underline hover:text-blue-700'
+                  class: 'block p-2 rounded text-blue-600 hover:no-underline hover:bg-blue-200 hover:text-gray-700'
         hr.my-2
         = link_to 'Добавить', new_course_path,
-                  class: 'block p-2 rounded text-gray-500 hover:bg-gray-300 hover:no-underline hover:text-blue-700',
+                  class: 'block p-2 rounded text-blue-600 hover:no-underline hover:bg-blue-200 hover:text-gray-700',
                   title: "Количество курсов на рассмотрении: #{unapproved_courses_amount}",
                   data: { toggle: 'tooltip', placement: 'bottom' }
 
