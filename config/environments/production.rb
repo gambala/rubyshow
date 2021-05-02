@@ -25,7 +25,6 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
   config.log_level = :info
   config.log_tags = [:request_id]
-  config.middleware.use Rack::Attack
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
   config.require_master_key = true
   config.webpacker.check_yarn_integrity = false
