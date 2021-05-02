@@ -1,20 +1,27 @@
-.bundle
 .byebug_history
 .DS_Store
 .idea
 .yarn-integrity
 yarn-debug.log*
 
+/.bundle
 /config/application.yml
 /config/master.key
 /coverage
 /lib/snippets/*.dev.rb
 /log/*
 /node_modules
+/public/assets
 /public/packs
 /public/packs-test
 /server
+/storage/*
 /tmp/*
+/tmp/pids/*
 /yarn-error.log
 
 !/log/.keep
+!/storage/.keep
+!/tmp/.keep
+!/tmp/pids/
+!/tmp/pids/.keep

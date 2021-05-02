@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'amazing_print'
 gem 'autoprefixer-rails'
@@ -68,4 +68,10 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen'
   gem 'web-console'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
