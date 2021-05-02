@@ -50,4 +50,4 @@ section(itemscope itemtype='https://schema.org/EducationEvent')
             = render partial: 'web/comments/form', locals: { course: @course, comment: @comment }
 
           - if @comments.any?
-            = render partial: 'card_comment', locals: { course: @course }, collection: @comments
+            = render partial: 'card_comment', locals: { course: @course, show_course: false }, collection: @comments

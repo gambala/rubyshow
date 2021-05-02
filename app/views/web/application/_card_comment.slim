@@ -1,4 +1,5 @@
-- comment = card_comment
+- comment     = card_comment
+- show_course = true         if local_assigns[:show_course].nil?
 
 - if comment.user.present?
   .media.media-stack-overflow(itemscope itemtype='https://schema.org/Comment')
@@ -8,7 +9,7 @@
       .media-heading
         .float-right.text-right
           p
-            small.text-muted = comment.created_at.strftime("%e %B %Y")
+              small.text-muted = comment.created_at.strftime("%e %B %Y")
           - if params[:controller] == 'comments' || params[:controller] == 'users'
             p
               small = link_to comment.course.title, comment.course
@@ -17,6 +18,8 @@
               small.text-success Выпускник курса
         span(itemprop='author')
           = link_to (comment.user.username || comment.user.email), comment.user
-        div: small
-          = link_to comment.course.title, comment.course
+
+        - if show_course
+          div: small
+            = link_to comment.course.title, comment.course
       p(itemprop='text') = comment.content
