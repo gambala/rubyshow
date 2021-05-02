@@ -16,7 +16,7 @@ section(itemscope itemtype='https://schema.org/EducationEvent')
                 - if policy(@course).edit?
                   .float-right
                     = link_to edit_course_path(@course), title: 'Редактировать курс', class: 'btn btn-default btn-xs' do
-                      span.fa.fa-pencil
+                      = hicon 'pencil', class: 'w-4 block my-1'
                 section.section-with-margin
                   - if @course.graduates.any?
                     dl.dl-inline
