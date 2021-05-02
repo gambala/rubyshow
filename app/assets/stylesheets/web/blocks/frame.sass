@@ -1,9 +1,46 @@
-@import rails-plus/mixins/media
-
 .frame
-  padding-left: 10px
-  padding-right: 10px
+  padding-left: Max(1rem, env(safe-area-inset-left))
+  padding-right: Max(1rem, env(safe-area-inset-right))
 
-  +from(640px)
-    padding-left: 20px
-    padding-right: 20px
+.-frame
+  margin-left: calc(-1 * Max(1rem, env(safe-area-inset-left)))
+  margin-right: calc(-1 * Max(1rem, env(safe-area-inset-right)))
+
+.-frame.-my-1
+  padding-left: Max(0.75rem, env(safe-area-inset-left))
+  padding-right: Max(0.75rem, env(safe-area-inset-right))
+
+  .flex-compensator
+    width: 0.75rem
+
+.-frame.-my-3
+  padding-left: Max(0.25rem, env(safe-area-inset-left))
+  padding-right: Max(0.25rem, env(safe-area-inset-right))
+
+  .flex-compensator
+    width: 0.25rem
+
+
+
+@media (min-width: 640px)
+  .frame
+    padding-left: Max(2rem, env(safe-area-inset-left))
+    padding-right: Max(2rem, env(safe-area-inset-right))
+
+  .-frame
+    margin-left: calc(-1 * Max(2rem, env(safe-area-inset-left)))
+    margin-right: calc(-1 * Max(2rem, env(safe-area-inset-right)))
+
+  .-frame.-my-1
+    padding-left: Max(1.75rem, env(safe-area-inset-left))
+    padding-right: Max(1.75rem, env(safe-area-inset-right))
+
+    .flex-compensator
+      width: 1.75rem
+
+  .-frame.-my-3
+    padding-left: Max(1.25rem, env(safe-area-inset-left))
+    padding-right: Max(1.25rem, env(safe-area-inset-right))
+
+    .flex-compensator
+      width: 1.25rem
