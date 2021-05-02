@@ -51,6 +51,9 @@ lint-security:
 
 
 
+run-bundle-install:
+	MAKE="make --jobs 8" bundle install
+
 run-bundle-update:
 	MAKE="make --jobs 8" gem_update
 
@@ -78,6 +81,8 @@ test:
 	rails test
 
 
+
+bi: run-bundle-install
 
 bu: run-bundle-update
 
