@@ -459,6 +459,7 @@ DEPENDENCIES
   listen
   lograge
   mailgun-ruby
+  mime-types
   mina
   mina-puma
   mina-scp

@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem 'mime-types', require: 'mime/types/columnar' # hack for free memory – https://github.com/schneems/derailed_benchmarks
+
 gem 'amazing_print'
 gem 'autoprefixer-rails'
 gem 'bootsnap', require: false
