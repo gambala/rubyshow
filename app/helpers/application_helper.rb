@@ -8,6 +8,14 @@ module ApplicationHelper
     "https://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
   end
 
+  def benchmark(caption = nil, &block)
+    Benchmark.benchmark(caption.to_s) do |x|
+      x.report do
+        yield
+      end
+    end
+  end
+
   def unapproved_courses_amount
     Course.where(approved: false).count
   end
