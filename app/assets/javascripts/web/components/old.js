@@ -1,6 +1,4 @@
 document.addEventListener("page:load", function() {
-  $('[data-toggle="tooltip"]').tooltip()
-
   $('.rate-course').hide();
 
   // Comments graduate rating

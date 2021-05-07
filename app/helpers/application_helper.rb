@@ -16,10 +16,6 @@ module ApplicationHelper
     end
   end
 
-  def unapproved_courses_amount
-    Course.where(approved: false).count
-  end
-
   def comments_amount
     Comment.count
   end
