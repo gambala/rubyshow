@@ -257,7 +257,7 @@ GEM
       omniauth (>= 1.9, < 3)
     open4 (1.3.4)
     orm_adapter (0.5.0)
-    pagy (3.13.0)
+    pagy (4.5.1)
     parallel (1.20.1)
     parser (3.0.1.1)
       ast (~> 2.4.1)
@@ -325,7 +325,7 @@ GEM
     recaptcha (5.7.0)
       json
     redis (4.2.5)
-    redis-namespace (1.7.0)
+    redis-namespace (1.8.1)
       redis (>= 3.0.4)
     regexp_parser (2.1.1)
     request_store (1.5.0)
@@ -480,7 +480,7 @@ DEPENDENCIES
   rails_performance
   recaptcha
   redis
-  redis-namespace (= 1.7.0)
+  redis-namespace
   rubocop
   rubocop-github!
   rubocop-performance
@@ -500,4 +500,4 @@ DEPENDENCIES
   webpacker
 
 BUNDLED WITH
-   1.17.3
+   2.2.17

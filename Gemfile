@@ -39,7 +39,7 @@ gem 'rails-plus', github: 'gambala/rails-plus', branch: 'develop'
 gem 'rails_performance'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'redis'
-gem 'redis-namespace', '1.7.0' # because of Coverband: view_tracker failed to store, error Redis::CommandError
+gem 'redis-namespace'
 gem 'sass-rails', '>= 6.0'
 gem 'slim'
 gem 'sprockets'

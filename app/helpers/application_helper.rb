@@ -50,4 +50,9 @@ module ApplicationHelper
     request.reset_session
     csrf_meta_tags
   end
+
+  # Monkey patch of rails-plus I18nHelper t monkey patched method
+  def t(key, options = {})
+    super(key, **options)
+  end
 end
