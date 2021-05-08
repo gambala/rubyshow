@@ -13,7 +13,7 @@
           .form-group
             = f.check_box :graduate
             = f.label :graduate, 'Я закончил этот курс!'
-        .col-md-6.rate-course
+        .col-md-6.rate-course.hidden
           .form-group
             ' Оценка курса:
             - (1..5).each do |value|
