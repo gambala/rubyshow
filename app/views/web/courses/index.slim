@@ -17,24 +17,23 @@ section.section-padded
 
         .sticky-section
           = form_tag courses_path, method: :get, remote: true
-            .panel.panel-default
-              .panel-body
-                .form-group
-                  = text_field_tag :title, params[:title], class: 'input', id: 'course_name',
-                                   placeholder: 'Найти по названию'
-                .form-group
-                  .select-wrapper = select_tag :language, options_for_select(language_options, params[:language])
-                .form-group
-                  .select-wrapper = select_tag :paid, options_for_select(paid_options, params[:paid])
-                .form-group
-                  .text-right
-                    = link_to 'Показать все курсы', courses_path, class: 'btn btn-link', id: 'reset_filter'
-                    = button_tag 'Найти', class: 'btn btn-primary', id: 'apply_filter'
+            .card.bg-gray-50.p-4
+              .form-group
+                = text_field_tag :title, params[:title], class: 'input', id: 'course_name',
+                                 placeholder: 'Найти по названию'
+              .form-group
+                .select-wrapper = select_tag :language, options_for_select(language_options, params[:language])
+              .form-group
+                .select-wrapper = select_tag :paid, options_for_select(paid_options, params[:paid])
+              .form-group.mb-0
+                .text-right
+                  => link_to 'Показать все курсы', courses_path, class: 'button h-30px bg-white', id: 'reset_filter'
+                  => button_tag 'Найти', class: 'button h-30px bg-red', id: 'apply_filter'
 
       div class='lg:order-first lg:flex-grow'
         - present courses_query do |courses_query_presenter|
           - if courses_query_presenter.any_titles?
-            .well
+            .card.bg-gray-50.p-4
               dl.dl-inline
                 dt По запросу:
                 dd = courses_query_presenter.request_title
@@ -44,7 +43,6 @@ section.section-padded
         section.section-with-margin
           = render 'web/courses/list', courses: courses_query.courses
 
-        .well
-          p
-            ' Знаете о курсе, которого нет в списке?
-            = link_to 'Добавьте его.', new_course_path, class: 'b'
+        .card.bg-gray-50.p-4
+          ' Знаете о курсе, которого нет в списке?
+          = link_to 'Добавьте его.', new_course_path, class: 'b'

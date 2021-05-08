@@ -34,7 +34,7 @@ section.py-10
         h2 Пять лучших платных курсов
         = render 'web/courses/list', courses: top_5_paid_courses
     .my-10
-      = link_to 'Посмотреть все курсы', courses_path, class: 'btn btn-default block'
+      = link_to 'Посмотреть все курсы', courses_path, class: 'button h-30px bg-white block'
 
     - if random_comment.present?
       .my-10

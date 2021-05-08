@@ -2,7 +2,7 @@ div
   = link_to 'javascript:;',
             class: 'button ios-button with-tooltip',
             data: { template: 'user_menu', tippy_interactive: true, tippy_theme: 'light', tippy_maxWidth: 300 }
-    .ios-button__icon: i.glyphicon.glyphicon-user
+    .ios-button__icon = hicon 'user', class: 'w-7 block'
     .ios-button__label Профиль
   .hidden id='user_menu' style='min-width: 200px;'
     .p-2
