@@ -1,4 +1,6 @@
 const initAll = () => {
+  if (!document.querySelector('#comment_graduate')) return;
+
   document.querySelector('#comment_graduate').onchange = function(){
     if (this.checked)
       document.querySelector('.rate-course').classList.remove('hidden');
