@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-include RoutesHelper
+include RailsPlus::Helpers::Routes
 
 Rails.application.routes.draw do
   authenticate :user, ->(user) { user.admin? } do
