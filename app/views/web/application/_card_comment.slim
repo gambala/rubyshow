@@ -4,7 +4,7 @@
 - if comment.user.present?
   .media.media-stack-overflow(itemscope itemtype='https://schema.org/Comment')
     .media-left
-      = image_tag avatar_url(comment.user.email, 144), class: 'media-object media-object-responsive'
+      = image_tag gravatar_url(comment.user.email, 144), class: 'media-object media-object-responsive'
     .media-body
       .media-heading
         .float-right.text-right

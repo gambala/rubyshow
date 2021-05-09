@@ -3,7 +3,7 @@
 .container
   .col-md-2
     .text-center
-      = image_tag avatar_url(@user.email, 144)
+      = image_tag gravatar_url(@user.email, 144)
       h1.h3 = @user.username
 
       - if @user.github_name
