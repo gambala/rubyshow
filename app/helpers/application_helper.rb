@@ -9,7 +9,7 @@ module ApplicationHelper
   include RailsPlus::Helpers::Hicon
   include RailsPlus::Helpers::RescuedCsrfMetaTags
   include RailsPlus::Helpers::RichFormFor
-  # include RailsPlus::Helpers::Seo
+  include RailsPlus::Helpers::Seo
 
   def comments_amount
     Comment.count
