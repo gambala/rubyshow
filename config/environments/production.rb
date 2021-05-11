@@ -16,7 +16,6 @@ Rails.application.configure do
   config.active_support.disallowed_deprecation = :log
   config.active_support.disallowed_deprecation_warnings = []
   config.assets.compile = false
-  config.assets.js_compressor = :uglifier
   config.cache_classes = true
   config.consider_all_requests_local = false
   config.eager_load = true

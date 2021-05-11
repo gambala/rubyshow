@@ -11,7 +11,6 @@ gem 'autoprefixer-rails'
 gem 'bootsnap', require: false
 gem 'bootstrap-sass'
 gem 'bugsnag'
-gem 'coffee-rails'
 gem 'devise'
 gem 'devise-i18n'
 gem 'figaro'
@@ -45,7 +44,6 @@ gem 'slim'
 gem 'sprockets'
 gem 'table_print'
 gem 'turbolinks'
-gem 'uglifier'
 gem 'webpacker'
 
 group :development do
