@@ -9,26 +9,27 @@ section.section-padded
     div class='lg:flex lg:flex-nowrap'
       div class='lg:order-last lg:ml-5' style='min-width: 300px; max-width: 500px;'
         - if policy(Course.new).approve?
-          section
+          .mb-3
             span.b Новые курсы
-            ul.list-unstyled
-              - Course.unapproved.each do |course|
-                li = link_to course.title, course
+
+            - Course.unapproved.each do |course|
+              div = link_to course.title, course
 
         .sticky-section
           = form_tag courses_path, method: :get, remote: true
             .card.bg-gray-50.p-4
-              .form-group
-                = text_field_tag :title, params[:title], class: 'input', id: 'course_name',
-                                 placeholder: 'Найти по названию'
-              .form-group
-                .select-wrapper = select_tag :language, options_for_select(language_options, params[:language])
-              .form-group
-                .select-wrapper = select_tag :paid, options_for_select(paid_options, params[:paid])
-              .form-group.mb-0
-                .text-right
-                  => link_to 'Показать все курсы', courses_path, class: 'button h-30px bg-white', id: 'reset_filter'
-                  => button_tag 'Найти', class: 'button h-30px bg-red', id: 'apply_filter'
+              .form
+                .field-group
+                  = text_field_tag :title, params[:title], class: 'input', id: 'course_name',
+                                   placeholder: 'Найти по названию'
+                .field-group
+                  .select-wrapper = select_tag :language, options_for_select(language_options, params[:language])
+                .field-group
+                  .select-wrapper = select_tag :paid, options_for_select(paid_options, params[:paid])
+                .field-group.mb-0
+                  .text-right
+                    => link_to 'Показать все курсы', courses_path, class: 'button h-30px bg-white', id: 'reset_filter'
+                    => button_tag 'Найти', class: 'button h-30px bg-red', id: 'apply_filter'
 
       div class='lg:order-first lg:flex-grow'
         - present courses_query do |courses_query_presenter|

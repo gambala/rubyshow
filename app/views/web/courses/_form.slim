@@ -1,31 +1,32 @@
 = form_for @course do |f|
-  = form_field_group :title, @course do
-    = f.label :title, 'Название'
-    = f.text_field :title, class: 'input'
-    = form_field_error :title, @course
-  = form_field_group :url, @course do
-    = f.label :url, 'Ссылка на курс'
-    = f.text_field :url, class: 'input'
-    = form_field_error :url, @course
-  .row
-    .col-md-6
-      .form-group
-        = f.label :language, 'Язык'
-        = f.select(:language, %w(Русский English), {}, { class: 'input' })
-    .col-md-6
-      .form-group
-        = f.label :paid, 'Доступность курса'
-        = f.select :paid, [['Платный', true], ['Бесплатный', false]],
-                   { prompt: 'Выберите один из вариантов' },
-                   class: 'input', required: true
-  = form_field_group :description, @course do
-    = f.label :description, 'Описание'
-    = f.text_area :description, rows: 5, class: 'input'
-    = form_field_error :description, @course
-  .row
-    .col-md-6
-      .form-group
-        = f.submit 'Сохранить', class: 'button h-30px bg-white'
-    .col-md-6
-      .form-group
-        = recaptcha_tags
+  .form
+    = form_field_group :title, @course do
+      = f.label :title, 'Название', class: 'label'
+      = f.text_field :title, class: 'input'
+      = form_field_error :title, @course
+    = form_field_group :url, @course do
+      = f.label :url, 'Ссылка на курс', class: 'label'
+      = f.text_field :url, class: 'input'
+      = form_field_error :url, @course
+    .row
+      .col-md-6
+        .field-group
+          = f.label :language, 'Язык', class: 'label'
+          = f.select(:language, %w(Русский English), {}, { class: 'input' })
+      .col-md-6
+        .field-group
+          = f.label :paid, 'Доступность курса', class: 'label'
+          = f.select :paid, [['Платный', true], ['Бесплатный', false]],
+                     { prompt: 'Выберите один из вариантов' },
+                     class: 'input', required: true
+    = form_field_group :description, @course do
+      = f.label :description, 'Описание', class: 'label'
+      = f.text_area :description, rows: 5, class: 'input'
+      = form_field_error :description, @course
+    .row
+      .col-md-6
+        .field-group
+          = f.submit 'Сохранить', class: 'button h-30px bg-white'
+      .col-md-6
+        .field-group
+          = recaptcha_tags
