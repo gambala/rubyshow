@@ -5,6 +5,7 @@ module ApplicationHelper
   include Pagy::Frontend
   include RailsPlus::Helpers::Benchmark
   include RailsPlus::Helpers::Dashed
+  include RailsPlus::Helpers::FrameContainerTag
   include RailsPlus::Helpers::GravatarURL
   include RailsPlus::Helpers::Hicon
   include RailsPlus::Helpers::RescuedCsrfMetaTags

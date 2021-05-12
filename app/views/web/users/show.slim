@@ -1,14 +1,16 @@
 - title "Отзывы #{@user.username} о курсах по Ruby"
 
-.container
-  .col-md-2
-    .text-center
-      = image_tag gravatar_url(@user.email, 144)
-      h1.h3 = @user.username
+.py-6
+  = frame_container_tag
+    .flex.-m-4
+      .m-4.flex-1 style='min-width: 300px; max-width: 300px;'
+        .text-center
+          = image_tag gravatar_url(@user.email, 144)
+          h1.h3 = @user.username
 
-      - if @user.github_name
-        = link_to "github.com/#{@user.github_name}", "https://github.com/#{@user.github_name}"
-  .col-md-7
-    - if @comments.any?
-      h4 Отзывы пользователя
-      = render partial: 'card_comment', collection: @comments
+          - if @user.github_name
+            = link_to "github.com/#{@user.github_name}", "https://github.com/#{@user.github_name}"
+      .m-4.flex-1 style='min-width: 300px;'
+        - if @comments.any?
+          h4 Отзывы пользователя
+          = render partial: 'card_comment', collection: @comments

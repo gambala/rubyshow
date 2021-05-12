@@ -9,13 +9,13 @@
         = f.text_area :content, required: true, rows: 3, class: 'input new-comment'
 
       - if policy(comment).rate?
-        .row
-          .col-md-6
+        .mb-0.flex.-m-4
+          .m-4.flex-1 style='min-width: 300px;'
             .field-group
               = f.check_box :graduate
               = f.label :graduate, 'Я закончил этот курс!', class: 'label'
-          .col-md-6.rate-course.hidden
-            .field-group
+          .m-4.flex-1 style='min-width: 300px;'
+            .rate-course.hidden.field-group
               ' Оценка курса:
               - (1..5).each do |value|
                 label>

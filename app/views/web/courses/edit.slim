@@ -1,10 +1,7 @@
 section.bg-gray-800.py-6 class='md:py-12'
-  .container
+  = frame_container_tag
     h1.m-0.mb-2.text-2xl.leading-snug.font-semibold.text-red-500 class='md:text-3xl' Редактирование курса
 
 section.section-padded
-  .container
-    .row
-      .col-sm-4.col-sm-push-8.col-lg-3.col-lg-push-9
-      .col-sm-8.col-sm-pull-4.col-lg-9.col-lg-pull-3
-        = render 'form'
+  = frame_container_tag
+    = render 'form'

@@ -8,12 +8,12 @@
       = f.label :url, 'Ссылка на курс', class: 'label'
       = f.text_field :url, class: 'input'
       = form_field_error :url, @course
-    .row
-      .col-md-6
+    .mb-0.flex.-m-4
+      .m-4.flex-1 style='min-width: 300px;'
         .field-group
           = f.label :language, 'Язык', class: 'label'
           = f.select(:language, %w(Русский English), {}, { class: 'input' })
-      .col-md-6
+      .m-4.flex-1 style='min-width: 300px;'
         .field-group
           = f.label :paid, 'Доступность курса', class: 'label'
           = f.select :paid, [['Платный', true], ['Бесплатный', false]],
@@ -23,10 +23,9 @@
       = f.label :description, 'Описание', class: 'label'
       = f.text_area :description, rows: 5, class: 'input'
       = form_field_error :description, @course
-    .row
-      .col-md-6
+    .mb-0.flex.-m-4
+      .m-4.flex-1 style='min-width: 300px;'
         .field-group
-          = f.submit 'Сохранить', class: 'button h-30px bg-white'
-      .col-md-6
-        .field-group
-          = recaptcha_tags
+          = f.submit 'Сохранить', class: 'button h-36px bg-blue'
+      .m-4.flex-1 style='min-width: 300px;'
+        = recaptcha_tags

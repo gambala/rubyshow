@@ -1,5 +1,5 @@
 section.section-padded#comments
-  .container
+  = frame_container_tag
     h1 Последние отзывы о курсах
     = render partial: 'card_comment', collection: @comments
     .text-center

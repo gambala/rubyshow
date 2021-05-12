@@ -2,12 +2,14 @@
 
 class ApplicationController < ActionController::Base
   include Pundit
+  include WithFrameContainerTag
   include WithMobileViews
   include WithSeo
 
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :check_for_mobile
+  before_action :use_container, only: %i(index new create show edit update mini)
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 

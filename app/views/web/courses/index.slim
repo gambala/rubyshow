@@ -1,11 +1,11 @@
 - present courses_query do |courses_query_presenter|
   - title courses_query_presenter.request_title if courses_query_presenter.any_titles?
   section.bg-gray-800.py-6 class='md:py-12'
-    .container
+    = frame_container_tag
       h1.m-0.mb-2.text-2xl.leading-snug.font-semibold.text-red-500 class='md:text-3xl' Каталог курсов по Ruby
       .text-gray-200 Собрано уже #{comments_amount} #{t('words.comments_suffix', count: comments_amount)} о курсах
 section.section-padded
-  .container
+  = frame_container_tag
     div class='lg:flex lg:flex-nowrap'
       div class='lg:order-last lg:ml-5' style='min-width: 300px; max-width: 500px;'
         - if policy(Course.new).approve?

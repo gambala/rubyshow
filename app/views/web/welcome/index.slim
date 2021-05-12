@@ -13,19 +13,20 @@ section.bg-gray-800.text-gray-200.py-6.relative class='md:py-12'
     .circles-area__item
     .circles-area__item
 
-  .container.relative
-    h1.text-5xl.text-red-600.font-semibold.m-0.mb-2 Ruby.show
-    p.max-w-3xl Здесь вы найдете объемный список курсов, на которых можно обучиться Ruby и Ruby on Rails с отзывами выпускников этих курсов.
-    p Это поможет вам выбрать подходящий курс и сэкономить время.
-    p
-      | Сейчас у нас есть
-      span.text-red-500 =<> courses_size
-      | #{t('words.course', count: courses_size)} и
-      span.text-red-500 =<> reviews_size
-      | #{t('words.comment', count: reviews_size)} к ним.
+  = frame_container_tag
+    .relative
+      h1.text-5xl.text-red-600.font-semibold.m-0.mb-2 Ruby.show
+      p.max-w-3xl Здесь вы найдете объемный список курсов, на которых можно обучиться Ruby и Ruby on Rails с отзывами выпускников этих курсов.
+      p Это поможет вам выбрать подходящий курс и сэкономить время.
+      p
+        | Сейчас у нас есть
+        span.text-red-500 =<> courses_size
+        | #{t('words.course', count: courses_size)} и
+        span.text-red-500 =<> reviews_size
+        | #{t('words.comment', count: reviews_size)} к ним.
 
 section.py-10
-  .container
+  = frame_container_tag
     .flex.flex-wrap.-m-2
       .flex-1.m-2 style='min-width: 300px;'
         h2 Пять лучших бесплатных курсов
