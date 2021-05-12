@@ -9,7 +9,6 @@ gem 'mime-types', require: 'mime/types/columnar' # hack for free memory – http
 gem 'amazing_print'
 gem 'autoprefixer-rails'
 gem 'bootsnap', require: false
-gem 'bootstrap-sass'
 gem 'bugsnag'
 gem 'devise'
 gem 'devise-i18n'
