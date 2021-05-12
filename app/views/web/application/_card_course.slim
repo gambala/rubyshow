@@ -1,18 +1,18 @@
 .so-media.flex
   .mr-3
     - if course.rated?
-      = link_to course_path(course), class: 'so-digita text-red-500 relative'
+      = link_to course_path(course), class: 'so-digita text-red-500 no-underline relative'
         .so-digita__title = course.comments.pluck(:graduate).count
         .so-digita__text отзывов
 
         - if course.suspicious?
           .absolute.top-0.-left-8.text-3xl.pointer-events-none 🤔
     - else
-      = link_to course_path(course), class: 'so-digita text-red-500'
+      = link_to course_path(course), class: 'so-digita text-red-500 no-underline'
         span
   .flex-grow
     .flex.flex-wrap.items-baseline.-mx-1
-      = link_to course.title, course, class: 'mx-1 text-lg font-medium text-blue-600 hover:text-blue-800 hover:no-underline'
+      = link_to course.title, course, class: 'mx-1 text-lg font-medium text-blue-600 hover:text-blue-800 no-underline'
     .flex.-m-1
       .m-1 = language_flag(course.language)
       .m-1 = course_status(course)

@@ -1,16 +1,16 @@
 .flex.flex-wrap
   .m-2
     = link_to 'Курсы', courses_path,
-              class: 'block p-2 rounded font-mono text-yellow-400 hover:bg-gray-800 hover:no-underline hover:text-yellow-400 with-tooltip',
+              class: 'block p-2 rounded font-mono text-yellow-400 hover:bg-gray-800 no-underline hover:text-yellow-400 with-tooltip',
               data: { template: 'courses_menu', tippy_interactive: true, tippy_theme: 'light', tippy_maxWidth: 300 }
     .hidden id='courses_menu' style='min-width: 200px;'
       .p-2
         = link_to 'Платные', courses_path(paid: '1'),
-                  class: 'block p-2 rounded text-blue-600 hover:no-underline hover:bg-blue-200 hover:text-gray-700'
+                  class: 'block p-2 rounded text-blue-600 no-underline hover:bg-blue-200 hover:text-gray-700'
         = link_to 'Бесплатные', courses_path(paid: '0'),
-                  class: 'block p-2 rounded text-blue-600 hover:no-underline hover:bg-blue-200 hover:text-gray-700'
+                  class: 'block p-2 rounded text-blue-600 no-underline hover:bg-blue-200 hover:text-gray-700'
         hr.my-2
         = link_to 'Добавить', new_course_path,
-                  class: 'block p-2 rounded text-blue-600 hover:no-underline hover:bg-blue-200 hover:text-gray-700'
+                  class: 'block p-2 rounded text-blue-600 no-underline hover:bg-blue-200 hover:text-gray-700'
 
-  = link_to 'Отзывы', [:public, :reviews], class: 'm-2 p-2 rounded font-mono text-yellow-400 hover:bg-gray-800 hover:no-underline hover:text-yellow-400'
+  = link_to 'Отзывы', [:public, :reviews], class: 'm-2 p-2 rounded font-mono text-yellow-400 hover:bg-gray-800 no-underline hover:text-yellow-400'

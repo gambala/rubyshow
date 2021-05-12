@@ -17,9 +17,9 @@
             p
               small.text-success Выпускник курса
         span(itemprop='author')
-          = link_to (comment.user.username || comment.user.email), comment.user
+          = link_to (comment.user.username || comment.user.email), comment.user, class: 'link'
 
         - if show_course
           div: small
-            = link_to comment.course.title, comment.course
+            = link_to comment.course.title, comment.course, class: 'link'
       p(itemprop='text') = comment.content

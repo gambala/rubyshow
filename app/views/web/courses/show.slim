@@ -6,7 +6,7 @@ section(itemscope itemtype='https://schema.org/EducationEvent')
       h1.m-0.mb-2.text-2xl.leading-snug.font-semibold.text-red-500 class='md:text-3xl' itemprop='name' = @course.title
       .mb-4.font-semibold.text-red-500 class='md:text-lg'
         = link_to @course.url, @course.url, target: '_blank', rel: 'noopener noreferrer', itemprop: 'url',
-                  class: 'text-yellow-400 hover:text-yellow-400'
+                  class: 'no-underline text-yellow-400 hover:text-yellow-400'
       .text-gray-200 itemprop='description' = simple_format @course.description
   section.section-padded
     = frame_container_tag
