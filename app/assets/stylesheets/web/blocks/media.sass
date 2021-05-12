@@ -1,0 +1,15 @@
+.media
+  display: flex
+
+  .media__aside
+    flex-shrink: 0
+
+  .media__body + .media__aside,
+  .media__aside + .media__body
+    margin-left: 10px
+
+.media_sticky
+  align-items: stretch
+
+  .media__body
+    width: 100%
