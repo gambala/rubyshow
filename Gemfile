@@ -21,7 +21,7 @@ gem 'mina'
 gem 'mina-puma', require: false
 gem 'mina-scp',  require: false
 gem 'oj' # pagy dependency
-gem 'omniauth-github', '~> 1.4' # because of possible bug https://github.com/heartcombo/devise/issues/5236
+gem 'omniauth-github', '~> 1.4' # because of possible bug https://github.com/heartcombo/devise/issues/5236
 gem 'pagy'
 gem 'pg'
 gem 'pghero'
