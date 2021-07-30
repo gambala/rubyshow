@@ -2,7 +2,7 @@
 
 if Rails.env.development?
   require 'annotate'
-  task :set_annotation_options do
+  task set_annotation_options: :environment do
     Annotate.set_defaults(
       'routes'                     => 'false',
       'models'                     => 'true',
@@ -43,7 +43,7 @@ if Rails.env.development?
       'trace'                      => 'false',
       'wrapper_open'               => nil,
       'wrapper_close'              => nil,
-      'with_comment'               => true
+      'with_comment'               => true,
     )
   end
 
