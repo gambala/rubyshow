@@ -1,0 +1,18 @@
+h2 = t('.heading')
+
+= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+  = render 'devise/shared/error_messages', resource: resource
+
+  .field
+    = f.label :username
+    br
+    = f.text_field :username, autofocus: true
+  .field
+    = f.label :email
+    br
+    = f.email_field :email, autocomplete: 'email'
+
+  .actions
+    = f.submit t('.links')
+
+= render 'devise/shared/links'
