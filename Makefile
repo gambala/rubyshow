@@ -92,4 +92,5 @@ fu: run-frontend-update
 
 g: run-generate
 
-s: run-rails
+s:
+	hivemind
