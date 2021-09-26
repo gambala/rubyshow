@@ -62,8 +62,6 @@ group :development do
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-template', require: false, github: 'gambala/rubocop-template'
-  gem 'spring'
-  gem 'spring-watcher-listen'
   gem 'web-console'
 end
 
