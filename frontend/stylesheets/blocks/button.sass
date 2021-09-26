@@ -1,4 +1,19 @@
-.button_blue,
+@tailwind components
+
+@layer components
+  .button_blue
+    @apply bg-blue-600 text-blue-100
+
+    &:hover
+      @apply bg-blue-700
+
+    &:active
+      @apply bg-blue-800
+
+    &.disabled
+      @apply bg-blue-300
+
+
 .button.bg-blue
   @apply bg-blue-600 text-blue-100
 

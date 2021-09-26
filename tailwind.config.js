@@ -5,6 +5,7 @@ module.exports = {
     container: false,
     preflight: false,
   },
+  mode: 'jit',
   purge: [
     './app/components/**/*.rb',
     './app/components/**/*.slim',

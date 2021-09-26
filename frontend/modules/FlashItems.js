@@ -35,7 +35,7 @@ const timedElement = (element) => {
 
 const timedAll = () => {
   const elements = document.querySelectorAll('.flash-item_notice:not(.flash-item_timed)');
-  [...elements].forEach(element => timedElement(element));
+  Array.from(elements).forEach(element => timedElement(element));
 };
 
 const start = () => {

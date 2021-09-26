@@ -41,7 +41,7 @@ gem 'slim'
 gem 'sprockets'
 gem 'table_print'
 gem 'turbolinks'
-gem 'webpacker'
+gem 'webpacker', '>= 6.0.0.rc.5' # With Yarn 3 compatibility
 
 group :development do
   gem 'annotate'
