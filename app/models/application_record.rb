@@ -4,6 +4,7 @@ class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true
 
   scope :order_randomly, -> { order('RANDOM()') }
+  scope :random, -> { order_randomly.first }
 
   # User.all.reject_duplicates(:email)
   # Order.all.reject_duplicates(:user_id, :email, field: :slug, selected_record: :first)
