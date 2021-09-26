@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer components {
   .button_blue {
     @apply bg-blue-600 text-blue-100;
