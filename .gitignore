@@ -5,6 +5,7 @@
 yarn-debug.log*
 
 /.bundle
+/app/assets/builds/*
 /config/application.yml
 /config/master.key
 /coverage
@@ -20,6 +21,7 @@ yarn-debug.log*
 /tmp/pids/*
 /yarn-error.log
 
+!/app/assets/builds/.keep
 !/log/.keep
 !/storage/.keep
 !/tmp/.keep

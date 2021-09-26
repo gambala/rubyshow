@@ -9,6 +9,7 @@ module.exports = {
   purge: [
     './app/components/**/*.rb',
     './app/components/**/*.slim',
+    './app/javascript/**/*.js',
     './app/helpers/**/*.rb',
     './app/views/**/*.erb',
     './app/views/**/*.html',

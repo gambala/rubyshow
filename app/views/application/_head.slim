@@ -10,5 +10,5 @@ meta name='viewport' content='width=device-width, initial-scale=1'
 = csp_meta_tag
 = stylesheet_link_tag 'web/application', media: 'all', data: { turbolinks_track: 'reload' }
 = render 'favicons'
-= stylesheet_pack_tag 'application', media: 'all', data: { turbolinks_track: 'reload' }
-= javascript_pack_tag 'application', async: true, data: { turbolinks_track: 'reload', turbolinks_suppress_warning: true }
+= stylesheet_link_tag 'application', media: 'all', data: { turbolinks_track: 'reload' }
+= javascript_include_tag "application", "data_turbolinks_track": "reload", async: true

@@ -6,14 +6,15 @@
   "dependencies": {
     "@rails/ujs": "^6.1.4",
     "@rails/webpacker": "6.0.0-beta.7",
-    "autoprefixer": "^10.3.5",
+    "autoprefixer": "^10.3.6",
     "css-loader": "^5.2.7",
     "css-minimizer-webpack-plugin": "^3.0.2",
     "dom4": "^2.1.6",
+    "esbuild": "^0.13.2",
     "file-loader": "^6.2.0",
     "jquery": "^3.6.0",
     "mini-css-extract-plugin": "^1.6.2",
-    "postcss": "^8.3.7",
+    "postcss": "^8.3.8",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^14.0.2",
     "postcss-loader": "^6.1.1",
@@ -22,7 +23,7 @@
     "rails-plus": "https://github.com/gambala/rails-plus#develop",
     "sass": "^1.42.1",
     "sass-loader": "^12.1.0",
-    "tailwindcss": "2.2.7",
+    "tailwindcss": "^2.2.15",
     "tippy.js": "^6.3.1",
     "turbolinks": "^5.0.3",
     "webpack": "^5.47.1",
@@ -40,5 +41,9 @@
   },
   "browserslist": [
     "defaults"
-  ]
+  ],
+  "scripts": {
+    "build": "esbuild app/javascript/*.* --bundle --outdir=app/assets/builds",
+    "build:css": "tailwindcss --postcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css"
+  }
 }

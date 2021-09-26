@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .button_blue {
+    @apply bg-blue-600 text-blue-100;
+
+    &:hover {
+      @apply bg-blue-700;
+    }
+
+    &:active {
+      @apply bg-blue-800;
+    }
+
+    &.disabled {
+      @apply bg-blue-300;
+    }
+  }
+}
+
+.button.bg-blue {
+  @apply bg-blue-600 text-blue-100;
+
+  &:hover {
+    @apply bg-blue-700;
+  }
+
+  &:active {
+    @apply bg-blue-800;
+  }
+
+  &.disabled {
+    @apply bg-blue-300;
+  }
+}
+
+
+.button_green,
+.button.bg-green {
+
+  @apply bg-green-500 text-green-100;
+
+  &:hover {
+    @apply bg-green-600;
+  }
+
+  &:active {
+    @apply bg-green-700;
+  }
+
+  &.disabled {
+    @apply bg-green-300;
+  }
+}
+
+
+.button_orange,
+.button.bg-orange {
+
+  @apply bg-orange-500 text-orange-100;
+
+  &:hover {
+    @apply bg-orange-600;
+  }
+
+  &:active {
+    @apply bg-orange-700;
+  }
+
+  &.disabled {
+    @apply bg-orange-300;
+  }
+}
+
+
+.button_red,
+.button.bg-red {
+
+  @apply bg-red-600 text-red-100;
+
+  &:hover {
+    @apply bg-red-700;
+  }
+
+  &:active {
+    @apply bg-red-800;
+  }
+
+  &.disabled {
+    @apply bg-red-300;
+  }
+}
+
+
+.button_yellow,
+.button.bg-yellow {
+
+  @apply bg-yellow-400 text-yellow-900;
+
+  &:hover {
+    @apply bg-yellow-500;
+  }
+
+  &:active {
+    @apply bg-yellow-600 text-yellow-100;
+  }
+
+  &.disabled {
+    @apply bg-yellow-200 text-yellow-600;
+  }
+}
+
+
+.button_white,
+.button.bg-white {
+  @apply bg-gray-100 text-gray-700 border-solid border border-gray-400;
+
+  .fa {
+    @apply text-gray-600;
+  }
+
+  &:hover {
+    @apply bg-gray-200;
+  }
+
+  &:active {
+    @apply bg-gray-300 text-gray-800;
+  }
+
+  &.disabled {
+    @apply bg-gray-200 text-gray-600 border-gray-300;
+  }
+
+  &.active {
+    @apply bg-blue-600 text-blue-100 border-blue-600;
+  }
+}
