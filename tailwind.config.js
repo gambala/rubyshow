@@ -6,6 +6,9 @@ module.exports = {
     preflight: false,
   },
   purge: [
+    './app/components/**/*.rb',
+    './app/components/**/*.slim',
+    './app/helpers/**/*.rb',
     './app/views/**/*.erb',
     './app/views/**/*.html',
     './app/views/**/*.slim',
