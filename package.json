@@ -15,7 +15,7 @@
     "postcss-loader": "^6.1.1",
     "postcss-preset-env": "^6.7.0",
     "rails-plus": "https://github.com/gambala/rails-plus#develop",
-    "tailwindcss": "^2.2.15",
+    "tailwindcss": "^2.2.16",
     "tippy.js": "^6.3.1",
     "turbolinks": "^5.0.3"
   },
