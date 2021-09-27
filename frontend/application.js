@@ -2,7 +2,6 @@ import 'rails-plus/es6/bundles/modernizr';
 import 'what-input';
 import 'whatwg-fetch';
 import 'dom4';
-// import './modules/pagy.js.erb';
 
 import Rails      from '@rails/ujs';
 import Turbolinks from 'turbolinks';

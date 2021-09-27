@@ -1,4 +1,2 @@
-<%= Pagy.root.join('javascripts', 'pagy.js').read %>
-
 document.addEventListener('page:load', Pagy.init);
 document.addEventListener('ajax:success', Pagy.init);
