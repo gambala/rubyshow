@@ -10,11 +10,13 @@ gem 'amazing_print'
 gem 'autoprefixer-rails'
 gem 'bootsnap', require: false
 gem 'bugsnag'
+gem 'cssbundling-rails'
 gem 'devise'
 gem 'devise-i18n'
 gem 'figaro'
 gem 'flag-icons-rails'
 gem 'heroicon'
+gem 'jsbundling-rails'
 gem 'lograge'
 gem 'mailgun-ruby'
 gem 'mina'
@@ -41,7 +43,6 @@ gem 'slim'
 gem 'sprockets'
 gem 'table_print'
 gem 'turbolinks'
-gem 'webpacker', '>= 6.0.0.rc.5' # With Yarn 3 compatibility
 
 group :development do
   gem 'annotate'

@@ -93,4 +93,4 @@ fu: run-frontend-update
 g: run-generate
 
 s:
-	hivemind
+	hivemind Procfile.dev
