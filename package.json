@@ -1,50 +1,30 @@
 {
   "comments": {
-    "resolutions": "because of Security Alerts on GitHub",
     "tailwindcss": "version <2.2.8 because of ERROR from Css Minimizer Unknown word on assets:precompile step"
   },
   "dependencies": {
     "@rails/ujs": "^6.1.4",
-    "@rails/webpacker": "6.0.0-beta.7",
     "autoprefixer": "^10.3.6",
-    "css-loader": "^5.2.7",
-    "css-minimizer-webpack-plugin": "^3.0.2",
     "dom4": "^2.1.6",
     "esbuild": "^0.13.2",
-    "file-loader": "^6.2.0",
     "jquery": "^3.6.0",
-    "mini-css-extract-plugin": "^1.6.2",
     "postcss": "^8.3.8",
     "postcss-cli": "^9.0.0",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^14.0.2",
     "postcss-loader": "^6.1.1",
     "postcss-preset-env": "^6.7.0",
-    "rails-erb-loader": "^5.5.2",
     "rails-plus": "https://github.com/gambala/rails-plus#develop",
-    "sass": "^1.42.1",
-    "sass-loader": "^12.1.0",
     "tailwindcss": "^2.2.15",
     "tippy.js": "^6.3.1",
-    "turbolinks": "^5.0.3",
-    "webpack": "^5.47.1",
-    "webpack-cli": "^4.7.2"
-  },
-  "devDependencies": {
-    "@webpack-cli/serve": "^1.5.2",
-    "webpack-dev-server": "^3.11.2"
+    "turbolinks": "^5.0.3"
   },
   "private": true,
-  "babel": {
-    "presets": [
-      "./node_modules/@rails/webpacker/package/babel/preset.js"
-    ]
-  },
   "browserslist": [
     "defaults"
   ],
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --outdir=app/assets/builds",
+    "build": "esbuild frontend/*.* --bundle --outdir=app/assets/builds",
     "build:css": "postcss ./app/assets/stylesheets/postcss/index.css -o ./app/assets/builds/postcss.css"
   }
 }
