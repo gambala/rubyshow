@@ -19,12 +19,16 @@
     "tippy.js": "^6.3.1",
     "turbolinks": "^5.0.3"
   },
+  "devDependencies": {
+    "esbuild-visualizer": "^0.3.1"
+  },
   "private": true,
   "browserslist": [
     "defaults"
   ],
   "scripts": {
-    "build": "esbuild frontend/*.* --bundle --outdir=app/assets/builds",
+    "build": "node esbuild.run.js",
+    "build:size": "esbuild-visualizer --metadata ./esbuild.stats.json --filename esbuild.stats.html; open ./esbuild.stats.html",
     "build:css": "postcss ./app/assets/stylesheets/postcss/index.css -o ./app/assets/builds/postcss.css"
   }
 }

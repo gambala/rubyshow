@@ -9,6 +9,8 @@ yarn-debug.log*
 /config/application.yml
 /config/master.key
 /coverage
+/esbuild.stats.html
+/esbuild.stats.json
 /lib/snippets/*.dev.rb
 /log/*
 /node_modules
