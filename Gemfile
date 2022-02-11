@@ -28,7 +28,7 @@ gem 'pagy'
 gem 'pg'
 gem 'pghero'
 gem 'pry-rails'
-gem 'puma', '~> 4.0' # because of capistrano3-puma incompatible with 5.0
+gem 'puma', '~> 4.3' # because of capistrano3-puma incompatible with 5.0
 gem 'pundit'
 gem 'rack-attack'
 gem 'rails', '~> 6.1.0'
