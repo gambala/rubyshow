@@ -11,6 +11,7 @@ gem 'autoprefixer-rails'
 gem 'bootsnap', require: false
 gem 'bugsnag'
 gem 'cssbundling-rails'
+gem 'ddtrace', require: 'ddtrace/auto_instrument'
 gem 'devise'
 gem 'devise-i18n'
 gem 'figaro'
