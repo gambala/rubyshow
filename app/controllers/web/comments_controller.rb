@@ -3,7 +3,19 @@
 module Web
   class CommentsController < Web::ApplicationController
     before_action :set_comment, only: %i(update destroy)
-    before_action :set_course, only: %i(create update destroy)
+    before_action :set_course, only: %i(index create update destroy)
+
+    def index
+      @comments = @course.comments
+
+      authorize Comment
+
+      respond_to do |format|
+        format.rss do
+          render layout: false
+        end
+      end
+    end
 
     def create
       @comment = @course.comments.build(comment_params)

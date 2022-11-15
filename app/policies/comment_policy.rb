@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class CommentPolicy < ApplicationPolicy
+  def index?
+    true
+  end
+
   def update?
     owner?
   end
