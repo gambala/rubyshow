@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     get '/paid'         , to: redirect('/courses?paid=1')
 
     resources :courses do
-      resources :comments, only: %i(create update destroy)
+      resources :comments, only: %i(index create update destroy)
       put :approve, on: :member
     end
 
