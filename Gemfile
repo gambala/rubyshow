@@ -15,16 +15,17 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'figaro'
 gem 'flag-icons-rails'
-gem 'heroicon'
+gem 'heroicon', '0.4.0' # because of "Failed to find heroicon: login" message in 1.0
 gem 'jsbundling-rails'
 gem 'lograge'
+gem 'mail', '2.7.1' # because of the 1ms render bug in 2.8.0 and 2.9.edge
 gem 'mailgun-ruby'
 gem 'mina'
 gem 'mina-puma', require: false
 gem 'mina-scp',  require: false
 gem 'oj' # pagy dependency
 gem 'omniauth-github', '~> 1.4' # because of possible bug https://github.com/heartcombo/devise/issues/5236
-gem 'pagy'
+gem 'pagy', '~> 4.11' # Because of undefined method pagy_countless in 5.x
 gem 'pg'
 gem 'pghero'
 gem 'pry-rails'
