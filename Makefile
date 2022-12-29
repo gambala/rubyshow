@@ -90,6 +90,11 @@ c: run-console
 
 fu: run-frontend-update
 
+frontend-upgrade:
+	yarn upgrade
+
+fuu: frontend-upgrade
+
 g: run-generate
 
 s:
