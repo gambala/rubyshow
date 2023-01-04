@@ -34,7 +34,7 @@ module Web
     def show
       authorize @course, :show?
 
-      @comments = @course.comments
+      @comments = @course.comments.includes(:user)
       @comment = @course.comments.build
       @rating = @course.rating
     end
