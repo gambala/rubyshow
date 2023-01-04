@@ -10,6 +10,7 @@ gem 'amazing_print'
 gem 'autoprefixer-rails'
 gem 'bootsnap', require: false
 gem 'bugsnag'
+gem 'counter_culture'
 gem 'cssbundling-rails'
 gem 'devise'
 gem 'devise-i18n'

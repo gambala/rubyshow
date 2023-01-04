@@ -45,15 +45,16 @@ random_course_<%= i %>:
 #
 # Table name: courses
 #
-#  id          :integer          not null, primary key
-#  title       :string           default(""), not null
-#  description :text             default(""), not null
-#  language    :string           default("Русский"), not null
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  paid        :boolean          default(FALSE)
-#  approved    :boolean          default(FALSE), not null
-#  url         :string
+#  id              :integer          not null, primary key
+#  title           :string           default(""), not null
+#  description     :text             default(""), not null
+#  language        :string           default("Русский"), not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  paid            :boolean          default(FALSE)
+#  approved        :boolean          default(FALSE), not null
+#  url             :string
+#  graduates_count :integer          default(0), not null
 #
 # Indexes
 #

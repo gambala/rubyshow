@@ -19,6 +19,10 @@ class Course < ApplicationRecord
     comments.pluck(:graduate)
   end
 
+  def has_graduates?
+    graduates_count > 0
+  end
+
   def rated?
     scores.any?
   end
@@ -30,7 +34,7 @@ class Course < ApplicationRecord
 
   def suspicious?
     return false if id.in?([11, 161])
-    comments.pluck(:graduate).count > 50
+    graduates_count > 50
   end
 
   private
@@ -44,15 +48,16 @@ end
 #
 # Table name: courses
 #
-#  id          :integer          not null, primary key
-#  title       :string           default(""), not null
-#  description :text             default(""), not null
-#  language    :string           default("Русский"), not null
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  paid        :boolean          default(FALSE)
-#  approved    :boolean          default(FALSE), not null
-#  url         :string
+#  id              :integer          not null, primary key
+#  title           :string           default(""), not null
+#  description     :text             default(""), not null
+#  language        :string           default("Русский"), not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  paid            :boolean          default(FALSE)
+#  approved        :boolean          default(FALSE), not null
+#  url             :string
+#  graduates_count :integer          default(0), not null
 #
 # Indexes
 #

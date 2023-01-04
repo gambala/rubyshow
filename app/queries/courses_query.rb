@@ -52,7 +52,7 @@ class CoursesQuery
   end
 
   def sort_by_rating
-    @courses = courses.sort_by { |course| [course.rating, course.comments.count] }.reverse
+    @courses = courses.sort_by { |course| [course.rating, course.graduates_count] }.reverse
     self
   end
 

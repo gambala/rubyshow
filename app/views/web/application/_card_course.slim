@@ -1,8 +1,8 @@
 .so-media.flex
   .mr-3
-    - if course.rated?
+    - if course.has_graduates?
       = link_to course_path(course), class: 'so-digita text-red-500 no-underline relative'
-        .so-digita__title = course.comments.pluck(:graduate).count
+        .so-digita__title = course.graduates_count
         .so-digita__text отзывов
 
         - if course.suspicious?
