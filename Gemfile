@@ -59,11 +59,14 @@ group :development do
   gem 'capistrano3-puma', '~> 4.0'
   gem 'letter_opener'
   gem 'listen'
+  gem 'memory_profiler' # rack-mini-profiler dependency
+  gem 'rack-mini-profiler'
   gem 'rubocop', require: false
   gem 'rubocop-github', github: 'gambala/rubocop-github' # because of Metrics/LineLength warning fix
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-template', require: false, github: 'gambala/rubocop-template'
+  gem 'stackprof' # rack-mini-profiler dependency
   gem 'web-console'
 end
 
