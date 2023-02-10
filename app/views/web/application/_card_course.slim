@@ -3,7 +3,7 @@
     - if course.has_graduates?
       = link_to course_path(course), class: 'so-digita text-red-500 no-underline relative'
         .so-digita__title = course.graduates_count
-        .so-digita__text отзывов
+        .so-digita__text = t('words.comment', count: course.graduates_count)
 
         - if course.suspicious?
           .absolute.top-0.-left-8.text-3xl.pointer-events-none 🤔
