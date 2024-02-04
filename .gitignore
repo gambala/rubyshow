@@ -29,3 +29,6 @@ yarn-debug.log*
 !/tmp/.keep
 !/tmp/pids/
 !/tmp/pids/.keep
+
+/app/assets/builds/*
+!/app/assets/builds/.keep

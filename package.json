@@ -6,7 +6,6 @@
     "@rails/ujs": "^6.1.4",
     "autoprefixer": "^10.4.17",
     "dom4": "^2.1.6",
-    "esbuild": "^0.16.14",
     "jquery": "^3.7.1",
     "postcss": "^8.4.33",
     "postcss-cli": "^9.0.0",
@@ -19,16 +18,10 @@
     "tippy.js": "^6.3.7",
     "turbolinks": "^5.0.3"
   },
-  "devDependencies": {
-    "esbuild-visualizer": "^0.4.1"
-  },
   "private": true,
-  "browserslist": [
-    "defaults"
-  ],
+  "browserslist": ["defaults"],
   "scripts": {
-    "build": "node esbuild.run.js",
-    "build:size": "esbuild-visualizer --metadata ./esbuild.stats.json --filename esbuild.stats.html; open ./esbuild.stats.html",
+    "build": "bun bun.config.js",
     "build:css": "postcss ./app/assets/stylesheets/postcss/index.css -o ./app/assets/builds/postcss.css"
   }
 }
