@@ -3,6 +3,8 @@
 include RailsPlus::Helpers::Routes
 
 Rails.application.routes.draw do
+  get "up" => "rails/health#show", as: :rails_health_check
+
   authenticate :user, ->(user) { user.admin? } do
     mount PgHero::Engine           , at: '/pghero'
     mount RailsPerformance::Engine , at: '/rails/performance' , as: 'rails_performance'

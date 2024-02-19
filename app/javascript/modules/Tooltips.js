@@ -1,7 +1,4 @@
-import tippy, { roundArrow } from 'tippy.js';
-import 'tippy.js/animations/shift-toward-extreme.css';
-import 'tippy.js/dist/svg-arrow.css';
-import 'tippy.js/themes/light.css';
+import tippy, { roundArrow } from 'tippy.js/dist/tippy.umd.min.js';
 
 const getContent = (node) => {
   if (node.title) {

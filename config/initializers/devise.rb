@@ -8,13 +8,13 @@ Devise.setup do |config|
   config.confirmation_keys = [:username]
   config.expire_all_remember_me_on_sign_out = true
   config.mailer_sender = 'noreply@ruby.show'
-  config.omniauth :github, ENV['github_key'], ENV['github_secret'], scope: 'user:email'
+  config.omniauth :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET'], scope: 'user:email'
   config.parent_controller = 'Devisery::ApplicationController'
   config.password_length = 8..72
   config.reconfirmable = false
   config.reset_password_keys = [:username]
   config.reset_password_within = 6.hours
-  config.secret_key = ENV['devise_secret']
+  config.secret_key = ENV['DEVISE_SECRET']
   config.sign_out_via = :delete
   config.skip_session_storage = [:http_auth]
   config.stretches = Rails.env.test? ? 1 : 10

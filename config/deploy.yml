@@ -1,0 +1,52 @@
+service: rubyshow
+image: gambala/rubyshow
+servers:
+  - <%= ENV["MAIN_SERVER_IP"] %>
+labels:
+  traefik.http.routers.rubyshow-web.rule: Host(`new.ruby.show`)
+registry:
+  server: ghcr.io
+  username: gambala
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+env:
+  secret:
+    - RAILS_MASTER_KEY
+    - DB_HOST
+    - DB_PORT
+    - POSTGRES_DB
+    - POSTGRES_USER
+    - POSTGRES_PASSWORD
+    - REDIS_HOST
+    - REDIS_PORT
+    - APP_DOMAIN
+    - APP_HOST
+    - BUGSNAG_API_KEY
+    - DEVISE_SECRET
+    - GITHUB_KEY
+    - GITHUB_SECRET
+    - MAILGUN_API_KEY
+    - RAILS_SERVE_STATIC_FILES
+    - RECAPTCHA_SECRET_KEY
+    - RECAPTCHA_SITE_KEY
+    - SECRET_KEY_BASE
+accessories:
+  db:
+    image: postgres:15
+    host: <%= ENV["DB_HOST"] %>
+    port: <%= ENV["DB_PORT"] %>:5432
+    env:
+      secret:
+        - POSTGRES_DB
+        - POSTGRES_USER
+        - POSTGRES_PASSWORD
+    directories:
+      - data:/var/lib/postgresql/data
+  redis:
+    image: redis:latest
+    host: <%= ENV["REDIS_HOST"] %>
+    port: <%= ENV["REDIS_PORT"] %>:6379
+    directories:
+      - data:/data
+healthcheck:
+  cmd: ls -l > /dev/null

@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.configure do
-  config.action_controller.asset_host = ENV['app_host']
-  config.action_controller.default_url_options = { host: ENV['app_host'] }
-  config.action_mailer.asset_host = ENV['app_host']
-  config.action_mailer.default_url_options = { host: ENV['app_host'] }
+  config.action_controller.asset_host = ENV['APP_HOST']
+  config.action_controller.default_url_options = { host: ENV['APP_HOST'] }
+  config.action_mailer.asset_host = ENV['APP_HOST']
+  config.action_mailer.default_url_options = { host: ENV['APP_HOST'] }
   config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_caching = false
   config.action_mailer.raise_delivery_errors = false
@@ -20,7 +20,7 @@ Rails.application.configure do
   config.consider_all_requests_local = true
   config.eager_load = false
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-  config.hosts << ENV['app_domain']
+  config.hosts << ENV['APP_DOMAIN']
   config.sass.inline_source_maps = true
   config.sass.line_comments = false
   config.sass.preferred_syntax = :sass

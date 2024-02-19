@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 Rails.application.configure do
-  config.action_controller.asset_host = ENV['app_host']
-  config.action_controller.default_url_options = { host: ENV['app_host'] }
+  config.action_controller.asset_host = ENV['APP_HOST']
+  config.action_controller.default_url_options = { host: ENV['APP_HOST'] }
   config.action_controller.perform_caching = true
-  config.action_mailer.asset_host = ENV['app_host']
-  config.action_mailer.default_url_options = { host: ENV['app_host'] }
+  config.action_mailer.asset_host = ENV['APP_HOST']
+  config.action_mailer.default_url_options = { host: ENV['APP_HOST'] }
   config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = { api_key: ENV['mailgun_api_key'], domain: 'mg.ruby.show',
+  config.action_mailer.mailgun_settings = { api_key: ENV['MAILGUN_API_KEY'], domain: 'mg.ruby.show',
                                             api_host: 'api.eu.mailgun.net' }
   config.action_mailer.perform_caching = false
   config.active_record.dump_schema_after_migration = false
@@ -16,16 +16,17 @@ Rails.application.configure do
   config.active_support.disallowed_deprecation = :log
   config.active_support.disallowed_deprecation_warnings = []
   config.assets.compile = false
+  config.assume_ssl = true
   config.cache_classes = true
   config.consider_all_requests_local = false
   config.eager_load = true
-  config.hosts << ENV['app_domain']
+  config.force_ssl = false
+  config.hosts << ENV['APP_DOMAIN']
   config.i18n.fallbacks = true
   config.log_formatter = ::Logger::Formatter.new
   config.log_level = :info
   config.log_tags = [:request_id]
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
-  config.require_master_key = true
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)

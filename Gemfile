@@ -14,54 +14,43 @@ gem 'counter_culture'
 gem 'cssbundling-rails'
 gem 'devise'
 gem 'devise-i18n'
-gem 'figaro'
 gem 'flag-icons-rails'
 gem 'heroicon', '0.4.0' # because of "Failed to find heroicon: login" message in 1.0
 gem 'jsbundling-rails'
 gem 'lograge'
-gem 'mail', '2.7.1' # because of the 1ms render bug in 2.8.0 and 2.9.edge
+gem 'mail'
 gem 'mailgun-ruby'
-gem 'mina'
-gem 'mina-puma', require: false
-gem 'mina-scp',  require: false
+gem 'mini_racer', '~> 0.7.0' # 0.8.x has libv8-node 18.16.0 which has issues on musl-linux
+#                              execjs (autoprefixer coffee-script terser/uglifier) dependency
 gem 'oj' # pagy dependency
 gem 'omniauth-github', '~> 1.4' # because of possible bug https://github.com/heartcombo/devise/issues/5236
 gem 'pagy', '~> 4.11' # Because of undefined method pagy_countless in 5.x
 gem 'pg'
 gem 'pghero'
 gem 'pry-rails'
-gem 'puma', '~> 4.0' # because of capistrano3-puma incompatible with 5.0
+gem 'puma'
 gem 'pundit'
 gem 'rack-attack'
-gem 'rails', '~> 6.1.0'
+gem "rails", "~> 7.1.3"
 gem 'rails-i18n'
 gem 'rails-plus', github: 'gambala/rails-plus', branch: 'develop'
 gem 'rails_performance'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'redis'
-gem 'redis-namespace'
 gem 'sass-rails', '>= 6.0'
 gem 'slim'
-gem 'sprockets'
+gem "sprockets-rails"
 gem 'table_print'
 gem 'turbolinks' # Waiting for fix https://github.com/hotwired/turbo-rails/issues/122
 
 group :development do
   gem 'annotate'
   gem 'bullet'
-  gem 'byebug', platform: :mri
-  gem 'capistrano'
-  gem 'capistrano-bundler'
-  gem 'capistrano-figaro-yml'
-  gem 'capistrano-rails'
-  gem 'capistrano-rails-console', require: false
-  gem 'capistrano-rvm'
-  gem 'capistrano-touch-linked-files'
-  gem 'capistrano3-puma', '~> 4.0'
+  gem "dotenv-rails"
   gem 'letter_opener'
-  gem 'listen'
   gem 'memory_profiler' # rack-mini-profiler dependency
   gem 'rack-mini-profiler'
+  gem "rails_live_reload"
   gem 'rubocop', require: false
   gem 'rubocop-github', github: 'gambala/rubocop-github' # because of Metrics/LineLength warning fix
   gem 'rubocop-performance', require: false

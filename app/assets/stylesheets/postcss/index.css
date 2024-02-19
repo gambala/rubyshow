@@ -1,3 +1,6 @@
+@import 'tippy.js/animations/shift-toward-extreme.css';
+@import 'tippy.js/dist/svg-arrow.css';
+@import 'tippy.js/themes/light.css';
 @import "blocks/button.css";
 
 @tailwind base;

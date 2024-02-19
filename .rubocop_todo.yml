@@ -38,7 +38,6 @@ Rails/Delegate:
 # Include: **/Rakefile, **/*.rake
 Rails/RakeEnvironment:
   Exclude:
-    - 'lib/capistrano/tasks/**/*.rake'
     - 'lib/tasks/auto_annotate_models.rake'
 
 # Offense count: 1
