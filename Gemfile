@@ -15,7 +15,7 @@ gem 'cssbundling-rails'
 gem 'devise'
 gem 'devise-i18n'
 gem 'flag-icons-rails'
-gem 'heroicon', '0.4.0' # because of "Failed to find heroicon: login" message in 1.0
+gem 'heroicon'
 gem 'jsbundling-rails'
 gem 'lograge'
 gem 'mail'

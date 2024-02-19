@@ -168,7 +168,7 @@ GEM
     globalid (1.2.1)
       activesupport (>= 6.1)
     hashie (5.0.0)
-    heroicon (0.4.0)
+    heroicon (1.0.0)
       rails (>= 5.2)
     http-accept (1.7.0)
     http-cookie (1.0.5)
@@ -456,7 +456,7 @@ DEPENDENCIES
   devise-i18n
   dotenv-rails
   flag-icons-rails
-  heroicon (= 0.4.0)
+  heroicon
   jsbundling-rails
   letter_opener
   lograge
