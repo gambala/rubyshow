@@ -2,8 +2,8 @@
 
 module Web
   class CommentsController < Web::ApplicationController
-    before_action :set_comment, only: %i(update destroy)
-    before_action :set_course, only: %i(index create update destroy)
+    before_action :set_comment, only: %i[update destroy]
+    before_action :set_course, only: %i[index create update destroy]
 
     def index
       @comments = @course.comments
@@ -28,7 +28,7 @@ module Web
       respond_to do |format|
         if @comment.save
           format.html do
-            redirect_to @course, notice: 'Спасибо за ваш комментарий!'
+            redirect_to @course, notice: "Спасибо за ваш комментарий!"
           end
           format.json { render :show, status: 201, location: @comment }
         else
@@ -43,7 +43,7 @@ module Web
 
       respond_to do |format|
         if @comment.update(comment_params)
-          format.html { redirect_to @comment, notice: 'Комментарий успешно обновлен.' }
+          format.html { redirect_to @comment, notice: "Комментарий успешно обновлен." }
           format.json { render :show, status: 200, location: @comment }
         else
           format.html { render :edit }
@@ -58,7 +58,7 @@ module Web
       @comment.destroy
 
       respond_to do |format|
-        format.html { redirect_to comments_url, notice: 'Комментарий успешно удален.' }
+        format.html { redirect_to comments_url, notice: "Комментарий успешно удален." }
         format.json { head :no_content }
       end
     end

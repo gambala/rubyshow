@@ -7,22 +7,6 @@ GIT
       autoprefixer-rails (>= 5.2.1)
       sass-rails (>= 6.0)
 
-GIT
-  remote: https://github.com/gambala/rubocop-github.git
-  revision: 4116f8a56deac3e3aee896ae039b35e4bb8a416a
-  specs:
-    rubocop-github (0.14.0)
-      rubocop (<= 0.81.0)
-      rubocop-performance (~> 1.0)
-      rubocop-rails (~> 2.0)
-
-GIT
-  remote: https://github.com/gambala/rubocop-template.git
-  revision: 1950c9e196f1794b26d8d3615e67f35522814ec7
-  specs:
-    rubocop-template (1.2.0)
-      rubocop (>= 0.49)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -179,15 +163,17 @@ GEM
     irb (1.11.2)
       rdoc
       reline (>= 0.4.2)
-    jaro_winkler (1.5.6)
     jsbundling-rails (1.3.0)
       railties (>= 6.0.0)
+    json (2.7.1)
     jwt (2.7.1)
+    language_server-protocol (3.17.0.3)
     launchy (2.5.2)
       addressable (~> 2.8)
     letter_opener (1.8.1)
       launchy (>= 2.2, < 3)
     libv8-node (17.9.1.1)
+    lint_roller (1.1.0)
     listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -359,20 +345,22 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rexml (3.2.6)
-    rubocop (0.81.0)
-      jaro_winkler (~> 1.5.1)
+    rubocop (1.60.2)
+      json (~> 2.3)
+      language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
-      parser (>= 2.7.0.1)
+      parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
-      rexml
+      regexp_parser (>= 1.8, < 3.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.30.0, < 2.0)
       ruby-progressbar (~> 1.7)
-      unicode-display_width (>= 1.4.0, < 2.0)
-    rubocop-performance (1.6.1)
-      rubocop (>= 0.71.0)
-    rubocop-rails (2.5.2)
-      activesupport
-      rack (>= 1.1)
-      rubocop (>= 0.72.0)
+      unicode-display_width (>= 2.4.0, < 3.0)
+    rubocop-ast (1.30.0)
+      parser (>= 3.2.1.0)
+    rubocop-performance (1.20.2)
+      rubocop (>= 1.48.1, < 2.0)
+      rubocop-ast (>= 1.30.0, < 2.0)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
@@ -404,6 +392,18 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     stackprof (0.2.26)
+    standard (1.34.0)
+      language_server-protocol (~> 3.17.0.2)
+      lint_roller (~> 1.0)
+      rubocop (~> 1.60)
+      standard-custom (~> 1.0.0)
+      standard-performance (~> 1.3)
+    standard-custom (1.0.2)
+      lint_roller (~> 1.0)
+      rubocop (~> 1.50)
+    standard-performance (1.3.1)
+      lint_roller (~> 1.1)
+      rubocop-performance (~> 1.20.2)
     stringio (3.1.0)
     table_print (1.5.7)
     temple (0.10.3)
@@ -415,7 +415,7 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    unicode-display_width (1.8.0)
+    unicode-display_width (2.5.0)
     uniform_notifier (1.16.0)
     uri (0.13.0)
     version_gem (1.1.3)
@@ -482,20 +482,16 @@ DEPENDENCIES
   rails_performance
   recaptcha
   redis
-  rubocop
-  rubocop-github!
-  rubocop-performance
-  rubocop-rails
-  rubocop-template!
   sass-rails (>= 6.0)
   selenium-webdriver
   slim
   sprockets-rails
   stackprof
+  standard
   table_print
   turbolinks
   web-console
   webdrivers
 
 BUNDLED WITH
-   2.2.17
+   2.5.6

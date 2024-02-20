@@ -27,8 +27,8 @@ class CommentPolicy < ApplicationPolicy
 
   def comment?
     user.comments
-        .pluck(:course_id)
-        .include?(record.course.id)
+      .pluck(:course_id)
+      .include?(record.course.id)
   end
 
   def rate?

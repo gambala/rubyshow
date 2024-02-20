@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.configure do
-  config.action_controller.asset_host = ENV['APP_HOST']
-  config.action_controller.default_url_options = { host: ENV['APP_HOST'] }
-  config.action_mailer.asset_host = ENV['APP_HOST']
-  config.action_mailer.default_url_options = { host: ENV['APP_HOST'] }
+  config.action_controller.asset_host = ENV["APP_HOST"]
+  config.action_controller.default_url_options = {host: ENV["APP_HOST"]}
+  config.action_mailer.asset_host = ENV["APP_HOST"]
+  config.action_mailer.default_url_options = {host: ENV["APP_HOST"]}
   config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_caching = false
   config.action_mailer.raise_delivery_errors = false
@@ -20,16 +20,16 @@ Rails.application.configure do
   config.consider_all_requests_local = true
   config.eager_load = false
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-  config.hosts << ENV['APP_DOMAIN']
+  config.hosts << ENV["APP_DOMAIN"]
   config.sass.inline_source_maps = true
   config.sass.line_comments = false
   config.sass.preferred_syntax = :sass
 
-  if Rails.root.join('tmp', 'caching-dev.txt').exist?
+  if Rails.root.join("tmp", "caching-dev.txt").exist?
     config.action_controller.perform_caching = true
     config.action_controller.enable_fragment_cache_logging = true
     config.cache_store = :memory_store
-    config.public_file_server.headers = { 'Cache-Control' => "public, max-age=#{2.days.to_i}" }
+    config.public_file_server.headers = {"Cache-Control" => "public, max-age=#{2.days.to_i}"}
   else
     config.action_controller.perform_caching = false
     config.cache_store = :null_store

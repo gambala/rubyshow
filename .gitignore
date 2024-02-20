@@ -11,7 +11,7 @@ yarn-debug.log*
 /coverage
 /esbuild.stats.html
 /esbuild.stats.json
-/lib/snippets/*.dev.rb
+/lib/snippets/*.dev.erb
 /log/*
 /node_modules
 /public/assets

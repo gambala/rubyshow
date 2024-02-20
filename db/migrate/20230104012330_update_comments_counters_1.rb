@@ -3,5 +3,6 @@ class UpdateCommentsCounters1 < ActiveRecord::Migration[6.1]
     Comment.counter_culture_fix_counts
   end
 
-  def down; end
+  def down
+  end
 end

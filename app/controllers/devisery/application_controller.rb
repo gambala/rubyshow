@@ -2,6 +2,6 @@
 
 module Devisery
   class ApplicationController < ::ApplicationController
-    layout 'devise'
+    layout "devise"
   end
 end

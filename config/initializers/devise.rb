@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
 Devise.setup do |config|
-  require 'devise/orm/active_record'
+  require "devise/orm/active_record"
 
   config.authentication_keys = [:login]
   config.case_insensitive_keys = [:email]
   config.confirmation_keys = [:username]
   config.expire_all_remember_me_on_sign_out = true
-  config.mailer_sender = 'noreply@ruby.show'
-  config.omniauth :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET'], scope: 'user:email'
-  config.parent_controller = 'Devisery::ApplicationController'
+  config.mailer_sender = "noreply@ruby.show"
+  config.omniauth :github, ENV["GITHUB_KEY"], ENV["GITHUB_SECRET"], scope: "user:email"
+  config.parent_controller = "Devisery::ApplicationController"
   config.password_length = 8..72
   config.reconfirmable = false
   config.reset_password_keys = [:username]
   config.reset_password_within = 6.hours
-  config.secret_key = ENV['DEVISE_SECRET']
+  config.secret_key = ENV["DEVISE_SECRET"]
   config.sign_out_via = :delete
   config.skip_session_storage = [:http_auth]
   config.stretches = Rails.env.test? ? 1 : 10

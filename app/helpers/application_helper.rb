@@ -18,15 +18,15 @@ module ApplicationHelper
 
   def language_flag(language)
     case language
-    when 'English'
-      content_tag(:span, '', class: 'flag-icon flag-icon-us', title: language)
-    when 'Русский'
-      content_tag(:span, '', class: 'flag-icon flag-icon-ru', title: language)
+    when "English"
+      content_tag(:span, "", class: "flag-icon flag-icon-us", title: language)
+    when "Русский"
+      content_tag(:span, "", class: "flag-icon flag-icon-ru", title: language)
     end
   end
 
   def course_status(course)
-    course.paid? ? 'Платный' : 'Бесплатный'
+    course.paid? ? "Платный" : "Бесплатный"
   end
 
   def present(object, klass = nil)

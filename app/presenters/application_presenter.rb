@@ -12,7 +12,11 @@ class ApplicationPresenter
     end
   end
 
-  def method_missing(*args, &block)
-    @template.send(*args, &block)
+  def respond_to_missing?(*)
+    true
+  end
+
+  def method_missing(*, &block)
+    @template.send(*, &block)
   end
 end

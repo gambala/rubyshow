@@ -4,7 +4,9 @@ class Web::Public::Review < Comment
 end
 
 class Web::Public::ReviewPolicy < ApplicationPolicy
-  def index?; true end
+  def index?
+    true
+  end
 end
 
 module Web::Public

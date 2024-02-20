@@ -3,10 +3,11 @@
 module Web
   class WelcomeController < Web::ApplicationController
     helper_method :reviews_size, :courses_size,
-                  :random_comment,
-                  :top_5_free_courses, :top_5_paid_courses
+      :random_comment,
+      :top_5_free_courses, :top_5_paid_courses
 
-    def index; end
+    def index
+    end
 
     private
 

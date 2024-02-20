@@ -3,4 +3,4 @@
 require "amazing_print"
 
 AmazingPrint.pry!
-Pry.config.theme = 'pry-tepid-8'
+Pry.config.theme = "pry-tepid-8"

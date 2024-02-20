@@ -3,9 +3,9 @@
 class CreateCourses < ActiveRecord::Migration[4.2]
   def change
     create_table :courses do |t|
-      t.string :title, null: false, default: ''
-      t.text :description, null: false, default: ''
-      t.string :language, null: false, default: 'Русский'
+      t.string :title, null: false, default: ""
+      t.text :description, null: false, default: ""
+      t.string :language, null: false, default: "Русский"
 
       t.timestamps null: false
     end

@@ -12,12 +12,12 @@ module WithMobileViews
   end
 
   def prepare_for_mobile
-    prepend_view_path Rails.root.join('app', 'views_mobile')
-    @body_mobile_class = 'mobile-body'
+    prepend_view_path Rails.root.join("app", "views_mobile")
+    @body_mobile_class = "mobile-body"
   end
 
   def mobile_device?
-    return cookies.permanent[:mobile_override] == '1' if cookies.permanent[:mobile_override]
+    return cookies.permanent[:mobile_override] == "1" if cookies.permanent[:mobile_override]
     (request.user_agent =~ /iPhone|iPod|Android|webOS|Mobile/) && (request.user_agent !~ /iPad/)
   end
 end

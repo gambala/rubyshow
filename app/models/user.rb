@@ -4,19 +4,19 @@ class User < ApplicationRecord
   attr_accessor :login
 
   devise :database_authenticatable, :registerable, :confirmable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable,
-         omniauth_providers: [:github], authentication_keys: [:login]
+    :recoverable, :rememberable, :trackable, :validatable, :omniauthable,
+    omniauth_providers: [:github], authentication_keys: [:login]
 
   has_many :comments, dependent: :destroy
 
   validates :username, presence: true
 
   def admin?
-    role == 'admin'
+    role == "admin"
   end
 
   def sudo?
-    role == 'admin'
+    role == "admin"
   end
 
   # Devise Omniauth methods
@@ -24,8 +24,8 @@ class User < ApplicationRecord
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
 
-    if login = conditions.delete(:login)
-      where(['lower(username) = :value OR lower(email) = :value', { value: login.downcase }]).find_by(conditions)
+    if (login = conditions.delete(:login))
+      where(["lower(username) = :value OR lower(email) = :value", {value: login.downcase}]).find_by(conditions)
     elsif conditions[:username].nil?
       find_by(conditions)
     else
@@ -44,13 +44,13 @@ class User < ApplicationRecord
 
   def self.new_with_session(params, session)
     super.tap do |user|
-      if data = session['devise.github_data'] && session['devise.github_data']['extra']['raw_info']
-        user.email = data['email'] unless user.email?
+      if (data = session["devise.github_data"]) && session["devise.github_data"]["extra"]["raw_info"]
+        user.email = data["email"] unless user.email?
       end
     end
   end
 
-  def self.send_reset_password_instructions(attributes={})
+  def self.send_reset_password_instructions(attributes = {})
     recoverable = find_or_initialize_with_errors([:email], attributes, :not_found)
     recoverable.send_reset_password_instructions if recoverable.persisted?
     recoverable
