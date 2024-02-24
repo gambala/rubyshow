@@ -3,11 +3,14 @@ image: gambala/rubyshow
 servers:
   - <%= ENV["MAIN_SERVER_IP"] %>
 labels:
-  traefik.http.routers.rubyshow-web.rule: Host(`new.ruby.show`, `www.ruby.show`, `ruby.show`)
-  traefik.http.routers.rubyshow-web.middlewares: rubyshow-redirect-www,rubyshow-web-retry@docker
-  traefik.http.middlewares.rubyshow-redirect-www.redirectregex.regex: "^http://(www\\.)?ruby\\.show/(.*)"
-  traefik.http.middlewares.rubyshow-redirect-www.redirectregex.replacement: "http://new.ruby.show/$2"
-  traefik.http.middlewares.rubyshow-redirect-www.redirectregex.permanent: "false"
+  traefik.http.routers.rubyshow-web.rule: Host(`ruby.show`, `www.ruby.show`, `new.ruby.show`)
+  traefik.http.routers.rubyshow-web.middlewares: rubyshow-redirect-new,rubyshow-redirect-www,rubyshow-web-retry@docker
+  traefik.http.middlewares.rubyshow-redirect-new.redirectregex.regex: "^http://new\\.ruby\\.show/(.*)"
+  traefik.http.middlewares.rubyshow-redirect-new.redirectregex.replacement: "http://ruby.show/$1"
+  traefik.http.middlewares.rubyshow-redirect-new.redirectregex.permanent: "true"
+  traefik.http.middlewares.rubyshow-redirect-www.redirectregex.regex: "^http://www\\.ruby\\.show/(.*)"
+  traefik.http.middlewares.rubyshow-redirect-www.redirectregex.replacement: "http://ruby.show/$1"
+  traefik.http.middlewares.rubyshow-redirect-www.redirectregex.permanent: "true"
 registry:
   server: ghcr.io
   username: gambala
