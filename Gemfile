@@ -46,7 +46,7 @@ gem "turbolinks" # Waiting for fix https://github.com/hotwired/turbo-rails/issue
 group :development do
   gem "annotate"
   gem "bullet"
-  gem "dotenv-rails"
+  gem "dotenv"
   gem "letter_opener"
   gem "memory_profiler" # rack-mini-profiler dependency
   gem "rack-mini-profiler"
