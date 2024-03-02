@@ -64,7 +64,10 @@ run-console:
 	bundle exec rails console
 
 run-frontend-update:
-	yarn upgrade-interactive --latest
+	ncu -p bun -i
+
+run-frontend-upgrade:
+	bun update
 
 run-generate:
 	bundle exec rails generate $(RUN_ARGS)
@@ -90,10 +93,7 @@ c: run-console
 
 fu: run-frontend-update
 
-frontend-upgrade:
-	yarn upgrade
-
-fuu: frontend-upgrade
+fuu: run-frontend-upgrade
 
 g: run-generate
 
