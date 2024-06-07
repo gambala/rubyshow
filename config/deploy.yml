@@ -55,3 +55,5 @@ accessories:
     port: <%= ENV["REDIS_PORT"] %>:6379
     directories:
       - data:/data
+builder:
+  multiarch: false
