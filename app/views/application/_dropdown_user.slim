@@ -8,5 +8,5 @@ div
     .p-2
       = link_to 'Настройки', edit_user_registration_path,
                 class: 'block p-2 rounded text-blue-600 no-underline hover:bg-blue-200 hover:text-gray-700'
-      = button_to 'Выход', destroy_user_session_path, data: { method: :delete },
+      = button_to 'Выход', destroy_user_session_path, method: :delete,
                 class: 'block p-2 rounded text-blue-600 no-underline hover:bg-blue-200 hover:text-gray-700'
