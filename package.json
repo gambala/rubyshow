@@ -18,6 +18,6 @@
   "private": true,
   "scripts": {
     "build": "bun bun.config.js",
-    "build:css": "postcss ./app/assets/stylesheets/postcss/index.css -o ./app/assets/builds/postcss.css --verbose --watch"
+    "build:css": "postcss ./app/assets/stylesheets/postcss/index.css -o ./app/assets/builds/postcss.css --verbose"
   }
 }
