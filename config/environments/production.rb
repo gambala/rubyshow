@@ -16,6 +16,8 @@ Rails.application.configure do
   config.active_support.disallowed_deprecation = :log
   config.active_support.disallowed_deprecation_warnings = []
   config.assets.compile = false
+  config.assets.css_compressor = nil
+  config.assets.js_compressor = nil
   config.assume_ssl = true
   config.cache_classes = true
   config.consider_all_requests_local = false
@@ -46,7 +48,6 @@ Rails.application.configure do
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.asset_host = 'http://assets.example.com'
-  # config.assets.css_compressor = :sass
   # config.cache_store = :mem_cache_store
   # config.force_ssl = true
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')

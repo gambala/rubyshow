@@ -172,7 +172,6 @@ GEM
       childprocess (~> 5.0)
     letter_opener (1.10.0)
       launchy (>= 2.2, < 4)
-    libv8-node (17.9.1.1)
     lint_roller (1.1.0)
     listen (3.9.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -202,8 +201,6 @@ GEM
     mime-types-data (3.2024.0702)
     mini_mime (1.1.5)
     mini_portile2 (2.8.7)
-    mini_racer (0.7.0)
-      libv8-node (~> 17.9.1.0)
     minitest (5.24.1)
     msgpack (1.7.2)
     multi_xml (0.7.1)
@@ -448,7 +445,6 @@ PLATFORMS
 DEPENDENCIES
   amazing_print
   annotate
-  autoprefixer-rails
   bootsnap
   bugsnag
   bullet
@@ -463,11 +459,9 @@ DEPENDENCIES
   jsbundling-rails
   letter_opener
   lograge
-  mail
   mailgun-ruby
   memory_profiler
   mime-types
-  mini_racer (~> 0.7.0)
   oj
   omniauth-github (~> 1.4)
   pagy (~> 4.11)

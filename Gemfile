@@ -4,10 +4,7 @@ source "https://rubygems.org"
 
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem "mime-types", require: "mime/types/columnar" # hack for free memory – https://github.com/schneems/derailed_benchmarks
-
 gem "amazing_print"
-gem "autoprefixer-rails"
 gem "bootsnap", require: false
 gem "bugsnag"
 gem "counter_culture"
@@ -18,10 +15,9 @@ gem "flag-icons-rails"
 gem "heroicon"
 gem "jsbundling-rails"
 gem "lograge"
-gem "mail"
 gem "mailgun-ruby"
-gem "mini_racer", "~> 0.7.0" # 0.8.x has libv8-node 18.16.0 which has issues on musl-linux
-#                              execjs (autoprefixer coffee-script terser/uglifier) dependency
+gem "mime-types", require: "mime/types/columnar" # mailgun dependency
+  # hack to reduce memory usage, https://github.com/schneems/derailed_benchmarks
 gem "oj" # pagy dependency
 gem "omniauth-github", "~> 1.4" # because of possible bug https://github.com/heartcombo/devise/issues/5236
 gem "pagy", "~> 4.11" # Because of undefined method pagy_countless in 5.x
