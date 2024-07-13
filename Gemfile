@@ -54,6 +54,7 @@ gem "mime-types", require: "mime/types/columnar" # → mailgun
 group :development do
   gem "annotate"
   gem "bullet"
+  gem "dockerfile-rails", ">= 1.6"
   gem "dotenv"
   gem "letter_opener" # → Mailers
   gem "memory_profiler" # → rack-mini-profiler
