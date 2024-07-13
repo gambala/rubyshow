@@ -3,7 +3,6 @@ import "what-input";
 import "whatwg-fetch";
 import "dom4";
 
-import Rails from "@rails/ujs";
 import Turbolinks from "turbolinks";
 
 import FlashItems from "./modules/FlashItems";
@@ -11,10 +10,7 @@ import PageEvent from "./modules/PageEvent";
 import RateCourse from "./modules/RateCourse";
 import Tooltips from "./modules/Tooltips";
 
-window.Rails = Rails;
-
 FlashItems.start();
-Rails.start();
 RateCourse.start();
 Tooltips.start();
 Turbolinks.start();
