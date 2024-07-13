@@ -1,8 +1,5 @@
 /*
 *= require flag-icon
-*= require tippy.js/animations/shift-toward-extreme
-*= require tippy.js/dist/svg-arrow
-*= require tippy.js/themes/light
 *= require rails-plus/application
 *= require_tree ./components
 *= require_tree ./hacks

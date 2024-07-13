@@ -1,26 +1,23 @@
 {
   "comments": {
-    "tailwindcss": "version <2.2.8 because of ERROR from Css Minimizer Unknown word on assets:precompile step"
+    "postcss-cli": "Dependency for build:css script",
+    "postcss-import": "Allows to store styles in separate css files"
   },
   "dependencies": {
     "autoprefixer": "^10.4.19",
     "dom4": "^2.1.6",
     "jquery": "^3.7.1",
     "postcss": "^8.4.39",
-    "postcss-cli": "^9.1.0",
-    "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-import": "^14.1.0",
-    "postcss-loader": "^6.2.1",
-    "postcss-preset-env": "^6.7.2",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
     "rails-plus": "https://github.com/gambala/rails-plus#develop",
-    "tailwindcss": "^2.2.19",
+    "tailwindcss": "^3.4.4",
     "tippy.js": "^6.3.7",
     "turbolinks": "^5.2.0"
   },
   "private": true,
-  "browserslist": ["defaults"],
   "scripts": {
     "build": "bun bun.config.js",
-    "build:css": "postcss ./app/assets/stylesheets/postcss/index.css -o ./app/assets/builds/postcss.css"
+    "build:css": "postcss ./app/assets/stylesheets/postcss/index.css -o ./app/assets/builds/postcss.css --verbose --watch"
   }
 }
