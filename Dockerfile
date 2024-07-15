@@ -2,7 +2,7 @@
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
 ARG RUBY_VERSION=3.3.4
-FROM ruby:$RUBY_VERSION-slim as base
+FROM ruby:$RUBY_VERSION-slim AS base
 
 # Rails app lives here
 WORKDIR /rails
@@ -19,14 +19,14 @@ RUN gem update --system --no-document && \
 
 
 # Throw-away build stages to reduce size of final image
-FROM base as prebuild
+FROM base AS prebuild
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential curl git libpq-dev unzip
 
 
-FROM prebuild as bun
+FROM prebuild AS bun
 
 # Install Bun
 ARG BUN_VERSION=1.1.10
@@ -39,7 +39,7 @@ COPY --link package.json bun.lockb ./
 RUN bun install --frozen-lockfile
 
 
-FROM prebuild as build
+FROM prebuild AS build
 
 # Install application gems
 COPY --link Gemfile Gemfile.lock ./
