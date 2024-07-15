@@ -1,7 +1,5 @@
-import "rails-plus/es6/bundles/modernizr";
-import "what-input";
-import "whatwg-fetch";
-import "dom4";
+import "rails-plus/es6/bundles/modernizr"; // Dependency for +svg rails-plus sass mixin
+import "what-input"; // Dependency for +focus rails-plus sass mixin
 import "@hotwired/turbo-rails"
 
 import FlashItems from "./modules/FlashItems";
