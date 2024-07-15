@@ -42,9 +42,11 @@ section(itemscope itemtype='https://schema.org/EducationEvent')
 
               - if policy(@course).approve?
                 p
-                  = link_to 'Одобрить курс', approve_course_path(@course), method: :put,
+                  = link_to 'Одобрить курс', approve_course_path(@course),
+                            data: { turbo_method: :put },
                             class: 'button h-24px bg-red'
-                  = link_to 'Удалить курс', @course, method: :delete, data: { confirm: 'Точно удалить?' },
+                  = link_to 'Удалить курс', @course,
+                            data: { turbo_method: :delete, turbo_confirm: 'Точно удалить?' },
                             class: 'button h-24px bg-white'
 
         div class='lg:order-first lg:flex-grow'

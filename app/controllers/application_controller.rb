@@ -30,6 +30,12 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: %i[username email password password_confirmation current_password])
   end
 
+  # Turbo doesn't redirect user to root_path after sign out properly,
+  # Rails renders the root page with no layout. This method fixes it.
+  def after_sign_out_path_for(resource_or_scope)
+    root_path(format: :html)
+  end
+
   def user_not_authorized
     flash[:alert] = "У вас недостаточно прав для выполнения этого действия."
     redirect_to(request.referrer || root_path)
