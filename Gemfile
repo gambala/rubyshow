@@ -45,7 +45,7 @@ gem "recaptcha", require: "recaptcha/rails"
 gem "sass-rails", ">= 6.0"
 gem "slim"
 gem "sprockets-rails"
-gem "turbolinks" # Waiting for fix https://github.com/hotwired/turbo-rails/issues/122
+gem "turbo-rails"
 
 # Mailers
 gem "mailgun-ruby"

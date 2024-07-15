@@ -2,8 +2,7 @@ import "rails-plus/es6/bundles/modernizr";
 import "what-input";
 import "whatwg-fetch";
 import "dom4";
-
-import Turbolinks from "turbolinks";
+import "@hotwired/turbo-rails"
 
 import FlashItems from "./modules/FlashItems";
 import PageEvent from "./modules/PageEvent";
@@ -13,9 +12,8 @@ import Tooltips from "./modules/Tooltips";
 FlashItems.start();
 RateCourse.start();
 Tooltips.start();
-Turbolinks.start();
 
-PageEvent.delegate("turbolinks:load", "page:load");
+PageEvent.delegate("turbo:load", "page:load");
 
 if (document.readyState !== "loading") {
   const event = document.createEvent("Event");
