@@ -20,7 +20,8 @@ gem "redis" # → rails_performance
 # Authentication & Authorization
 gem "devise"
 gem "devise-i18n"
-gem "omniauth-github", "~> 1.4" # because of possible bug https://github.com/heartcombo/devise/issues/5236
+gem "omniauth-github"
+gem "omniauth-rails_csrf_protection" # Fixes omniauth v2 CSRF protection issue
 gem "pundit"
 
 # Console better experience
