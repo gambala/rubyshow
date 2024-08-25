@@ -9,10 +9,15 @@ Rails.application.config.content_security_policy do |policy|
   # policy.font_src    :self, :https, :data
   # policy.img_src     :self, :https, :data
   # policy.object_src  :none
-  # policy.script_src  :self, :https
-  # policy.style_src   :self, :https
-  # If you are using webpack-dev-server then specify webpack-dev-server host
-  policy.connect_src :self, :https, "http://localhost:3035", "ws://localhost:3035" if Rails.env.development?
+
+  if Rails.env.development?
+    policy.script_src :self, :https, :unsafe_inline, :unsafe_eval, "http://#{ ViteRuby.config.host_with_port }"
+    policy.style_src :self, :https, :unsafe_inline
+    policy.connect_src :self, :https, "ws://#{ ViteRuby.config.host_with_port }"
+  end
+
+  # You may need to enable this in production as well depending on your setup.
+  # policy.script_src *policy.script_src, :blob if Rails.env.test?
 
   # Specify URI for violation reports
   # policy.report_uri "/csp-violation-report-endpoint"

@@ -13,7 +13,7 @@ section(itemscope itemtype='https://schema.org/EducationEvent')
       div class='lg:flex lg:flex-nowrap'
         div class='lg:order-last lg:ml-5' style='min-width: 250px; max-width: 400px;'
           .sticky-section
-            .card.bg-gray-50.p-4
+            .card.bg-gray-50.p-4.mb-3
               - if policy(@course).edit?
                 .float-right
                   = link_to edit_course_path(@course), title: 'Редактировать курс', class: 'button h-24px bg-white' do
@@ -50,7 +50,7 @@ section(itemscope itemtype='https://schema.org/EducationEvent')
                             class: 'button h-24px bg-white'
 
         div class='lg:order-first lg:flex-grow'
-          .card.bg-gray-50.p-4
+          .card.bg-gray-50.p-4.mb-3
             = render partial: 'web/comments/form', locals: { course: @course, comment: @comment }
 
           - if @comments.any?

@@ -34,10 +34,8 @@ gem "pghero"
 gem "rails_performance"
 
 # Frontend libraries
-gem "cssbundling-rails"
 gem "flag-icons-rails"
 gem "heroicon"
-gem "jsbundling-rails"
 gem "oj" # → pagy
 gem "pagy", "~> 4.11" # Because of undefined method pagy_countless in 5.x
 gem "rails-plus", github: "gambala/rails-plus", branch: "develop"
@@ -46,6 +44,7 @@ gem "sass-rails", ">= 6.0"
 gem "slim"
 gem "sprockets-rails"
 gem "turbo-rails"
+gem "vite_rails"
 
 # Mailers
 gem "mailgun-ruby"
@@ -58,6 +57,7 @@ group :development do
   gem "dockerfile-rails", ">= 1.6"
   gem "dotenv"
   gem "letter_opener" # → Mailers
+  gem "listen" # → rails_live_reload
   gem "memory_profiler" # → rack-mini-profiler
   gem "rack-mini-profiler"
   gem "rails_live_reload"

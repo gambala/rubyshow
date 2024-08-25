@@ -15,8 +15,8 @@
     "tippy.js": "^6.3.7"
   },
   "private": true,
-  "scripts": {
-    "build": "bun bun.config.js",
-    "build:css": "postcss ./app/assets/stylesheets/postcss/index.css -o ./app/assets/builds/postcss.css --verbose"
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "vite-plugin-ruby": "^5.0.0"
   }
 }

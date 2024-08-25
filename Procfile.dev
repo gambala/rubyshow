@@ -1,3 +1,2 @@
 web: bin/rails server
-js: bun run build --watch
-css: bun run build:css --watch
+vite: bin/vite dev
