@@ -1,0 +1,17 @@
+.link {
+  color: var(--link--color);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #081e4f;
+}
+
+.link.c-grey {
+  color: #9b9b96;
+}
+
+.link.c-grey:hover {
+  color: #353535;
+}
