@@ -28,7 +28,7 @@ env:
     - REDIS_PORT
     - APP_DOMAIN
     - APP_HOST
-    - BUGSNAG_API_KEY
+    - GLITCHTIP_DSN
     - DEVISE_SECRET
     - GITHUB_KEY
     - GITHUB_SECRET

@@ -100,8 +100,6 @@ GEM
     bootsnap (1.18.3)
       msgpack (~> 1.2)
     browser (6.0.0)
-    bugsnag (6.27.1)
-      concurrent-ruby (~> 1.0)
     builder (3.3.0)
     bullet (7.2.0)
       activesupport (>= 3.0.0)
@@ -374,6 +372,12 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    sentry-rails (5.19.0)
+      railties (>= 5.0)
+      sentry-ruby (~> 5.19.0)
+    sentry-ruby (5.19.0)
+      bigdecimal
+      concurrent-ruby (~> 1.0, >= 1.0.2)
     slim (5.2.1)
       temple (~> 0.10.0)
       tilt (>= 2.1.0)
@@ -446,7 +450,6 @@ DEPENDENCIES
   amazing_print
   annotate
   bootsnap
-  bugsnag
   bullet
   counter_culture
   devise
@@ -480,6 +483,8 @@ DEPENDENCIES
   recaptcha
   redis
   sass-rails (>= 6.0)
+  sentry-rails
+  sentry-ruby
   slim
   sprockets-rails
   stackprof

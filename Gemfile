@@ -5,13 +5,14 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem "bootsnap", require: false
-gem "bugsnag"
 gem "counter_culture"
 gem "lograge"
 gem "puma"
 gem "rack-attack"
 gem "rails", "~> 7.1.3"
 gem "rails-i18n"
+gem "sentry-ruby"
+gem "sentry-rails"
 
 # Accessories
 gem "pg"
