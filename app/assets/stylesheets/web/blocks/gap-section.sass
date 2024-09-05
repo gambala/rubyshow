@@ -1,10 +1,8 @@
-@import rails-plus/mixins/media
-
 .gap-section
-  +to(720px)
+  @media (max-width: 719px)
     .devise-card.card
       background: none
       border: none
 
-  +from(720px)
+  @media (min-width: 720px)
     padding: 96px 0

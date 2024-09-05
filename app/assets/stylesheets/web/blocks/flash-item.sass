@@ -1,5 +1,3 @@
-@import rails-plus/mixins/bg
-
 .flash-item
   max-height: 20px * 10 + 12px * 2
   opacity: 1
@@ -14,7 +12,8 @@
     padding: 12px 10px
 
   .flash-item__close
-    +bg('/static-assets/times-white', '.svg', $size: cover)
+    background: image_url('/static-assets/times-white.svg') 50% 50% no-repeat
+    background-size: cover
     float: right
     height: 12px
     margin: 4px
