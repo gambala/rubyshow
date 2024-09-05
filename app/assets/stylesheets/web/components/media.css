@@ -1,0 +1,72 @@
+.media-stack-overflow {
+  margin: 0 -10px;
+  padding: 12px 10px;
+  transition: background 0.25s;
+}
+
+.media-stack-overflow .media__aside {
+  padding: 0;
+}
+
+.media-stack-overflow .media__aside .media-object {
+  border-radius: 4px;
+  display: block;
+  font-size: 24px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  width: 48px;
+}
+
+@media (min-width: 640px) {
+  .media-stack-overflow .media__aside .media-object-responsive {
+    height: 72px;
+    line-height: 72px;
+    width: 72px;
+  }
+}
+
+.media-stack-overflow .media-body {
+  padding: 0 10px;
+}
+
+.media-stack-overflow .media-body .media-heading {
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+
+.media-stack-overflow .media-body .media-heading span + span,
+.media-stack-overflow .media-body .media-heading span + small,
+.media-stack-overflow .media-body .media-heading small + span,
+.media-stack-overflow .media-body .media-heading small + small {
+  margin-left: 5px;
+}
+
+.media-stack-overflow .media-body .media-heading small {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+@media (min-width: 640px) {
+  .media-stack-overflow .media-body .media-heading {
+    font-size: 16px;
+  }
+}
+
+.media-stack-overflow .media-body p {
+  color: #555;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+
+.media-stack-overflow .media-body p span + span,
+.media-stack-overflow .media-body p span + a,
+.media-stack-overflow .media-body p a + span,
+.media-stack-overflow .media-body p a + a {
+  margin-left: 5px;
+}
+
+.media-stack-overflow:hover {
+  background: rgba(37, 99, 235, 0.1);
+}

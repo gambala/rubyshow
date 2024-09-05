@@ -1,0 +1,39 @@
+:root {
+  --input--background: #fff;
+  --input--color: #292d3c;
+  --input--border-color: #ccc;
+  --input__placeholder--color: #777;
+}
+
+.input {
+  background: var(--input--background);
+  color: var(--input--color);
+  border-radius: 3px;
+  border: 1px solid;
+  border-color: var(--input--border-color);
+  min-height: 36px;
+  padding: 5px 9px; /* Replaced calc((36px - 24px) / 2 - 1px) calc(10px - 1px) */
+  width: 100%;
+}
+
+.input::placeholder {
+  color: var(--input__placeholder--color);
+}
+
+.input.h-24px {
+  font-size: 12px;
+  min-height: 24px;
+  padding: 1px 5px;
+}
+
+.input.h-30px {
+  font-size: 12px;
+  min-height: 30px;
+  padding: 3px 9px; /* Replaced calc((30px - 24px) / 2 - 1px) calc(10px - 1px) */
+}
+
+.input.h-36px {
+  font-size: 14px;
+  min-height: 36px;
+  padding: 5px 9px; /* Replaced calc((36px - 24px) / 2 - 1px) calc(10px - 1px) */
+}

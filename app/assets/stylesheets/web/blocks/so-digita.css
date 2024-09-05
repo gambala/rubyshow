@@ -1,0 +1,23 @@
+.so-digita {
+  display: block;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 48px;
+  justify-content: center;
+  text-align: center;
+  width: 48px;
+}
+
+.so-digita .so-digita__title {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.so-digita .so-digita__text {
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.so-digita:hover {
+  text-decoration: none;
+}

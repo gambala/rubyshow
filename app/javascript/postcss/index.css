@@ -2,7 +2,7 @@
 @import 'tippy.js/dist/svg-arrow.css';
 @import 'tippy.js/themes/light.css';
 @import "./blocks/button.css";
-@import "./blocks/card.sass";
+@import "./blocks/card.css";
 
 @tailwind base;
 @tailwind components;

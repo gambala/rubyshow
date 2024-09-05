@@ -1,0 +1,169 @@
+.form .field-group,
+.form .field-flex,
+.form .wide-flex,
+.form .input-flex,
+.form .field-set,
+.form .row {
+  margin-bottom: 12px;
+}
+
+.form .field-group:last-child,
+.form .field-flex:last-child,
+.form .wide-flex:last-child,
+.form .input-flex:last-child,
+.form .field-set:last-child,
+.form .row:last-child {
+  margin-bottom: 0;
+}
+
+.form .field-set {
+  margin-top: 24px;
+}
+
+.form .row .field-group {
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .form_horizontal .field-group {
+    margin-bottom: 9px;
+  }
+
+  .form_horizontal .field-group .label {
+    font-size: 12px;
+    line-height: 16px;
+    min-height: auto;
+    margin-bottom: 0;
+    margin-left: 2px;
+  }
+
+  .form_horizontal .field-group .label_overlayed {
+    background: linear-gradient(0, var(--input--background_transparent) 40%, var(--input--background) 47%, var(--input--background_transparent) 54%);
+    display: table;
+    margin-bottom: -8px;
+    position: relative;
+  }
+}
+
+@media (min-width: 768px) {
+  .form_horizontal .field-group {
+    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+  }
+
+  .form_horizontal .field-group .label {
+    background: none;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 20px;
+    margin-top: 6px;
+  }
+
+  .form_horizontal .field-group .label_prefix {
+    margin-top: -8px;
+  }
+
+  .form_horizontal .field-group .checkbox-group,
+  .form_horizontal .field-group .input,
+  .form_horizontal .field-group .input-flex,
+  .form_horizontal .field-group .a-button-flex,
+  .form_horizontal .field-group .field-paragraph,
+  .form_horizontal .field-group .files-flex {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+  .form_horizontal .field-group .checkbox-group {
+    padding: 5px 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .form_horizontal .field-group {
+    grid-template-columns: 220px 1fr;
+  }
+}
+
+.form_flex .field-group {
+  align-items: baseline;
+  display: flex;
+  flex-flow: row wrap;
+  margin: -0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.form_flex .field-group .label,
+.form_flex .field-group .checkbox-group,
+.form_flex .field-group .input,
+.form_flex .field-group .input-flex,
+.form_flex .field-group .a-button-flex,
+.form_flex .field-group .field-paragraph,
+.form_flex .field-group .files-flex {
+  margin: 0.25rem;
+}
+
+.form_flex .field-group .label {
+  min-width: 70px;
+}
+
+.form_flex .field-group .field-paragraph {
+  width: 100%;
+}
+
+.form_inline {
+  display: flex;
+}
+
+.form_inline .field-group {
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+
+.form_inline .field-group:last-child {
+  margin-right: 0;
+}
+
+.form_inline_solid {
+  display: flex;
+}
+
+.form_inline_solid .field-group {
+  margin-bottom: 0;
+  margin-right: -1px;
+}
+
+.form_inline_solid .field-group:first-child .button,
+.form_inline_solid .field-group:first-child .input {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form_inline_solid .field-group:last-child {
+  margin-right: 0;
+}
+
+.form_inline_solid .field-group:last-child .button,
+.form_inline_solid .field-group:last-child .input {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.form_inline_solid .field-group:not(:first-child):not(:last-child) .button,
+.form_inline_solid .field-group:not(:first-child):not(:last-child) .input {
+  border-radius: 0;
+}
+
+.form_inline_stacked {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+
+.form_inline_stacked .field-group {
+  margin-bottom: 0;
+}

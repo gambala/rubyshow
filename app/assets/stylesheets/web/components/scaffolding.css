@@ -1,0 +1,14 @@
+dl {
+  margin-bottom: 0;
+}
+
+.dl-inline dt {
+  clear: left;
+  float: left;
+  margin-right: 5px;
+}
+
+.dl-inline dd {
+  display: inline-block;
+  margin-left: 0;
+}

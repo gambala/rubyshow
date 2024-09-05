@@ -1,0 +1,32 @@
+.user_info {
+  display: flex;
+}
+
+@media (max-width: 640px) {
+  .user_info {
+    flex-direction: column;
+  }
+}
+
+.user_logo {
+  min-width: 300px;
+  max-width: 300px;
+}
+
+@media (max-width: 640px) {
+  .user_logo {
+    min-width: auto;
+    max-width: auto;
+  }
+}
+
+.user_feedback {
+  min-width: 300px;
+}
+
+@media (max-width: 640px) {
+  .user_feedback {
+    min-width: auto;
+    max-width: auto;
+  }
+}

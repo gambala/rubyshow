@@ -1,0 +1,9 @@
+.so-media {
+  margin: 0 -10px;
+  padding: 12px 10px;
+  transition: background 0.25s;
+}
+
+.so-media:hover {
+  background: rgba(37, 99, 235, 0.1);
+}

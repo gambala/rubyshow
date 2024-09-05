@@ -1,0 +1,12 @@
+@media (max-width: 719px) {
+  .gap-section .devise-card.card {
+    background: none;
+    border: none;
+  }
+}
+
+@media (min-width: 720px) {
+  .gap-section {
+    padding: 96px 0;
+  }
+}
