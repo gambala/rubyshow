@@ -54,8 +54,11 @@ lint-security:
 run-bundle-install:
 	MAKE="make --jobs 8" bundle install
 
+run-bundle-update-setup:
+	gem install bundle_update_interactive
+
 run-bundle-update:
-	MAKE="make --jobs 8" gem_update
+	bundle ui
 
 run-command:
 	$(RUN_ARGS)
