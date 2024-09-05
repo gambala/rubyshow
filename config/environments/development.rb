@@ -10,7 +10,6 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.active_record.migration_error = :page_load
   config.active_record.verbose_query_logs = true
-  config.active_storage.service = :local
   config.active_support.deprecation = :log
   config.active_support.disallowed_deprecation = :raise
   config.active_support.disallowed_deprecation_warnings = []
@@ -40,7 +39,6 @@ Rails.application.configure do
     Bullet.console = true
   end
 
-  # config.action_cable.disable_request_forgery_protection = true
   # config.action_view.annotate_rendered_view_with_filenames = true
   # config.i18n.raise_on_missing_translations = true
 end

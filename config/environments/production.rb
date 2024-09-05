@@ -11,7 +11,6 @@ Rails.application.configure do
                                             api_host: "api.eu.mailgun.net"}
   config.action_mailer.perform_caching = false
   config.active_record.dump_schema_after_migration = false
-  config.active_storage.service = :local
   config.active_support.deprecation = :notify
   config.active_support.disallowed_deprecation = :log
   config.active_support.disallowed_deprecation_warnings = []
@@ -36,14 +35,9 @@ Rails.application.configure do
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
 
-  # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
-  # config.action_cable.mount_path = nil
-  # config.action_cable.url = 'wss://example.com/cable'
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
   # config.action_mailer.raise_delivery_errors = false
-  # config.active_job.queue_adapter = :resque
-  # config.active_job.queue_name_prefix = "rubyshow_production"
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
   # config.active_record.database_selector = { delay: 2.seconds }
