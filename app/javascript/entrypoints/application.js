@@ -1,7 +1,6 @@
 // const channels = import.meta.globEager('./**/*_channel.js') // Import all channels
 
 import "~/postcss/index.css";
-import "rails-plus/es6/bundles/modernizr"; // Dependency for +svg rails-plus sass mixin
 import "what-input"; // Dependency for +focus rails-plus sass mixin
 import "@hotwired/turbo-rails";
 

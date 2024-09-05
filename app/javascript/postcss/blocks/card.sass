@@ -1,5 +1,3 @@
-@import rails-plus/app/assets/stylesheets/rails-plus/mixins/media
-
 .card
   border-radius: 3px
   border: 1px solid rgba(#000, 0.2)
@@ -8,7 +6,7 @@
   .card__bg
     display: none
 
-  +from(840px)
+  @media (min-width: 840px)
     .card__bg
       bottom: 0
       display: block

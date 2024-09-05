@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import html from 'rails-plus/es6/modules/html';
+import html from './html';
 
 const flash = (group, message) => html`
   <div class="flash-item flash-item_${group}">
