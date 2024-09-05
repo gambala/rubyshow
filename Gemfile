@@ -4,17 +4,22 @@ source "https://rubygems.org"
 
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+# Ruby & Rails performance optimization & deploy
 gem "bootsnap", require: false
-gem "counter_culture"
 gem "lograge"
+gem "pghero"
 gem "puma"
 gem "rack-attack"
 gem "rails", "~> 7.1.3"
 gem "rails-i18n"
+gem "rails_performance"
+
+# Third-party services
 gem "sentry-ruby"
 gem "sentry-rails"
 
-# Accessories
+# Data
+gem "counter_culture"
 gem "pg"
 gem "redis" # → rails_performance
 
@@ -25,16 +30,12 @@ gem "omniauth-github"
 gem "omniauth-rails_csrf_protection" # Fixes omniauth v2 CSRF protection issue
 gem "pundit"
 
-# Console better experience
+# REPL
 gem "amazing_print"
 gem "pry-rails"
 gem "table_print"
 
-# Full-feature engines
-gem "pghero"
-gem "rails_performance"
-
-# Frontend libraries
+# Frontend
 gem "flag-icons-rails"
 gem "heroicon"
 gem "oj" # → pagy
