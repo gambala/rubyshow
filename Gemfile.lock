@@ -392,6 +392,9 @@ GEM
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
+    sqlite3 (1.7.3)
+      mini_portile2 (~> 2.8.0)
+    sqlite3 (1.7.3-aarch64-linux)
     stackprof (0.2.26)
     standard (1.40.0)
       language_server-protocol (~> 3.17.0.2)
@@ -486,6 +489,7 @@ DEPENDENCIES
   sentry-ruby
   slim
   sprockets-rails
+  sqlite3 (~> 1.4)
   stackprof
   standard
   table_print

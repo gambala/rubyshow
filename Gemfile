@@ -22,6 +22,7 @@ gem "sentry-rails"
 gem "counter_culture"
 gem "pg"
 gem "redis" # → rails_performance
+gem "sqlite3", '~> 1.4'
 
 # Authentication & Authorization
 gem "devise"

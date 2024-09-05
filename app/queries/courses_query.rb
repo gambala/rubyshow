@@ -29,7 +29,7 @@ class CoursesQuery
   end
 
   def filter_by_title
-    @courses = courses.where("title ILIKE ?", "%#{params[:title]}%") if params[:title].present?
+    @courses = courses.where("lower(title) LIKE ?", "%#{params[:title].downcase}%") if params[:title].present?
     self
   end
 

@@ -16,9 +16,12 @@ registry:
   username: gambala
   password:
     - KAMAL_REGISTRY_PASSWORD
+volumes:
+  - rubyshow-storage:/rails/storage
 env:
   secret:
     - RAILS_MASTER_KEY
+    - SQLITE_DB
     - DB_HOST
     - DB_PORT
     - POSTGRES_DB
