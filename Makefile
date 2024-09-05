@@ -101,4 +101,4 @@ fuu: run-frontend-upgrade
 g: run-generate
 
 s:
-	hivemind Procfile.dev
+	bin/dev
