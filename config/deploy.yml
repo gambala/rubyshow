@@ -22,11 +22,6 @@ env:
   secret:
     - RAILS_MASTER_KEY
     - SQLITE_DB
-    - DB_HOST
-    - DB_PORT
-    - POSTGRES_DB
-    - POSTGRES_USER
-    - POSTGRES_PASSWORD
     - REDIS_HOST
     - REDIS_PORT
     - APP_DOMAIN
@@ -41,17 +36,6 @@ env:
     - RECAPTCHA_SITE_KEY
     - SECRET_KEY_BASE
 accessories:
-  db:
-    image: postgres:15
-    host: <%= ENV["DB_HOST"] %>
-    port: <%= ENV["DB_PORT"] %>:5432
-    env:
-      secret:
-        - POSTGRES_DB
-        - POSTGRES_USER
-        - POSTGRES_PASSWORD
-    directories:
-      - data:/var/lib/postgresql/data
   redis:
     image: redis:latest
     host: <%= ENV["REDIS_HOST"] %>

@@ -7,7 +7,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Ruby & Rails performance optimization & deploy
 gem "bootsnap", require: false
 gem "lograge"
-gem "pghero"
 gem "puma"
 gem "rack-attack"
 gem "rails", "~> 7.1.3"
@@ -20,7 +19,6 @@ gem "sentry-rails"
 
 # Data
 gem "counter_culture"
-gem "pg"
 gem "redis" # → rails_performance
 gem "sqlite3", '~> 1.4'
 
