@@ -1,7 +1,6 @@
 GIT
   remote: https://github.com/gambala/rails-plus.git
   revision: 0873abd4a38a6e0769cf038114a4dcbac5c46e92
-  branch: develop
   specs:
     rails-plus (0.1.0)
 
@@ -126,8 +125,8 @@ GEM
       logger
     faraday-net_http (3.3.0)
       net-http
-    ffi (1.17.0)
     ffi (1.17.0-aarch64-linux-gnu)
+    ffi (1.17.0-arm64-darwin)
     globalid (1.2.1)
       activesupport (>= 6.1)
     hashie (5.0.0)
@@ -178,7 +177,6 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2024.0903)
     mini_mime (1.1.5)
-    mini_portile2 (2.8.7)
     minitest (5.25.1)
     msgpack (1.7.2)
     multi_xml (0.7.1)
@@ -196,10 +194,9 @@ GEM
       net-protocol
     netrc (0.11.0)
     nio4r (2.7.3)
-    nokogiri (1.16.7)
-      mini_portile2 (~> 2.8.2)
-      racc (~> 1.4)
     nokogiri (1.16.7-aarch64-linux)
+      racc (~> 1.4)
+    nokogiri (1.16.7-arm64-darwin)
       racc (~> 1.4)
     oauth2 (2.0.9)
       faraday (>= 0.17.3, < 3.0)
@@ -361,9 +358,8 @@ GEM
     snaky_hash (2.0.1)
       hashie
       version_gem (~> 1.1, >= 1.1.1)
-    sqlite3 (1.7.3)
-      mini_portile2 (~> 2.8.0)
-    sqlite3 (1.7.3-aarch64-linux)
+    sqlite3 (2.0.4-aarch64-linux-gnu)
+    sqlite3 (2.0.4-arm64-darwin)
     stackprof (0.2.26)
     standard (1.40.0)
       language_server-protocol (~> 3.17.0.2)
@@ -416,7 +412,7 @@ GEM
 
 PLATFORMS
   aarch64-linux
-  ruby
+  arm64-darwin-23
 
 DEPENDENCIES
   amazing_print
@@ -454,7 +450,7 @@ DEPENDENCIES
   sentry-rails
   sentry-ruby
   slim
-  sqlite3 (~> 1.4)
+  sqlite3
   stackprof
   standard
   table_print
@@ -463,4 +459,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   2.5.9
+   2.5.18

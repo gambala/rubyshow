@@ -20,7 +20,7 @@ gem "sentry-rails"
 # Data
 gem "counter_culture"
 gem "redis" # → rack-mini-profiler, rails_performance
-gem "sqlite3", '~> 1.4'
+gem "sqlite3"
 
 # Authentication & Authorization
 gem "devise"
@@ -38,7 +38,7 @@ gem "table_print"
 gem "heroicon"
 gem "oj" # → pagy
 gem "pagy", "~> 4.11" # Because of undefined method pagy_countless in 5.x
-gem "rails-plus", github: "gambala/rails-plus", branch: "develop"
+gem "rails-plus", github: "gambala/rails-plus"
 gem "recaptcha", require: "recaptcha/rails"
 gem "slim"
 gem "turbo-rails"
