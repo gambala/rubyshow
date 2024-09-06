@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import html from './html';
 
 const flash = (group, message) => html`
@@ -11,8 +10,11 @@ const flash = (group, message) => html`
 `;
 
 const add = (group, message) => {
-  $('#flashes').append(flash(group, message));
-  timedAll();
+  const flashesContainer = document.getElementById('flashes');
+  if (flashesContainer) {
+    flashesContainer.insertAdjacentHTML('beforeend', flash(group, message));
+    timedAll();
+  }
 };
 
 const hide = (flashItem) => {

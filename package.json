@@ -1,15 +1,12 @@
 {
   "comments": {
-    "postcss-cli": "Dependency for build:css script",
     "postcss-import": "Allows to store styles in separate css files"
   },
   "dependencies": {
     "@hotwired/turbo-rails": "^8.0.5",
     "autoprefixer": "^10.4.20",
     "flag-icons": "^7.2.3",
-    "jquery": "^3.7.1",
     "postcss": "^8.4.45",
-    "postcss-cli": "^11.0.0",
     "postcss-import": "^16.1.0",
     "rails-plus": "github:gambala/rails-plus",
     "tailwindcss": "^3.4.10",
