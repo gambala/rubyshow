@@ -1,11 +1,10 @@
 GIT
   remote: https://github.com/gambala/rails-plus.git
-  revision: 67520724d6b0c097dea5ec691c934cfdf225cfed
+  revision: 69487e20b67768ee16fc7becf4b5225c97b55eb3
   branch: develop
   specs:
     rails-plus (0.1.0)
       autoprefixer-rails (>= 5.2.1)
-      sass-rails (>= 6.0)
 
 GEM
   remote: https://rubygems.org/
@@ -137,8 +136,6 @@ GEM
       net-http
     ffi (1.17.0)
     ffi (1.17.0-aarch64-linux-gnu)
-    flag-icons-rails (3.4.6.1)
-      sass-rails
     globalid (1.2.1)
       activesupport (>= 6.1)
     hashie (5.0.0)
@@ -360,16 +357,6 @@ GEM
       rubocop (>= 1.48.1, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
     ruby-progressbar (1.13.0)
-    sass-rails (6.0.0)
-      sassc-rails (~> 2.1, >= 2.1.1)
-    sassc (2.4.0)
-      ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
     sentry-rails (5.19.0)
       railties (>= 5.0)
       sentry-ruby (~> 5.19.0)
@@ -455,7 +442,6 @@ DEPENDENCIES
   devise-i18n
   dockerfile-rails (>= 1.6)
   dotenv
-  flag-icons-rails
   heroicon
   letter_opener
   listen
@@ -479,7 +465,6 @@ DEPENDENCIES
   rails_performance
   recaptcha
   redis
-  sass-rails (>= 6.0)
   sentry-rails
   sentry-ruby
   slim

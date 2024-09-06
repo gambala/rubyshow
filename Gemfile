@@ -35,13 +35,11 @@ gem "pry-rails"
 gem "table_print"
 
 # Frontend
-gem "flag-icons-rails"
 gem "heroicon"
 gem "oj" # → pagy
 gem "pagy", "~> 4.11" # Because of undefined method pagy_countless in 5.x
 gem "rails-plus", github: "gambala/rails-plus", branch: "develop"
 gem "recaptcha", require: "recaptcha/rails"
-gem "sass-rails", ">= 6.0"
 gem "slim"
 gem "sprockets-rails"
 gem "turbo-rails"
