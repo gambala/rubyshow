@@ -3,4 +3,4 @@ section.section-padded#comments
     h1 Последние отзывы о курсах
     = render partial: 'card_comment', collection: @comments
     .text-center
-      == pagy_nav_js pagy_object if pagy_object.pages > 1
+      == pagy_nav pagy_object if pagy_object.pages > 1
