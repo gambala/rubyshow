@@ -5,8 +5,5 @@ if Rails.env.development?
   Rack::MiniProfiler.config.flamegraph_mode = :object
   Rack::MiniProfiler.config.flamegraph_sample_rate = 1
   Rack::MiniProfiler.config.show_total_sql_count = true
-  Rack::MiniProfiler.config.storage = Rack::MiniProfiler::RedisStore
-  Rack::MiniProfiler.config.storage_options = {
-    url: "redis://#{ENV["REDIS_HOST"]}:#{ENV["REDIS_PORT"]}/3"
-  }
+  Rack::MiniProfiler.config.storage = Rack::MiniProfiler::FileStore
 end

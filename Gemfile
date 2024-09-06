@@ -19,7 +19,7 @@ gem "sentry-rails"
 
 # Data
 gem "counter_culture"
-gem "redis" # → rack-mini-profiler, rails_performance
+gem "redis" # → rails_performance
 gem "sqlite3"
 
 # Authentication & Authorization
