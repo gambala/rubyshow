@@ -1,10 +1,9 @@
 GIT
   remote: https://github.com/gambala/rails-plus.git
-  revision: 69487e20b67768ee16fc7becf4b5225c97b55eb3
+  revision: 1384f85bebeee7d823dc1e1ce6ae294cfe39b9cd
   branch: develop
   specs:
     rails-plus (0.1.0)
-      autoprefixer-rails (>= 5.2.1)
 
 GEM
   remote: https://rubygems.org/
@@ -90,8 +89,6 @@ GEM
       activerecord (>= 3.2, < 8.0)
       rake (>= 10.4, < 14.0)
     ast (2.4.2)
-    autoprefixer-rails (10.4.19.0)
-      execjs (~> 2)
     base64 (0.2.0)
     bcrypt (3.1.20)
     bigdecimal (3.1.8)
@@ -128,7 +125,6 @@ GEM
     drb (2.2.1)
     dry-cli (1.1.0)
     erubi (1.13.0)
-    execjs (2.9.1)
     faraday (2.11.0)
       faraday-net_http (>= 2.0, < 3.4)
       logger

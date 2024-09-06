@@ -3,8 +3,49 @@
 @import "tippy.js/dist/svg-arrow.css";
 @import "tippy.js/themes/light.css";
 
+@import "rails-plus/dist/rails-plus.css";
+
+@import "./components/footer.css";
+@import "./components/forms.css";
+@import "./components/input.css";
+@import "./components/media.css";
+@import "./components/scaffolding.css";
+@import "./components/sections.css";
+
+@import "./hacks/remove-ios-input-inset-shadow.css";
+@import "./hacks/smooth-scroll.css";
+@import "./hacks/typography.css";
+
+@import "./blocks/body.css";
 @import "./blocks/button.css";
+@import "./blocks/button_sizes.css";
 @import "./blocks/card.css";
+@import "./blocks/circles-area.css";
+@import "./blocks/container.css";
+@import "./blocks/devise-card.css";
+@import "./blocks/flag-icon.css";
+@import "./blocks/flash-collection.css";
+@import "./blocks/flash-item.css";
+@import "./blocks/flex-dropdown-menu.css";
+@import "./blocks/form.css";
+@import "./blocks/frame.css";
+@import "./blocks/gap-section.css";
+@import "./blocks/ios-button.css";
+@import "./blocks/link.css";
+@import "./blocks/media.css";
+@import "./blocks/page_next.css";
+@import "./blocks/pagination.css";
+@import "./blocks/select-input.css";
+@import "./blocks/so-digita.css";
+@import "./blocks/so-media.css";
+@import "./blocks/soda-header.css";
+@import "./blocks/soda-layout.css";
+@import "./blocks/soda-main.css";
+@import "./blocks/soda-mobile-menu.css";
+@import "./blocks/sticky-section.css";
+@import "./blocks/tippy.css";
+@import "./blocks/user.css";
+@import "./blocks/variables-custom.css";
 
 @tailwind base;
 @tailwind components;
