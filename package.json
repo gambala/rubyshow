@@ -10,11 +10,15 @@
     "postcss-import": "^16.1.0",
     "rails-plus": "github:gambala/rails-plus",
     "tailwindcss": "^3.4.10",
-    "tippy.js": "^6.3.7"
+    "tippy.js": "^6.3.7",
+    "what-input": "^4.1.1"
   },
   "private": true,
   "devDependencies": {
     "vite": "^5.0.0",
     "vite-plugin-ruby": "^5.1.0"
+  },
+  "scripts": {
+    "build": "vite build --outDir public"
   }
 }

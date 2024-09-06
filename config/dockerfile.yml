@@ -2,6 +2,7 @@
 
 ---
 options:
+  alpine: true
   compose: true
   jemalloc: true
   parallel: true
