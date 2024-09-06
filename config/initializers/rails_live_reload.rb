@@ -5,7 +5,6 @@ RailsLiveReload.configure do |config|
 
   # Default watched folders & files
   config.watch %r{app/views/.+\.(erb|haml|slim)$}
-  config.watch %r{(app|vendor)/assets/\w+/(.+\.(css|js|html|png|jpg|ts|jsx)).*}, reload: :always
 
   # More examples:
   config.watch %r{app/helpers/.+\.rb}, reload: :always

@@ -41,7 +41,6 @@ gem "pagy", "~> 4.11" # Because of undefined method pagy_countless in 5.x
 gem "rails-plus", github: "gambala/rails-plus", branch: "develop"
 gem "recaptcha", require: "recaptcha/rails"
 gem "slim"
-gem "sprockets-rails"
 gem "turbo-rails"
 gem "vite_rails"
 

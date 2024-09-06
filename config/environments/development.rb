@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.configure do
-  config.action_controller.asset_host = ENV["APP_HOST"]
   config.action_controller.default_url_options = {host: ENV["APP_HOST"]}
-  config.action_mailer.asset_host = ENV["APP_HOST"]
   config.action_mailer.default_url_options = {host: ENV["APP_HOST"]}
   config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_caching = false
@@ -13,8 +11,6 @@ Rails.application.configure do
   config.active_support.deprecation = :log
   config.active_support.disallowed_deprecation = :raise
   config.active_support.disallowed_deprecation_warnings = []
-  config.assets.debug = true
-  config.assets.quiet = true
   config.cache_classes = false
   config.consider_all_requests_local = true
   config.eager_load = false

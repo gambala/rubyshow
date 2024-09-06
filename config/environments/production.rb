@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.configure do
-  config.action_controller.asset_host = ENV["APP_HOST"]
   config.action_controller.default_url_options = {host: ENV["APP_HOST"]}
   config.action_controller.perform_caching = true
-  config.action_mailer.asset_host = ENV["APP_HOST"]
   config.action_mailer.default_url_options = {host: ENV["APP_HOST"]}
   config.action_mailer.delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {api_key: ENV["MAILGUN_API_KEY"], domain: "mg.ruby.show",
@@ -14,9 +12,6 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
   config.active_support.disallowed_deprecation = :log
   config.active_support.disallowed_deprecation_warnings = []
-  config.assets.compile = false
-  config.assets.css_compressor = nil
-  config.assets.js_compressor = nil
   config.assume_ssl = true
   config.cache_classes = true
   config.consider_all_requests_local = false
@@ -41,7 +36,6 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
   # config.active_record.database_selector = { delay: 2.seconds }
-  # config.asset_host = 'http://assets.example.com'
   # config.cache_store = :mem_cache_store
   # config.force_ssl = true
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
