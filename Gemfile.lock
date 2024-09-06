@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/gambala/rails-plus.git
-  revision: 1384f85bebeee7d823dc1e1ce6ae294cfe39b9cd
+  revision: 0873abd4a38a6e0769cf038114a4dcbac5c46e92
   branch: develop
   specs:
     rails-plus (0.1.0)
