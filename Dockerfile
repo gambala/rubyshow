@@ -14,13 +14,12 @@ ENV BUNDLE_DEPLOYMENT="1" \
     RAILS_ENV="production"
 
 # Install packages
-RUN apk update && \
-    apk add tzdata && \
-    rm -rf /var/cache/apk/*
+RUN apk add --no-cache tzdata
 
 # Update gems and bundler
 RUN gem update --system --no-document && \
-    gem install -N bundler
+    gem install -N bundler && \
+    rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git node_modules/.cache
 
 
 # Throw-away build stages to reduce size of final image
@@ -33,10 +32,8 @@ FROM base AS prebuild
 # - nodejs: for vite
 # - npm: for pnpm
 # - pnpm: for installing node modules
-RUN apk update && \
-    apk add build-base git gcompat nodejs npm && \
-    npm install -g pnpm && \
-    rm -rf /var/cache/apk/*
+RUN apk add --no-cache build-base git gcompat nodejs npm && \
+    npm install -g pnpm
 
 
 FROM prebuild AS node_modules_build
@@ -81,9 +78,7 @@ COPY --from=node_modules_production /rails/node_modules /rails/node_modules
 FROM base
 
 # Install packages needed for deployment
-RUN apk update && \
-    apk add curl jemalloc gcompat && \
-    rm -rf /var/cache/apk/*
+RUN apk add --no-cache curl jemalloc gcompat
 
 # Copy built artifacts: gems, application
 COPY --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
