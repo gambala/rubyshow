@@ -39,11 +39,18 @@ RUN apk update && \
     rm -rf /var/cache/apk/*
 
 
-FROM prebuild AS node_modules
+FROM prebuild AS node_modules_build
 
 # Install node modules
 COPY --link package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+
+
+FROM prebuild AS node_modules_production
+
+# Install node modules for production
+COPY --link package.json pnpm-lock.yaml ./
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile --prod
 
 
 FROM prebuild AS build
@@ -55,7 +62,7 @@ RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git
 
 # Copy node modules & application code
-COPY --from=node_modules /rails/node_modules /rails/node_modules
+COPY --from=node_modules_build /rails/node_modules /rails/node_modules
 COPY --link . .
 
 # Precompile bootsnap code for faster boot times
@@ -63,6 +70,11 @@ RUN bundle exec bootsnap precompile app/ lib/
 
 # Precompiling assets for production
 RUN pnpm run build
+
+# Remove build-related node_modules to reduce image size
+RUN rm -rf node_modules
+
+COPY --from=node_modules_production /rails/node_modules /rails/node_modules
 
 
 # Final stage for app image
