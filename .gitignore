@@ -38,3 +38,6 @@ yarn-debug.log*
 /.env
 /.env*.local
 !/.env*.erb
+
+# docker container id file (see Makefile)
+.container_id

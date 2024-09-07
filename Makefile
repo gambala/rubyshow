@@ -13,6 +13,9 @@
 #   > bundle exec rails g model Order user:references record:references{polymorphic}
 #
 RUN_ARGS := $(wordlist 2, $(words $(MAKECMDGOALS)), $(MAKECMDGOALS))
+CONTAINER_NAME=ghcr.io/gambala/rubyshow
+PORT=3000
+ID_FILE=.container_id
 
 .PHONY: test
 
@@ -34,6 +37,27 @@ db-migrate:
 
 db-rollback:
 	bundle exec rake db:rollback
+
+
+
+docker-build:
+	docker build -t $(CONTAINER_NAME) .
+
+docker-run:
+	@echo "Running Docker container..."
+	@docker run -dp $(PORT):$(PORT) $(CONTAINER_NAME) > $(ID_FILE)
+	@echo "Container started: $$(cat $(ID_FILE))"
+
+docker-stop:
+	@if [ -f $(ID_FILE) ]; then \
+		CONTAINER_ID=$$(cat $(ID_FILE)); \
+		echo "Stopping Docker container: $$CONTAINER_ID"; \
+		docker stop $$CONTAINER_ID; \
+		rm $(ID_FILE); \
+		echo "Container stopped."; \
+	else \
+		echo "No container ID file found. Is the container running?"; \
+	fi
 
 
 
