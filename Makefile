@@ -91,10 +91,10 @@ run-console:
 	bundle exec rails console
 
 run-frontend-update:
-	ncu -p bun -i
+	pnpm update --interactive --latest
 
 run-frontend-upgrade:
-	bun update
+	pnpm update
 
 run-generate:
 	bundle exec rails generate $(RUN_ARGS)
