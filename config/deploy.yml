@@ -1,16 +1,13 @@
+<% require "dotenv"; Dotenv.load(".env") %>
+
 service: my-rubyshow
 image: gambala/my-rubyshow
 servers:
   - <%= ENV["MAIN_SERVER_IP"] %>
-labels:
-  traefik.http.routers.my-rubyshow-web.rule: Host(`ruby.show`, `www.ruby.show`, `new.ruby.show`)
-  traefik.http.routers.my-rubyshow-web.middlewares: my-rubyshow-redirect-new,my-rubyshow-redirect-www,my-rubyshow-web-retry@docker
-  traefik.http.middlewares.my-rubyshow-redirect-new.redirectregex.regex: "^http://new\\.ruby\\.show/(.*)"
-  traefik.http.middlewares.my-rubyshow-redirect-new.redirectregex.replacement: "http://ruby.show/$1"
-  traefik.http.middlewares.my-rubyshow-redirect-new.redirectregex.permanent: "true"
-  traefik.http.middlewares.my-rubyshow-redirect-www.redirectregex.regex: "^http://www\\.ruby\\.show/(.*)"
-  traefik.http.middlewares.my-rubyshow-redirect-www.redirectregex.replacement: "http://ruby.show/$1"
-  traefik.http.middlewares.my-rubyshow-redirect-www.redirectregex.permanent: "true"
+proxy:
+  ssl: false
+  host: ruby.show
+  app_port: 3000
 registry:
   server: ghcr.io
   username: gambala
@@ -42,7 +39,5 @@ accessories:
     port: <%= ENV["REDIS_PORT"] %>:6379
     directories:
       - data:/data
-healthcheck:
-  interval: 10s
 builder:
-  multiarch: false
+  arch: arm64

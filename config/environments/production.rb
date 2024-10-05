@@ -17,7 +17,7 @@ Rails.application.configure do
   config.consider_all_requests_local = false
   config.eager_load = true
   config.force_ssl = false
-  config.hosts = ["localhost", ENV["APP_DOMAIN"]]
+  # config.hosts = ["localhost", ENV["APP_DOMAIN"]]
   config.i18n.fallbacks = true
   config.log_formatter = ::Logger::Formatter.new
   config.log_level = :info
