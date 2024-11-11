@@ -1,4 +1,4 @@
-<% require "dotenv"; Dotenv.load(".env") %>
+# <% require "dotenv"; Dotenv.load(".env") %>
 
 service: my-rubyshow
 image: gambala/my-rubyshow
@@ -41,3 +41,7 @@ accessories:
       - data:/data
 builder:
   arch: arm64
+aliases:
+  console: app exec --interactive --reuse "bin/rails console"
+  shell: app exec --interactive --reuse "sh"
+  logs: app logs -f
