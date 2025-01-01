@@ -9,7 +9,7 @@
     "postcss": "^8.4.49",
     "postcss-import": "^16.1.0",
     "rails-plus": "github:gambala/rails-plus",
-    "tailwindcss": "^3.4.15",
+    "tailwindcss": "^3.4.17",
     "tippy.js": "^6.3.7",
     "what-input": "^5.2.12"
   },
