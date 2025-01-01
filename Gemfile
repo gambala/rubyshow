@@ -31,7 +31,6 @@ gem "pundit"
 
 # REPL
 gem "amazing_print"
-gem "pry-rails"
 gem "table_print"
 
 # Frontend
