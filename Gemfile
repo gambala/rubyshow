@@ -47,7 +47,7 @@ gem "vite_rails"
 # Mailers
 gem "mailgun-ruby"
 gem "mime-types", require: "mime/types/columnar" # → mailgun
-  # hack to reduce memory usage, https://github.com/schneems/derailed_benchmarks
+# hack to reduce memory usage, https://github.com/schneems/derailed_benchmarks
 
 group :development do
   gem "annotate"

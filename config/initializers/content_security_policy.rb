@@ -11,9 +11,9 @@ Rails.application.config.content_security_policy do |policy|
   # policy.object_src  :none
 
   if Rails.env.development?
-    policy.script_src :self, :https, :unsafe_inline, :unsafe_eval, "http://#{ ViteRuby.config.host_with_port }"
+    policy.script_src :self, :https, :unsafe_inline, :unsafe_eval, "http://#{ViteRuby.config.host_with_port}"
     policy.style_src :self, :https, :unsafe_inline
-    policy.connect_src :self, :https, "ws://#{ ViteRuby.config.host_with_port }"
+    policy.connect_src :self, :https, "ws://#{ViteRuby.config.host_with_port}"
   end
 
   # You may need to enable this in production as well depending on your setup.

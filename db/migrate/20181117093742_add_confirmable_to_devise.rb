@@ -5,9 +5,9 @@ class AddConfirmableToDevise < ActiveRecord::Migration[5.2]
     add_column :users, :confirmed_at, :datetime
     add_column :users, :confirmation_sent_at, :datetime
     add_index :users, :confirmation_token, unique: true
-    if ActiveRecord::Base.connection.adapter_name == 'PostgreSQL'
+    if ActiveRecord::Base.connection.adapter_name == "PostgreSQL"
       execute("UPDATE users SET confirmed_at = NOW()")
-    elsif ActiveRecord::Base.connection.adapter_name == 'SQLite'
+    elsif ActiveRecord::Base.connection.adapter_name == "SQLite"
       execute("UPDATE users SET confirmed_at = CURRENT_TIMESTAMP")
     end
   end

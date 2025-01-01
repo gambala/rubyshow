@@ -64,11 +64,11 @@ docker-stop:
 lint-js:
 	./node_modules/.bin/eslint frontend --fix
 
-lint-ruby-setup:
-	bundle exec rubocop --auto-gen-config
+lint-ruby-unsafe:
+	bundle exec standardrb --fix-unsafely
 
 lint-ruby:
-	bundle exec rubocop -a
+	bundle exec standardrb --fix
 
 lint-security:
 	brakeman
