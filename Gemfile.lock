@@ -131,9 +131,13 @@ GEM
     ffi (1.17.1-arm64-darwin)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    groupdate (6.5.1)
+      activesupport (>= 7)
     hashie (5.0.0)
     heroicon (1.0.0)
       rails (>= 5.2)
+    hightop (0.5.0)
+      activesupport (>= 7)
     http-accept (1.7.0)
     http-cookie (1.0.8)
       domain_name (~> 0.5)
@@ -420,7 +424,9 @@ DEPENDENCIES
   devise-i18n
   dockerfile-rails (>= 1.6)
   dotenv
+  groupdate
   heroicon
+  hightop
   letter_opener
   listen
   lograge

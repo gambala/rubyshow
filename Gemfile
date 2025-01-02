@@ -31,6 +31,8 @@ gem "pundit"
 
 # REPL
 gem "amazing_print"
+gem "groupdate"
+gem "hightop" # For using .top(:field) instead of .group(:field).count.sort_by_value
 gem "table_print"
 
 # Frontend
