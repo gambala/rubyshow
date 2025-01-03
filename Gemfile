@@ -11,11 +11,13 @@ gem "puma"
 gem "rack-attack"
 gem "rails", "~> 7.2"
 gem "rails-i18n"
+
+# Engines
 gem "rails_performance"
 
 # Third-party services
-gem "sentry-ruby"
-gem "sentry-rails"
+gem "sentry-ruby" # → app.glitchtip.com
+gem "sentry-rails" # → app.glitchtip.com
 
 # Data
 gem "counter_culture"
