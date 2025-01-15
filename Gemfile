@@ -52,6 +52,9 @@ gem "mailgun-ruby"
 gem "mime-types", require: "mime/types/columnar" # → mailgun
 # hack to reduce memory usage, https://github.com/schneems/derailed_benchmarks
 
+# Uncategorized
+gem "csv" # → rails_performance, it's not a part of std library from Ruby 3.4+
+
 group :development do
   gem "annotate"
   gem "bullet"
