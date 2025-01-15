@@ -1,6 +1,6 @@
 # syntax = docker/dockerfile:1
 ARG RUBY_VERSION=3.3.6
-ARG ALPINE_VERSION=3.19
+ARG ALPINE_VERSION=3.21
 FROM ruby:$RUBY_VERSION-alpine$ALPINE_VERSION AS base
   WORKDIR /rails
   ENV BUNDLE_DEPLOYMENT="1" \
@@ -24,7 +24,7 @@ FROM base AS prebuild
   # - nodejs: for vite
   # - npm: for pnpm
   # - pnpm: for installing node modules
-  RUN apk add --no-cache git build-base nodejs npm && \
+  RUN apk add --no-cache git build-base nodejs npm yaml-dev && \
       npm install -g pnpm
 
 
