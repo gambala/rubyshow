@@ -38,10 +38,10 @@ gem "hightop" # For using .top(:field) instead of .group(:field).count.sort_by_v
 gem "table_print"
 
 # Frontend
-gem "heroicon"
 gem "oj" # → pagy
 gem "pagy", "~> 4.11" # Because of undefined method pagy_countless in 5.x
 gem "rails-plus", github: "gambala/rails-plus"
+gem "rails_heroicon"
 gem "recaptcha", require: "recaptcha/rails"
 gem "slim"
 gem "turbo-rails"

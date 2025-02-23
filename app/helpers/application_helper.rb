@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
-  include Heroicon::Engine.helpers
   include Pagy::Frontend
   include RailsPlus::Helpers::Benchmark
   include RailsPlus::Helpers::Dashed
   include RailsPlus::Helpers::FrameContainerTag
   include RailsPlus::Helpers::GravatarURL
-  include RailsPlus::Helpers::Hicon
   include RailsPlus::Helpers::RescuedCsrfMetaTags
   include RailsPlus::Helpers::RichFormFor
   include RailsPlus::Helpers::Seo
