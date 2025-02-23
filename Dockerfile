@@ -41,13 +41,10 @@ FROM prebuild AS node_modules_production
 FROM prebuild AS build
   COPY --link Gemfile Gemfile.lock ./
   RUN bundle install && \
-      bundle exec bootsnap precompile --gemfile && \
       rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git
   # Copy node modules & application code
   COPY --from=node_modules_build /rails/node_modules /rails/node_modules
   COPY --link . .
-  # Precompile bootsnap code for faster boot times
-  RUN bundle exec bootsnap precompile app/ lib/
   # Precompiling assets for production
   RUN pnpm run build
   # Remove build-related node_modules to reduce image size

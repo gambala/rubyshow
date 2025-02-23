@@ -90,8 +90,6 @@ GEM
     benchmark (0.4.0)
     bigdecimal (3.1.9)
     bindex (0.8.1)
-    bootsnap (1.18.4)
-      msgpack (~> 1.2)
     browser (6.2.0)
     builder (3.3.0)
     bullet (8.0.1)
@@ -182,7 +180,6 @@ GEM
     mime-types-data (3.2025.0204)
     mini_mime (1.1.5)
     minitest (5.25.4)
-    msgpack (1.8.0)
     multi_xml (0.7.1)
       bigdecimal (~> 3.1)
     mutex_m (0.3.0)
@@ -417,7 +414,6 @@ PLATFORMS
 DEPENDENCIES
   amazing_print
   annotate
-  bootsnap
   bullet
   counter_culture
   csv

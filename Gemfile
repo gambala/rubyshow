@@ -5,7 +5,6 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Ruby & Rails performance optimization & deploy
-gem "bootsnap", require: false
 gem "lograge"
 gem "puma"
 gem "rack-attack"
