@@ -406,7 +406,7 @@ DEPENDENCIES
   csv
   devise
   devise-i18n
-  dockerfile-rails (>= 1.6)
+  dockerfile-rails
   dotenv
   groupdate
   hightop
