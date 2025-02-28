@@ -60,10 +60,8 @@ group :development do
   gem "dockerfile-rails", ">= 1.6"
   gem "dotenv"
   gem "letter_opener" # → Mailers
-  gem "listen" # → rails_live_reload
   gem "memory_profiler" # → rack-mini-profiler
   gem "rack-mini-profiler"
-  gem "rails_live_reload"
   gem "stackprof" # → rack-mini-profiler
   gem "standard"
   gem "web-console"
