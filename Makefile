@@ -73,6 +73,9 @@ lint-ruby:
 lint-security:
 	brakeman
 
+lint-vite:
+	pnpx vite-bundle-visualizer
+
 
 
 run-bundle-install:
