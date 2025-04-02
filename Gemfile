@@ -55,7 +55,7 @@ gem "mime-types", require: "mime/types/columnar" # ➡️ mailgun
 gem "csv"                      # ➡️ rails_performance, it's not a part of std library from Ruby 3.4+
 
 group :development do
-  gem "annotate"               # ✅
+  gem "annotaterb"             # ✅
   gem "bullet"                 # ✅
   gem "dockerfile-rails"       # ✅
   gem "dotenv"                 # ✅

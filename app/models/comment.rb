@@ -24,14 +24,14 @@ end
 # Table name: comments
 #
 #  id         :integer          not null, primary key
-#  user_id    :integer
+#  user_id    :integer          indexed
 #  content    :text             default(""), not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  course_id  :integer
-#  rating     :integer
+#  course_id  :integer          indexed
+#  rating     :integer          indexed
 #  graduate   :boolean          default(FALSE)
-#  kind       :integer          default(1), not null
+#  kind       :integer          default(1), not null, indexed
 #
 # Indexes
 #

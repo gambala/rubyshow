@@ -49,7 +49,7 @@ end
 # Table name: courses
 #
 #  id              :integer          not null, primary key
-#  title           :string           default(""), not null
+#  title           :string           default(""), not null, indexed
 #  description     :text             default(""), not null
 #  language        :string           default("Русский"), not null
 #  created_at      :datetime         not null
