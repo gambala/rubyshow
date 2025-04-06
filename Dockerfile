@@ -39,7 +39,7 @@ FROM prebuild AS node_modules_production
 
 
 FROM prebuild AS build
-  COPY --link Gemfile Gemfile.lock ./
+  COPY --link Gemfile Gemfile.lock .ruby-version ./
   RUN bundle install && \
       rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git
   # Copy node modules & application code
