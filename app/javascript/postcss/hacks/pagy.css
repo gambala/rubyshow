@@ -1,0 +1,27 @@
+.pagy {
+  @apply flex justify-center space-x-1 font-semibold text-sm text-gray-500;
+
+  a:not(.gap) {
+    @apply block rounded px-2 py-1 bg-gray-100 border border-gray-400;
+
+    &:hover {
+      @apply text-white bg-blue-500;
+    }
+
+    &:not([href]) { /* disabled links */
+      @apply text-gray-300 bg-gray-100 cursor-default;
+    }
+
+    &.current {
+      @apply text-black bg-gray-300;
+    }
+  }
+
+  label {
+    @apply inline-block whitespace-nowrap bg-gray-200 rounded-lg px-3 py-0.5;
+
+    input {
+      @apply bg-gray-100 border-none rounded-md;
+    }
+  }
+}

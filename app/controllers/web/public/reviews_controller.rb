@@ -16,7 +16,7 @@ module Web::Public
     def index
       @comments = Web::Public::Review.includes(:course, :user).order(created_at: :desc)
       authorize @comments
-      @comments = paginate(@comments, items: 6)
+      @comments = paginate(@comments, limit: 6)
     end
   end
 end

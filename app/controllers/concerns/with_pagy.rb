@@ -8,13 +8,13 @@ module WithPagy
 
   private
 
-  def paginate(*)
-    @pagy_object, result = pagy(*)
+  def paginate(collection, **vars)
+    @pagy_object, result = pagy(collection, **vars)
     result
   end
 
-  def paginate_countless(*)
-    @pagy_object, result = pagy_countless(*)
+  def paginate_countless(collection, **vars)
+    @pagy_object, result = pagy_countless(collection, **vars)
     result
   end
 

@@ -12,6 +12,7 @@
 @import "./components/scaffolding.css";
 @import "./components/sections.css";
 
+@import "./hacks/pagy.css";
 @import "./hacks/remove-ios-input-inset-shadow.css";
 @import "./hacks/smooth-scroll.css";
 @import "./hacks/typography.css";
@@ -34,7 +35,6 @@
 @import "./blocks/link.css";
 @import "./blocks/media.css";
 @import "./blocks/page_next.css";
-@import "./blocks/pagination.css";
 @import "./blocks/select-input.css";
 @import "./blocks/so-digita.css";
 @import "./blocks/so-media.css";

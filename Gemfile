@@ -37,8 +37,8 @@ gem "hightop"                  # ✅ # .top(:field) ← .group(:field).count.sor
 gem "table_print"              # ✅
 
 # Frontend
-gem "oj"                       # ➡️ pagy
-gem "pagy", "~> 4.11"          # 🔒 undefined method pagy_countless in 5.x
+gem "oj"                       # ➡️ pagy (js nav only)
+gem "pagy", "~> 9.3"           # ✅
 gem "rails-plus", github: "gambala/rails-plus" # 🔴 remove
 gem "rails_heroicon"           # ✅ for Rails SSR
 gem "recaptcha", require: "recaptcha/rails" # 🟠 better options?
