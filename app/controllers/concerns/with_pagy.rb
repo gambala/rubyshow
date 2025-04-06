@@ -9,6 +9,7 @@ module WithPagy
   private
 
   def paginate(collection, **vars)
+    params[:page] = 1 if params[:page].to_i <= 0
     @pagy_object, result = pagy(collection, **vars)
     result
   end
