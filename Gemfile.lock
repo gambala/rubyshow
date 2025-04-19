@@ -90,7 +90,7 @@ GEM
     bindex (0.8.1)
     browser (6.2.0)
     builder (3.3.0)
-    bullet (8.0.3)
+    bullet (8.0.4)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11)
     childprocess (5.1.0)
