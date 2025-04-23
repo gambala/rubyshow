@@ -31,6 +31,12 @@ Rails.application.configure do
     Bullet.console = true
   end
 
+  if ENV["PRELOAD"].present?
+    puts "Preloading application..."
+    config.action_mailer.perform_caching = true
+    config.eager_load = true
+  end
+
   # config.action_view.annotate_rendered_view_with_filenames = true
   # config.i18n.raise_on_missing_translations = true
 end
