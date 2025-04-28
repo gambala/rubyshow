@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class CoursesQuery
   attr_reader :courses, :params
 

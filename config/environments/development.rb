@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 Rails.application.configure do
   config.action_controller.default_url_options = {host: ENV["APP_HOST"]}
   config.action_mailer.default_url_options = {host: ENV["APP_HOST"]}

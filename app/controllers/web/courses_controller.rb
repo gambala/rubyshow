@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module Web
   class CoursesController < Web::ApplicationController
     before_action :set_course, only: %i[show edit update destroy approve]

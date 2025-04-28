@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module Web
   class UsersController < Web::ApplicationController
     def show

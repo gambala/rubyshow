@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 include RailsPlus::Helpers::Routes
 
 Rails.application.routes.draw do

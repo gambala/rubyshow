@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module Web
   class CommentsController < Web::ApplicationController
     before_action :set_comment, only: %i[update destroy]

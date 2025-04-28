@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module Web
   class WelcomeController < Web::ApplicationController
     helper_method :reviews_size, :courses_size,

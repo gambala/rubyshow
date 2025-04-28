@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Course < ApplicationRecord
   has_many :comments, -> { sorted_by_date }, dependent: :destroy
 
