@@ -403,8 +403,7 @@ GEM
 
 PLATFORMS
   aarch64-linux-musl
-  arm64-darwin-23
-  arm64-darwin-24
+  arm64-darwin
 
 DEPENDENCIES
   amazing_print
