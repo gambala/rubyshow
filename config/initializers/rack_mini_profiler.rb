@@ -4,6 +4,7 @@ if Rails.env.development?
   Rack::MiniProfiler.config.enable_advanced_debugging_tools = true
   Rack::MiniProfiler.config.flamegraph_mode = :object
   Rack::MiniProfiler.config.flamegraph_sample_rate = 1
+  Rack::MiniProfiler.config.position = "bottom-left"
   Rack::MiniProfiler.config.show_total_sql_count = true
   Rack::MiniProfiler.config.storage = Rack::MiniProfiler::FileStore
 end
