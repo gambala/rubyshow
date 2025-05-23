@@ -49,7 +49,7 @@ section(itemscope itemtype='https://schema.org/EducationEvent')
                             data: { turbo_method: :delete, turbo_confirm: 'Точно удалить?' },
                             class: 'button h-24px bg-white'
 
-        div class='lg:order-first lg:flex-grow'
+        div class='lg:order-first lg:grow'
           .card.bg-gray-50.p-4.mb-3
             = render partial: 'web/comments/form', locals: { course: @course, comment: @comment }
 

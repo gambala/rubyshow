@@ -31,7 +31,7 @@ section.section-padded
                     => link_to 'Показать все курсы', courses_path, class: 'button h-30px bg-white', id: 'reset_filter'
                     => button_tag 'Найти', class: 'button h-30px bg-red', id: 'apply_filter'
 
-      div class='lg:order-first lg:flex-grow'
+      div class='lg:order-first lg:grow'
         - present courses_query do |courses_query_presenter|
           - if courses_query_presenter.any_titles?
             .card.bg-gray-50.p-4.mb-3

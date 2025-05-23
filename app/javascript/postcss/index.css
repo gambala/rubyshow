@@ -1,52 +1,69 @@
-@import "flag-icons/css/flag-icons.min.css";
-@import "tippy.js/animations/shift-toward-extreme.css";
-@import "tippy.js/dist/svg-arrow.css";
-@import "tippy.js/themes/light.css";
+@import 'flag-icons/css/flag-icons.min.css' layer(base);
+@import 'tippy.js/animations/shift-toward-extreme.css' layer(base);
+@import 'tippy.js/dist/svg-arrow.css' layer(base);
+@import 'tippy.js/themes/light.css' layer(base);
 
-@import "rails-plus/dist/rails-plus.css";
+@import 'rails-plus/dist/rails-plus.css' layer(base);
 
-@import "./components/footer.css";
-@import "./components/forms.css";
-@import "./components/input.css";
-@import "./components/media.css";
-@import "./components/scaffolding.css";
-@import "./components/sections.css";
+@import './components/footer.css' layer(base);
+@import './components/forms.css' layer(base);
+@import './components/input.css' layer(base);
+@import './components/media.css' layer(base);
+@import './components/scaffolding.css' layer(base);
+@import './components/sections.css' layer(base);
 
-@import "./hacks/pagy.css";
-@import "./hacks/remove-ios-input-inset-shadow.css";
-@import "./hacks/smooth-scroll.css";
-@import "./hacks/typography.css";
+@import './hacks/pagy.css' layer(base);
+@import './hacks/remove-ios-input-inset-shadow.css' layer(base);
+@import './hacks/smooth-scroll.css' layer(base);
+@import './hacks/typography.css' layer(base);
 
-@import "./blocks/body.css";
-@import "./blocks/button.css";
-@import "./blocks/button_sizes.css";
-@import "./blocks/card.css";
-@import "./blocks/circles-area.css";
-@import "./blocks/container.css";
-@import "./blocks/devise-card.css";
-@import "./blocks/flag-icon.css";
-@import "./blocks/flash-collection.css";
-@import "./blocks/flash-item.css";
-@import "./blocks/flex-dropdown-menu.css";
-@import "./blocks/form.css";
-@import "./blocks/frame.css";
-@import "./blocks/gap-section.css";
-@import "./blocks/ios-button.css";
-@import "./blocks/link.css";
-@import "./blocks/media.css";
-@import "./blocks/page_next.css";
-@import "./blocks/select-input.css";
-@import "./blocks/so-digita.css";
-@import "./blocks/so-media.css";
-@import "./blocks/soda-header.css";
-@import "./blocks/soda-layout.css";
-@import "./blocks/soda-main.css";
-@import "./blocks/soda-mobile-menu.css";
-@import "./blocks/sticky-section.css";
-@import "./blocks/tippy.css";
-@import "./blocks/user.css";
-@import "./blocks/variables-custom.css";
+@import './blocks/body.css' layer(base);
+@import './blocks/button.css' layer(base);
+@import './blocks/button.utilities.css';
+@import './blocks/button_sizes.css' layer(base);
+@import './blocks/card.css' layer(base);
+@import './blocks/circles-area.css' layer(base);
+@import './blocks/container.css' layer(base);
+@import './blocks/devise-card.css' layer(base);
+@import './blocks/flag-icon.css' layer(base);
+@import './blocks/flash-collection.css' layer(base);
+@import './blocks/flash-item.css' layer(base);
+@import './blocks/flex-dropdown-menu.css' layer(base);
+@import './blocks/form.css' layer(base);
+@import './blocks/frame.css' layer(base);
+@import './blocks/gap-section.css' layer(base);
+@import './blocks/ios-button.css' layer(base);
+@import './blocks/link.css' layer(base);
+@import './blocks/media.css' layer(base);
+@import './blocks/page_next.css' layer(base);
+@import './blocks/select-input.css' layer(base);
+@import './blocks/so-digita.css' layer(base);
+@import './blocks/so-media.css' layer(base);
+@import './blocks/soda-header.css' layer(base);
+@import './blocks/soda-layout.css' layer(base);
+@import './blocks/soda-main.css' layer(base);
+@import './blocks/soda-mobile-menu.css' layer(base);
+@import './blocks/sticky-section.css' layer(base);
+@import './blocks/tippy.css' layer(base);
+@import './blocks/user.css' layer(base);
+@import './blocks/variables-custom.css' layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}

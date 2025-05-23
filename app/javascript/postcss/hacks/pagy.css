@@ -2,7 +2,7 @@
   @apply flex justify-center space-x-1 font-semibold text-sm text-gray-500;
 
   a:not(.gap) {
-    @apply block rounded px-2 py-1 bg-gray-100 border border-gray-400;
+    @apply block rounded-sm px-2 py-1 bg-gray-100 border border-gray-400;
 
     &:hover {
       @apply text-white bg-blue-500;
