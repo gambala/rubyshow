@@ -86,7 +86,7 @@ GEM
     base64 (0.2.0)
     bcrypt (3.1.20)
     benchmark (0.4.0)
-    bigdecimal (3.1.9)
+    bigdecimal (3.2.0)
     bindex (0.8.1)
     browser (6.2.0)
     builder (3.3.0)
@@ -175,7 +175,7 @@ GEM
     mime-types (3.7.0)
       logger
       mime-types-data (~> 3.2025, >= 3.2025.0507)
-    mime-types-data (3.2025.0520)
+    mime-types-data (3.2025.0527)
     mini_mime (1.1.5)
     minitest (5.25.5)
     multi_xml (0.7.2)
@@ -287,7 +287,7 @@ GEM
     rails_heroicon (2.3.0)
       actionview
       railties
-    rails_performance (1.4.1)
+    rails_performance (1.4.2)
       browser
       railties
       redis
@@ -317,7 +317,7 @@ GEM
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
-    rubocop (1.75.7)
+    rubocop (1.75.8)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
