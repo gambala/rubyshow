@@ -94,7 +94,8 @@ run-console:
 	bundle exec rails console
 
 run-frontend-update:
-	pnpm update --interactive --latest
+	# pnpm update --interactive --latest
+	pnpm dlx npm-check-updates -i
 
 run-frontend-upgrade:
 	pnpm update
