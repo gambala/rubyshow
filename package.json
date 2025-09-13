@@ -17,7 +17,7 @@
     "what-input": "^5.2.12"
   },
   "devDependencies": {
-    "vite": "^7.1.4",
+    "vite": "^7.1.5",
     "vite-plugin-ruby": "^5.1.1"
   }
 }
