@@ -456,7 +456,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 3.4.4
+   ruby 3.4.6
 
 BUNDLED WITH
    2.6.9
