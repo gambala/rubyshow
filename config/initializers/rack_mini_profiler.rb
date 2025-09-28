@@ -6,5 +6,5 @@ if Rails.env.development?
   Rack::MiniProfiler.config.flamegraph_sample_rate = 1
   Rack::MiniProfiler.config.position = "bottom-left"
   Rack::MiniProfiler.config.show_total_sql_count = true
-  Rack::MiniProfiler.config.storage = Rack::MiniProfiler::FileStore
+  Rack::MiniProfiler.config.storage = Rack::MiniProfiler::MemoryStore
 end
