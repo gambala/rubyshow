@@ -172,7 +172,7 @@ GEM
       faraday (~> 2.1)
       faraday-multipart (~> 1.1.0)
       mini_mime
-    marcel (1.0.4)
+    marcel (1.1.0)
     memory_profiler (1.1.0)
     mime-types (3.7.0)
       logger
