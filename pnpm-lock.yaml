@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@hotwired/turbo-rails':
-        specifier: ^8.0.18
-        version: 8.0.18
+        specifier: ^8.0.20
+        version: 8.0.20
       '@tailwindcss/postcss':
         specifier: ^4.1.16
         version: 4.1.16
@@ -202,11 +202,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@hotwired/turbo-rails@8.0.18':
-    resolution: {integrity: sha512-iRxd922VSTVH0NzlLDx9T9S8Ep0NPnrLCKva31WIMLNApJgUZKa/a90EFiBa2G6Do+x4xuKZk53dlweiwTyXkQ==}
+  '@hotwired/turbo-rails@8.0.20':
+    resolution: {integrity: sha512-4aYkYF9XMKL7ZZPfgElq15+60osZOwMwhztE4myKQYEzCPvaPUxwZH301tOrBNtWUwOD+TNOm1Hrpeaq22RX9A==}
 
-  '@hotwired/turbo@8.0.18':
-    resolution: {integrity: sha512-dG0N7khQsP8sujclodQE3DYkI4Lq7uKA04fhT0DCC/DwMgn4T4WM3aji6EC6+iCfABQeJncY0SraXqVeOq0vvQ==}
+  '@hotwired/turbo@8.0.20':
+    resolution: {integrity: sha512-IilkH/+h92BRLeY/rMMR3MUh1gshIfdra/qZzp/Bl5FmiALD/6sQZK/ecxSbumeyOYiWr/JRI+Au1YQmkJGnoA==}
     engines: {node: '>= 18'}
 
   '@jridgewell/gen-mapping@0.3.13':
@@ -240,8 +240,8 @@ packages:
   '@popperjs/core@2.11.8':
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
 
-  '@rails/actioncable@8.1.0':
-    resolution: {integrity: sha512-9WSbN548dplVkfCFJFi/CKrJ+P4runAHZLlpXFn0xL+Y6tFJvo3zp92fr4ON9WOhNt8inetu8NJG1xDDAJ8N8g==}
+  '@rails/actioncable@8.1.100':
+    resolution: {integrity: sha512-j4vJQqz51CDVYv2UafKRu4jiZi5/gTnm7NkyL+VMIgEw3s8jtVtmzu9uItUaZccUg9NJ6o05yVyBAHxNfTuCRA==}
 
   '@rollup/rollup-android-arm-eabi@4.52.5':
     resolution: {integrity: sha512-8c1vW4ocv3UOMp9K+gToY5zL2XiiVw3k7f1ksf4yO1FlDFQ1C2u72iACFnSOceJFsWskc2WZNqeRhFRPzv+wtQ==}
@@ -830,12 +830,12 @@ snapshots:
   '@esbuild/win32-x64@0.25.11':
     optional: true
 
-  '@hotwired/turbo-rails@8.0.18':
+  '@hotwired/turbo-rails@8.0.20':
     dependencies:
-      '@hotwired/turbo': 8.0.18
-      '@rails/actioncable': 8.1.0
+      '@hotwired/turbo': 8.0.20
+      '@rails/actioncable': 8.1.100
 
-  '@hotwired/turbo@8.0.18': {}
+  '@hotwired/turbo@8.0.20': {}
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
@@ -870,7 +870,7 @@ snapshots:
 
   '@popperjs/core@2.11.8': {}
 
-  '@rails/actioncable@8.1.0': {}
+  '@rails/actioncable@8.1.100': {}
 
   '@rollup/rollup-android-arm-eabi@4.52.5':
     optional: true
