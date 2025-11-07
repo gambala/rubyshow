@@ -8,16 +8,16 @@
   },
   "dependencies": {
     "@hotwired/turbo-rails": "^8.0.20",
-    "@tailwindcss/postcss": "^4.1.16",
+    "@tailwindcss/postcss": "^4.1.17",
     "flag-icons": "^7.5.0",
     "postcss": "^8.5.6",
     "rails-plus": "github:gambala/rails-plus",
-    "tailwindcss": "^4.1.16",
+    "tailwindcss": "^4.1.17",
     "tippy.js": "^6.3.7",
     "what-input": "^5.2.12"
   },
   "devDependencies": {
-    "vite": "^7.1.12",
+    "vite": "^7.2.2",
     "vite-plugin-ruby": "^5.1.1"
   }
 }
