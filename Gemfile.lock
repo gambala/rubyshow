@@ -169,10 +169,11 @@ GEM
       net-imap
       net-pop
       net-smtp
-    mailgun-ruby (1.4.0)
+    mailgun-ruby (1.4.1)
       faraday (~> 2.1)
-      faraday-multipart (~> 1.1.0)
+      faraday-multipart (< 2)
       mini_mime
+      zeitwerk
     marcel (1.1.0)
     memory_profiler (1.1.0)
     mime-types (3.7.0)
