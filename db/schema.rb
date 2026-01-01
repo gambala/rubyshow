@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_01_01_233956) do
+ActiveRecord::Schema[8.0].define(version: 2026_01_01_235218) do
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
     t.text "content", default: "", null: false
@@ -19,9 +19,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_01_01_233956) do
     t.integer "course_id"
     t.integer "rating"
     t.boolean "graduate", default: false
-    t.integer "kind", default: 1, null: false
     t.index ["course_id"], name: "index_comments_on_course_id"
-    t.index ["kind"], name: "index_comments_on_kind"
     t.index ["rating"], name: "index_comments_on_rating"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
