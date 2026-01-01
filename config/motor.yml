@@ -1,0 +1,30 @@
+---
+engine_version: 0.4.37
+file_version: 2026-01-01 23:44:27.175906000 +04:00
+resources:
+- name: web/public/review
+  preferences:
+    visible: false
+  updated_at: 2026-01-01 23:44:27.175906000 +00:00
+configs:
+- key: header.links
+  value:
+  - name: 'Translation missing: ru.motor.reports'
+    link_type: reports
+  - name: 'Translation missing: ru.motor.forms'
+    link_type: forms
+  updated_at: 2026-01-01 23:43:22.062487000 +00:00
+- key: language
+  value: en
+  updated_at: 2026-01-01 23:44:06.172957000 +00:00
+queries: []
+dashboards: []
+forms: []
+alerts: []
+api_configs:
+- id: 1
+  name: origin
+  url: "/"
+  preferences: {}
+  description:
+  updated_at: 2026-01-01 23:39:58.042761000 +00:00

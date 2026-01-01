@@ -60,9 +60,9 @@ end
 # Table name: users
 #
 #  id                     :integer          not null, primary key
-#  email                  :string           default(""), not null, indexed
+#  email                  :string           default(""), not null, uniquely indexed
 #  encrypted_password     :string           default(""), not null
-#  reset_password_token   :string           indexed
+#  reset_password_token   :string           uniquely indexed
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
 #  sign_in_count          :integer          default(0), not null
@@ -75,9 +75,9 @@ end
 #  role                   :string           default("user"), not null
 #  provider               :string
 #  uid                    :string
-#  username               :string           indexed
+#  username               :string           uniquely indexed
 #  github_name            :string
-#  confirmation_token     :string           indexed
+#  confirmation_token     :string           uniquely indexed
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
 #

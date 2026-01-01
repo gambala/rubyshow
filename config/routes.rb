@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "up", to: "rails/health#show", as: :rails_health_check
 
   authenticate :user, ->(user) { user.admin? } do
+    mount Motor::Admin => '/motor_admin'
     mount RailsPerformance::Engine, at: "/rails/performance", as: "rails_performance"
   end
 
