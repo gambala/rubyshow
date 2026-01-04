@@ -37,8 +37,8 @@ importers:
         specifier: ^7.3.0
         version: 7.3.0(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.0)
       vite-plugin-ruby:
-        specifier: ^5.1.1
-        version: 5.1.1(vite@7.3.0(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.0))
+        specifier: ^5.1.2
+        version: 5.1.2(vite@7.3.0(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.0))
 
 packages:
 
@@ -689,8 +689,8 @@ packages:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
 
-  vite-plugin-ruby@5.1.1:
-    resolution: {integrity: sha512-I1dXJq2ywdvTD2Cz5LYNcYLujqQ3eUxPoCjruRdfm2QBtHBY15NEeb6x5HuPM3T5S+y8S3p9fwRsieQQCjk0gg==}
+  vite-plugin-ruby@5.1.2:
+    resolution: {integrity: sha512-aIhAhq9BOVhfWGYuludgYK9ch58SQClpDVyF8WfpNsr5xr6dCw24mgpFso2KsXYONGYzX2kDt+cca54nDzkitg==}
     peerDependencies:
       vite: '>=5.0.0'
 
@@ -1253,7 +1253,7 @@ snapshots:
     dependencies:
       is-number: 7.0.0
 
-  vite-plugin-ruby@5.1.1(vite@7.3.0(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.0)):
+  vite-plugin-ruby@5.1.2(vite@7.3.0(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.0)):
     dependencies:
       debug: 4.4.3
       fast-glob: 3.3.3
