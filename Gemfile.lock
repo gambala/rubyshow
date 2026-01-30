@@ -81,7 +81,7 @@ GEM
     addressable (2.8.8)
       public_suffix (>= 2.0.2, < 8.0)
     amazing_print (2.0.0)
-    annotaterb (4.20.0)
+    annotaterb (4.21.0)
       activerecord (>= 6.0.0)
       activesupport (>= 6.0.0)
     ar_lazy_preload (1.1.2)
@@ -180,7 +180,7 @@ GEM
       net-imap
       net-pop
       net-smtp
-    mailgun-ruby (1.4.1)
+    mailgun-ruby (1.4.2)
       faraday (~> 2.1)
       faraday-multipart (< 2)
       mini_mime
@@ -190,11 +190,11 @@ GEM
     mime-types (3.7.0)
       logger
       mime-types-data (~> 3.2025, >= 3.2025.0507)
-    mime-types-data (3.2026.0113)
+    mime-types-data (3.2026.0127)
     mini_mime (1.1.5)
     minitest (6.0.1)
       prism (~> 1.5)
-    motor-admin (0.4.37)
+    motor-admin (0.4.38)
       ar_lazy_preload (~> 1.0)
       audited (~> 5.0)
       cancancan (~> 3.0)
@@ -334,7 +334,7 @@ GEM
     recaptcha (5.21.1)
     redis (5.4.1)
       redis-client (>= 0.22.0)
-    redis-client (0.26.3)
+    redis-client (0.26.4)
       connection_pool
     regexp_parser (2.11.3)
     reline (0.6.3)
@@ -398,7 +398,7 @@ GEM
     tilt (2.7.0)
     timeout (0.6.0)
     tsort (0.2.0)
-    turbo-rails (2.0.21)
+    turbo-rails (2.0.23)
       actionpack (>= 7.1.0)
       railties (>= 7.1.0)
     tzinfo (2.0.6)
