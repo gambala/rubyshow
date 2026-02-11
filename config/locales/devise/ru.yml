@@ -7,6 +7,10 @@ ru:
         leave_blank_if_you_don_t_want_to_change_it: оставьте пустым, если не хотите менять
         unhappy: Не нравится ресурс?
         we_need_your_current_password_to_confirm_your_changes: 'нужно при смене пароля'
+    confirmations:
+      new:
+        heading: 'ВЫСЛАТЬ ПОВТОРНО ПИСЬМО С АКТИВАЦИЕЙ'
+        links: 'Выслать повторно письмо с активацией'
     shared:
       links:
         sign_up: Зарегистрироваться
