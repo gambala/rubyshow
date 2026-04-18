@@ -10,7 +10,7 @@
     "@hotwired/turbo-rails": "^8.0.23",
     "@tailwindcss/postcss": "^4.2.2",
     "flag-icons": "^7.5.0",
-    "postcss": "^8.5.9",
+    "postcss": "^8.5.10",
     "rails-plus": "github:gambala/rails-plus",
     "tailwindcss": "^4.2.2",
     "tippy.js": "^6.3.7",
