@@ -90,7 +90,7 @@ GEM
     audited (5.8.0)
       activerecord (>= 5.2, < 8.2)
       activesupport (>= 5.2, < 8.2)
-    auth-sanitizer (0.1.4)
+    auth-sanitizer (0.1.5)
       version_gem (~> 1.1, >= 1.1.9)
     base64 (0.3.0)
     bcrypt (3.1.22)
@@ -99,7 +99,7 @@ GEM
     bindex (0.8.1)
     browser (6.2.0)
     builder (3.3.0)
-    bullet (8.1.1)
+    bullet (8.1.3)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11)
     cancancan (3.6.1)
@@ -137,9 +137,9 @@ GEM
       logger
     faraday-multipart (1.1.1)
       multipart-post (~> 2.0)
-    faraday-net_http (3.4.3)
+    faraday-net_http (3.4.4)
       net-http (~> 0.5)
-    fugit (1.12.1)
+    fugit (1.12.2)
       et-orbi (~> 1.4)
       raabro (~> 1.4)
     globalid (1.3.0)
@@ -158,7 +158,7 @@ GEM
       prism (>= 1.3.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
-    json (2.19.5)
+    json (2.19.8)
     jwt (3.1.2)
       base64
     language_server-protocol (3.17.0.5)
@@ -183,7 +183,7 @@ GEM
       net-imap
       net-pop
       net-smtp
-    mailgun-ruby (1.4.3)
+    mailgun-ruby (1.4.4)
       faraday (~> 2.1)
       faraday-multipart (< 2)
       mini_mime
@@ -415,7 +415,7 @@ GEM
     uniform_notifier (1.18.0)
     uri (1.1.1)
     useragent (0.16.11)
-    version_gem (1.1.9)
+    version_gem (1.1.10)
     vite_rails (3.0.20)
       railties (>= 5.1, < 9)
       vite_ruby (~> 3.0, >= 3.2.2)
