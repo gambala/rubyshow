@@ -116,6 +116,7 @@ test:
 
 test-unit:
 	ruby -Itest test/configuration/legacy_defaults_test.rb
+	bundle exec ruby -Itest test/configuration/runtime_contract_test.rb
 
 
 bi: run-bundle-install
