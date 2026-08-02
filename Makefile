@@ -17,7 +17,7 @@ CONTAINER_NAME=ghcr.io/gambala/rubyshow
 PORT=3000
 ID_FILE=.container_id
 
-.PHONY: test
+.PHONY: test test-unit
 
 
 
@@ -114,6 +114,8 @@ run-sidekiq:
 test:
 	rails test
 
+test-unit:
+	ruby -Itest test/configuration/legacy_defaults_test.rb
 
 
 bi: run-bundle-install
