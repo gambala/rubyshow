@@ -3,8 +3,8 @@
 # Mark the database schema as having been generated.
 db/schema.rb linguist-generated
 
-# Mark the node_modules lockfile as having been generated.
-pnpm-lock.yaml linguist-generated
+# Mark the Bun lockfile as having been generated.
+bun.lock linguist-generated
 
 # Mark any vendored files as having been vendored.
 vendor/* linguist-vendored

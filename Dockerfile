@@ -21,21 +21,23 @@ FROM base AS prebuild
   # Install packages needed to build gems and assets
   # - git: for installing gems from git repositories
   # - build-base: for compiling native extensions
-  # - nodejs: for vite
-  # - npm: for pnpm
-  # - pnpm: for installing node modules
-  RUN apk add --no-cache git build-base nodejs npm yaml-dev && \
-      npm install -g pnpm
+  # - bash: for the Bun installer
+  # - curl: for installing Bun
+  # - bun: for installing node modules and building assets
+  RUN apk add --no-cache git build-base yaml-dev curl bash && \
+      curl -fsSL https://bun.sh/install | bash && \
+      rm -rf /var/cache/apk/*
+  ENV PATH="/root/.bun/bin:${PATH}"
 
 
 FROM prebuild AS node_modules_build
-  COPY --link package.json pnpm-lock.yaml ./
-  RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+  COPY --link package.json bun.lock ./
+  RUN --mount=type=cache,id=bun,target=/bun/store bun install --frozen-lockfile
 
 
 FROM prebuild AS node_modules_production
-  COPY --link package.json pnpm-lock.yaml ./
-  RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile --prod
+  COPY --link package.json bun.lock ./
+  RUN --mount=type=cache,id=bun,target=/bun/store bun install --frozen-lockfile --production
 
 
 FROM prebuild AS build
@@ -46,7 +48,7 @@ FROM prebuild AS build
   COPY --from=node_modules_build /rails/node_modules /rails/node_modules
   COPY --link . .
   # Precompiling assets for production
-  RUN pnpm run build
+  RUN bun --bun run build
   # Remove build-related node_modules to reduce image size
   RUN rm -rf node_modules
   COPY --from=node_modules_production /rails/node_modules /rails/node_modules

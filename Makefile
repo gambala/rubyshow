@@ -74,7 +74,7 @@ lint-security:
 	brakeman
 
 lint-vite:
-	pnpx vite-bundle-visualizer
+	bunx --bun vite-bundle-visualizer
 
 
 
@@ -94,11 +94,10 @@ run-console:
 	bundle exec rails console
 
 run-frontend-update:
-	# pnpm update --interactive --latest
-	pnpm dlx npm-check-updates -i
+	bunx --bun npm-check-updates -i
 
 run-frontend-upgrade:
-	pnpm update
+	bun update
 
 run-generate:
 	bundle exec rails generate $(RUN_ARGS)
