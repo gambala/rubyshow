@@ -94,7 +94,7 @@ run-console:
 	bundle exec rails console
 
 run-frontend-update:
-	bunx --bun npm-check-updates -i
+	bun update --interactive
 
 run-frontend-upgrade:
 	bun update
