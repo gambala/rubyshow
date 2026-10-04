@@ -150,8 +150,8 @@ GEM
       activesupport (>= 7.2)
     hashie (5.1.0)
       logger
-    hightop (0.6.0)
-      activesupport (>= 7.1)
+    hightop (1.0.0)
+      activesupport (>= 7.2)
     i18n (1.14.8)
       concurrent-ruby (~> 1.0)
     io-console (0.8.2)
